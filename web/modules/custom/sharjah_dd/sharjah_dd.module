@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+use Drupal\Core\Form\FormStateInterface;
+
+
+/**
+ * @file
+ * Primary module hooks for sharjah_dd module.
+ */
+
+
+
+/**
+ * Implements hook_theme().
+ */
+function sharjah_dd_theme($existing, $type, $theme, $path)
+{
+
+  return [
+    'header' => [
+      'variables' => ['items' => NULL],
+      'template' => 'header',
+    ],
+    // home_banner
+    'home_banner' => [
+      'variables' => ['items' => NULL],
+      'template' => 'home-banner',
+    ],
+  // performance_highlights
+    'performance_highlights' => [
+      'variables' => ['items' => NULL],
+      'template' => 'performance-highlights',
+    ],
+    // front-services.html.twig
+    'front_services' => [
+      'variables' => ['items' => NULL],
+      'template' => 'front-services',
+    ],
+    // front_initiatives
+    'front_initiatives' => [
+      'variables' => ['items' => NULL],
+      'template' => 'front-initiatives',
+    ],
+    // front_latest_news
+    'front_latest_news' => [
+      'variables' => ['items' => NULL],
+      'template' => 'front-latest-news',
+    ],
+      // footer
+    'footer' => [
+      'variables' => ['items' => NULL],
+      'template' => 'footer',
+    ],
+    
+  ];
+}   
+
+
+// hook form altr
+function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  
+  // if ($form_id === 'contact_message_feedback_form') {
+  //   // add class 
+  //   $form['#attributes']['class'][] = 'contact-message-feedback-form container pt-5 pb-5';
+  // }
+ 
+}
+

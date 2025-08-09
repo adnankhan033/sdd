@@ -1,0 +1,19 @@
+uuid: 771d3afb-12b3-4070-974a-631277cc2dad
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_footer_email
+id: config_pages.home_settings.field_footer_email
+field_name: field_footer_email
+entity_type: config_pages
+bundle: home_settings
+label: 'Footer Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,19 @@
+uuid: db91c2c5-2fbf-4f45-8c4d-d32ffe367d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.services
+id: node.services.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: services
+label: 'Short title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

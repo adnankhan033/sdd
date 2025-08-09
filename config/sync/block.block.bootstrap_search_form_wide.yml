@@ -1,0 +1,23 @@
+uuid: f5147beb-2e45-435c-87c3-43e9d52663b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - bootstrap
+_core:
+  default_config_hash: rt0YHBkt7Tfep6rr6wIFe2chQoqGmNHHZ-DcvCVpY3g
+id: bootstrap_search_form_wide
+theme: bootstrap
+region: top_header_form
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

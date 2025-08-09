@@ -1,0 +1,19 @@
+uuid: 957ce8aa-dbfc-4167-81b1-49341654b18c
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_contact_number
+id: config_pages.home_settings.field_contact_number
+field_name: field_contact_number
+entity_type: config_pages
+bundle: home_settings
+label: 'contact number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

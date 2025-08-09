@@ -1,0 +1,27 @@
+# Main theme library.
+custom-library:
+  js:
+    # js/jquery-3.6.0.min.js: {}
+    # js/bootstrap.min.js: {}
+    # js/swiper-bundle.min.js: {}
+    # js/ma5-menu.min.js: {}
+    # js/owl.carousel.min.js: {}
+    # js/select2.min.js: {}
+    # js/isotope.pkgd.min.js: {}
+    # js/imagesloaded.pkgd.min.js: {}
+    # js/aos.js: {}
+    # js/funfacts.js: {}
+    # js/custom.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js: { type: external, minified: true }
+    https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js: { type: external, minified: true }
+    assets/js/script.js: {}
+    
+  css:
+    theme:
+      # css/style.css: {}
+      https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css: { type: external, minified: true }
+      assets/css/all.css: {}
+      assets/css/style.css: {}
+
+
+

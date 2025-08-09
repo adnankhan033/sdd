@@ -1,0 +1,19 @@
+uuid: cf1c852c-88f2-418d-b3e3-50038e202e9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_testimonials_highlight
+id: config_pages.home_settings.field_testimonials_highlight
+field_name: field_testimonials_highlight
+entity_type: config_pages
+bundle: home_settings
+label: 'Testimonials highlight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

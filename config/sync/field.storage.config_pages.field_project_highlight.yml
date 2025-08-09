@@ -1,0 +1,21 @@
+uuid: 680f4357-18aa-4bc0-a0ae-42747ff1de87
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_project_highlight
+field_name: field_project_highlight
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

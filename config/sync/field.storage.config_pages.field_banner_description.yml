@@ -1,0 +1,19 @@
+uuid: 76d3fa43-835c-410c-9344-b2f2b2b4b2c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - text
+id: config_pages.field_banner_description
+field_name: field_banner_description
+entity_type: config_pages
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

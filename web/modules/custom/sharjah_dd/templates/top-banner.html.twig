@@ -1,0 +1,31 @@
+<div class="theme_slider_1">
+	<div class="slider" style='position: relative; background-image: url("{{ items.cover_image }}"); background-position: center; background-repeat: no-repeat;background-size: cover;'>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="slide_content">
+						<h5 class="sub_heading" data-aos="fade-up" data-aos-duration="1000">
+							{{ "CALL US"|t}}
+							<span>
+								{{ items.banner_mobile }}
+							</span>
+						</h5>
+						 <h2 class="heading" data-aos="fade-up" data-aos-duration="1500">
+                        
+                        {{ items.title }}
+                        </h2
+						<p class="desc" data-aos="fade-up" data-aos-duration="2000">
+							{{ items.body|raw }}
+
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-5 d-flex align-items-end" data-aos="fade-left" data-aos-duration="2500">
+					<div class="layer_object">
+						<img src="{{ items.banner_img_url  }}" alt="{{ "banner construction"|t }}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

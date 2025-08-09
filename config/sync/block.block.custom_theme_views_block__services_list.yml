@@ -1,0 +1,29 @@
+uuid: 0fe9ae15-fd35-4d21-b2b1-69154cc3a430
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - system
+    - views
+  theme:
+    - custom_theme
+id: custom_theme_views_block__services_list
+theme: custom_theme
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:services-list'
+settings:
+  id: 'views_block:services-list'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /front

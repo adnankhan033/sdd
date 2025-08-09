@@ -1,0 +1,19 @@
+uuid: ca09fd6d-d954-415c-bc70-9d16b84227ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_title_most_popular_project
+id: config_pages.home_settings.field_title_most_popular_project
+field_name: field_title_most_popular_project
+entity_type: config_pages
+bundle: home_settings
+label: 'Title Most popular project'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

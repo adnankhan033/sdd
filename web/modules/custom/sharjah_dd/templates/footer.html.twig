@@ -1,0 +1,27 @@
+{% set footer_items = simplify_menu('footer') %}
+
+{# Group parents into batches of 3 for each row #}
+{% for row in footer_items.menu_tree|batch(3) %}
+    <div class="row">
+        {% for menu_item in row %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="footer_widget footer_links">
+                    {% if menu_item.submenu is defined and menu_item.submenu|length > 0 %}
+                        <h4 class="widget_title">
+                            {{ menu_item.text }}
+                        </h4>
+                        <div class="footer_nav">
+                            <ul class="footer_menu">
+                                {% for child in menu_item.submenu %}
+                                    <li class="menu-item">
+                                        <a href="{{ child.url }}">{{ child.text }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}

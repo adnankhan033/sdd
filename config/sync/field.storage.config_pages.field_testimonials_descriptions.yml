@@ -1,0 +1,20 @@
+uuid: c46adcc1-b1f8-43d4-b209-20683543df3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - text
+id: config_pages.field_testimonials_descriptions
+field_name: field_testimonials_descriptions
+entity_type: config_pages
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

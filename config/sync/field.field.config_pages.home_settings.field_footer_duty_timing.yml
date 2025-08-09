@@ -1,0 +1,19 @@
+uuid: 917b332b-09bd-4e43-8329-12bfca2311a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_footer_duty_timing
+id: config_pages.home_settings.field_footer_duty_timing
+field_name: field_footer_duty_timing
+entity_type: config_pages
+bundle: home_settings
+label: 'Footer duty Timing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

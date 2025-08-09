@@ -1,0 +1,17 @@
+uuid: 47b0f7dc-3107-4fda-8029-23dd21d40057
+langcode: en
+status: true
+dependencies: {  }
+id: home_settings
+label: 'Home Settings'
+token: false
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: ''
+  weight: 0
+  description: ''

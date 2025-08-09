@@ -1,0 +1,20 @@
+uuid: 071d760f-a8e6-4070-8084-c6e658626e23
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom
+  theme:
+    - custom_theme
+id: custom_theme_footer
+theme: custom_theme
+region: footer
+weight: 0
+provider: null
+plugin: footer_block
+settings:
+  id: footer_block
+  label: Footer
+  label_display: '0'
+  provider: custom
+visibility: {  }

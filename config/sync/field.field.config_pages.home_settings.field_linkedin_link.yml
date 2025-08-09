@@ -1,0 +1,19 @@
+uuid: 5e4c5dbf-a4b3-44b2-ba99-605f8afc8f11
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_linkedin_link
+id: config_pages.home_settings.field_linkedin_link
+field_name: field_linkedin_link
+entity_type: config_pages
+bundle: home_settings
+label: 'linkedin Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

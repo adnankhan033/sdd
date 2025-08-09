@@ -1,0 +1,19 @@
+uuid: 81880fcf-62e3-4d14-b182-e27a7a8a5438
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_our_fact_title
+id: config_pages.home_settings.field_our_fact_title
+field_name: field_our_fact_title
+entity_type: config_pages
+bundle: home_settings
+label: 'Our Fact Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

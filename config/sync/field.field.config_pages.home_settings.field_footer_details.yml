@@ -1,0 +1,19 @@
+uuid: 6e61451a-e499-4020-9120-39c1490cbcfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_footer_details
+id: config_pages.home_settings.field_footer_details
+field_name: field_footer_details
+entity_type: config_pages
+bundle: home_settings
+label: 'Footer details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

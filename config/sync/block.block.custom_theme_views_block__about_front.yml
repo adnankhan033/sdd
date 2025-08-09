@@ -1,0 +1,29 @@
+uuid: e49cc6b3-cde9-4f4c-9d4b-42b598f294af
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.about
+  module:
+    - system
+    - views
+  theme:
+    - custom_theme
+id: custom_theme_views_block__about_front
+theme: custom_theme
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:about-front'
+settings:
+  id: 'views_block:about-front'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /

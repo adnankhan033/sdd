@@ -1,0 +1,25 @@
+uuid: 7ebc9b9a-b9e2-459f-9d75-dcf0805f952d
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom
+    - system
+  theme:
+    - custom_theme
+id: custom_theme_ourfacts
+theme: custom_theme
+region: content
+weight: -8
+provider: null
+plugin: our_facts
+settings:
+  id: our_facts
+  label: 'our Facts'
+  label_display: '0'
+  provider: custom
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /front

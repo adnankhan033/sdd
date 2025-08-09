@@ -1,0 +1,19 @@
+uuid: d8492678-22d2-4066-b130-f366fbe02d67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_of_experiance
+    - node.type.page
+id: node.page.field_year_of_experiance
+field_name: field_year_of_experiance
+entity_type: node
+bundle: page
+label: 'Year of experiance'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

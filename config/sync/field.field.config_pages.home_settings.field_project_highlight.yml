@@ -1,0 +1,19 @@
+uuid: ebf101fb-c8bf-4faa-b6c0-7a3b544c1d28
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_project_highlight
+id: config_pages.home_settings.field_project_highlight
+field_name: field_project_highlight
+entity_type: config_pages
+bundle: home_settings
+label: 'Project highlight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

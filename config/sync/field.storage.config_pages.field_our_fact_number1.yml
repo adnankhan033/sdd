@@ -1,0 +1,21 @@
+uuid: 39ee486d-22d9-4914-a35c-a787e9a8516b
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_our_fact_number1
+field_name: field_our_fact_number1
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

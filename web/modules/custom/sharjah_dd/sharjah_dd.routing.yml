@@ -1,0 +1,16 @@
+
+sharjah_dd.front:
+  path: '/front'
+  defaults:
+    _title: 'Front'
+    _controller: '\Drupal\sharjah_dd\Controller\FrontController'
+  requirements:
+    _permission: 'access content'
+
+# sharjah_dd.projects:
+#   path: '/projects'
+#   defaults:
+#     _title: 'projects'
+#     _controller: '\Drupal\sharjah_dd\Controller\ProjectsController'
+#   requirements:
+#     _permission: 'access content'

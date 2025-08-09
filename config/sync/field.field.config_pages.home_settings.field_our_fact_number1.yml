@@ -1,0 +1,19 @@
+uuid: bb7f6bea-6de6-46b5-a626-95bb3405ead9
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_our_fact_number1
+id: config_pages.home_settings.field_our_fact_number1
+field_name: field_our_fact_number1
+entity_type: config_pages
+bundle: home_settings
+label: 'Our Fact Number1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

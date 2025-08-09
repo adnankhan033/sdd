@@ -1,0 +1,1087 @@
+  <header>
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between lg:py-6 py-5">
+
+        <button class="flex items-center lg:hidden" type="button">
+          <div class="hamburger-toggle">
+            <div class="hamburger">
+              <span class="bg-black"></span>
+              <span class="bg-black"></span>
+              <span class="bg-black"></span>
+            </div>
+          </div>
+        </button>
+
+        <div>
+          <img src="/{{ active_theme_path() }}/assets/images/Logo.svg" class="max-w-full" alt />
+        </div>
+
+        <div class="hidden lg:block">
+          <img src="/{{ active_theme_path() }}/assets/images/Logo2.svg" class="max-w-full" alt />
+        </div>
+
+        <button class="search">
+          <i class="fa-regular fa-search text-lg transition-all font-semibold"></i>
+
+        </button>
+
+      </div>
+    </div>
+
+    <nav class="bg-secondary">
+      <div class="container mx-auto px-4 h-full">
+        <div class="lg:flex items-center justify-between h-full">
+          <div class="hidden lg:block main-menu pt-3 lg:pt-0  h-full">
+            <ul class="flex lg:items-center lg:gap-6 gap-4">
+              <li class="lg:py-4 pb-4 hover:text-orange transition-all lg:border-0 border-b border-[#D4D4D8]">
+                <a href> Home </a>
+              </li>
+
+              <li
+                class="lg:py-4 pb-4 dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a class="flex items-center  group-hover/dropdwon:text-orange  gap-2 hover:text-orange">
+                  <span> About</span>
+                  <i class="fa-regular fa-arrow-up-right text-xs"></i>
+                </a>
+
+                <div
+                  class="dropdown-menu absolute opacity-0 -z-50 bg-white pt-4 pb-2 border-t-2 min-w-[200px] mt-4 border-orange lg:transition-all lg:group-hover/dropdwon:opacity-100 lg:group-hover/dropdwon:!z-20">
+
+                  <div class="sub-item pt-5 pb-10  flex justify-between items-center px-4 lg:hidden">
+                    <i class="fa-regular fa-close text-lg close-menu"></i>
+                    <h6 class="text-xl">About</h6>
+                    <i class="fa-regular fa-angle-left text-lg back-menu"></i>
+                  </div>
+
+                  <ul class="grid gap-4  ">
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </li>
+
+              <li class="lg:py-4 pb-4 hover:text-orange transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a href> Services </a>
+              </li>
+
+              <li class="lg:py-4 pb-4 hover:text-orange transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a href> Initiatives </a>
+              </li>
+
+              <li
+                class="lg:py-4 pb-4 dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a class="flex items-center  group-hover/dropdwon:text-orange  gap-2 hover:text-orange">
+                  <span> Open Data</span>
+                  <i class="fa-regular fa-arrow-up-right text-xs"></i>
+                </a>
+
+                <div
+                  class="dropdown-menu absolute opacity-0 -z-50 bg-white pt-4 pb-2 border-t-2 min-w-[200px] mt-4 border-orange lg:transition-all lg:group-hover/dropdwon:opacity-100 lg:group-hover/dropdwon:!z-20">
+
+                  <div class="sub-item pt-5 pb-10  flex justify-between items-center px-4 lg:hidden">
+                    <i class="fa-regular fa-close text-lg close-menu"></i>
+                    <h6 class="text-xl">About</h6>
+                    <i class="fa-regular fa-angle-left text-lg back-menu"></i>
+                  </div>
+
+                  <ul class="grid gap-4  ">
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </li>
+
+              <li
+                class="lg:py-4 pb-4 dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a class="flex items-center  group-hover/dropdwon:text-orange  gap-2 hover:text-orange">
+                  <span> Media Center</span>
+                  <i class="fa-regular fa-arrow-up-right text-xs"></i>
+                </a>
+
+                <div
+                  class="dropdown-menu absolute opacity-0 -z-50 bg-white pt-4 pb-2 border-t-2 min-w-[200px] mt-4 border-orange lg:transition-all lg:group-hover/dropdwon:opacity-100 lg:group-hover/dropdwon:!z-20">
+
+                  <div class="sub-item pt-5 pb-10  flex justify-between items-center px-4 lg:hidden">
+                    <i class="fa-regular fa-close text-lg close-menu"></i>
+                    <h6 class="text-xl">About</h6>
+                    <i class="fa-regular fa-angle-left text-lg back-menu"></i>
+                  </div>
+
+                  <ul class="grid gap-4  ">
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                    <li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+                      <a href
+                        class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+                        <span>About SDD</span>
+                        <i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </li>
+
+              <li class="lg:py-4 pb-4 hover:text-orange transition-all  lg:border-0 border-b border-[#D4D4D8]">
+
+                <a href> Contact </a>
+              </li>
+            </ul>
+
+            <div class=" lg:hidden h-full flex flex-col justify-end mb-11">
+
+              <div class="flex gap-3 justify-center">
+                <button
+                  class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-[#F3F4F6] px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+
+                  <i class="fa-brands fa-accessible-icon  transition-all  "></i>
+
+                </button>
+
+                <button
+                  class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-[#F3F4F6] px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+                  <i class="fa-light fa-globe text-sm transition-all font-semibold"></i>
+
+                  <span>EN</span>
+                </button>
+              </div>
+              <div class="flex items-center justify-center mt-8">
+                <img src="/{{ active_theme_path() }}/assets/images/Logo2.svg" class="max-w-full" alt />
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="  items-center gap-3 hidden lg:flex">
+            <button
+              class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+
+              <i class="fa-regular fa-search text-sm transition-all font-semibold"></i>
+
+              <span>Search</span>
+            </button>
+
+            <button
+              class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+
+              <i class="fa-brands fa-accessible-icon  transition-all  "></i>
+
+            </button>
+
+            <button
+              class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+              <i class="fa-light fa-globe text-sm transition-all font-semibold"></i>
+
+              <span>EN</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section
+    class="first-section relative h-[calc(100vh_-100px)] bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.09)_40.45%,#000_100%)]">
+    <video class="absolute -z-[1] h-full w-full object-cover opacity-95" src="/{{ active_theme_path() }}/assets/video/hero.mp4" autoplay muted
+      loop></video>
+
+    <div class="container mx-auto px-4 h-full">
+      <div class="flex h-full flex-col justify-between pb-[80px] pt-[20vh]">
+        <div class="max-w-[667px]">
+          <h1 class="text-5xl font-bold leading-[56px] text-white [text-shadow:0px_4px_4px_#00000026]">
+            Thoughtful Innovations Driving Government Excellence
+          </h1>
+        </div>
+
+        <button class="flex items-center gap-2 text-white">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.62109 12.1289L1.24609 7.75391C0.890625 7.42578 0.890625 6.85156 1.24609 6.52344C1.57422 6.16797 2.14844 6.16797 2.47656 6.52344L5.375 9.39453V1C5.375 0.535156 5.75781 0.125 6.25 0.125C6.71484 0.125 7.125 0.535156 7.125 1V9.39453L9.99609 6.52344C10.3242 6.16797 10.8984 6.16797 11.2266 6.52344C11.582 6.85156 11.582 7.42578 11.2266 7.75391L6.85156 12.1289C6.52344 12.4844 5.94922 12.4844 5.62109 12.1289Z"
+              fill="white" />
+          </svg>
+
+          <span>Scroll</span>
+        </button>
+
+        <div class="min-w-0">
+          <!-- Swiper -->
+          <div class="swiper heroswiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
+                  <img class="mb-5 max-w-full" src="/{{ active_theme_path() }}/assets/images/Heading3Hereareafew.svg" alt />
+                  <h3 class="mb-3 text-xl text-white">
+                    Government to <br />
+                    Government Solutions
+                  </h3>
+                  <p class="text-sm text-white">Lorem Ipsum is simply lorem
+                    industry.</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
+                  <img class="mb-5 max-w-full" src="/{{ active_theme_path() }}/assets/images/Heading3Hereareafew.svg" alt />
+                  <h3 class="mb-3 text-xl text-white">
+                    Government to <br />
+                    Government Solutions
+                  </h3>
+                  <p class="text-sm text-white">Lorem Ipsum is simply lorem
+                    industry.</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
+                  <img class="mb-5 max-w-full" src="/{{ active_theme_path() }}/assets/images/Heading3Hereareafew.svg" alt />
+                  <h3 class="mb-3 text-xl text-white">
+                    Government to <br />
+                    Government Solutions
+                  </h3>
+                  <p class="text-sm text-white">Lorem Ipsum is simply lorem
+                    industry.</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div
+                  class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
+                  <img class="mb-5 max-w-full" src="/{{ active_theme_path() }}/assets/images/Heading3Hereareafew.svg" alt />
+                  <h3 class="mb-3 text-xl text-white">
+                    Government to <br />
+                    Government Solutions
+                  </h3>
+                  <p class="text-sm text-white">Lorem Ipsum is simply lorem
+                    industry.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative translate-y-[-60px] rounded-t-[60px] bg-white pt-[100px]">
+    <div class="container mx-auto px-4">
+      <div class="title">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> Performance Highlights</span>
+        </h6>
+        <h2 class="mb-10 text-4xl">Our Impact in Numbers</h2>
+        <div class="max-w-[300px]">
+          <p class="text-lg">
+            Empowering government through tailored support and authentic
+            connection.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <video class="h-[285px] w-full object-fill" autoplay muted src="/{{ active_theme_path() }}/assets/video/shutterstock_1097618671.mp4"></video>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <div class="mt-[150px] grid grid-cols-4">
+        <div class>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:end-0 after:h-[420px] after:w-[1px] after:bg-[#353535]">
+            <h6>
+              Supporting <br />
+              Government
+            </h6>
+            <h4 class="text-[70px] font-bold text-orange">190</h4>
+            <p class="text-sm">Total entities we serve</p>
+          </div>
+        </div>
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              Featured <br />
+              Solutions
+            </h6>
+            <h4 class="text-[70px] font-bold">25</h4>
+            <p class="text-sm">Total entities we serve</p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-11 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              Serving <br />
+              Sharjah
+            </h6>
+            <h4 class="text-[70px] font-bold">1.2m</h4>
+            <p class="text-sm">Active citizen and resident through Digital
+              Sharjah app</p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              Our <br />
+              Datacenter
+            </h6>
+            <h4 class="text-[70px] font-bold">Tier3</h4>
+            <p class="text-sm">Certified Data Center</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rounded-t-[60px] bg-[linear-gradient(180deg,#F6F7F8_74.15%,#F6F7F8_79.58%,#FFFFFF_100%)] py-[112px]">
+    <div class="container mx-auto px-4">
+      <div class="title">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> Services</span>
+        </h6>
+        <h2 class="mb-10 text-4xl">Explore Our Services</h2>
+        <div class="max-w-[300px]">
+          <p class="text-lg">Transforming Service Delivery for a Smarter
+            Sharjah</p>
+        </div>
+      </div>
+
+      <div class="my-[56px] flex items-center justify-between filter">
+        <div class="tabs">
+          <ul class="flex items-center gap-6 rounded-[11px] border border-[#BCBCBC] p-1">
+            <li>
+              <button
+                class="active [.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                all
+              </button>
+            </li>
+            <li>
+              <button
+                class="[.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                Cloud
+              </button>
+            </li>
+            <li>
+              <button
+                class="[.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                Digital Platforms
+              </button>
+            </li>
+            <li>
+              <button
+                class="[.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                Consultancy
+              </button>
+            </li>
+            <li>
+              <button
+                class="[.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                Digital Operations
+              </button>
+            </li>
+            <li>
+              <button
+                class="[.active]:bg-orange [.active]:text-white rounded-lg px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white">
+                Citizens
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <input
+            class="h-[54px] rounded-sm border border-[#D4D4D8] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]"
+            type="search" placeholder="Search" name id />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6">
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-at text-5xl text-orange"></i>
+          </div>
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-id-card text-5xl text-orange"></i>
+          </div>
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum
+            is simply dummy text of the printing and typesetting industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-file-contract text-5xl text-orange"></i>
+          </div>
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum
+            is simply dummy text of the printing and typesetting industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-landmark-flag text-5xl text-orange"></i>
+          </div>
+
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum
+            is simply dummy text of the printing and typesetting industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-id-card text-5xl text-orange"></i>
+          </div>
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum
+            is simply dummy text of the printing and typesetting industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+
+        <a href class="rounded-xl bg-white p-9">
+          <div class="mb-6 flex items-center justify-between">
+            <h5>Mail</h5>
+            <i class="fa-thin fa-file-contract text-5xl text-orange"></i>
+          </div>
+          <p class="text-sm text-[#99A1AF]">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum
+            is simply dummy text of the printing and typesetting industry.
+          </p>
+
+          <div class="mt-6 flex items-center gap-2">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.96875 0.36377C9.32422 0.36377 9.625 0.664551 9.625 1.02002V7.58252C9.625 7.96533 9.32422 8.23877 8.96875 8.23877C8.58594 8.23877 8.3125 7.96533 8.3125 7.58252V2.60596L1.99609 8.92236C1.72266 9.1958 1.3125 9.1958 1.06641 8.92236C0.792969 8.67627 0.792969 8.26611 1.06641 8.02002L7.38281 1.70361H2.40625C2.02344 1.70361 1.75 1.40283 1.75 1.04736C1.75 0.664551 2.02344 0.391113 2.40625 0.391113H8.96875V0.36377Z"
+                fill="#99A1AF" />
+            </svg>
+
+            <span class="text-sm text-[#6A7282]">Learn more</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-[56px] text-center">
+        <a href
+          class="group/btn relative rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-4 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+          <span class=" ">View all</span>
+
+          <span
+            class="absolute -end-1 top-0 flex h-[53px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange">
+            <i class="fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="relative py-[96px] after:absolute after:-bottom-[100px] after:-z-[1] after:h-[406px] after:w-[444px] after:bg-[url(../images/shape.svg)] after:bg-no-repeat">
+    <div class="container mx-auto px-4">
+      <div class="title max-w-[470px]">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> Our Initiatives </span>
+        </h6>
+        <h2 class="mb-10 text-4xl">Pioneering change through innovation</h2>
+        <div class="max-w-[300px]">
+          <p class="text-lg">
+            Empowering government through tailored support and authentic
+            connection.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden">
+      <div class="ms-auto mt-[68px] max-w-[calc(70%)]">
+        <div class="swiper Initiatives-swiper !overflow-visible">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="relative flex h-[600px] flex-col items-start justify-center">
+                <div class="image absolute -z-[1] h-full w-full">
+                  <img class="h-full w-full rounded-xl object-cover" src="/{{ active_theme_path() }}/assets/images/img.jpg" alt />
+                </div>
+
+                <div class="w-full px-[60px]">
+                  <div class="mb-10 max-w-[450px] text-white">
+                    <div class="mb-[26px] inline-block rounded-full bg-[#353535] p-3 text-xs font-bold text-white">
+                      Environment
+                    </div>
+                    <h2 class="mb-8 text-[44px] font-bold">Paperless
+                      Sharjah</h2>
+
+                    <h5 class="mb-8 text-[28px] text-orange">Eliminating
+                      CO2</h5>
+
+                    <p class="text-lg">
+                      We are building a future without paper, more than 336
+                      Million Sheets of
+                      paper used for government transactions every year.
+                    </p>
+                  </div>
+
+                  <div class="flex gap-3">
+                    <div class="w-full max-w-[275px] rounded-xl rounded-e-none bg-white p-7">
+                      <h5 class="text-[33px] font-bold">15t <span class="text-lg">CO2</span></h5>
+                      <p class="text-lg text-[#353535]">Annual carbon
+                        removal</p>
+                    </div>
+
+                    <div class="w-full max-w-[275px] rounded-xl rounded-s-none bg-white p-7">
+                      <h5 class="text-[33px] font-bold">2024</h5>
+                      <p class="text-lg text-[#353535]">Year of delivery</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="relative flex h-[600px] flex-col items-start justify-center">
+                <div class="image absolute -z-[1] h-full w-full">
+                  <img class="h-full w-full rounded-xl object-cover" src="/{{ active_theme_path() }}/assets/images/img.jpg" alt />
+                </div>
+
+                <div class="w-full px-[60px]">
+                  <div class="mb-10 max-w-[450px] text-white">
+                    <div class="mb-[26px] inline-block rounded-full bg-[#353535] p-3 text-xs font-bold text-white">
+                      Environment
+                    </div>
+                    <h2 class="mb-8 text-[44px] font-bold">Paperless
+                      Sharjah</h2>
+
+                    <h5 class="mb-8 text-[28px] text-orange">Eliminating
+                      CO2</h5>
+
+                    <p class="text-lg">
+                      We are building a future without paper, more than 336
+                      Million Sheets of
+                      paper used for government transactions every year.
+                    </p>
+                  </div>
+
+                  <div class="flex gap-3">
+                    <div class="w-full max-w-[275px] rounded-xl rounded-e-none bg-white p-7">
+                      <h5 class="text-[33px] font-bold">15t <span class="text-lg">CO2</span></h5>
+                      <p class="text-lg text-[#353535]">Annual carbon
+                        removal</p>
+                    </div>
+
+                    <div class="w-full max-w-[275px] rounded-xl rounded-s-none bg-white p-7">
+                      <h5 class="text-[33px] font-bold">2024</h5>
+                      <p class="text-lg text-[#353535]">Year of delivery</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-[96px]">
+    <div class="container mx-auto px-4">
+      <div class="title">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> Latest News </span>
+        </h6>
+
+        <div class="flex items-center justify-between">
+          <div class="max-w-[470px]">
+            <h2 class="mb-10 text-4xl">
+              Stay informed with our latest updates and important alerts
+            </h2>
+          </div>
+          <a href
+            class="group/btn relative inline-flex h-[51px] rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+            <span class=" ">View all</span>
+
+            <span
+              class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange">
+              <i class="fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex gap-10">
+        <div class="flex-4/7">
+          <div class="flex h-full flex-col items-start justify-between border-s border-orange ps-7">
+            <div>
+              <div class="image mb-11">
+                <img src="/{{ active_theme_path() }}/assets/images/Rectangle39406.png" class="h-[310px] w-full max-w-full rounded-sm object-cover"
+                  alt />
+              </div>
+
+              <div class="mb-11">
+                <div class="mb-5 text-sm text-[#99A1AF]">March 5th, 2025</div>
+                <h3 class="text-2xl">
+                  Sharjah Digital Department launches new corporate identity
+                </h3>
+              </div>
+            </div>
+
+            <a href
+              class="group/btn relative inline-flex h-[51px] rounded-full border border-orange bg-[#FFF3E9] py-3 pe-[65px] ps-7 text-orange transition-all">
+              <span class=" ">View all</span>
+
+              <span
+                class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-orange bg-orange transition-all">
+                <i class="fa-regular fa-arrow-right text-xs text-white"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="flex-2/7">
+          <div class="flex h-full flex-col items-start justify-between border-s border-[#D4D4D8] ps-7">
+            <div>
+              <div class="image mb-11">
+                <img src="/{{ active_theme_path() }}/assets/images/Rectangle39406.png" class="h-[190px] w-full max-w-full rounded-sm object-cover"
+                  alt />
+              </div>
+
+              <div class="mb-11">
+                <div class="mb-5 text-sm text-[#99A1AF]">March 5th, 2025</div>
+                <h3 class="text-2xl">
+                  Sharjah Digital Department launches new corporate identity
+                </h3>
+              </div>
+            </div>
+
+            <a href
+              class="group/btn relative inline-flex h-[51px] rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+              <span class=" ">View all</span>
+
+              <span
+                class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange">
+                <i class="fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-2/7">
+          <div class="flex h-full flex-col items-start justify-between border-s border-[#D4D4D8] ps-7">
+            <div>
+              <div class="image mb-11">
+                <img src="/{{ active_theme_path() }}/assets/images/Rectangle39406.png" class="h-[190px] w-full max-w-full rounded-sm object-cover"
+                  alt />
+              </div>
+
+              <div class="mb-11">
+                <div class="mb-5 text-sm text-[#99A1AF]">March 5th, 2025</div>
+                <h3 class="text-2xl">
+                  Sharjah Digital Department launches new corporate identity
+                </h3>
+              </div>
+            </div>
+
+            <a href
+              class="group/btn relative inline-flex h-[51px] rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+              <span class=" ">View all</span>
+
+              <span
+                class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange">
+                <i class="fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="sticky-section" class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center">
+
+        <div class="flex items-center gap-3 has-border">
+          <button class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+            <i class="fa-solid fa-rectangle-history"></i>
+            <span>Services</span>
+          </button>
+
+          <button class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+            <i class="fa-solid fa-message-exclamation"></i>
+            <span>Feedback & Complaints</span>
+          </button>
+
+          <a class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call centre 06-5017717</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="bg-white rounded-full w-11 h-11 flex items-center justify-center">
+            <i class="fa-solid fa-share-nodes text-[#6A7282] text-sm"></i>
+          </button>
+
+          <button class="border-3 border-[#ADB5BB] bg-white rounded-full w-11 h-11 flex items-center justify-center">
+
+            <i class="fa-regular fa-face-smile text-3xl "></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#F3F4F6] pt-16">
+    <div class="container mx-auto px-4">
+
+      <div class="grid-layout  gap-x-[84px]">
+        <div class="item1">
+          <div class=" flex-1 flex items-start mb-10 md:mb-0 md:justify-start justify-center">
+            <img src="/{{ active_theme_path() }}/assets/images/Logo.svg" class="max-w-full" alt>
+          </div>
+        </div>
+        <div class="item3  mt-10 md:mt-0   ">
+          <div class=" flex-1 flex items-end justify-start h-full">
+
+            <form action class="w-full">
+              <label class="text-xl font-bold mb-7" for>
+                Sign up to our newsletter
+              </label>
+
+              <div
+                class="bg-white justify-between flex items-center mt-7 gap-3 rounded-2xl p-3 ps-6 w-full max-w-[470px]">
+                <input type="search" class="outline-0 rounded-2xl bg-white block w-full" placeholder="Add your email">
+                <button class="bg-[#353535] rounded-[10px] text-white md:p-6 p-2 font-bold">Subscribe</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="item2">
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-y-[30px] md:gap-y-[60px] ">
+            <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+              <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+              <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+              <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+              <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+
+              <div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+              <div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+                <h3 class="font-bold">Quick Access</h3>
+                <button class="sm:hidden">
+                  <i class="fa-solid fa-angle-down transition-all"></i>
+                </button>
+              </div>
+              <ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+                <li>
+                  <a href>Home</a>
+                </li>
+                <li>
+                  <a href>Contact</a>
+                </li>
+                <li>
+                  <a href>Privacy policy
+                  </a>
+                </li>
+                <li>
+                  <a href>Terms of use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+       
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="copyrights mt-[30px] relative overflow-hidden md:pb-16 pb-10">
+
+      <div class="absolute bottom-0 end-0 start-0 md:start-auto">
+        <img class="w-full h-[25px] md:h-full" src="/{{ active_theme_path() }}/assets/images/footer.png" alt>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-1">
+
+        <div class="inline-flex md:max-w-max  w-full flex-col md:flex-row justify-center md:justify-start items-center gap-3 pt-[38px] border-t border-[#E6E7EB]">
+          <p class="text-xs text-[#99A1AF]">All rights reserved to Sharjah
+            Digital Department © 2025.</p>
+
+          <div class="flex items-center gap-3 text-xs text-[#4A5565]">
+            <p class>Follow us</p>
+
+            <ul class="flex items-center gap-3">
+              <li>
+                <a href>
+                  <i class="fa-brands fa-facebook-f "></i>
+                </a>
+              </li>
+
+              <li>
+                <a href>
+                  <i class="fa-brands fa-instagram "></i>
+                </a>
+              </li>
+
+              <li>
+                <a href>
+                  <i class="fa-brands fa-youtube "></i>
+                </a>
+              </li>
+
+              <li>
+                <a href>
+
+                  <img src="/{{ active_theme_path() }}/assets/images/x-twitter.svg" alt>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>

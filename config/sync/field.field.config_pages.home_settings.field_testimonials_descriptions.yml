@@ -1,0 +1,24 @@
+uuid: 4852fecc-fec2-4707-9f70-be437e39f892
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_testimonials_descriptions
+    - filter.format.plain_text
+  module:
+    - text
+id: config_pages.home_settings.field_testimonials_descriptions
+field_name: field_testimonials_descriptions
+entity_type: config_pages
+bundle: home_settings
+label: 'Testimonials Descriptions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

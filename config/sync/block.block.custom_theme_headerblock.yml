@@ -1,0 +1,25 @@
+uuid: 6d9e74bd-7022-49ce-9910-562949b77032
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom
+    - system
+  theme:
+    - custom_theme
+id: custom_theme_headerblock
+theme: custom_theme
+region: banner
+weight: 0
+provider: null
+plugin: header_block
+settings:
+  id: header_block
+  label: 'Header Block'
+  label_display: '0'
+  provider: custom
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /front

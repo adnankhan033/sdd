@@ -1,0 +1,37 @@
+<div class="main_wrapper">
+	<div class="container">
+		<div class="project_details section">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="project_details_inner">
+						<div class="post_img">
+							{% if node.field_image.entity is not empty %}
+								<img src="{{ file_url(node.field_image.entity.uri.value) }}" alt="{{ node.field_image.alt }}" class="img-fluid rounded float-start"/>
+							{% endif %}
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-6 col-md-12">
+					<div class="project_details_inner">
+
+						<div class="post_content">
+							<div class="post_header">
+								<h3 class="post_title">{{ node.title.value}}</h3>
+							</div>
+							<div class="fulltext">
+								<p>
+									{{ node.body.value|raw }}
+								</p>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

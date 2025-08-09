@@ -1,0 +1,46 @@
+<div class="experience section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="group_image_holder type_1">
+					<div class="expe_box">
+						<div class="expe_box_inner">
+							<h1>
+								{{ node.field_year_of_experiance.value  }}
+
+							</h1>
+							{{ "Years of Experience"}}
+						</div>
+					</div>
+					<div class="image_object">
+						{% if node.field_image.entity is not empty %}
+							<img src="{{ file_url(node.field_image.entity.uri.value) }}" alt="{{ node.field_image.alt }}" class="my-custom-class"/>
+						{% endif %}
+						<div class="object">
+							<img src="/{{ active_theme_path() }}/images/3.png" alt="About">
+							<img src="/{{ active_theme_path() }}/images/3.png" alt="About">
+							<img src="/{{ active_theme_path() }}/images/3.png" alt="About">
+							<img src="/{{ active_theme_path() }}/images/s1_1.png" alt="About" data-aos="fade-down" data-aos-duration="3000">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div class="experience_content">
+					<div class="section_header">
+						<div class="shadow_icon"><img src="/{{ active_theme_path() }}/images/shadow_icon1.png" alt=""></div>
+						<h6 class="section_sub_title">{{ node.field_short_title.value  }}</h6>
+						<h1 class="section_title">{{ short_label }}</h1>
+						<p class="section_desc">
+							{{ node.body.value|raw }}
+						</p>
+
+					</div>
+					<a class="button" href="{{ url }}">{{ "Learn More"|t }}</a>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
