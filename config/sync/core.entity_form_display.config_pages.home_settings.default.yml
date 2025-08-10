@@ -4,67 +4,36 @@ status: true
 dependencies:
   config:
     - config_pages.type.home_settings
-    - field.field.config_pages.home_settings.field_banner_cover
-    - field.field.config_pages.home_settings.field_banner_description
-    - field.field.config_pages.home_settings.field_banner_image
-    - field.field.config_pages.home_settings.field_banner_link
-    - field.field.config_pages.home_settings.field_banner_mobile_number
-    - field.field.config_pages.home_settings.field_banner_title
-    - field.field.config_pages.home_settings.field_contact_long_title
-    - field.field.config_pages.home_settings.field_contact_number
-    - field.field.config_pages.home_settings.field_contact_short_title
-    - field.field.config_pages.home_settings.field_facebook_link
-    - field.field.config_pages.home_settings.field_fact_highlight
-    - field.field.config_pages.home_settings.field_footer_address
-    - field.field.config_pages.home_settings.field_footer_details
-    - field.field.config_pages.home_settings.field_footer_duty_timing
-    - field.field.config_pages.home_settings.field_footer_email
-    - field.field.config_pages.home_settings.field_instagram_link
-    - field.field.config_pages.home_settings.field_linkedin_link
-    - field.field.config_pages.home_settings.field_our_fact_icon1
-    - field.field.config_pages.home_settings.field_our_fact_icon2
-    - field.field.config_pages.home_settings.field_our_fact_icon3
-    - field.field.config_pages.home_settings.field_our_fact_icon4
-    - field.field.config_pages.home_settings.field_our_fact_image
-    - field.field.config_pages.home_settings.field_our_fact_number1
-    - field.field.config_pages.home_settings.field_our_fact_number2
-    - field.field.config_pages.home_settings.field_our_fact_number3
-    - field.field.config_pages.home_settings.field_our_fact_number4
-    - field.field.config_pages.home_settings.field_our_fact_title
-    - field.field.config_pages.home_settings.field_our_fact_title1
-    - field.field.config_pages.home_settings.field_our_fact_title2
-    - field.field.config_pages.home_settings.field_our_fact_title3
-    - field.field.config_pages.home_settings.field_our_fact_title4
-    - field.field.config_pages.home_settings.field_project_highlight
-    - field.field.config_pages.home_settings.field_testimonials_descriptions
-    - field.field.config_pages.home_settings.field_testimonials_highlight
-    - field.field.config_pages.home_settings.field_testimonials_title
-    - field.field.config_pages.home_settings.field_title_most_popular_project
-    - field.field.config_pages.home_settings.field_twitter_link
-    - field.field.config_pages.home_settings.field_website_link
+    - field.field.config_pages.home_settings.field_banner_info
+    - field.field.config_pages.home_settings.field_banner_video
+    - field.field.config_pages.home_settings.field_featured_solutions
+    - field.field.config_pages.home_settings.field_front_initiatives_desc
+    - field.field.config_pages.home_settings.field_front_initiatives_highligh
+    - field.field.config_pages.home_settings.field_front_initiatives_title
+    - field.field.config_pages.home_settings.field_front_news_description
+    - field.field.config_pages.home_settings.field_front_news_highlight
+    - field.field.config_pages.home_settings.field_our_datacenter
+    - field.field.config_pages.home_settings.field_ph_description
+    - field.field.config_pages.home_settings.field_ph_highlight
+    - field.field.config_pages.home_settings.field_ph_title
+    - field.field.config_pages.home_settings.field_service_front_description
+    - field.field.config_pages.home_settings.field_services_highlights
+    - field.field.config_pages.home_settings.field_services_title
+    - field.field.config_pages.home_settings.field_serving_sharjah
+    - field.field.config_pages.home_settings.field_supporting_government
+    - field.field.config_pages.home_settings.field_top_logo_left
+    - field.field.config_pages.home_settings.field_top_logo_right
     - image.style.thumbnail
   module:
     - field_group
-    - field_layout
-    - image
-    - layout_discovery
-    - link
+    - file
+    - svg_image
     - text
 third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
   field_group:
-    group_banner_section:
-      children:
-        - field_banner_mobile_number
-        - field_banner_title
-        - field_banner_description
-        - field_banner_link
-        - field_banner_cover
-        - field_banner_image
-      label: 'Banner Section'
+    group_footer:
+      children: {  }
+      label: Footer
       region: content
       parent_name: ''
       weight: 0
@@ -77,27 +46,14 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_our_fact_speaks:
+    group_header:
       children:
-        - field_fact_highlight
-        - field_our_fact_title
-        - field_our_fact_icon1
-        - field_our_fact_number1
-        - field_our_fact_title1
-        - field_our_fact_icon2
-        - field_our_fact_number2
-        - field_our_fact_title2
-        - field_our_fact_icon3
-        - field_our_fact_number3
-        - field_our_fact_title3
-        - field_our_fact_icon4
-        - field_our_fact_number4
-        - field_our_fact_title4
-        - field_our_fact_image
-      label: 'Our Fact Speaks'
+        - field_top_logo_left
+        - field_top_logo_right
+      label: Header
       region: content
       parent_name: ''
-      weight: 20
+      weight: 1
       format_type: tab
       format_settings:
         classes: ''
@@ -107,14 +63,14 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_popular_projects:
+    group_banner:
       children:
-        - field_project_highlight
-        - field_title_most_popular_project
-      label: 'Our Most Popular Projects'
+        - field_banner_video
+        - field_banner_info
+      label: Banner
       region: content
       parent_name: ''
-      weight: 20
+      weight: 2
       format_type: tab
       format_settings:
         classes: ''
@@ -124,15 +80,19 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_front_contact_info:
+    group_performance_highlights:
       children:
-        - field_contact_long_title
-        - field_contact_short_title
-        - field_contact_number
-      label: 'Front contact Info'
+        - field_ph_highlight
+        - field_ph_title
+        - field_ph_description
+        - field_supporting_government
+        - field_featured_solutions
+        - field_serving_sharjah
+        - field_our_datacenter
+      label: 'Performance Highlights'
       region: content
       parent_name: ''
-      weight: 20
+      weight: 3
       format_type: tab
       format_settings:
         classes: ''
@@ -142,15 +102,15 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_testimonials:
+    group_services:
       children:
-        - field_testimonials_highlight
-        - field_testimonials_title
-        - field_testimonials_descriptions
-      label: Testimonials
+        - field_services_highlights
+        - field_services_title
+        - field_service_front_description
+      label: Services
       region: content
       parent_name: ''
-      weight: 20
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -160,21 +120,32 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_footer:
+    group_initiatives:
       children:
-        - field_footer_details
-        - field_footer_address
-        - field_footer_email
-        - field_footer_duty_timing
-        - field_facebook_link
-        - field_twitter_link
-        - field_website_link
-        - field_instagram_link
-        - field_linkedin_link
-      label: Footer
+        - field_front_initiatives_highligh
+        - field_front_initiatives_title
+        - field_front_initiatives_desc
+      label: Initiatives
       region: content
       parent_name: ''
-      weight: 20
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_front_news:
+      children:
+        - field_front_news_highlight
+        - field_front_news_description
+      label: 'Front News'
+      region: content
+      parent_name: ''
+      weight: 7
       format_type: tab
       format_settings:
         classes: ''
@@ -189,207 +160,38 @@ targetEntityType: config_pages
 bundle: home_settings
 mode: default
 content:
-  field_banner_cover:
-    type: image_image
-    weight: 7
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_banner_description:
-    type: text_textarea
-    weight: 5
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_banner_image:
-    type: image_image
-    weight: 8
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_banner_link:
-    type: link_default
-    weight: 6
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_banner_mobile_number:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_banner_title:
-    type: string_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_contact_long_title:
-    type: string_textfield
-    weight: 38
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_contact_number:
-    type: string_textfield
+  field_banner_info:
+    type: text_textfield
     weight: 40
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_contact_short_title:
-    type: string_textfield
-    weight: 39
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_facebook_link:
-    type: string_textfield
-    weight: 48
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_fact_highlight:
-    type: string_textfield
-    weight: 21
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_footer_address:
-    type: string_textfield
-    weight: 45
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_footer_details:
-    type: string_textfield
-    weight: 44
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_footer_duty_timing:
-    type: string_textfield
-    weight: 47
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_footer_email:
-    type: email_default
-    weight: 46
-    region: content
-    settings:
-      placeholder: ''
-      size: 60
-    third_party_settings: {  }
-  field_instagram_link:
-    type: string_textfield
-    weight: 51
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_linkedin_link:
-    type: string_textfield
-    weight: 52
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_icon1:
-    type: image_image
-    weight: 23
+  field_banner_video:
+    type: file_generic
+    weight: 38
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
-  field_our_fact_icon2:
-    type: image_image
-    weight: 26
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_our_fact_icon3:
-    type: image_image
+  field_featured_solutions:
+    type: string_textfield
     weight: 29
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  field_our_fact_icon4:
-    type: image_image
-    weight: 32
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_our_fact_image:
-    type: image_image
+  field_front_initiatives_desc:
+    type: text_textarea
     weight: 35
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_our_fact_number1:
-    type: string_textfield
-    weight: 24
-    region: content
-    settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_our_fact_number2:
-    type: string_textfield
-    weight: 27
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_number3:
-    type: string_textfield
-    weight: 30
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_number4:
+  field_front_initiatives_highligh:
     type: string_textfield
     weight: 33
     region: content
@@ -397,39 +199,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_our_fact_title:
-    type: string_textfield
-    weight: 22
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_title1:
-    type: string_textfield
-    weight: 25
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_title2:
-    type: string_textfield
-    weight: 28
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_title3:
-    type: string_textfield
-    weight: 31
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_our_fact_title4:
+  field_front_initiatives_title:
     type: string_textfield
     weight: 34
     region: content
@@ -437,7 +207,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_project_highlight:
+  field_front_news_description:
+    type: text_textarea
+    weight: 37
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_front_news_highlight:
     type: string_textfield
     weight: 36
     region: content
@@ -445,53 +223,93 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_testimonials_descriptions:
-    type: text_textfield
-    weight: 43
+  field_our_datacenter:
+    type: string_textfield
+    weight: 31
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_testimonials_highlight:
+  field_ph_description:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_ph_highlight:
     type: string_textfield
-    weight: 41
+    weight: 25
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_testimonials_title:
+  field_ph_title:
     type: string_textfield
-    weight: 42
+    weight: 26
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_title_most_popular_project:
+  field_service_front_description:
+    type: text_textarea
+    weight: 31
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_services_highlights:
     type: string_textfield
-    weight: 37
+    weight: 29
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_twitter_link:
+  field_services_title:
     type: string_textfield
-    weight: 49
+    weight: 30
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_website_link:
+  field_serving_sharjah:
     type: string_textfield
-    weight: 50
+    weight: 30
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_supporting_government:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_top_logo_left:
+    type: image_image
+    weight: 21
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_top_logo_right:
+    type: image_image
+    weight: 22
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
   label: true

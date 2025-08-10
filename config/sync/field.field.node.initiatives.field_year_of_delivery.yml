@@ -1,0 +1,19 @@
+uuid: fbae643e-b63c-4981-8288-8d13b1ac9696
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year_of_delivery
+    - node.type.initiatives
+id: node.initiatives.field_year_of_delivery
+field_name: field_year_of_delivery
+entity_type: node
+bundle: initiatives
+label: 'Year of delivery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

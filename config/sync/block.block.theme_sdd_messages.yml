@@ -1,0 +1,22 @@
+uuid: e49117f2-8368-4d32-9b0d-16302f376990
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_sdd
+_core:
+  default_config_hash: HcmK2CYcBEMGKELu4E1FF45G06oaVV0VfjYJD3seN80
+id: theme_sdd_messages
+theme: theme_sdd
+region: header
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

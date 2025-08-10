@@ -1,0 +1,19 @@
+uuid: 5cdb854b-0d5c-46c6-839c-8240083be396
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_supporting_government
+id: config_pages.home_settings.field_supporting_government
+field_name: field_supporting_government
+entity_type: config_pages
+bundle: home_settings
+label: 'Supporting Government'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

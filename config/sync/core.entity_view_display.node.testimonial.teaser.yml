@@ -8,15 +8,8 @@ dependencies:
     - field.field.node.testimonial.field_designation
     - node.type.testimonial
   module:
-    - field_layout
-    - layout_discovery
     - text
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.testimonial.teaser
 targetEntityType: node
 bundle: testimonial
@@ -37,3 +30,4 @@ content:
     region: content
 hidden:
   field_designation: true
+  langcode: true

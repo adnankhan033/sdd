@@ -4,22 +4,17 @@ status: true
 dependencies:
   config:
     - field.field.node.services.body
-    - field.field.node.services.field_icon
+    - field.field.node.services.field_font_icon
     - field.field.node.services.field_image
+    - field.field.node.services.field_services_type
     - field.field.node.services.field_short_title
+    - field.field.node.services.field_weight
     - image.style.thumbnail
     - node.type.services
   module:
-    - field_layout
-    - image
-    - layout_discovery
     - path
+    - svg_image
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.services.default
 targetEntityType: node
 bundle: services
@@ -41,13 +36,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_icon:
-    type: image_image
-    weight: 1
+  field_font_icon:
+    type: options_select
+    weight: 12
     region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+    settings: {  }
     third_party_settings: {  }
   field_image:
     type: image_image
@@ -57,6 +50,16 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_services_type:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_short_title:
     type: string_textfield
     weight: 3
@@ -64,6 +67,20 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

@@ -1,0 +1,22 @@
+uuid: df3c1333-1c7b-41f7-85d1-7443b6fcfd32
+langcode: en
+status: true
+dependencies:
+  theme:
+    - theme_sdd
+_core:
+  default_config_hash: 8NiNh48tRzu1-Sl5LUG0Id8JSHgcDugRRxXnNVgufV8
+id: theme_sdd_primary_local_tasks
+theme: theme_sdd
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

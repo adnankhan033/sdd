@@ -1,0 +1,20 @@
+uuid: 50bcb0cc-184f-406d-b413-70753e910ce6
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+  theme:
+    - theme_sdd
+id: theme_sdd_headerblock
+theme: theme_sdd
+region: header
+weight: 0
+provider: null
+plugin: header_block
+settings:
+  id: header_block
+  label: 'Header Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility: {  }

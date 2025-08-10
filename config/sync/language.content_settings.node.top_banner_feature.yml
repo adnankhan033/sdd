@@ -1,0 +1,16 @@
+uuid: b31df346-bbd9-4fff-91e1-9e8e6df0c20f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.top_banner_feature
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.top_banner_feature
+target_entity_type_id: node
+target_bundle: top_banner_feature
+default_langcode: site_default
+language_alterable: true

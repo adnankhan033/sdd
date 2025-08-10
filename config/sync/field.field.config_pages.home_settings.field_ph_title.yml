@@ -1,0 +1,19 @@
+uuid: e13bdc6b-72dd-4188-b1d5-6ed7bb124e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_ph_title
+id: config_pages.home_settings.field_ph_title
+field_name: field_ph_title
+entity_type: config_pages
+bundle: home_settings
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

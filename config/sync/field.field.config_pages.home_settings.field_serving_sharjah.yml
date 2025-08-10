@@ -1,0 +1,19 @@
+uuid: fe7e16ad-b04c-4c34-89c8-a2710dd5fedb
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_serving_sharjah
+id: config_pages.home_settings.field_serving_sharjah
+field_name: field_serving_sharjah
+entity_type: config_pages
+bundle: home_settings
+label: 'Serving Sharjah'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

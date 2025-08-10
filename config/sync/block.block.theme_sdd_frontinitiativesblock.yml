@@ -1,0 +1,25 @@
+uuid: ec8db07c-a64b-40f6-8c48-f6e24f16cf2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_frontinitiativesblock
+theme: theme_sdd
+region: content
+weight: -2
+provider: null
+plugin: front_initiatives
+settings:
+  id: front_initiatives
+  label: 'Front Initiatives Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

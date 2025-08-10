@@ -1,0 +1,41 @@
+uuid: e12fc9bc-99ce-443c-8e5e-6cdf22222d3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.top_banner_feature.body
+    - field.field.node.top_banner_feature.field_icon
+    - node.type.top_banner_feature
+  module:
+    - svg_image
+    - text
+    - user
+id: node.top_banner_feature.teaser
+targetEntityType: node
+bundle: top_banner_feature
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_icon:
+    type: image_url
+    label: hidden
+    settings:
+      image_style: medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

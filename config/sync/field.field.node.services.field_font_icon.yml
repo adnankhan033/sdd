@@ -1,0 +1,21 @@
+uuid: cabe3dc3-17a0-4dde-a140-058d931c481c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_font_icon
+    - node.type.services
+  module:
+    - options
+id: node.services.field_font_icon
+field_name: field_font_icon
+entity_type: node
+bundle: services
+label: 'Font Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

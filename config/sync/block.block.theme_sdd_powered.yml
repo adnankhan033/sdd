@@ -1,0 +1,22 @@
+uuid: 8c1f560b-a3c3-4359-88ba-788a38da9458
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_sdd
+_core:
+  default_config_hash: Sq4yYlo6bDXG7m-p9Tpv2IwdvWjxwbjssiZZmpscKeo
+id: theme_sdd_powered
+theme: theme_sdd
+region: header
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

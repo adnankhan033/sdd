@@ -4,294 +4,50 @@ status: true
 dependencies:
   config:
     - config_pages.type.home_settings
-    - field.field.config_pages.home_settings.field_banner_cover
-    - field.field.config_pages.home_settings.field_banner_description
-    - field.field.config_pages.home_settings.field_banner_image
-    - field.field.config_pages.home_settings.field_banner_link
-    - field.field.config_pages.home_settings.field_banner_mobile_number
-    - field.field.config_pages.home_settings.field_banner_title
-    - field.field.config_pages.home_settings.field_contact_long_title
-    - field.field.config_pages.home_settings.field_contact_number
-    - field.field.config_pages.home_settings.field_contact_short_title
-    - field.field.config_pages.home_settings.field_facebook_link
-    - field.field.config_pages.home_settings.field_fact_highlight
-    - field.field.config_pages.home_settings.field_footer_address
-    - field.field.config_pages.home_settings.field_footer_details
-    - field.field.config_pages.home_settings.field_footer_duty_timing
-    - field.field.config_pages.home_settings.field_footer_email
-    - field.field.config_pages.home_settings.field_instagram_link
-    - field.field.config_pages.home_settings.field_linkedin_link
-    - field.field.config_pages.home_settings.field_our_fact_icon1
-    - field.field.config_pages.home_settings.field_our_fact_icon2
-    - field.field.config_pages.home_settings.field_our_fact_icon3
-    - field.field.config_pages.home_settings.field_our_fact_icon4
-    - field.field.config_pages.home_settings.field_our_fact_image
-    - field.field.config_pages.home_settings.field_our_fact_number1
-    - field.field.config_pages.home_settings.field_our_fact_number2
-    - field.field.config_pages.home_settings.field_our_fact_number3
-    - field.field.config_pages.home_settings.field_our_fact_number4
-    - field.field.config_pages.home_settings.field_our_fact_title
-    - field.field.config_pages.home_settings.field_our_fact_title1
-    - field.field.config_pages.home_settings.field_our_fact_title2
-    - field.field.config_pages.home_settings.field_our_fact_title3
-    - field.field.config_pages.home_settings.field_our_fact_title4
-    - field.field.config_pages.home_settings.field_project_highlight
-    - field.field.config_pages.home_settings.field_testimonials_descriptions
-    - field.field.config_pages.home_settings.field_testimonials_highlight
-    - field.field.config_pages.home_settings.field_testimonials_title
-    - field.field.config_pages.home_settings.field_title_most_popular_project
-    - field.field.config_pages.home_settings.field_twitter_link
-    - field.field.config_pages.home_settings.field_website_link
+    - field.field.config_pages.home_settings.field_banner_info
+    - field.field.config_pages.home_settings.field_banner_video
+    - field.field.config_pages.home_settings.field_featured_solutions
+    - field.field.config_pages.home_settings.field_front_initiatives_desc
+    - field.field.config_pages.home_settings.field_front_initiatives_highligh
+    - field.field.config_pages.home_settings.field_front_initiatives_title
+    - field.field.config_pages.home_settings.field_front_news_description
+    - field.field.config_pages.home_settings.field_front_news_highlight
+    - field.field.config_pages.home_settings.field_our_datacenter
+    - field.field.config_pages.home_settings.field_ph_description
+    - field.field.config_pages.home_settings.field_ph_highlight
+    - field.field.config_pages.home_settings.field_ph_title
+    - field.field.config_pages.home_settings.field_service_front_description
+    - field.field.config_pages.home_settings.field_services_highlights
+    - field.field.config_pages.home_settings.field_services_title
+    - field.field.config_pages.home_settings.field_serving_sharjah
+    - field.field.config_pages.home_settings.field_supporting_government
+    - field.field.config_pages.home_settings.field_top_logo_left
+    - field.field.config_pages.home_settings.field_top_logo_right
   module:
-    - field_layout
-    - image
-    - layout_discovery
-    - link
+    - file
+    - svg_image
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: config_pages.home_settings.default
 targetEntityType: config_pages
 bundle: home_settings
 mode: default
 content:
-  field_banner_cover:
-    type: image_url
-    label: above
-    settings:
-      image_style: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_banner_description:
+  field_banner_info:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
-  field_banner_image:
-    type: image_url
+  field_banner_video:
+    type: file_default
     label: above
     settings:
-      image_style: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_banner_link:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_banner_mobile_number:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_banner_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_contact_long_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 25
-    region: content
-  field_contact_number:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 27
-    region: content
-  field_contact_short_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 26
-    region: content
-  field_facebook_link:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 35
-    region: content
-  field_fact_highlight:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_footer_address:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 32
-    region: content
-  field_footer_details:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 31
-    region: content
-  field_footer_duty_timing:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 34
-    region: content
-  field_footer_email:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 33
-    region: content
-  field_instagram_link:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 38
-    region: content
-  field_linkedin_link:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 39
-    region: content
-  field_our_fact_icon1:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_our_fact_icon2:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_our_fact_icon3:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_our_fact_icon4:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_our_fact_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 21
-    region: content
-  field_our_fact_number1:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_our_fact_number2:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  field_our_fact_number3:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
+      use_description_as_link_text: true
     third_party_settings: {  }
     weight: 15
     region: content
-  field_our_fact_number4:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
-  field_our_fact_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_our_fact_title1:
+  field_featured_solutions:
     type: string
     label: above
     settings:
@@ -299,15 +55,45 @@ content:
     third_party_settings: {  }
     weight: 17
     region: content
-  field_our_fact_title2:
+  field_front_initiatives_desc:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_front_initiatives_highligh:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 18
+    weight: 11
     region: content
-  field_our_fact_title3:
+  field_front_initiatives_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_front_news_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_front_news_highlight:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_our_datacenter:
     type: string
     label: above
     settings:
@@ -315,67 +101,88 @@ content:
     third_party_settings: {  }
     weight: 19
     region: content
-  field_our_fact_title4:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  field_project_highlight:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 22
-    region: content
-  field_testimonials_descriptions:
+  field_ph_description:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 30
+    weight: 6
     region: content
-  field_testimonials_highlight:
+  field_ph_highlight:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 28
+    weight: 4
     region: content
-  field_testimonials_title:
+  field_ph_title:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 29
+    weight: 5
     region: content
-  field_title_most_popular_project:
+  field_service_front_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_services_highlights:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 24
+    weight: 8
     region: content
-  field_twitter_link:
+  field_services_title:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 36
+    weight: 7
     region: content
-  field_website_link:
+  field_serving_sharjah:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 37
+    weight: 18
+    region: content
+  field_supporting_government:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_top_logo_left:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_top_logo_right:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden: {  }

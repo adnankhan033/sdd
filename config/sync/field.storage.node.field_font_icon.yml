@@ -1,0 +1,39 @@
+uuid: a2c3a5ac-b6b1-43c3-957d-5e5a0a124ec1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_font_icon
+field_name: field_font_icon
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: fa_at
+      label: fa-at
+    -
+      value: fa_id_card
+      label: fa-id-card
+    -
+      value: fa_file_contract
+      label: fa-file-contract
+    -
+      value: fa_landmark_flag
+      label: fa-landmark-flag
+    -
+      value: fa_trash_can_plus
+      label: fa-trash-can-plus
+    -
+      value: fa_link
+      label: fa-link
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

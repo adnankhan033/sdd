@@ -1,0 +1,21 @@
+uuid: ccd60134-a21a-4baa-bbc2-8314efd16502
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_front_initiatives_title
+field_name: field_front_initiatives_title
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

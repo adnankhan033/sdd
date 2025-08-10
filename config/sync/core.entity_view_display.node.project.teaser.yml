@@ -11,16 +11,9 @@ dependencies:
     - image.style.medium
     - node.type.project
   module:
-    - field_layout
-    - image
-    - layout_discovery
+    - svg_image
     - text
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.project.teaser
 targetEntityType: node
 bundle: project
@@ -66,4 +59,5 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  langcode: true

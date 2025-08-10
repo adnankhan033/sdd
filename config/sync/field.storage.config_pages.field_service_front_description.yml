@@ -1,0 +1,19 @@
+uuid: 8e248269-3cb9-44a3-9f36-23c9d7973f39
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - text
+id: config_pages.field_service_front_description
+field_name: field_service_front_description
+entity_type: config_pages
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

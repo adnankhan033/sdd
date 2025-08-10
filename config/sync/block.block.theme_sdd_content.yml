@@ -1,0 +1,22 @@
+uuid: 6716f9d2-f8d7-41e5-b10f-717005016241
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_sdd
+_core:
+  default_config_hash: CiBjSwgbxabxP53O64ow0A0qaiek4K_ypLQ-jg4Xfn0
+id: theme_sdd_content
+theme: theme_sdd
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,11 @@
+uuid: 4dc4bb8c-7d4b-48af-8241-626a14a76f5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.initiatives_front
+label: 'Initiatives front'
+description: ''
+targetEntityType: node
+cache: true

@@ -1,0 +1,87 @@
+uuid: 969d8319-651c-4a04-b09f-bdfae9f1490c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.initiatives_front
+    - field.field.node.initiatives.body
+    - field.field.node.initiatives.field_annual_carbon_removal
+    - field.field.node.initiatives.field_image
+    - field.field.node.initiatives.field_sh_highlights
+    - field.field.node.initiatives.field_tags
+    - field.field.node.initiatives.field_year_of_delivery
+    - image.style.wide
+    - node.type.initiatives
+  module:
+    - image_class
+    - svg_image
+    - text
+    - user
+id: node.initiatives.initiatives_front
+targetEntityType: node
+bundle: initiatives
+mode: initiatives_front
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_annual_carbon_removal:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'h-full w-full rounded-xl object-cover'
+    weight: 6
+    region: content
+  field_sh_highlights:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_year_of_delivery:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

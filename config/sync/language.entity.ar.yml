@@ -1,0 +1,9 @@
+uuid: bab041af-11a2-48c7-8eb4-e49f464d074f
+langcode: en
+status: true
+dependencies: {  }
+id: ar
+label: Arabic
+direction: rtl
+weight: 1
+locked: false

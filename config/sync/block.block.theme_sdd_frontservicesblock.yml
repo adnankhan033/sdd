@@ -1,0 +1,25 @@
+uuid: 9c16da2a-5f8d-4aff-84c5-c03659c6d9aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_frontservicesblock
+theme: theme_sdd
+region: content
+weight: -3
+provider: null
+plugin: front_services
+settings:
+  id: front_services
+  label: 'Front services Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

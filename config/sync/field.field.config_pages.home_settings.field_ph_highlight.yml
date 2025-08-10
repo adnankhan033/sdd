@@ -1,0 +1,19 @@
+uuid: 3a42e441-401c-4b92-8562-963bd81677a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_ph_highlight
+id: config_pages.home_settings.field_ph_highlight
+field_name: field_ph_highlight
+entity_type: config_pages
+bundle: home_settings
+label: 'Performance Highlights '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

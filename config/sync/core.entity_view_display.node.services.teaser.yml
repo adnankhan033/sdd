@@ -5,40 +5,51 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.services.body
-    - field.field.node.services.field_icon
+    - field.field.node.services.field_font_icon
     - field.field.node.services.field_image
+    - field.field.node.services.field_services_type
     - field.field.node.services.field_short_title
+    - field.field.node.services.field_weight
     - image.style.medium
     - node.type.services
   module:
-    - field_layout
-    - image
-    - layout_discovery
-    - text
+    - options
+    - smart_trim
+    - svg_image
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.services.teaser
 targetEntityType: node
 bundle: services
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 100
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: true
+        replace_tokens: false
     third_party_settings: {  }
     weight: 2
     region: content
-  field_icon:
-    type: image_url
+  field_font_icon:
+    type: list_default
     label: hidden
-    settings:
-      image_style: medium
+    settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
@@ -50,8 +61,20 @@ content:
       image_style: medium
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_services_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_short_title:
     type: string
@@ -61,9 +84,19 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-hidden: {  }
+hidden:
+  langcode: true

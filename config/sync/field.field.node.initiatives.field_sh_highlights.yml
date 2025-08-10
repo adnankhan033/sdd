@@ -1,0 +1,19 @@
+uuid: dd87f9b9-5a88-4763-be0f-8f04d2e6fb5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sh_highlights
+    - node.type.initiatives
+id: node.initiatives.field_sh_highlights
+field_name: field_sh_highlights
+entity_type: node
+bundle: initiatives
+label: Highlights
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

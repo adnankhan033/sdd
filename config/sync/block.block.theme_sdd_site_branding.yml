@@ -1,0 +1,25 @@
+uuid: 1db695ac-92cd-4eb7-8847-ac2f0071a856
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - theme_sdd
+_core:
+  default_config_hash: qNwx3jobxnB9WNt9kK1e1JTZOEOfgLuTckcXET9H_ZM
+id: theme_sdd_site_branding
+theme: theme_sdd
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

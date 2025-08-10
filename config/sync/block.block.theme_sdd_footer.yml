@@ -1,0 +1,20 @@
+uuid: 2a5dd8ed-dfcf-4adc-ba7f-eed213da5cd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+  theme:
+    - theme_sdd
+id: theme_sdd_footer
+theme: theme_sdd
+region: footer
+weight: 0
+provider: null
+plugin: footer_block
+settings:
+  id: footer_block
+  label: Footer
+  label_display: '0'
+  provider: sharjah_dd
+visibility: {  }

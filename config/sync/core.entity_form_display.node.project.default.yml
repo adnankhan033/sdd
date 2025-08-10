@@ -10,16 +10,9 @@ dependencies:
     - image.style.thumbnail
     - node.type.project
   module:
-    - field_layout
-    - image
-    - layout_discovery
     - path
+    - svg_image
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.project.default
 targetEntityType: node
 bundle: project
@@ -62,6 +55,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   path:
     type: path

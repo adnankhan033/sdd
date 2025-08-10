@@ -1,0 +1,19 @@
+uuid: 1242eb9a-4401-4730-b591-53c793db9046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_annual_carbon_removal
+    - node.type.initiatives
+id: node.initiatives.field_annual_carbon_removal
+field_name: field_annual_carbon_removal
+entity_type: node
+bundle: initiatives
+label: 'Annual carbon removal'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -11,16 +11,9 @@ dependencies:
     - image.style.wide
     - node.type.page
   module:
-    - field_layout
-    - image
-    - layout_discovery
+    - svg_image
     - text
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -76,4 +69,5 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  langcode: true

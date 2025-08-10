@@ -12,16 +12,9 @@ dependencies:
     - image.style.medium
     - node.type.page
   module:
-    - field_layout
-    - image
-    - layout_discovery
+    - svg_image
     - text
     - user
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 _core:
   default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
 id: node.page.teaser
@@ -77,4 +70,5 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-hidden: {  }
+hidden:
+  langcode: true

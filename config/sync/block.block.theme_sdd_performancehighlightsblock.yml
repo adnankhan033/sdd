@@ -1,0 +1,25 @@
+uuid: bccd09a6-83d6-4e11-ad74-f97de8030351
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_performancehighlightsblock
+theme: theme_sdd
+region: content
+weight: -5
+provider: null
+plugin: performance_highlights
+settings:
+  id: performance_highlights
+  label: 'Performance Highlights Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

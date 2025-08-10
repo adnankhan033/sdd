@@ -1,0 +1,25 @@
+uuid: ddf55d32-f94f-4ffd-a20e-c3768beaacc7
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_homebannerblock
+theme: theme_sdd
+region: banner
+weight: 0
+provider: null
+plugin: home_banner_block
+settings:
+  id: home_banner_block
+  label: 'Home Banner Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

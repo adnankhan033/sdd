@@ -1,0 +1,25 @@
+uuid: 72d43676-21da-40e3-8a5e-8bc9520bc7e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_frontlatestnewblock
+theme: theme_sdd
+region: content
+weight: 0
+provider: null
+plugin: front_latest_news
+settings:
+  id: front_latest_news
+  label: 'Front Latest new Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

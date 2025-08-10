@@ -1,0 +1,22 @@
+uuid: 8cb6382b-16d6-4ee3-acd7-4aa2f7ed276e
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_banner_info
+  module:
+    - text
+id: config_pages.home_settings.field_banner_info
+field_name: field_banner_info
+entity_type: config_pages
+bundle: home_settings
+label: 'Banner info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

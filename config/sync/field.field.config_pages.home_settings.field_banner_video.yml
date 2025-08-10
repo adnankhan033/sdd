@@ -1,0 +1,27 @@
+uuid: c0d6edb9-bd2c-4b34-9fae-4276fd4f9114
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_banner_video
+  module:
+    - file
+id: config_pages.home_settings.field_banner_video
+field_name: field_banner_video
+entity_type: config_pages
+bundle: home_settings
+label: 'Banner Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+field_type: file

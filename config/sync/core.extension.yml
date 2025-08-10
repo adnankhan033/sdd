@@ -14,24 +14,26 @@ module:
   comment: 0
   config: 0
   config_pages: 0
+  config_translation: 0
   contact: 0
   contextual: 0
-  custom: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
   field_group: 0
-  field_layout: 0
   field_ui: 0
   file: 0
   filter: 0
   help: 0
   history: 0
   image: 0
+  image_class: 0
+  language: 0
   layout_discovery: 0
   link: 0
+  locale: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -40,18 +42,24 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  quick_node_clone: 0
   search: 0
+  sharjah_dd: 0
   shortcut: 0
   simplify_menu: 0
+  smart_trim: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   twig_tweak: 0
   update: 0
   user: 0
   vch: 0
   views_ui: 0
+  content_translation: 10
   views: 10
   form_mode_manager: 11
   standard: 1000
@@ -59,5 +67,6 @@ theme:
   olivero: 0
   claro: 0
   bootstrap: 0
-  custom_theme: 0
+  theme_sdd: 0
+  stable9: 0
 profile: standard

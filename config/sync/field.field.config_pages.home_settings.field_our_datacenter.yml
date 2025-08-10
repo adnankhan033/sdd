@@ -1,0 +1,19 @@
+uuid: f6d117d0-e9ab-4d2b-a992-b0d7868dff79
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_our_datacenter
+id: config_pages.home_settings.field_our_datacenter
+field_name: field_our_datacenter
+entity_type: config_pages
+bundle: home_settings
+label: 'Our Datacenter '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
