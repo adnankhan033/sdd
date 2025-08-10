@@ -1,11 +1,14 @@
 name: Sharjah Digital Department
 type: theme
-base theme: bootstrap
+base theme: stable9
 description: 'Custom Sharjah Digital Department theme based on Bootstrap.'
 package: Custom
 core_version_requirement: ^10 || ^11
 libraries:
   - theme_sdd/custom-library
+
+libraries-override:
+  system/base: false
 
 regions:
   header: 'Header'
@@ -21,9 +24,3 @@ regions:
   sidebar_second: 'Sidebar second'
   footer: 'Footer'
 
-
-# libraries-override:
-#   claro/base:
-#     css:
-#       component:
-#         css/components/menu.css: false

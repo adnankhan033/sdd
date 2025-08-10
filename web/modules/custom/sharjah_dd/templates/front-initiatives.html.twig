@@ -1,1 +1,18 @@
-{{ dd(items)}}
+<section
+    class="relative py-[96px] after:absolute after:-bottom-[100px] after:-z-[1] after:h-[406px] after:w-[444px] after:bg-[url(../images/shape.svg)] after:bg-no-repeat">
+    <div class="container mx-auto px-4">
+      <div class="title max-w-[470px]">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="assets/images/headline.svg" alt />
+          <span> {{ items.highlight }} </span>
+        </h6>
+        <h2 class="mb-10 text-4xl">{{ items.title }}</h2>
+        <div class="max-w-[300px]">
+          <div class="text-lg">
+           {{ items.description|raw }}
+          </div>
+        </div>
+      </div>
+    </div>
+        {{ drupal_view('initiatives', 'front') }}
+</section>

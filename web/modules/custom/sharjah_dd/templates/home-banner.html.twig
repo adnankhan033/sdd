@@ -1,2 +1,34 @@
 
-{{ dd(items)}}
+
+<section
+    class="first-section relative h-[calc(100vh_-100px)] bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.09)_40.45%,#000_100%)]">
+    <video class="absolute -z-[1] h-full w-full object-cover opacity-95" src="{{ items.video_url }}" autoplay muted
+      loop></video>
+
+    <div class="container mx-auto px-4 h-full">
+      <div class="flex h-full flex-col justify-between pb-[80px] pt-[20vh]">
+        <div class="max-w-[667px]">
+          <h1 class="text-5xl font-bold leading-[56px] text-white [text-shadow:0px_4px_4px_#00000026]">
+           {{items.banner_info}}
+          </h1>
+        </div>
+
+        <button class="flex items-center gap-2 text-white">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M5.62109 12.1289L1.24609 7.75391C0.890625 7.42578 0.890625 6.85156 1.24609 6.52344C1.57422 6.16797 2.14844 6.16797 2.47656 6.52344L5.375 9.39453V1C5.375 0.535156 5.75781 0.125 6.25 0.125C6.71484 0.125 7.125 0.535156 7.125 1V9.39453L9.99609 6.52344C10.3242 6.16797 10.8984 6.16797 11.2266 6.52344C11.582 6.85156 11.582 7.42578 11.2266 7.75391L6.85156 12.1289C6.52344 12.4844 5.94922 12.4844 5.62109 12.1289Z"
+              fill="white" />
+          </svg>
+
+          <span>Scroll</span>
+        </button>
+
+        <div class="min-w-0">
+          <!-- Swiper -->
+          <div class="swiper heroswiper">
+           {{ drupal_view('top_banner_feature', 'front') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if q is not empty %}
+	{# This ensures that, if clean URLs are off, the 'q' is added first,as a hidden form element, so that it shows up first in the POST URL. #}
+
+	{{ q }}
+
+{% endif %}
+
+{% set classes = [
+	'my-[56px]',
+	 'flex',
+	  'items-center',
+	   'justify-between',
+	    'filter'
+	] %}
+
+<div {{attributes.addClass(classes)}} id="services">
+	{{ form|without('actions','keys') }}
+	{% set keys = form.keys %}
+	{% set keys = keys|merge({
+  '#attributes': keys['#attributes']|merge({
+    'class': (keys['#attributes'].class|default([]))|merge(['h-[54px] rounded-sm border border-[#D4D4D8] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]'])
+  })
+}) %}
+	{{ keys }}
+	<div class="submit-reset hidden ">
+		{{ form.actions }}
+	</div>
+
+
+</div>

@@ -1,1 +1,74 @@
-{{ dd(items)}}
+ 
+<section class="relative translate-y-[-60px] rounded-t-[60px] bg-white pt-[100px]">
+    <div class="container mx-auto px-4">
+      <div class="title">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> {{ items.highlight }}</span>
+        </h6>
+        <h2 class="mb-10 text-4xl">    {{ items.title }}</h2>
+        <div class="max-w-[300px]">
+          <p class="text-lg">
+              {{ items.description|raw }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <video class="h-[285px] w-full object-fill" autoplay muted src="/{{ active_theme_path() }}/assets/video/shutterstock_1097618671.mp4"></video>
+    </div>
+
+    <div class="container mx-auto px-4">
+      <div class="mt-[150px] grid grid-cols-4">
+        <div class>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:end-0 after:h-[420px] after:w-[1px] after:bg-[#353535]">
+            <h6>
+              {{"Supporting"|t }} <br />
+              {{ "Government"|t }}
+            </h6>
+            <h4 class="text-[70px] font-bold text-orange">   {{ items.supporting_govt }}</h4>
+            <p class="text-sm">{{"Total entities we serve"|t }}</p>
+          </div>
+        </div>
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              {{ "Featured "|t }}
+              <br />
+              {{ "Solutions"|t }}
+            </h6>
+            <h4 class="text-[70px] font-bold">    {{ items.featured_solutions }}</h4>
+            <p class="text-sm">{{ "Total entities we serve"|t }}</p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-11 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              {{ "Serving"|t }} <br />
+              {{ "Sharjah"|t }}
+            </h6>
+            <h4 class="text-[70px] font-bold">    {{ items.serving_sharjah }}</h4>
+            <p class="text-sm">
+            {{ "Active citizen and resident through Digital Sharjah app"|t }}
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div
+            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
+            <h6>
+              {{ "Our"|t }} <br />
+              {{ "Datacenter"|t }}
+            </h6>
+            <h4 class="text-[70px] font-bold">    {{ items.our_datacenter }}</h4>
+            <p class="text-sm">{{ "Certified Data Center"|t }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

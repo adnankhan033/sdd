@@ -1,6 +1,36 @@
-{{ dd(items)}}
-
-
+<section class="rounded-t-[60px] bg-[linear-gradient(180deg,#F6F7F8_74.15%,#F6F7F8_79.58%,#FFFFFF_100%)] py-[112px]">
+    <div class="container mx-auto px-4">
+      <div class="title">
+        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
+          <span> {{ items.highlight }}</span>
+        </h6>
+        <h2 class="mb-10 text-4xl">{{ items.title }}</h2>
+        <div class="max-w-[300px]">
+          <p class="text-lg">
+          {{ items.description|raw }}
+          </p>
+        </div>
+      </div>   
+<!--        render service view start -->
+        
 {{ drupal_view('services', 'list') }}
 
 
+<!--        render service view end-->
+        
+        
+
+      <div class="mt-[56px] text-center">
+        <a href
+          class="group/btn relative rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-4 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+          <span class=" ">{{ "View all"|t }}</span>
+
+          <span
+            class="absolute -end-1 top-0 flex h-[53px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange">
+            <i class="fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>

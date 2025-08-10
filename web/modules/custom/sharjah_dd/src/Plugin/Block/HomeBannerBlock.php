@@ -63,18 +63,19 @@ final class HomeBannerBlock extends BlockBase implements ContainerFactoryPluginI
     if (!$config_page) {
       return [];
     }
-    $front_banner = $config_page->get('field_banner')->entity ?? '';
-    $banner_info = $config_page->get('field_banner_info')->value ?? '';
-    $banner_url = '';
-    if ($front_banner instanceof \Drupal\file\FileInterface) {
-      $banner_url = \Drupal::entityTypeManager()->getStorage('image_style')->load('large'); // Replace 'large' with your desired style
-      $banner_url = $banner_url->buildUrl($front_banner->getFileUri());
-    }
 
+
+    $banner_video = $config_page->get('field_banner_video')->entity ?? '';
+    $banner_info = $config_page->get('field_banner_info')->value ?? '';
+
+    $video_url = '';
+    if ($banner_video instanceof \Drupal\file\FileInterface) {
+      $video_url = \Drupal::service('file_url_generator')->generateAbsoluteString($banner_video->getFileUri());
+    }
 
     $items = [
       'banner_info' => $banner_info,
-      'banner_url' => $banner_url,
+      'video_url' => $video_url,
     ];
 
 
@@ -87,6 +88,5 @@ final class HomeBannerBlock extends BlockBase implements ContainerFactoryPluginI
       ],
 
     ];
- 
   }
 }

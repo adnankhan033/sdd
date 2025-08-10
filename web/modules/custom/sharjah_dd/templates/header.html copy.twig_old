@@ -1,0 +1,19 @@
+{{ items.left_logo_url }}</br>{{ items.right_logo_url }}
+
+{% set main_items = simplify_menu('main') %}{% for item in main_items.menu_tree %}
+{% if item.submenu is defined and item.submenu|length > 0 %}
+	<li class="nav-item dropdown">
+		<a class="nav-link dropdown-toggle" href="{{ item.url }}" id="navbarDropdown{{ loop.index }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{{ item.text }}
+		</a>
+		<div class="dropdown-menu" aria-labelledby="navbarDropdown{{ loop.index }}">
+			{% for child in item.submenu %}
+				<a class="dropdown-item" href="{{ child.url }}">{{ child.text }}</a>
+			{% endfor %}
+		</div>
+	</li>
+{% else %}
+	<li class="nav-item">
+		<a class="nav-link" href="{{ item.url }}">{{ item.text }}</a>
+	</li>
+{% endif %}{% endfor %}

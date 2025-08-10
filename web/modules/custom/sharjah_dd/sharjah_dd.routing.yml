@@ -2,7 +2,7 @@
 sharjah_dd.front:
   path: '/front'
   defaults:
-    _title: 'Front'
+    _title: ''
     _controller: '\Drupal\sharjah_dd\Controller\FrontController'
   requirements:
     _permission: 'access content'

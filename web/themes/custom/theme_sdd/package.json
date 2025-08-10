@@ -1,18 +1,14 @@
 {
-  "name": "theme_sdd",
+  "name": "MAIYAR",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/style.css",
-    "watch": "npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/style.css --watch"
+    "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.min.css --minify",
+    "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.11"
+  "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-tailwindcss": "latest",
+    "@tailwindcss/cli": "latest"
   }
 }

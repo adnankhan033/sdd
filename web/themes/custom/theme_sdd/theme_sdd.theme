@@ -8,29 +8,84 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\file\Entity\File;
 
 
+
+
+
 // /**
 //  * Implements hook_preprocess_HOOK() for node.html.twig.
 //  */
 function theme_sdd_preprocess_node(array &$variables): void
 {
-    static $counter = 1;
-    // Define your class options
-    $bg_classes = ['bg_1', 'bg_2', 'bg_3' ]; // Add more if needed
-    // Calculate index safely
-    $index = ($counter - 1) % count($bg_classes);
-    $variables['bg_class'] = $bg_classes[$index];
-    $counter++;
+
   
-    $node = $variables['node'];
+  static $bg_classes = [
+    'index-0',
+    'index-1', 
+    'index-2'
+  ];
+  static $counter = 0;
+
+  $class_index = $counter % count($bg_classes);
+  $variables['index_count'] = $bg_classes[$class_index];
+  $counter++;
+
+    $node = $variables['node'];  
     $bundle = $node->bundle();
 
     $title = $node->getTitle();
     $short_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 55, true, true);
     $medium_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 70, true, true);
     $shortened_title = Unicode::truncate(strip_tags(string: preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 30, true, true);
+
     $variables['short_label'] = $short_label;
     $variables['medium_label'] = $medium_label;
     $variables['shortened_title'] = $shortened_title;
 
 }
 
+
+// hook add class to body
+function theme_sdd_preprocess_html(array &$variables): void
+{
+    $variables['attributes']['class'][] = 'font-sdd';
+}
+
+
+
+function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if (
+      isset($form['#id']) &&
+      $form['#id'] === 'views-exposed-form-services-list'
+    ) {
+      if (isset($form['service_type'])) {
+        // Add class to the entire BEF link list.
+        $form['service_type']['#attributes']['class'][] = 'bef-taxonomy-links';
+  
+        // Add class to each term link.
+        foreach ($form['service_type']['#options'] as $tid => $label) {
+          if (!empty($tid)) {
+
+            if ($label ===  "- Any -") {
+              $form['service_type']['#options'][$tid] = t('All');
+            }
+          
+          }
+        }
+      }
+    }
+  }
+  
+
+  function theme_sdd_preprocess_bef_links(array &$variables) {
+    
+    if (!empty($variables['element']['#name']) && $variables['element']['#name'] === 'service_type') {
+      foreach ($variables['children'] as $key => $child) {
+        $element = &$variables['element'][$child];
+        if (isset($element['#url']) && $element['#url'] instanceof \Drupal\Core\Url) {
+          $element['#url']->setOption('fragment', 'services');
+        }
+
+      }
+    }
+  
+  }

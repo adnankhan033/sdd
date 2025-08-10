@@ -1,0 +1,42 @@
+<div class="relative flex h-[600px] flex-col items-start justify-center">
+	<div
+		class="image absolute -z-[1] h-full w-full">
+		{{ content.field_image }}
+	</div>
+
+	<div class="w-full px-[60px]">
+		<div class="mb-10 max-w-[450px] text-white">
+			<div class="mb-[26px] inline-block rounded-full bg-[#353535] p-3 text-xs font-bold text-white">
+				{{ content.field_tags|render|striptags|trim|raw }}
+			</div>
+			<h2 class="mb-8 text-[44px] font-bold">
+
+				{{  short_label }}
+			</h2>
+
+			<h5 class="mb-8 text-[28px] text-orange">
+				{{ content.field_sh_highlights|render|striptags|trim|raw }}
+			</h5>
+
+			<p class="text-lg">
+				{{ content.body|render|striptags|trim|raw }}
+			</p>
+		</div>
+
+		<div class="flex gap-3">
+			<div class="w-full max-w-[275px] rounded-xl rounded-e-none bg-white p-7">
+				<h5 class="text-[33px] font-bold">
+					{{ content.field_annual_carbon_removal|render|striptags|trim|raw }}
+				</h5>
+				<span class="text-lg">CO2</span>
+			</h5>
+			<p class="text-lg text-[#353535]">Annual carbon removal</p>
+		</div>
+
+		<div class="w-full max-w-[275px] rounded-xl rounded-s-none bg-white p-7">
+			<h5 class="text-[33px] font-bold">{{ content.field_year_of_delivery }}</h5>
+			<p class="text-lg text-[#353535]">Year of delivery</p>
+		</div>
+	</div>
+</div>
+</div>

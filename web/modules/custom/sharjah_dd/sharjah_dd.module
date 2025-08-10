@@ -60,11 +60,7 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
 // hook form altr
 function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
-  
-  // if ($form_id === 'contact_message_feedback_form') {
-  //   // add class 
-  //   $form['#attributes']['class'][] = 'contact-message-feedback-form container pt-5 pb-5';
-  // }
+
  
 }
 

@@ -19,6 +19,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #101828;font-family: 'sdd';
 }
@@ -228,7 +232,7 @@ padding: 0;
 }
 
 
-  @media (max-width :1024px) {
+  @media (max-width :1280px) {
     .container {
     max-width: 100%;
     

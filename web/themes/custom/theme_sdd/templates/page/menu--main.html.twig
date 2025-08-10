@@ -1,0 +1,35 @@
+<!-- Header 1 -->
+<header class="header">
+	<div class="middle_bar">
+		<div class="container">
+			<div class="middle_bar_inner">
+				<div class="logo">
+					{# <a href="{{ path('<front>')}}" class="sharjah_dd"><img src="/{{ active_theme_path() }}/images/logo.svg" alt="logo"></a> #}
+					{# <a href="{{ path('<front>')}}" class="dark_mode_logo"><img src="/{{ active_theme_path() }}/images/logo_foot.svg" alt="logo"></a> #}
+				</div>
+				<div class="header_right_part">
+					<div
+						class="mainnav">
+
+						{# Get menu items #}
+						{% set items = simplify_menu('main') %}
+
+						{# Iterate menu tree #}
+						<ul class="main_menu">
+							{% for menu_item in items.menu_tree %}
+
+								<li class="menu-item menu-item-has-children- {{ menu_item.active =='active' ? 'active': '' }}">
+									<a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+					<button class="ma5menu__toggle" type="button">
+						<i class="ion-android-menu"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

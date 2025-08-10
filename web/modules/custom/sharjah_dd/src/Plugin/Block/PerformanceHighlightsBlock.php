@@ -67,14 +67,23 @@ final class PerformanceHighlightsBlock extends BlockBase implements ContainerFac
     $highlight = $config_page->get('field_ph_highlight')->value ?? '';
     $title = $config_page->get('field_ph_title')->value ?? '';
     $description = $config_page->get('field_ph_description')->value ?? '';
+
+    $supporting_govt = $config_page->get('field_supporting_government')->value ?? '';
+    $featured_solutions = $config_page->get('field_featured_solutions')->value ?? '';
+    $serving_sharjah = $config_page->get('field_serving_sharjah')->value ?? '';
+    $our_datacenter = $config_page->get('field_our_datacenter')->value ?? '';
     
-  
 
     $items = [
       'highlight' => $highlight,
       'title' => $title,
       'description' => $description,
+      'supporting_govt' => $supporting_govt,
+      'featured_solutions' => $featured_solutions,
+      'serving_sharjah' => $serving_sharjah,
+      'our_datacenter' => $our_datacenter,
     ];
+   
 
 
     return [
