@@ -1,0 +1,39 @@
+uuid: 81a25500-3ae9-40f3-8c39-c8001306bde4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_font_class
+field_name: field_font_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: briefcase
+      label: briefcase
+    -
+      value: bus
+      label: bus
+    -
+      value: plug
+      label: plug
+    -
+      value: buildings
+      label: buildings
+    -
+      value: seedling
+      label: seedling
+    -
+      value: shield
+      label: shield
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

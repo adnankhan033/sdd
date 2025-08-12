@@ -1,0 +1,19 @@
+uuid: f65bd67e-3889-46e0-b445-b0d619222cf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dm_name
+    - node.type.leadership_message
+id: node.leadership_message.field_dm_name
+field_name: field_dm_name
+entity_type: node
+bundle: leadership_message
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

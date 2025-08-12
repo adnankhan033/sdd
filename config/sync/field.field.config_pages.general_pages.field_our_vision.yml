@@ -1,0 +1,22 @@
+uuid: 00167bd8-2c8c-446f-ba11-70130a31a00c
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_our_vision
+  module:
+    - text
+id: config_pages.general_pages.field_our_vision
+field_name: field_our_vision
+entity_type: config_pages
+bundle: general_pages
+label: 'Our Vision'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,16 @@
+uuid: 8a33ff44-e6ba-4f7b-aea3-89cf09b93417
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.leadership_message
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.leadership_message
+target_entity_type_id: node
+target_bundle: leadership_message
+default_langcode: site_default
+language_alterable: true

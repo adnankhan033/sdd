@@ -1,16 +1,16 @@
-uuid: d0e079df-3b5a-4f29-ab2c-683987ad62f5
+uuid: f636a8cd-c01a-4ecb-aea0-1fb6d2413b1b
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.testimonial
+    - node.type.leadership_message
   module:
     - node
     - user
     - vch
-id: testimonials
-label: Testimonials
+id: leadership_message
+label: 'Leadership Message'
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Testimonials
+      title: 'Leadership Message'
       fields:
         title:
           id: title
@@ -133,13 +133,9 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            testimonial: testimonial
+            leadership_message: leadership_message
       style:
         type: clean_html_style
-        options:
-          row_class: item
-          uses_fields: false
-          wrapper_class: 'owl_testimonial1 owl-carousel owl-theme'
       row:
         type: 'entity:node'
         options:
@@ -164,15 +160,15 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  list:
-    id: list
-    display_title: 'Testimonials Block'
-    display_plugin: block
+  about_list:
+    id: about_list
+    display_title: 'Leadership Message'
+    display_plugin: page
     position: 1
     display_options:
       display_description: ''
       display_extenders: {  }
-      block_description: 'Testimonials Block'
+      path: about/leadership-message
     cache_metadata:
       max-age: -1
       contexts:

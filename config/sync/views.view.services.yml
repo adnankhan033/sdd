@@ -334,9 +334,9 @@ display:
       style:
         type: clean_html_style
         options:
-          row_class: 'rounded-xl bg-white p-9'
+          row_class: ''
           uses_fields: false
-          wrapper_class: 'grid grid-cols-3 gap-6'
+          wrapper_class: 'grid lg:grid-cols-3 md:grid-cols-2 gap-6'
       row:
         type: 'entity:node'
         options:

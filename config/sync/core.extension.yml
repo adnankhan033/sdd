@@ -11,6 +11,14 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  ckeditor5_line_height: 0
+  ckeditor5_plugin_pack: 0
+  ckeditor5_plugin_pack_font: 0
+  ckeditor5_plugin_pack_fullscreen: 0
+  ckeditor5_plugin_pack_highlight: 0
+  ckeditor5_plugin_pack_link_attributes: 0
+  ckeditor5_plugin_pack_todo_document_list: 0
+  ckeditor5_plugin_pack_word_count: 0
   comment: 0
   config: 0
   config_pages: 0
@@ -20,7 +28,9 @@ module:
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -62,6 +72,7 @@ module:
   content_translation: 10
   views: 10
   form_mode_manager: 11
+  paragraphs: 11
   standard: 1000
 theme:
   olivero: 0

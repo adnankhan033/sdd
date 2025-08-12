@@ -1,6 +1,6 @@
 uuid: 46d23a00-8b27-4e2b-b232-d37f843faeb0
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - theme_sdd
@@ -9,7 +9,7 @@ _core:
 id: theme_sdd_secondary_local_tasks
 theme: theme_sdd
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

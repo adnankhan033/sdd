@@ -1,0 +1,25 @@
+uuid: 91d7bb91-c2e9-4d79-8456-99afec4a8b4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - sharjah_dd
+    - system
+  theme:
+    - theme_sdd
+id: theme_sdd_headertitle
+theme: theme_sdd
+region: inner_banner
+weight: -10
+provider: null
+plugin: sharjah_dd_header_title
+settings:
+  id: sharjah_dd_header_title
+  label: 'Header Title'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/about/leadership-message\r\n/node/32"

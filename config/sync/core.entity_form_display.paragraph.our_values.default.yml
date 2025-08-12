@@ -1,0 +1,41 @@
+uuid: 02c281ce-6d20-40d0-9061-244d2b59c388
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_values.field_description
+    - field.field.paragraph.our_values.field_font_class
+    - field.field.paragraph.our_values.field_title
+    - paragraphs.paragraphs_type.our_values
+  module:
+    - text
+id: paragraph.our_values.default
+targetEntityType: paragraph
+bundle: our_values
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_font_class:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

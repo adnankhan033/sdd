@@ -1,0 +1,31 @@
+uuid: 18dc5f5d-fa3f-4c70-b348-d670f1945fa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_strategic_goals.field_description
+    - field.field.paragraph.our_strategic_goals.field_title
+    - paragraphs.paragraphs_type.our_strategic_goals
+  module:
+    - text
+id: paragraph.our_strategic_goals.default
+targetEntityType: paragraph
+bundle: our_strategic_goals
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

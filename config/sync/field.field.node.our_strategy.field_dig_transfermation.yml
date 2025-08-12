@@ -1,0 +1,22 @@
+uuid: 47c42919-2120-4a7b-ac69-4db726fa4205
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dig_transfermation
+    - node.type.our_strategy
+  module:
+    - text
+id: node.our_strategy.field_dig_transfermation
+field_name: field_dig_transfermation
+entity_type: node
+bundle: our_strategy
+label: ' Enabling GovernmentEntities in the Field of Digital Transformation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

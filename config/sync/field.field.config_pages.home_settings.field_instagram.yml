@@ -1,0 +1,23 @@
+uuid: 15eb5e10-dca8-4bd6-9030-ccedcadc1356
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.home_settings
+    - field.storage.config_pages.field_instagram
+  module:
+    - link
+id: config_pages.home_settings.field_instagram
+field_name: field_instagram
+entity_type: config_pages
+bundle: home_settings
+label: Instagram
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

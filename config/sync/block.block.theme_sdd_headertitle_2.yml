@@ -1,0 +1,28 @@
+uuid: 5a1fcc4f-b7db-4f47-8e01-b6fa91cc3b6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sharjah_dd
+  theme:
+    - theme_sdd
+id: theme_sdd_headertitle_2
+theme: theme_sdd
+region: inner_banner
+weight: 0
+provider: null
+plugin: sharjah_dd_header_title
+settings:
+  id: sharjah_dd_header_title
+  label: 'Header Title'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      our_strategy: our_strategy

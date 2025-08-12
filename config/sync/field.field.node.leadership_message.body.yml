@@ -1,0 +1,24 @@
+uuid: 416911b5-ba80-44c1-8ece-f8f3da8a0a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.leadership_message
+  module:
+    - text
+id: node.leadership_message.body
+field_name: body
+entity_type: node
+bundle: leadership_message
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

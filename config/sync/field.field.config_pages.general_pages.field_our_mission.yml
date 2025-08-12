@@ -1,0 +1,22 @@
+uuid: b33fe0cc-210f-46d6-92ff-09e81ab21798
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_our_mission
+  module:
+    - text
+id: config_pages.general_pages.field_our_mission
+field_name: field_our_mission
+entity_type: config_pages
+bundle: general_pages
+label: 'Our Mission'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

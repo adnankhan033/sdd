@@ -139,7 +139,7 @@ display:
         options:
           row_class: ''
           uses_fields: false
-          wrapper_class: 'flex gap-10'
+          wrapper_class: 'flex xl:gap-10 gap-7 md:gap-3 flex-col md:flex-row'
       row:
         type: 'entity:node'
         options:

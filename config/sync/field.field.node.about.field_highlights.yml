@@ -1,0 +1,19 @@
+uuid: 0eaed035-6184-48a4-b966-244784796647
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_highlights
+    - node.type.about
+id: node.about.field_highlights
+field_name: field_highlights
+entity_type: node
+bundle: about
+label: Highlights
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

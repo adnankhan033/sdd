@@ -1,0 +1,40 @@
+uuid: fcd0448e-7b14-4e75-938a-3f397402e705
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_values.field_description
+    - field.field.paragraph.our_values.field_font_class
+    - field.field.paragraph.our_values.field_title
+    - paragraphs.paragraphs_type.our_values
+  module:
+    - options
+    - text
+id: paragraph.our_values.default
+targetEntityType: paragraph
+bundle: our_values
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

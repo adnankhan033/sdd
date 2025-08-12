@@ -137,7 +137,7 @@ display:
       style:
         type: clean_html_style
         options:
-          row_class: swiper-slide
+          row_class: 'swiper-slide !h-auto'
           uses_fields: false
           wrapper_class: swiper-wrapper
       row:

@@ -1,18 +1,18 @@
-uuid: c7367416-ec27-4167-81a0-93a9c8f8cebf
+uuid: 169b567d-721e-4b9e-b4cb-d5185e4aaded
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.testimonial.body
-    - field.field.node.testimonial.field_designation
-    - node.type.testimonial
+    - field.field.node.custom_page.body
+    - field.field.node.custom_page.field_banner
+    - node.type.custom_page
   module:
     - text
     - user
-id: node.testimonial.teaser
+id: node.custom_page.teaser
 targetEntityType: node
-bundle: testimonial
+bundle: custom_page
 mode: teaser
 content:
   body:
@@ -29,5 +29,5 @@ content:
     weight: 100
     region: content
 hidden:
-  field_designation: true
+  field_banner: true
   langcode: true

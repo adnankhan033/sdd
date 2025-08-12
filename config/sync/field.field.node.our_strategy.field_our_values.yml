@@ -1,0 +1,34 @@
+uuid: 9e5d7a12-ff05-4cc0-93b3-7c163f928ab3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_our_values
+    - node.type.our_strategy
+    - paragraphs.paragraphs_type.our_values
+  module:
+    - entity_reference_revisions
+id: node.our_strategy.field_our_values
+field_name: field_our_values
+entity_type: node
+bundle: our_strategy
+label: 'Our Values'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      our_values: our_values
+    negate: 0
+    target_bundles_drag_drop:
+      our_strategic_goals:
+        weight: 3
+        enabled: false
+      our_values:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

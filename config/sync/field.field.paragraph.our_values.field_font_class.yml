@@ -1,0 +1,21 @@
+uuid: 5b771474-1b37-4b0b-ae6f-66d069fd1fb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_font_class
+    - paragraphs.paragraphs_type.our_values
+  module:
+    - options
+id: paragraph.our_values.field_font_class
+field_name: field_font_class
+entity_type: paragraph
+bundle: our_values
+label: 'Font Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

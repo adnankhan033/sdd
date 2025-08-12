@@ -1,0 +1,31 @@
+uuid: d583cfde-c140-46f5-ae92-2b84785b83c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_our_strategic_goals
+    - node.type.our_strategy
+    - paragraphs.paragraphs_type.our_strategic_goals
+  module:
+    - entity_reference_revisions
+id: node.our_strategy.field_our_strategic_goals
+field_name: field_our_strategic_goals
+entity_type: node
+bundle: our_strategy
+label: 'Our Strategic Goals'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      our_strategic_goals: our_strategic_goals
+    negate: 0
+    target_bundles_drag_drop:
+      our_strategic_goals:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

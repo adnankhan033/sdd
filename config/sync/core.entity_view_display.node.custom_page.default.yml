@@ -1,17 +1,18 @@
-uuid: 772c4c47-7c24-426b-aa06-34fa22c24a94
+uuid: 53ecf20e-734d-47ed-a7ec-31357f03e849
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.testimonial.body
-    - field.field.node.testimonial.field_designation
-    - node.type.testimonial
+    - field.field.node.custom_page.body
+    - field.field.node.custom_page.field_banner
+    - node.type.custom_page
   module:
+    - svg_image
     - text
     - user
-id: node.testimonial.default
+id: node.custom_page.default
 targetEntityType: node
-bundle: testimonial
+bundle: custom_page
 mode: default
 content:
   body:
@@ -21,11 +22,18 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_designation:
-    type: string
+  field_banner:
+    type: image
     label: above
     settings:
-      link_to_entity: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 102
     region: content

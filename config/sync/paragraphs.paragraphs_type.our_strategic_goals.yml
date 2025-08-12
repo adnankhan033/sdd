@@ -1,0 +1,10 @@
+uuid: 1ac76be7-ec76-4738-96f0-8c3ad68951d8
+langcode: en
+status: true
+dependencies: {  }
+id: our_strategic_goals
+label: 'Our Strategic Goals'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

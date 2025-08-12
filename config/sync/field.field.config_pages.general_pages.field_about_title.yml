@@ -1,0 +1,19 @@
+uuid: b1cf811f-3d13-4201-90fb-de26983c2bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_about_title
+id: config_pages.general_pages.field_about_title
+field_name: field_about_title
+entity_type: config_pages
+bundle: general_pages
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 07d7d92a-40de-4680-a95a-ccff05087c95
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - link
+id: config_pages.field_twitter
+field_name: field_twitter
+entity_type: config_pages
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

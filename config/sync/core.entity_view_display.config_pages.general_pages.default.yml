@@ -1,0 +1,72 @@
+uuid: 40799a47-b7ad-42bb-bf3b-7267e7796ce9
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.field.config_pages.general_pages.field_about_title
+    - field.field.config_pages.general_pages.field_leadership_banner
+    - field.field.config_pages.general_pages.field_our_mission
+    - field.field.config_pages.general_pages.field_our_vision
+    - field.field.config_pages.general_pages.field_sh_images
+  module:
+    - svg_image
+    - text
+id: config_pages.general_pages.default
+targetEntityType: config_pages
+bundle: general_pages
+mode: default
+content:
+  field_about_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_leadership_banner:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_our_mission:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_our_vision:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sh_images:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

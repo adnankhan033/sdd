@@ -1,18 +1,18 @@
-uuid: f8fd92fd-9fbb-47bb-a7d1-7f65df3a32e3
+uuid: 4a651b43-c02d-45c8-ae93-46bf3208af9d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_designation
-    - node.type.testimonial
-id: node.testimonial.field_designation
+    - node.type.leadership_message
+id: node.leadership_message.field_designation
 field_name: field_designation
 entity_type: node
-bundle: testimonial
+bundle: leadership_message
 label: Designation
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

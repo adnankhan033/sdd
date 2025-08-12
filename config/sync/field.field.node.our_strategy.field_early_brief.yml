@@ -1,0 +1,22 @@
+uuid: 92e59fef-77e0-4e01-8efc-bb0c430fb76b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_early_brief
+    - node.type.our_strategy
+  module:
+    - text
+id: node.our_strategy.field_early_brief
+field_name: field_early_brief
+entity_type: node
+bundle: our_strategy
+label: 'Early Brief'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

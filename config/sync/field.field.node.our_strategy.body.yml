@@ -1,16 +1,16 @@
-uuid: 4441b545-f48d-48a5-8bd3-78ecdaa4bb15
+uuid: 966f21e0-a080-463a-8659-6888e9f2a74c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.testimonial
+    - node.type.our_strategy
   module:
     - text
-id: node.testimonial.body
+id: node.our_strategy.body
 field_name: body
 entity_type: node
-bundle: testimonial
+bundle: our_strategy
 label: Body
 description: ''
 required: false
