@@ -32,24 +32,16 @@
 #}
 
 
+{% if rows %}
 
+	<div class="overflow-hidden">
+		<div class="ms-auto md:mt-[68px] mt-14 px-4 md:px-0 xl:max-w-[calc(70%)] md:max-w-[calc(90%)]">
+			<div class="swiper Initiatives-swiper !overflow-visible">
 
+				{{ rows }}
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
 
-
-
-
-  {% if rows %}
-
-
-    <div class="overflow-hidden">
-      <div class="ms-auto mt-[68px] max-w-[calc(70%)]">
-        <div class="swiper Initiatives-swiper !overflow-visible">
-
-      {{ rows }}
- <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
-  
-  {% endif %}
-  
+{% endif %}

@@ -1,0 +1,71 @@
+<section class="md:py-[80px] py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+			<div class="max-w-[500px]">
+				<h2 class="md:text-4xl text-[30px] font-light  ">
+					{{ node.field_early_brief.fieldDefinition.label ?: '' }}
+
+				</h2>
+			</div>
+
+			<div class="grid md:gap-10 gap-6">
+
+				<div class="md:text-lg">
+					{{ content.field_early_brief|render|striptags|trim|raw }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="md:py-[80px] py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+			<div class="max-w-[500px]">
+				<h2 class="md:text-4xl text-[30px] font-light">
+					{{ node.field_dig_transfermation.fieldDefinition.label ?: '' }}
+				</h2>
+			</div>
+
+			<div class="grid md:gap-10 gap-6">
+
+				<div class="md:text-lg">
+					{{ content.field_dig_transfermation|render|striptags|trim|raw }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="md:py-[64px] py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid md:gap-10 gap-6 md:grid-cols-[1fr_2fr]">
+			<div>
+				<h3 class="md:text-4xl text-[30px] mb-6 md:hidden ">{{ "Our Strategic Goals"|t}}</h3>
+				<div class="max-w-[470px]">
+					{{  content.field_image }}
+				</div>
+
+			</div>
+
+			<div>
+				<h3 class="text-4xl  hidden md:block">{{"Our Strategic Goals"|t }}</h3>
+				<div class="w-full mx-auto ">
+					{{ content.field_our_strategic_goals }}
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="md:py-[64px] py-[80px]">
+	<div class="container mx-auto px-4">
+		<h2 class="text-4xl mb-8">{{ "Our Values"|t }}</h2>
+		<div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+			{{ content.field_our_values }}
+		</div>
+	</div>
+</section>

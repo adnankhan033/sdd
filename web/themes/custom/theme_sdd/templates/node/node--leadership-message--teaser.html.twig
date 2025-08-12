@@ -1,0 +1,74 @@
+{% if count is even %}
+
+	<section class="md:py-[80px] py-12">
+		<div class="container mx-auto px-4">
+			<div class="grid md:gap-20 gap-10 md:grid-cols-2 ">
+
+				<div class="grid md:gap-10 gap-6 order-1 md:order-0">
+					<h2 class="md:text-5xl text-[30px] font-light hidden md:block">
+						{{ label|render|striptags|trim|raw }}
+					</h2>
+					{{ content.body[0]['#text']|raw }}
+				</div>
+
+				<div class>
+					<h2 class=" md:hidden mb-10 md:text-5xl text-[30px] font-light">
+						{{ label|render|striptags|trim|raw }}
+					</h2>
+
+					<div class="image">
+                        {{ content.field_image }}
+					</div>
+					<div class="bg-orange w-[47px] h-[2px] mt-7 mb-5"></div>
+					<div class="max-w-[280px]">
+						<h4 class="font-bold md:text-2xl text-xl mb-4">
+							{{ content.field_dm_name|render|striptags|trim|raw }}
+						</h4>
+						<div class="md:text-lg text-[#99A1AF]">
+							{{ content.field_designation|render|striptags|trim|raw }}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+
+{% if count is odd %}
+
+
+	<section class="md:py-[80px] py-12">
+		<div class="container mx-auto px-4">
+			<div class="grid md:gap-20 gap-10 md:grid-cols-2 ">
+
+
+				<div class>
+					<h2 class=" md:hidden mb-10 md:text-5xl text-[30px] font-light">
+						{{ label|render|striptags|trim|raw }}
+					</h2>
+
+					<div class="image">
+                        {{ content.field_image }}
+					</div>
+					<div class="bg-orange w-[47px] h-[2px] mt-7 mb-5"></div>
+					<div class="max-w-[280px]">
+						<h4 class="font-bold md:text-2xl text-xl mb-4">
+							{{ content.field_dm_name|render|striptags|trim|raw }}
+						</h4>
+						<div class="md:text-lg text-[#99A1AF]">
+							{{ content.field_designation|render|striptags|trim|raw }}
+						</div>
+
+					</div>
+				</div>
+
+				<div class="grid md:gap-10 gap-6 order-1 md:order-0">
+					{{ content.body[0]['#text']|raw }}
+
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}

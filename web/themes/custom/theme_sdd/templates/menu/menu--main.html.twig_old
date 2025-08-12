@@ -19,7 +19,7 @@
 							{% for menu_item in items.menu_tree %}
 
 								<li class="menu-item menu-item-has-children- {{ menu_item.active =='active' ? 'active': '' }}">
-									<a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+									{# <a href="{{ menu_item.url }}">{{ menu_item.text }}</a> #}
 								</li>
 							{% endfor %}
 						</ul>

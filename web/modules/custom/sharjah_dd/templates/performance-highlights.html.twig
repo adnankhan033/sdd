@@ -1,74 +1,120 @@
- 
-<section class="relative translate-y-[-60px] rounded-t-[60px] bg-white pt-[100px]">
-    <div class="container mx-auto px-4">
-      <div class="title">
-        <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
-          <img src="/{{ active_theme_path() }}/assets/images/headline.svg" alt />
-          <span> {{ items.highlight }}</span>
-        </h6>
-        <h2 class="mb-10 text-4xl">    {{ items.title }}</h2>
-        <div class="max-w-[300px]">
-          <p class="text-lg">
-              {{ items.description|raw }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <video class="h-[285px] w-full object-fill" autoplay muted src="/{{ active_theme_path() }}/assets/video/shutterstock_1097618671.mp4"></video>
-    </div>
-
-    <div class="container mx-auto px-4">
-      <div class="mt-[150px] grid grid-cols-4">
-        <div class>
-          <div
-            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:end-0 after:h-[420px] after:w-[1px] after:bg-[#353535]">
-            <h6>
-              {{"Supporting"|t }} <br />
-              {{ "Government"|t }}
-            </h6>
-            <h4 class="text-[70px] font-bold text-orange">   {{ items.supporting_govt }}</h4>
-            <p class="text-sm">{{"Total entities we serve"|t }}</p>
-          </div>
-        </div>
-        <div>
-          <div
-            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
-            <h6>
-              {{ "Featured "|t }}
-              <br />
-              {{ "Solutions"|t }}
-            </h6>
-            <h4 class="text-[70px] font-bold">    {{ items.featured_solutions }}</h4>
-            <p class="text-sm">{{ "Total entities we serve"|t }}</p>
-          </div>
-        </div>
-
-        <div>
-          <div
-            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-11 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
-            <h6>
-              {{ "Serving"|t }} <br />
-              {{ "Sharjah"|t }}
-            </h6>
-            <h4 class="text-[70px] font-bold">    {{ items.serving_sharjah }}</h4>
-            <p class="text-sm">
-            {{ "Active citizen and resident through Digital Sharjah app"|t }}
+   <section id="scroll"
+      class="relative translate-y-[-60px] rounded-t-[60px] bg-white pt-16 md:pt-[100px]">
+      <div class="container mx-auto px-4">
+        <div class="title relative z-[1]">
+          <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+            <img src="/{{ active_theme_path()}}/assets/images/headline.svg" alt />
+            <span> {{ items.highlight }}</span>
+          </h6>
+          <h2 class="md:mb-10 md:text-4xl mb-6  text-[30px]">
+          {{ items.title }}
+          </h2>
+          <div class="max-w-[300px]">
+            <p class="text-lg">
+             {{ items.description|raw }}
             </p>
           </div>
         </div>
+      </div>
+      <div class="md:-translate-y-[200px]">
+        <video class="h-[500px] w-full object-fill hidden md:block" autoplay
+          muted src="/{{ active_theme_path()}}/assets/video/shutterstock_1097618671.mp4"></video>
 
-        <div>
-          <div
-            class="relative max-w-[200px] p-5 pb-0 before:absolute before:-top-[230px] before:start-0 before:h-[1px] before:w-full before:bg-[#D9D9D9] after:absolute after:bottom-0 after:start-0 after:h-[420px] after:w-[1px] after:bg-[#D9D9D9]">
-            <h6>
-              {{ "Our"|t }} <br />
+        <div class="container mx-auto px-4">
+          <div class="md:mt-[150px] grid md:grid-cols-4 grid-cols-2">
+            <div class>
+              <div
+                class="relative   max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px]  ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block  after:absolute after:bottom-0 after:end-0 after:h-[480px] after:w-[1px] after:bg-[#353535]">
+
+                  <div
+                  class=" md:block hidden absolute z-[1] -end-[40px] -top-[332px] w-[80px] h-[80px]">
+                 <div class="flex relative w-[80px] h-[80px]">
+                   <span  class="lottie-container"></span>
+                  <span class="-z-[1] top-7 start-[25px] absolute bottom-0 w-7 h-7 inline-block" style=" background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(255, 255, 255, 0) 100%);"></span>
+                
+                 </div>
+                </div>
+                             <h6 class="mb-6">
+{{"Supporting"|t }} <br />
+              {{ "Government"|t }}
+                </h6>
+                <h4 class="sm:text-[70px] text-5xl font-bold  text-orange">{{ items.supporting_govt }}</h4>
+                <p class="text-sm max-w-[150px] md:max-w-max">{{"Total entities we serve"|t }}</p>
+              </div>
+            </div>
+
+            <div
+              class=" after:start-0 after:w-[1px] after:h-[130px] after:my-auto after:bottom-0 after:bg-[#CACACA] after:top-0 relative after:block  md:after:hidden after:absolute">
+
+              <div
+                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0 before:hidden  after:hidden md:after:block md:before:block  before:absolute before:-top-[288px] after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+
+               <div
+                  class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
+                 <div class="flex relative w-[80px] h-[80px]">
+                   <span  class="lottie-container"></span>
+                  <span class="-z-[1] top-7 start-[25px] absolute bottom-0 w-7 h-7 inline-block" style=" background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(255, 255, 255, 0) 100%);"></span>
+                
+                 </div>
+                </div>
+
+                <h6 class="mb-6">
+                   {{ "Featured "|t }}
+              <br />
+              {{ "Solutions"|t }}
+                </h6>
+                <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.featured_solutions }}</h4>
+                <p class="text-sm max-w-[150px] md:max-w-max">{{ "Total entities we serve"|t }}</p>
+              </div>
+            </div>
+
+            <div class="border-t border-[#CACACA] md:border-0 mt-6 md:mt-0">
+              <div
+                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block     after:absolute after:bottom-11 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+               <div
+                  class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
+                 <div class="flex relative w-[80px] h-[80px]">
+                   <span  class="lottie-container"></span>
+                  <span class="-z-[1] top-7 start-[25px] absolute bottom-0 w-7 h-7 inline-block" style=" background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(255, 255, 255, 0) 100%);"></span>
+                
+                 </div>
+                </div>
+
+                <h6 class="mb-6">
+                   {{ "Serving"|t }} <br />
+              {{ "Sharjah"|t }}
+                </h6>
+                <h4 class="sm:text-[70px] text-5xl font-bold "> {{ items.serving_sharjah }}</h4>
+                <p class="text-sm max-w-[150px] md:max-w-max">
+                 {{ "Active citizen and resident through Digital Sharjah app"|t }}
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="border-t border-[#CACACA] md:border-0 mt-6 md:mt-0 after:start-0 after:w-[1px] after:h-[130px] after:my-auto after:bottom-0 after:bg-[#CACACA] after:top-0 relative after:block  md:after:hidden after:absolute">
+              <div
+                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0  before:hidden md:before:block after:hidden md:after:block  after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+                <div
+                  class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
+                 <div class="flex relative w-[80px] h-[80px]">
+                   <span  class="lottie-container"></span>
+                  <span class="-z-[1] top-7 start-[25px] absolute bottom-0 w-7 h-7 inline-block" style=" background: radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(255, 255, 255, 0) 100%);"></span>
+                
+                 </div>
+                </div>
+
+                            <h6 class="mb-6">
+
+                 {{ "Our"|t }} <br />
               {{ "Datacenter"|t }}
-            </h6>
-            <h4 class="text-[70px] font-bold">    {{ items.our_datacenter }}</h4>
-            <p class="text-sm">{{ "Certified Data Center"|t }}</p>
+                </h6>
+                <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.our_datacenter }}</h4>
+                <p class="text-sm max-w-[150px] md:max-w-max">{{ "Certified Data Center"|t }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+
+    </section>

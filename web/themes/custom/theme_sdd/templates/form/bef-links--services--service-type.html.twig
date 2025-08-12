@@ -3,8 +3,9 @@
   is_nested ? 'bef-nested'
 ] %}
 
-{# <div class="my-[56px] flex items-center justify-between filter hellowrd"> #}
-  <div class="tabs">
+ <div
+          class="md:my-[56px] mt-10 mb-8 flex items-center gap-3 overflow-auto md:overflow-hidden md:flex-wrap lg:flex-nowrap justify-between filter">
+       <div class="tabs flex-shrink-0 w-full lg:w-auto min-w-max">
     {% set is_nested = true %}
     {% for name, value in hiddens %}
       <input type="hidden" name="{{ name }}" value="{{ value }}" />
@@ -30,7 +31,7 @@
         {% set delta = (current_nesting_level - new_nesting_level) |abs %}
 
         {% if loop.first %}
-          <ul class="flex items-center gap-6 rounded-[11px] border border-[#BCBCBC] p-3">
+          <ul class="flex items-center  lg:gap-3 xl:gap-6 gap-1 rounded-[11px] border border-[#BCBCBC] p-3">
         {% else %}
           {% if delta %}
             {% for i in 1..delta %}
@@ -55,4 +56,4 @@
       {% endfor %}
     </div>
   </div>
-{# </div> #}
+</div>

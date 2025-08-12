@@ -1,0 +1,71 @@
+<section class="md:py-[80px] py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid gap-6 md:grid-cols-[1fr_2fr]">
+			<div class>
+				<h2 class="md:text-5xl text-[30px] font-light">
+					{{ content.field_highlights|render|striptags|trim|raw }}
+				</h2>
+			</div>
+
+			<div class="grid md:gap-10 gap-6">
+				{{ content.body|raw }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="overflow-hidden pt-10 pb-20">
+	<div class="container mx-auto px-4">
+		<div class="swiper aboutswiper !overflow-visible">
+			<div class="swiper-wrapper">
+				{% if content.field_sh_images['#items'] is defined %}
+					{% for item in content.field_sh_images['#items'] %}
+						{% set uri = item.entity.uri.value %}
+
+						{# Render the image using Drupal's image function #}
+						{% set images =  drupal_image(uri) %}
+
+						<div class="swiper-slide !h-auto">
+							<div class="image w-full h-full">
+								{{ drupal_image(uri, 'large', { class: ['w-full', 'h-full', 'object-cover'], alt: item.alt|e }) }}
+							</div>
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="md:pt-[120px] md:pb-[300px] py-10">
+	<div class="border-y border-[#E5E7EB]">
+		<div class="max-w-[1000px] mx-auto px-4 py-20">
+			<div class=" cursor-pointer faq-btn">
+				<h2 class="md:text-5xl text-4xl font-light ">
+					{{ node.field_our_vision.fieldDefinition.label ?: '' }}
+
+				</h2>
+			</div>
+
+			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
+				{{ content.field_our_vision|raw }}
+			</div>
+		</div>
+	</div>
+
+	<div class="border-y border-[#E5E7EB]">
+		<div class="max-w-[1000px] mx-auto px-4 py-20">
+			<div class=" cursor-pointer faq-btn">
+				<h2 class="md:text-5xl text-4xl font-light ">
+					{{ node.field_our_mission.fieldDefinition.label ?: '' }}
+
+				</h2>
+			</div>
+
+			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
+				{{ content.field_our_mission|raw }}
+			</div>
+		</div>
+	</div>
+</section>

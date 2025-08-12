@@ -1,32 +1,33 @@
-<header>
-	<div class="container mx-auto px-4">
-		<div class="flex items-center justify-between lg:py-6 py-5">
+   <header>
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between lg:py-6 py-5">
 
-			<button class="flex items-center lg:hidden" type="button">
-				<div class="hamburger-toggle">
-					<div class="hamburger">
-						<span class="bg-black"></span>
-						<span class="bg-black"></span>
-						<span class="bg-black"></span>
-					</div>
-				</div>
-			</button>
+          <button class="flex items-center lg:hidden" type="button">
+            <div class="hamburger-toggle">
+              <div class="hamburger">
+                <span class="bg-black"></span>
+                <span class="bg-black"></span>
+                <span class="bg-black"></span>
+              </div>
+            </div>
+          </button>
 
-			<div>
-				<img src="assets/images/Logo.svg" class="max-w-full" alt/>
-			</div>
+          <div>
+            {# <img src="{{ items.left_logo_url }}" class="max-w-full" alt /> #}
+          </div>
 
-			<div class="hidden lg:block">
-				<img src="assets/images/Logo2.svg" class="max-w-full" alt/>
-			</div>
+          <div class="hidden lg:block">
+            {# <img src="{{ items.right_logo_url }}" class="max-w-full" alt /> #}
+          </div>
 
-			<button class="search">
-				<i class="fa-regular fa-search text-lg transition-all font-semibold"></i>
+          <button class="search lg:hidden">
+            <i
+              class="fa-regular fa-search text-lg transition-all font-semibold"></i>
 
-			</button>
+          </button>
 
-		</div>
-	</div>
+        </div>
+      </div>
 
 	<nav class="bg-secondary">
 		<div class="container mx-auto px-4 h-full">
@@ -56,9 +57,8 @@
 									<div class="dropdown-menu absolute opacity-0 -z-50 bg-white pt-4 pb-2 border-t-2 min-w-[200px] mt-4 border-orange lg:transition-all lg:group-hover/dropdwon:opacity-100 lg:group-hover/dropdwon:!z-20">
 										<ul class="grid gap-4  ">
 											{% for child in item.submenu %}
-
 												<li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
-													<a href {{ child.url }} class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
+													<a href="{{ child.url }}" class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
 														<span>{{ child.text }}</span>
 														<i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
 													</a>
@@ -88,14 +88,10 @@
 
 							</button>
 
-							<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-[#F3F4F6] px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
-								<i class="fa-light fa-globe text-sm transition-all font-semibold"></i>
-
-								<span>EN</span>
-							</button>
+						{{ drupal_block('language_block:language_interface', wrapper=false) }}
 						</div>
 						<div class="flex items-center justify-center mt-8">
-							<img src="assets/images/Logo2.svg" class="max-w-full" alt/>
+							<img src="/{{ active_theme_path()}}//{{ active_theme_path()}}/assets/images/Logo2.svg" class="max-w-full" alt/>
 						</div>
 
 					</div>
@@ -115,14 +111,9 @@
 						<i class="fa-brands fa-accessible-icon  transition-all  "></i>
 
 					</button>
-
-					<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
-						<i class="fa-light fa-globe text-sm transition-all font-semibold"></i>
-
-						<span>EN</span>
-					</button>
+					{{ drupal_block('language_block:language_interface', wrapper=false) }}
 				</div>
 			</div>
 		</div>
-	</nav>
-</header>
+   </nav>
+    </header>

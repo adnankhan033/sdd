@@ -24,12 +24,20 @@ html {
 }
 
 body {
-  color: #101828;font-family: 'sdd';
+  color: #101828;
+  font-family: 'sdd';
+  background-color: #f9fafb;
 }
 
 @config "../../tailwind.config.js";
 @import 'tailwindcss';
 
+.search-block {
+  display: none;
+}
+header {
+  background-color: #fff;
+}
 
 .sticky-bottom {
   bottom: 0;
@@ -40,20 +48,26 @@ body {
 
 .sticky-bottom button,
 .sticky-bottom a {
-  background-color: #F3F4F6;
+  background-color: #f3f4f6;
 }
 
 .sticky-bottom .has-border {
   border: 2px solid;
-  border-image-source: linear-gradient(90deg, #ffffff00 0%, #E5E7EB 53.37%, #E5E7EB 73.08%, #ffffff00 100%);
+  border-image-source: linear-gradient(
+    90deg,
+    #ffffff00 0%,
+    #e5e7eb 53.37%,
+    #e5e7eb 73.08%,
+    #ffffff00 100%
+  );
   border-image-slice: 1;
-  padding: 16px 0;backdrop-filter: blur(14px)
+  padding: 16px 0;
+  backdrop-filter: blur(14px);
 }
 
-button{
+button {
   cursor: pointer;
 }
-
 
 .hamburger-toggle {
   position: relative;
@@ -122,7 +136,7 @@ button{
   transform: rotate(-45deg);
 }
 
-.menu-opened{
+.menu-opened {
   overflow: hidden;
 }
 .menu-opened .main-menu ul {
@@ -130,32 +144,29 @@ button{
   flex-direction: column;
 }
 
-.menu-opened .main-menu{
+.menu-opened .main-menu {
   display: flex;
   flex-direction: column;
 }
 @media (width <48rem) {
- header nav{
-   left: -100%;
-   transition: 0.5s;
+  header nav {
+    left: -100%;
+    transition: 0.5s;
   }
-  
 }
-.menu-opened nav {
+.menu-opened header nav {
   background: white;
   position: fixed;
   top: 88px;
   left: 0;
   right: 0;
   width: 100%;
-  height:calc(100% - 88px);
+  height: calc(100% - 88px);
   z-index: 999;
- 
- 
 }
 
-.dropdown-menu.show{
-position: fixed;
+.dropdown-menu.show {
+  position: fixed;
   opacity: 1;
   z-index: 999;
   top: 0;
@@ -165,19 +176,17 @@ position: fixed;
   margin: 0;
   border: 0;
   background: white;
-padding: 0;
+  padding: 0;
 }
 
- 
-
- @media (min-width: 768px) {
+@media (min-width: 768px) {
   .grid-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      "item1 item2"
-      "item3 item2";
+      'item1 item2'
+      'item3 item2';
   }
 
   .item1 {
@@ -193,29 +202,27 @@ padding: 0;
   }
 }
 
- @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .grid-layout {
-  
-      grid-template-columns: 1fr 1fr;}
- }
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-    @media (max-width: 991px) {
-      .grid-layout {
-  
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+@media (max-width: 991px) {
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
   .grid-layout {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "item1"
-      "item2"
-      "item3";
-    
+      'item1'
+      'item2'
+      'item3';
   }
 
   .item1 {
@@ -231,14 +238,12 @@ padding: 0;
   }
 }
 
-
-  @media (max-width :1280px) {
-    .container {
+@media (max-width: 1280px) {
+  .container {
     max-width: 100%;
-    
   }
 }
 
-footer .open i{
+footer .open i {
   transform: rotate(180deg);
 }

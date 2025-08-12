@@ -27,6 +27,7 @@ function theme_sdd_preprocess_node(array &$variables): void
 
   $class_index = $counter % count($bg_classes);
   $variables['index_count'] = $bg_classes[$class_index];
+  $variables['count'] = $counter;
   $counter++;
 
     $node = $variables['node'];  
@@ -89,3 +90,74 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
     }
   
   }
+
+
+
+
+  /**
+ * Implements hook_preprocess_links__language_block()
+ */
+function theme_sdd_preprocess_links__language_block(&$variables)
+{
+    $current_langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if (isset($variables['links'][$current_langcode])) {
+        unset($variables['links'][$current_langcode]);
+    }
+
+
+    foreach ($variables['links'] as $i => &$link) {
+        /**
+         * @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage
+         */
+        $linkLanguage = $link['link']['#options']['language'];
+        $text = $linkLanguage->getId() === 'ar' ? 'AR' : ($linkLanguage->getId() === 'en' ? 'EN' : $linkLanguage->getName());
+        $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
+        $full_path =  $theme_path . '/images/language.svg';
+        $lang_icon = file_get_contents($full_path);
+
+        $link['link']['#title'] = [
+            '#type' => 'inline_template',
+            '#template' => '{{ svg|raw }} <span>{{ text|raw }}</span>',
+            '#context' => [
+                'text' => $text,
+                'svg' =>  $lang_icon,
+
+            ],
+        ];
+
+        $link['link']['#options']['attributes']['class'][] = 'language-switcher';
+    }
+}
+
+
+
+
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function theme_sdd_preprocess_paragraph(array &$variables) {
+  
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // 2) Title & Description from fields
+  $title = '';
+  if ($paragraph->hasField('field_title') && !$paragraph->get('field_title')->isEmpty()) {
+    $title = $paragraph->get('field_title')->value;
+  }
+
+  $description = '';
+  if ($paragraph->hasField('field_description') && !$paragraph->get('field_description')->isEmpty()) {
+    // If it's a text_long/formatted, use ->value for plain or ->processed if you want markup.
+    $description = $paragraph->get('field_description')->value;
+  }
+
+  // 3) Safe truncations
+  $clean = fn($t) => trim(preg_replace('/[^\w$\x{0080}-\x{FFFF}\s]+/u', ' ', strip_tags((string) $t)));
+  $variables['title_full']        = $title;
+  $variables['title_short']       = Unicode::truncate($clean($title), 25, true, true);
+  $variables['title_medium']      = Unicode::truncate($clean($title), 70, true, true);
+  $variables['description_full']  = $description;
+  $variables['description_short'] = Unicode::truncate($clean($description), 150, true, true);
+}

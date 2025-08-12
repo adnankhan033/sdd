@@ -17,15 +17,15 @@ use Drupal\file\Entity\File;
 
 
 /**
- * Provides a Header block.
+ * Provides a about Block"), block.
  *
  * @Block(
- *   id = "header_block",
- *   admin_label = @Translation("Header Block"),
+ *   id = "about_block",
+ *   admin_label = @Translation("About Block"),
  *   category = @Translation("sharjah_dd"),
  * )
  */
-final class HeaderBlock extends BlockBase implements ContainerFactoryPluginInterface
+final class AboutBlock extends BlockBase implements ContainerFactoryPluginInterface
 {
 
   /**
@@ -58,30 +58,37 @@ final class HeaderBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public function build(): array
   {
+
     $config_page = ConfigPages::config('home_settings');
     if (!$config_page) {
       return [];
     }
-    $top_logo_left = $config_page->get('field_top_logo_left')->entity ?? '';
-    $top_logo_right = $config_page->get('field_top_logo_right')->entity ?? '';
+    $facebook = $config_page->get('field_facebook')->getValue()[0]['uri'] ?? '';
+    $instagram = $config_page->get('field_instagram')->getValue()[0]['uri'] ?? '';
+    $youtube = $config_page->get('field_youtube')->getValue()[0]['uri'] ?? '';
+    $twitter = $config_page->get('field_twitter')->getValue()[0]['uri'] ?? '';
+    $copy_right = $config_page->get('field_copyrights')->value?? '';
+    
+    //  $twitter1 = $config_page->get('field_twitter')->getValue()[0]['uri'] ?? '';
 
-    $left_logo_url = '';
-    if ($top_logo_left instanceof \Drupal\file\FileInterface) {
-      $left_logo_url = \Drupal::service('file_url_generator')->generateAbsoluteString($top_logo_left->getFileUri());
-    } 
-
-    $right_logo_url = '';
-    if ($top_logo_right instanceof \Drupal\file\FileInterface) {
-      $right_logo_url = \Drupal::service('file_url_generator')->generateAbsoluteString($top_logo_right->getFileUri());
+ 
+// dd( $copy_right); exit;
+     $copy_right_text = '';
+    if ($copy_right) {
+      $copy_right_text = str_replace('[year]', date('Y'), $copy_right);
     }
 
     $items = [
-      'left_logo_url' => $left_logo_url,
-      'right_logo_url' => $right_logo_url,
+      'facebook' => $facebook,    
+      'instagram' => $instagram,    
+      'youtube' => $youtube,    
+      'twitter' => $twitter,    
+      'copy_right'=> $copy_right_text,
+      'about'=> 'about',
     ];
-
+    
     return [
-      '#theme' => 'header',
+      '#theme' => 'about',
       '#items' => $items,
       '#cache' => [
         'tags' => $config_page ? $config_page->getCacheTags() : [],
