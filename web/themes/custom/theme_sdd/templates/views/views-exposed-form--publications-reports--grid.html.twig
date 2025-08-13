@@ -19,28 +19,26 @@
 {% endif %}
 
 {% set classes = [
-	'my-[56px]',
-	 'flex',
-	  'items-center',
-	   'justify-between',
-	    'filter'
+	    'filter',
 	] %}
 
 <div {{attributes.addClass(classes)}} id="services">
-	{{ form|without('actions','keys') }}
+	
 	{% set keys = form.keys %}
 	{% set keys = keys|merge({
   '#attributes': keys['#attributes']|merge({
-    'class': (keys['#attributes'].class|default([]))|merge(['h-[54px] w-full rounded-sm border border-[#D4D4D8] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]'])
+    'class': (keys['#attributes'].class|default([]))|merge(['mb-4 h-[52px] w-full rounded-sm border border-[#D4D4D8] bg-[#fff] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828] md:mb-10 md:max-w-[333px]'])
   })
 }) %}
-	<div class="search w-full min-w-max xl:max-w-[333px]">
-
+{# {{ dd(form.field_pr_select_type)}} #}
 		{{ keys }}
-	</div>
+
+	{{ form.field_pr_select_type }}	
+		{# {{ keys }} #}
+
+		{# {{ form.service_type }} #}
 	<div class="submit-reset hidden ">
 		{{ form.actions }}
 	</div>
-
-
+	{{ form|without('actions','keys','field_pr_select_type') }}
 </div>

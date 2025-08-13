@@ -37,62 +37,33 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'py-10',
+    'pb-10 pt-16 md:pb-24',
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-      <div class="container mx-auto px-4">
-  {{ title_prefix }}
-  {% if title %}
-    {{ title }}
-  {% endif %}
-  {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
-  {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
-    </div>
-  {% endif %}
-  {% if attachment_before %}
-    <div class="attachment attachment-before">
-      {{ attachment_before }}
-    </div>
-  {% endif %}
+<div{{attributes.addClass(classes)}}>
+	<div class="container mx-auto px-4">
+		<div
+			class="grid gap-10 lg:grid-cols-[1fr_2fr]">
+			{# filter section  start #}
+			<div>
+				{% if exposed %}
+					<div class="view-filters">
+						{{ exposed }}
+					</div>
+				{% endif %}
+			</div>
 
-  {% if rows %}
-    <div class="view-content row">
-      {{ rows }}
-    </div>
-  {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
-  {% endif %}
-
-  {% if pager %}
-    {{ pager }}
-  {% endif %}
-  {% if attachment_after %}
-    <div class="attachment attachment-after">
-      {{ attachment_after }}
-    </div>
-  {% endif %}
-  {% if more %}
-    {{ more }}
-  {% endif %}
-  {% if footer %}
-    <div class="view-footer">
-      {{ footer }}
-    </div>
-  {% endif %}
-  {% if feed_icons %}
-    <div class="feed-icons">
-      {{ feed_icons }}
-    </div>
-  {% endif %}
-</div>
+			{% if rows %}
+				{# content section #}
+				<div data-content="type-1">
+					{{ rows }}
+				</div>
+			{% endif %}
+			{% if empty %}
+				<div data-content="type-1">
+					{{ empty }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
 </div>

@@ -1,0 +1,18 @@
+       <div class="">
+            <h3 class="mb-4 text-xl md:text-2xl">
+            {{ content.field_dm_name|render|striptags|trim|raw }}
+            </h3>
+            <p class="mb-4 text-sm text-[#6A7282] md:mb-6 md:text-base">
+             {{ label|render|striptags|trim|raw }}
+            </p>
+            <h6 class="md:text-lg">{{ content.field_designation|render|striptags|trim|raw }}</h6>
+          </div>
+          <div class="flex items-center gap-7">
+            <p class="flex-shrink-0 text-lg text-[#6A7282]">
+            {{ node.getCreatedTime()|format_date('olivero_medium') }}
+            </p>
+            <a href="{{ attachments.0['url'] }}" target="_blank" rel="noopener"class="flex items-center gap-2 text-orange">
+              <i class="fa fa-folder-arrow-down"></i>
+              <span>{{ "Download"|t }}</span>
+            </a>
+          </div>

@@ -1,0 +1,55 @@
+{% set classes = [
+  'bef-links',
+  is_nested ? 'bef-nested'
+] %}
+
+
+{% set is_nested = true %}
+{% for name, value in hiddens %}
+	<input type="hidden" name="{{ name }}" value="{{ value }}"/>
+{% endfor %}
+
+<div{{attributes.removeClass('form-select').addClass(classes)}}>
+	{% set current_nesting_level = 0 %}
+	{% for child in children %}
+		{% set item = attribute(element, child) %}
+
+
+		{% set item = item|merge({
+  '#attributes': item['#attributes']|merge({
+    'class': (item['#attributes'].class|default([]))|merge([
+      child in selected ? 'active' : '',
+      '[.active]:text-orange [.active]:border-orange border-s border-transparent px-4 py-3 text-start text-lg text-[#6A7282] transition-all hover:border-orange hover:text-orange'
+    ])
+  })
+}) %}
+
+		{% set new_nesting_level = attribute(depth, child) ?? 0 %}
+		{% set delta = (current_nesting_level - new_nesting_level) |abs %}
+
+		{% if loop.first %}
+			<ul class="hidden gap-2 md:grid md:gap-4">
+			{% else %}
+				{% if delta %}
+					{% for i in 1..delta %}
+						{% if new_nesting_level > current_nesting_level %}
+							<ul>
+						{% else %}
+							</ul>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+
+			<li>
+				{{ item }}
+				{% if loop.last %}
+					{% for i in new_nesting_level..0 %}
+					</li>
+				</ul>
+			{% endfor %}
+		{% endif %}
+
+		{% set current_nesting_level = new_nesting_level %}
+	{% endfor %}
+</div>

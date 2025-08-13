@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 
 /**
@@ -67,10 +68,37 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
 }   
 
 
-// hook form altr
+/**
+ * Implements hook_form_alter().
+ *
+ * This function alters the exposed filter forms for the services view.
+ */
 function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
 
- 
+  // if ($form['#id'] === 'views-exposed-form-services-main-page') {
+  //   $url = Url::fromRoute('view.services.main_page', [], [
+  //     'fragment' => 'services',
+  //     // 'query' => \Drupal::request()->query->all(), // keep current query if needed
+  //   ]);
+  //   $form['#action'] = $url->toString();
+  
+  //   if (isset($form['keys'])) {
+  //     $form['keys']['#name'] = 'title'; // rename GET param
+  //   }
+  // }
+
+  // if ($form['#id'] === 'views-exposed-form-services-list') {
+  //   $url = Url::fromRoute('sharjah_dd.front', [], [
+  //     'fragment' => 'services',
+  //     // 'query' => \Drupal::request()->query->all(), // keep current query if needed
+  //   ]);
+  //   $form['#action'] = $url->toString();
+  
+  //   if (isset($form['keys'])) {
+  //     $form['keys']['#name'] = 'title'; // rename GET param
+  //   }
+  // }
+  
 }
 

@@ -83,7 +83,41 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
         'image' => 'field_leadership_banner',
         'type' => 'leadership_message',
       ],
-
+      'view.services.main_page' => [
+        'title' => 'field_featured_solutions',
+        'image' => 'field_leadership_banner',
+        'type' => 'services',
+      ],
+      'view.faqs.list' => [
+        'title' => 'field_featured_solutions',
+        'image' => 'field_leadership_banner',
+        'type' => 'faqs',
+      ],
+      // initiatives
+      'view.initiatives.grid' => [
+        'title' => 'field_featured_solutions',
+        'image' => 'field_leadership_banner',
+        'type' => 'initiatives',
+      ],
+      
+         // publications_reports
+         'view.publications_reports.grid' => [
+          'title' => 'field_featured_solutions',
+          'image' => 'field_leadership_banner',
+          'type' => 'publications_reports',
+        ],
+        // regulations
+        'view.regulations.grid' => [
+          'title' => 'field_featured_solutions',
+          'image' => 'field_leadership_banner',
+          'type' => 'regulations',
+        ],
+// news main_page
+'view.news.main_page' => [
+  'title' => 'field_featured_solutions',
+  'image' => 'field_leadership_banner',
+  'type' => 'news',
+],
     ];
 
     if ($routeName === 'entity.node.canonical') {
@@ -104,9 +138,13 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
           case 'our_strategy':
             $image_uri = $node->get('field_banner')->entity?->getFileUri() ?? '';
             $image = $image_uri ? ImageStyle::load('wide')->buildUrl($image_uri) : '';
-          
             $type = 'node:our_strategy';
             break;
+            case 'custom_page':
+              $image_uri = $node->get('field_banner')->entity?->getFileUri() ?? '';
+              $image = $image_uri ? ImageStyle::load('wide')->buildUrl($image_uri) : '';
+              $type = 'node:custom_page';
+              break;
       }
 
       $cacheTags = array_merge($cacheTags, $node->getCacheTags());

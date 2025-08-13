@@ -25,3 +25,11 @@ regions:
   sidebar_second: 'Sidebar second'
   footer: 'Footer'
 
+
+dependencies:
+  - drupal:jquery
+  - drupal:jquery_update
+  - drupal:jquery_ui
+  - drupal:jquery_ui_effects_core
+  - drupal:jquery_ui_effects_blind
+  - drupal:ajax

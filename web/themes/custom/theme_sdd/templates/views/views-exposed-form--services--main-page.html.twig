@@ -27,7 +27,7 @@
 	] %}
 
 <div {{attributes.addClass(classes)}} id="services">
-	{{ form|without('actions','keys') }}
+	{{ form|without('actions','keys','service_type') }}
 	{% set keys = form.keys %}
 	{% set keys = keys|merge({
   '#attributes': keys['#attributes']|merge({
@@ -38,9 +38,14 @@
 
 		{{ keys }}
 	</div>
+	{{ form.service_type}}
+
 	<div class="submit-reset hidden ">
 		{{ form.actions }}
 	</div>
-
-
 </div>
+
+
+<h2 class="mb-10 text-4xl">
+{{ 'Cloud'|t }} 
+</h2>

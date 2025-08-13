@@ -1,0 +1,9 @@
+<button class="faq-btn flex w-full items-center justify-between gap-3 text-start text-xl text-[#6A7282] transition-colors focus:outline-none">
+	<span class="faq-title">
+		{{ label|render|striptags|trim|raw }}
+	</span>
+	<span class="faq-icon text-2xl font-light">+</span>
+</button>
+<div class="faq-content mt-9 hidden leading-7 text-[#6A7282]">
+	{{ content.body|render|striptags|trim|raw }}
+</div>

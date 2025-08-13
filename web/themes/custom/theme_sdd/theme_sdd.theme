@@ -6,7 +6,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\file\Entity\File;
-
+use Drupal\Core\Form\FormStateInterface;
 
 
 
@@ -17,10 +17,10 @@ use Drupal\file\Entity\File;
 function theme_sdd_preprocess_node(array &$variables): void
 {
 
-  
+
   static $bg_classes = [
     'index-0',
-    'index-1', 
+    'index-1',
     'index-2'
   ];
   static $counter = 0;
@@ -30,114 +30,217 @@ function theme_sdd_preprocess_node(array &$variables): void
   $variables['count'] = $counter;
   $counter++;
 
-    $node = $variables['node'];  
-    $bundle = $node->bundle();
+  $node = $variables['node'];
+  $bundle = $node->bundle();
 
-    $title = $node->getTitle();
-    $short_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 55, true, true);
-    $medium_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 70, true, true);
-    $shortened_title = Unicode::truncate(strip_tags(string: preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 30, true, true);
+  $title = $node->getTitle();
+  $body  = $node->hasField('body') ? $node->get('body')->value : '';
 
-    $variables['short_label'] = $short_label;
-    $variables['medium_label'] = $medium_label;
-    $variables['shortened_title'] = $shortened_title;
+  $short_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 55, true, true);
+  $medium_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 70, true, true);
+  $shortened_title = Unicode::truncate(strip_tags(string: preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 30, true, true);
+  $body_short = Unicode::truncate($body ?? '', 190, true, true);
 
+  $bundles = ['regulations', 'publications_reports','leadership_message'];
+  
+  if (in_array($node->bundle(), $bundles, true) && !$node->get('field_attachment')->isEmpty()) {
+    $gen = \Drupal::service('file_url_generator');
+    $attachments = [];
+    foreach ($node->get('field_attachment') as $item) {
+      if ($file = $item->entity) {
+        $attachments[] = [
+          'url'  => $gen->generateAbsoluteString($file->getFileUri()),
+          'label' => 'PDF (' . format_size($file->getSize()) . ')',
+        ];
+      }
+    }
+    $variables['attachments'] = $attachments;
+  }
+  
+  $variables['short_label'] = $short_label;
+  $variables['medium_label'] = $medium_label;
+  $variables['shortened_title'] = $shortened_title;
+  $variables['body_short'] = $body_short;
+  
 }
 
 
-// hook add class to body
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+
 function theme_sdd_preprocess_html(array &$variables): void
 {
-    $variables['attributes']['class'][] = 'font-sdd';
+  // load current page machine name
+  $route_match = \Drupal::routeMatch();
+  $route_name = $route_match->getRouteName();
+  $node       = $route_match->getParameter('node');
+  $variables['attributes']['class'][] = 'font-sdd';
+
+  $bundles_with_white_bg = ['custom_page', 'regulations', 'publications_reports'];
+  if (
+    $route_name === 'view.faqs.list'
+    || ($node instanceof \Drupal\node\NodeInterface && in_array($node->bundle(), $bundles_with_white_bg, true))
+  ) {
+    $variables['attributes']['class'][] = '!bg-white';
+  }
+
 }
 
 
+/**
+ * Implements hook_form_views_exposed_form_alter().
+ *
+ * This function alters the exposed filter forms for the services view.
+ */
+function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  // dd($form['#id'])  ;
+  if (
+    isset($form['#id']) &&
+    $form['#id'] === 'views-exposed-form-services-list' ||  $form['#id'] === "views-exposed-form-services-main-page"
+  ) {
+    if (isset($form['service_type'])) {
+      // Add class to the entire BEF link list.
+      $form['service_type']['#attributes']['class'][] = 'bef-taxonomy-links';
 
-function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-    if (
-      isset($form['#id']) &&
-      $form['#id'] === 'views-exposed-form-services-list'
-    ) {
-      if (isset($form['service_type'])) {
-        // Add class to the entire BEF link list.
-        $form['service_type']['#attributes']['class'][] = 'bef-taxonomy-links';
-  
-        // Add class to each term link.
-        foreach ($form['service_type']['#options'] as $tid => $label) {
-          if (!empty($tid)) {
+      // Add class to each term link.
+      foreach ($form['service_type']['#options'] as $tid => $label) {
+        if (!empty($tid)) {
 
-            if ($label ===  "- Any -") {
-              $form['service_type']['#options'][$tid] = t('All');
-            }
-          
+          if ($label ===  "- Any -") {
+            $form['service_type']['#options'][$tid] = t('All');
           }
         }
       }
     }
   }
   
+  if (isset($form['#id']) && $form['#id'] === "views-exposed-form-faqs-list") {
 
-  function theme_sdd_preprocess_bef_links(array &$variables) {
-    
-    if (!empty($variables['element']['#name']) && $variables['element']['#name'] === 'service_type') {
-      foreach ($variables['children'] as $key => $child) {
-        $element = &$variables['element'][$child];
-        if (isset($element['#url']) && $element['#url'] instanceof \Drupal\Core\Url) {
-          $element['#url']->setOption('fragment', 'services');
-        }
+    // Your taxonomy exposed filter element.
+    $el_name = isset($form['field_select_type_target_id']) ? 'field_select_type_target_id' : null;
+    if (!$el_name || empty($form[$el_name]['#options']) || !is_array($form[$el_name]['#options'])) {
+      return;
+    }
 
+    // Classes on the widget (and wrapper for good measure).
+    $form[$el_name]['#attributes']['class'][] = 'bef-taxonomy-links';
+    $form[$el_name]['#attributes']['class'][] = 'hello-world';
+    $form[$el_name]['#wrapper_attributes']['class'][] = 'faq-filter';
+
+    // Rename "- Any -" to "All".
+    foreach ($form[$el_name]['#options'] as $k => $label) {
+      if ($label === '- Any -') {
+        $form[$el_name]['#options'][$k] = t('All');
       }
     }
-  
+
+    // Collect tids from options.
+    $option_keys = array_keys($form[$el_name]['#options']);
+    $tids = array_values(array_filter($option_keys, 'is_numeric'));
+    if (!$tids) {
+      return;
+    }
+
+    // Build counts per term (published, correct bundle, in vocab "faqs").
+    $db = \Drupal::database();
+    $input = $form_state->getUserInput();
+    $bundle = 'faqs';           // <-- change if your FAQ node bundle differs
+    $vocab  = 'faqs';          // taxonomy vocabulary machine name
+
+    $q = $db->select('taxonomy_index', 'ti')
+      ->fields('ti', ['tid'])
+      ->groupBy('ti.tid');
+    $q->join('taxonomy_term_field_data', 'ttfd', 'ttfd.tid = ti.tid AND ttfd.vid = :vid', [':vid' => $vocab]);
+    $q->join('node_field_data', 'n', 'n.nid = ti.nid');
+    $q->condition('n.status', 1)
+      ->condition('n.type', $bundle)
+      ->condition('ti.tid', $tids, 'IN');
+    $q->addExpression('COUNT(DISTINCT n.nid)', 'cnt');
+
+    // Respect other exposed filters (example: text search field).
+    if (!empty($input['keys'])) {
+      $q->condition('n.title', '%' . $db->escapeLike($input['keys']) . '%', 'LIKE');
+    }
+    if (!empty($input['title'])) { // if you renamed it to 'title'
+      $q->condition('n.title', '%' . $db->escapeLike($input['title']) . '%', 'LIKE');
+    }
+
+    // IMPORTANT: do not apply the taxonomy filter itself here.
+
+    $counts = $q->execute()->fetchAllKeyed(0, 1); // tid => cnt
+
+    // Append counts to option labels.
+    foreach ($form[$el_name]['#options'] as $tid => $label) {
+      if (is_numeric($tid)) {
+        $form[$el_name]['#options'][$tid] = $label . ' (' . (int) ($counts[$tid] ?? 0) . ')';
+      }
+    }
   }
+}
+/**
+ * Implements hook_preprocess_bef_links().
+ *
+ * This function modifies the BEF links to ensure they point to the correct
+ * fragment on the page.
+ */
+
+function theme_sdd_preprocess_bef_links(array &$variables)
+{
+
+  if (!empty($variables['element']['#name']) && $variables['element']['#name'] === 'service_type') {
+    foreach ($variables['children'] as $key => $child) {
+      $element = &$variables['element'][$child];
+      if (isset($element['#url']) && $element['#url'] instanceof \Drupal\Core\Url) {
+        $element['#url']->setOption('fragment', 'services');
+      }
+    }
+  }
+}
 
 
-
-
-  /**
+/**
  * Implements hook_preprocess_links__language_block()
  */
 function theme_sdd_preprocess_links__language_block(&$variables)
 {
-    $current_langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    if (isset($variables['links'][$current_langcode])) {
-        unset($variables['links'][$current_langcode]);
-    }
+  $current_langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if (isset($variables['links'][$current_langcode])) {
+    unset($variables['links'][$current_langcode]);
+  }
 
 
-    foreach ($variables['links'] as $i => &$link) {
-        /**
-         * @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage
-         */
-        $linkLanguage = $link['link']['#options']['language'];
-        $text = $linkLanguage->getId() === 'ar' ? 'AR' : ($linkLanguage->getId() === 'en' ? 'EN' : $linkLanguage->getName());
-        $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
-        $full_path =  $theme_path . '/images/language.svg';
-        $lang_icon = file_get_contents($full_path);
+  foreach ($variables['links'] as $i => &$link) {
+    /**
+     * @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage
+     */
+    $linkLanguage = $link['link']['#options']['language'];
+    $text = $linkLanguage->getId() === 'ar' ? 'AR' : ($linkLanguage->getId() === 'en' ? 'EN' : $linkLanguage->getName());
+    $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
+    $full_path =  $theme_path . '/images/language.svg';
+    $lang_icon = file_get_contents($full_path);
 
-        $link['link']['#title'] = [
-            '#type' => 'inline_template',
-            '#template' => '{{ svg|raw }} <span>{{ text|raw }}</span>',
-            '#context' => [
-                'text' => $text,
-                'svg' =>  $lang_icon,
+    $link['link']['#title'] = [
+      '#type' => 'inline_template',
+      '#template' => '{{ svg|raw }} <span>{{ text|raw }}</span>',
+      '#context' => [
+        'text' => $text,
+        'svg' =>  $lang_icon,
 
-            ],
-        ];
+      ],
+    ];
 
-        $link['link']['#options']['attributes']['class'][] = 'language-switcher';
-    }
+    $link['link']['#options']['attributes']['class'][] = 'language-switcher';
+  }
 }
-
-
-
-
 
 /**
  * Implements hook_preprocess_paragraph().
  */
-function theme_sdd_preprocess_paragraph(array &$variables) {
-  
+function theme_sdd_preprocess_paragraph(array &$variables)
+{
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
 

@@ -1,0 +1,29 @@
+uuid: 19192526-6d16-49ab-94dc-baf1ff0f5c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - system
+    - views
+  theme:
+    - theme_sdd
+id: theme_sdd_views_block__services_digital_platform_block
+theme: theme_sdd
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:services-digital_platform_block'
+settings:
+  id: 'views_block:services-digital_platform_block'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /services
