@@ -30,56 +30,10 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-    'view',
-    'view-' ~ id|clean_class,
-    'view-id-' ~ id,
-    'view-display-id-' ~ display_id,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'py-10',
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
+
           <section class="py-16 bg-white group/layout section-layout grid ">
       <div class="container mx-auto px-4">
 
-        <div class="flex justify-between flex-col-reverse gap-6 md:flex-row md:items-center mb-12">
-          <div class="flex gap-5  flex-grow-1 items-center flex-col md:flex-row ">
-            <input
-              class="  h-[52px] w-full rounded-sm border border-[#D4D4D8] bg-[#fff] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]  md:max-w-[333px]"
-              type="search"
-              placeholder="Search"
-              name
-              id />
-            <select
-              name
-              id
-              class="h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2">
-              <option value>Latest to oldest</option>
-            </select>
-
-            <select
-              name
-              id
-              class="h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2">
-              <option value> 2025</option>
-            </select>
-          </div>
-          <div class="flex items-center justify-end   gap-6">
-
-            <button class="chnage-layout text-[#898989] [.active]:text-orange" data-layout="list"> 
-              <i
-                class="fa-solid fa-list  text-2xl"></i>
-            </button>
-
-            <button class="chnage-layout text-[#898989] [.active]:text-orange active" data-layout="grid"> 
-              <i
-                class="fa-solid fa-grid-2    text-2xl"></i>
-            </button>
-
-          </div>
-        </div>
   {{ title_prefix }}
   {% if title %}
     {{ title }}
@@ -133,6 +87,5 @@
     </div>
   {% endif %}
 </div>
-</div>
+
 </section>
-</div>

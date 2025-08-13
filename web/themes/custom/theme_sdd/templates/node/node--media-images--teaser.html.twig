@@ -1,0 +1,21 @@
+<div class="mb-8 w-full">
+	<div class="image relative mb-8 h-[310px]">
+		<div class="absolute -top-[10px] left-0 right-0 z-[-1] mx-auto h-full w-full max-w-[calc(100%-20px)] rounded-md bg-[#BDBDBD]"></div>
+		<div class="absolute -top-[20px] left-0 right-0 z-[-2] mx-auto h-full w-full max-w-[calc(100%-40px)] rounded-md bg-[#EBEBEB]"></div>
+
+		{{ content.field_banner }}
+
+		<div class="absolute start-6 top-6 flex items-center gap-2 rounded-full border border-[#D4D4D8] bg-white px-3 py-1">
+			<i class="fa-solid fa-image"></i>
+			<span>10 ITEMS</span>
+		</div>
+	</div>
+
+	<h3 class="mb-4 text-2xl transition-all group-hover/media:text-orange">
+		{{ short_label }}
+	</h3>
+	<div class="flex items-center gap-2">
+		<i class="fa fa-calendar text-[#99A1AF]"></i>
+		<span>{{ node.getCreatedTime()|format_date('olivero_medium') }}</span>
+	</div>
+</div>

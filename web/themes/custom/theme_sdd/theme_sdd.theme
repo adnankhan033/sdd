@@ -84,6 +84,11 @@ function theme_sdd_preprocess_html(array &$variables): void
   ) {
     $variables['attributes']['class'][] = '!bg-white';
   }
+  // add current path to body class
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $variables['attributes']['class'][] = 'path-' . str_replace('/', '-', trim($current_path_alias, '/'));
+  
 
 }
 
@@ -178,6 +183,32 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
       }
     }
   }
+
+  
+  // if ($form['#id'] === 'views-exposed-form-news-main-page') {
+  //   if (isset($form['field_year_value'])) {
+  //     $form['field_year_value']['#type'] = 'select';
+  //     $form['field_year_value']['#attributes']['class'][] = 'h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2';
+  //     // remove size 
+  //     unset($form['field_year_value']['#size']);
+  //     // Start with the default "- Any -" option.
+  //     $options = ['' => t('- All -')];
+
+  //     // Get current year.
+  //     $current_year = date('Y');
+
+  //     // Generate years from 2000 to current year (descending order).
+  //     for ($year = $current_year; $year >= 2000; $year--) {
+  //       $options[$year] = (string) $year;
+  //     }
+
+  //     $form['field_year_value']['#options'] = $options;
+  //     $form['field_year_value']['#empty_option'] = t('- All -');
+  //   }
+  
+  // }
+
+
 }
 /**
  * Implements hook_preprocess_bef_links().
@@ -264,3 +295,5 @@ function theme_sdd_preprocess_paragraph(array &$variables)
   $variables['description_full']  = $description;
   $variables['description_short'] = Unicode::truncate($clean($description), 150, true, true);
 }
+
+
