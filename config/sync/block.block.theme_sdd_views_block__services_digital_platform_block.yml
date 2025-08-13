@@ -12,7 +12,7 @@ dependencies:
 id: theme_sdd_views_block__services_digital_platform_block
 theme: theme_sdd
 region: content
-weight: -5
+weight: -6
 provider: null
 plugin: 'views_block:services-digital_platform_block'
 settings:
@@ -20,10 +20,11 @@ settings:
   label: ''
   label_display: '0'
   provider: views
+  context_mapping: {  }
   views_label: ''
   items_per_page: none
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /services
+    pages: "/services\r\n/Platforms"

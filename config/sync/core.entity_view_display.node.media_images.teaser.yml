@@ -1,0 +1,66 @@
+uuid: b6a7cecb-419f-4b65-ab04-c61c3792fdd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.media_images.body
+    - field.field.node.media_images.field_banner
+    - field.field.node.media_images.field_sh_images
+    - node.type.media_images
+  module:
+    - svg_image
+    - text
+    - user
+id: node.media_images.teaser
+targetEntityType: node
+bundle: media_images
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_banner:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'h-full w-full rounded-md object-cover'
+    weight: 1
+    region: content
+  field_sh_images:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

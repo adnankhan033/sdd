@@ -69,6 +69,7 @@ module:
   user: 0
   vch: 0
   views_ui: 0
+  yearonly: 0
   content_translation: 10
   views: 10
   form_mode_manager: 11

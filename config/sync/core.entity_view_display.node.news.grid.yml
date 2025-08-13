@@ -1,8 +1,9 @@
-uuid: bda990d8-972d-453b-a489-05b89b8a84f2
+uuid: 6f8f8518-87ba-4cad-95bd-5a2f9f97fed0
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.grid
     - field.field.node.news.body
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
@@ -15,11 +16,10 @@ dependencies:
     - svg_image
     - text
     - user
-    - yearonly
-id: node.news.default
+id: node.news.grid
 targetEntityType: node
 bundle: news
-mode: default
+mode: grid
 content:
   body:
     type: text_default
@@ -33,10 +33,16 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: ''
       image_loading:
-        attribute: eager
-    third_party_settings: {  }
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: false
+    third_party_settings:
+      image_class:
+        class: 'h-full w-full rounded-sm object-cover'
     weight: -1
     region: content
   field_sh_date:
@@ -62,15 +68,8 @@ content:
       svg_render_as_image: true
     third_party_settings:
       image_class:
-        class: 'w-full h-full object-cover'
+        class: 'h-full w-full rounded-sm object-cover'
     weight: 103
-    region: content
-  field_year:
-    type: yearonly_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 104
     region: content
   links:
     settings: {  }
@@ -78,4 +77,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_year: true
   langcode: true

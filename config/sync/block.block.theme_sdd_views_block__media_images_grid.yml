@@ -1,24 +1,24 @@
-uuid: 94c2b3a1-cb7f-4685-a177-b8e039b013d0
+uuid: 0de40cf4-c44f-4155-9819-2f05272c7c55
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.leadership_message
+    - views.view.media_images
   module:
     - system
     - views
   theme:
     - theme_sdd
-id: theme_sdd_views_block__leadership_message_list
+id: theme_sdd_views_block__media_images_grid
 theme: theme_sdd
 region: content
-weight: -5
+weight: -2
 provider: null
-plugin: 'views_block:leadership_message-list'
+plugin: 'views_block:media_images-grid'
 settings:
-  id: 'views_block:leadership_message-list'
+  id: 'views_block:media_images-grid'
   label: ''
-  label_display: visible
+  label_display: '0'
   provider: views
   views_label: ''
   items_per_page: none
@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/media-kit\r\n/node/52"
+    pages: /media-center

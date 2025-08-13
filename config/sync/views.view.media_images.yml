@@ -1,0 +1,196 @@
+uuid: a8b3f2c2-b1c4-4a89-8a5e-b1504e28ab92
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.media_images
+  module:
+    - node
+    - user
+    - vch
+id: media_images
+label: 'Media Images'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Media Images'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            media_images: media_images
+      style:
+        type: clean_html_style
+        options:
+          row_class: 'group/media flex flex-col items-start justify-between'
+          uses_fields: false
+          wrapper_class: 'grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3'
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "    <div class=\"mb-10 flex flex-wrap items-center justify-between gap-8\">\r\n            <h2 class=\"text-4xl\">Multimedia Gallery</h2>\r\n\r\n            <a\r\n              href\r\n              class=\"group/btn relative inline-flex h-[51px] flex-shrink-0 rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange\"\r\n            >\r\n              <span class=\" \"> Discover more </span>\r\n\r\n              <span\r\n                class=\"absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange\"\r\n              >\r\n                <i\r\n                  class=\"fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white\"\r\n                ></i>\r\n              </span>\r\n            </a>\r\n          </div>"
+            format: full_html
+          tokenize: false
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  grid:
+    id: grid
+    display_title: 'Media Images Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+      block_description: 'Media Images Block'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

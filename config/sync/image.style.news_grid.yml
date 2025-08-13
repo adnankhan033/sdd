@@ -1,0 +1,15 @@
+uuid: 1f56a9e1-3778-48c5-9d7c-5cd83dbe14df
+langcode: en
+status: true
+dependencies: {  }
+name: news_grid
+label: 'News Grid (450*310)'
+effects:
+  98e895ec-8f5a-4d4c-a90a-a8e1e2501a24:
+    uuid: 98e895ec-8f5a-4d4c-a90a-a8e1e2501a24
+    id: image_scale
+    weight: 2
+    data:
+      width: 500
+      height: 500
+      upscale: true

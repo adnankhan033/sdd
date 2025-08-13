@@ -9,7 +9,7 @@ _core:
 id: theme_sdd_primary_admin_actions
 theme: theme_sdd
 region: content
-weight: -12
+weight: -13
 provider: null
 plugin: local_actions_block
 settings:

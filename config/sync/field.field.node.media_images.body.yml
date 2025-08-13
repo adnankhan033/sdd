@@ -1,0 +1,24 @@
+uuid: d3ed8aa1-f235-4e45-9caa-7a2ed82d2d6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.media_images
+  module:
+    - text
+id: node.media_images.body
+field_name: body
+entity_type: node
+bundle: media_images
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary
