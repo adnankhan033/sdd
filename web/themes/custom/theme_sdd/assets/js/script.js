@@ -21,6 +21,8 @@ if (document.querySelector('.heroswiper')) {
   });
 }
 
+
+
 if (document.querySelector('.Initiatives-swiper')) {
   var swiper = new Swiper('.Initiatives-swiper', {
     slidesPerView: 1.1,
@@ -30,6 +32,7 @@ if (document.querySelector('.Initiatives-swiper')) {
       delay: 4000,
       disableOnInteraction: false,
     },
+    
     breakpoints: {
       768: {
         spaceBetween: 54,
@@ -37,7 +40,36 @@ if (document.querySelector('.Initiatives-swiper')) {
     },
   });
 }
+if (document.querySelector('.swiperlogos')) {
 
+
+  var swiper = new Swiper(".swiperlogos", {
+    spaceBetween: 20,
+
+ 
+    breakpoints: {
+      768: {
+        slidesPerView: 2.5,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 5,
+      },
+    },
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+}
 if (document.querySelector('.aboutswiper')) {
   var swiper = new Swiper('.aboutswiper', {
     spaceBetween: 20,
@@ -56,6 +88,31 @@ if (document.querySelector('.aboutswiper')) {
       },
     },
   });
+}
+if (document.querySelector('.news-details')) {
+
+  var swiper = new Swiper(".news-details", {
+  spaceBetween: 16,
+  speed: 1500,
+  slidesPerView: 1,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+   
+  },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+
+  },
+});
+
 }
 
 const stickySection = document.getElementById('sticky-section');
@@ -262,3 +319,41 @@ document.getElementById('categorySelect')?.addEventListener('change', function (
   let value = this.value;
   document.querySelector(`[data-filter="${value}"]`)?.click();
 });
+
+
+$(document).on('click', '.chnage-layout', function () {
+
+  let data= $(this).data('layout');
+  $('.chnage-layout ').removeClass('active');
+  $(this).addClass('active'); 
+
+  $('.section-layout').removeClass('list grid');
+  $('.section-layout').addClass(data);
+ 
+
+
+
+});
+
+
+document.querySelectorAll('.video').forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const overlay = wrapper.querySelector('.videoOverlay');
+
+ 
+  video.controls = false;
+
+  overlay?.addEventListener('click', () => {
+    video.controls = true;
+    video.play();
+    overlay.style.display = 'none';
+  });
+
+ 
+   video?.addEventListener('ended', () => {
+    overlay.style.display = 'flex';
+    video.controls = false;
+  });
+});
+
+
