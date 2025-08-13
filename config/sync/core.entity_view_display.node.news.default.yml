@@ -6,10 +6,11 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
-    - image.style.wide
+    - field.field.node.news.field_sh_images
     - node.type.news
   module:
     - datetime
+    - image_class
     - svg_image
     - text
     - user
@@ -44,6 +45,23 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_sh_images:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'w-full h-full object-cover'
+    weight: 103
     region: content
   links:
     settings: {  }

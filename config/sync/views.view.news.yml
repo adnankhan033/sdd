@@ -181,3 +181,35 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  main_page:
+    id: main_page
+    display_title: 'News Page'
+    display_plugin: page
+    position: 1
+    display_options:
+      title: News
+      style:
+        type: clean_html_style
+        options:
+          row_class: 'group-[:not(.list)]/layout:mb-10 w-full group-[.list]/layout:flex-col md:group-[.list]/layout:flex-row  group-[.list]/layout:fle'
+          uses_fields: false
+          wrapper_class: 'flex group-[:not(.list)]/layout:flex-col  group-[.list]/layout:flex-col md:group-[.list]/layout:flex-row  group-[.list]/layout:g'
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      defaults:
+        title: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+      path: news
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

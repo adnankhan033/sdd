@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.list
     - core.entity_view_mode.node.teaser
     - node.type.leadership_message
   module:
@@ -169,6 +170,39 @@ display:
       display_description: ''
       display_extenders: {  }
       path: about/leadership-message
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  list:
+    id: list
+    display_title: ' Our Leadership Media kit Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Our Leadership'
+      style:
+        type: clean_html_style
+        options:
+          row_class: 'mb-5 flex flex-wrap items-center justify-between gap-7 rounded-xl border border-[#D4D4D8] px-4 py-9 md:px-7'
+          uses_fields: false
+          wrapper_class: ''
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: list
+      defaults:
+        title: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+      block_description: ' Our Leadership Media kit Block'
     cache_metadata:
       max-age: -1
       contexts:

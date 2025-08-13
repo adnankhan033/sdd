@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.initiatives_front
+    - core.entity_view_mode.node.teaser
     - node.type.initiatives
   module:
     - node
@@ -179,6 +180,63 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  grid:
+    id: grid
+    display_title: 'Initiatives Page'
+    display_plugin: page
+    position: 1
+    display_options:
+      title: Initiatives
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 6
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      style:
+        type: clean_html_style
+        options:
+          row_class: 'flex flex-col items-start justify-between'
+          uses_fields: false
+          wrapper_class: 'grid gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-3'
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        title: false
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+      path: initiatives
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

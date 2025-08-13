@@ -1,0 +1,27 @@
+uuid: 3e2efbbe-3602-466e-bde4-237030493bdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.leadership_message
+  module:
+    - file
+id: node.leadership_message.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: leadership_message
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

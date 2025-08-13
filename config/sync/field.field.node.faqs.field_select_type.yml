@@ -1,0 +1,29 @@
+uuid: b0658de8-5a65-4a90-a18f-d773948dc4cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_select_type
+    - node.type.faqs
+    - taxonomy.vocabulary.faqs
+id: node.faqs.field_select_type
+field_name: field_select_type
+entity_type: node
+bundle: faqs
+label: 'Select Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faqs: faqs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

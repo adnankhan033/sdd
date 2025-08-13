@@ -1,19 +1,17 @@
-uuid: b7385d51-8ee7-42d2-a455-36a38afbcd68
+uuid: 15508c46-afb3-4f8e-9220-07b68a825cb6
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.project
-    - taxonomy.vocabulary.projects
+    - taxonomy.vocabulary.services
   module:
     - better_exposed_filters
     - node
     - taxonomy
     - user
-    - vch
-id: most_popular_projects
-label: 'Most Popular Projects'
+id: test
+label: TEst
 module: views
 description: ''
 tag: ''
@@ -26,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Most Popular Projects'
+      title: TEst
       fields:
         title:
           id: title
@@ -76,10 +74,24 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: mini
         options:
           offset: 0
-          items_per_page: 5
+          pagination_heading_level: h4
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: bef
         options:
@@ -91,14 +103,14 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
           text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
+          text_input_required_format: full_html
           bef:
             general:
               autosubmit: true
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_textfield_minimum_length: 3
-              autosubmit_hide: true
+              autosubmit_hide: false
               input_required: false
               allow_secondary: false
               secondary_label: 'Advanced options'
@@ -106,7 +118,7 @@ display:
               reset_button_always_show: false
             filter:
               field_select_type_target_id:
-                plugin_id: bef_links
+                plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
@@ -116,7 +128,6 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                   hide_label: false
-                select_all_none: false
       access:
         type: perm
         options:
@@ -124,20 +135,7 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'Result not found!'
-            format: basic_html
-          tokenize: false
+      empty: {  }
       sorts:
         created:
           id: created
@@ -168,15 +166,6 @@ display:
           group: 1
           expose:
             operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            project: project
         field_select_type_target_id:
           id: field_select_type_target_id
           table: node__field_select_type
@@ -191,7 +180,7 @@ display:
           exposed: true
           expose:
             operator_id: field_select_type_target_id_op
-            label: ''
+            label: 'Select Type (field_select_type)'
             description: ''
             use_operator: false
             operator: field_select_type_target_id_op
@@ -220,17 +209,13 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: projects
+          vid: services
           type: select
           hierarchy: false
           limit: true
           error_message: true
       style:
-        type: clean_html_style
-        options:
-          row_class: 'element-item residential'
-          uses_fields: false
-          wrapper_class: 'grid grid-5'
+        type: default
       row:
         type: 'entity:node'
         options:
@@ -244,7 +229,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      use_ajax: false
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -254,87 +239,18 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  list:
-    id: list
-    display_title: 'Most Popular Projects'
-    display_plugin: block
-    position: 1
-    display_options:
-      style:
-        type: clean_html_style
-        options:
-          row_class: ''
-          uses_fields: false
-          wrapper_class: 'grid grid-5'
-      row:
-        type: 'entity:node'
-        options:
-          view_mode: teaser
-      defaults:
-        style: false
-        row: false
-      display_description: ''
-      display_extenders: {  }
-      block_description: 'Most Popular Projects'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  page_grid:
-    id: page_grid
-    display_title: 'All projects'
+  page_1:
+    id: page_1
+    display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      title: 'All projects'
-      pager:
-        type: full
-        options:
-          offset: 0
-          pagination_heading_level: h4
-          items_per_page: 10
-          total_pages: null
-          id: 0
-          tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
-      style:
-        type: clean_html_style
-        options:
-          row_class: 'element-item residential col-md-4  pb-5'
-          uses_fields: false
-          wrapper_class: row
-      row:
-        type: 'entity:node'
-        options:
-          view_mode: teaser
-      defaults:
-        title: false
-        pager: false
-        style: false
-        row: false
-      display_description: ''
       display_extenders: {  }
-      path: projects
+      path: test
     cache_metadata:
       max-age: -1
       contexts:

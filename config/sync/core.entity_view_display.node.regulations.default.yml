@@ -1,0 +1,48 @@
+uuid: a35ca0d7-bf0b-458c-847d-c37ae1959c84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.regulations.body
+    - field.field.node.regulations.field_attachment
+    - field.field.node.regulations.field_reg_select_type
+    - node.type.regulations
+  module:
+    - file
+    - options
+    - text
+    - user
+id: node.regulations.default
+targetEntityType: node
+bundle: regulations
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_reg_select_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

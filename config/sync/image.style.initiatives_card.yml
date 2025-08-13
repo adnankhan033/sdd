@@ -1,0 +1,14 @@
+uuid: 02640314-d00f-4857-bcd0-54b31795d3ff
+langcode: en
+status: true
+dependencies: {  }
+name: initiatives_card
+label: 'Initiatives card'
+effects:
+  770217c0-566a-471d-874c-fd8cab8d654f:
+    uuid: 770217c0-566a-471d-874c-fd8cab8d654f
+    id: image_resize
+    weight: 2
+    data:
+      width: 488
+      height: 310

@@ -1,0 +1,18 @@
+uuid: b99a882b-f941-4509-8af3-c15af7413eb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Regulations
+type: regulations
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

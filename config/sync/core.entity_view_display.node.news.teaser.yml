@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
+    - field.field.node.news.field_sh_images
     - node.type.news
   module:
     - datetime
@@ -52,4 +53,5 @@ content:
     weight: 1
     region: content
 hidden:
+  field_sh_images: true
   langcode: true

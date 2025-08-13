@@ -1,0 +1,21 @@
+uuid: 77696f9b-cd53-4ac3-a7fd-848538ee7a45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reg_select_type
+    - node.type.regulations
+  module:
+    - options
+id: node.regulations.field_reg_select_type
+field_name: field_reg_select_type
+entity_type: node
+bundle: regulations
+label: 'Select type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

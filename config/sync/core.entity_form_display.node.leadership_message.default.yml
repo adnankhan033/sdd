@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.leadership_message.body
+    - field.field.node.leadership_message.field_attachment
     - field.field.node.leadership_message.field_designation
     - field.field.node.leadership_message.field_dm_name
     - field.field.node.leadership_message.field_image
     - image.style.thumbnail
     - node.type.leadership_message
   module:
+    - file
     - path
     - svg_image
     - text
@@ -33,6 +35,13 @@ content:
     weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_attachment:
+    type: file_generic
+    weight: 10
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_designation:
     type: string_textfield

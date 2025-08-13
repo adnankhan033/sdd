@@ -1,0 +1,14 @@
+uuid: 0bfc23e9-f6c2-4e4e-8929-447eae7d90df
+langcode: en
+status: true
+dependencies: {  }
+name: publication_icon
+label: 'Publication Icon (65*59)'
+effects:
+  461f215f-ad8c-4671-a5e7-54ee57ad33e1:
+    uuid: 461f215f-ad8c-4671-a5e7-54ee57ad33e1
+    id: image_resize
+    weight: 1
+    data:
+      width: 56
+      height: 59

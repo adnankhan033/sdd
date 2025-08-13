@@ -10,9 +10,10 @@ dependencies:
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
     - field.field.node.initiatives.field_year_of_delivery
-    - image.style.medium
+    - image.style.initiatives_card
     - node.type.initiatives
   module:
+    - image_class
     - svg_image
     - text
     - user
@@ -27,38 +28,61 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 3
+    region: content
+  field_annual_carbon_removal:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: content
-      image_style: medium
+      image_style: initiatives_card
       image_loading:
         attribute: lazy
       svg_attributes:
-        width: null
-        height: null
+        width: 424
+        height: 310
       svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'h-full w-full rounded-sm object-cover'
+    weight: 0
+    region: content
+  field_sh_highlights:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: -1
+    weight: 6
     region: content
   field_tags:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 1
+    region: content
+  field_year_of_delivery:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
-  field_annual_carbon_removal: true
-  field_sh_highlights: true
-  field_year_of_delivery: true
   langcode: true

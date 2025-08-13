@@ -5,12 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.leadership_message.body
+    - field.field.node.leadership_message.field_attachment
     - field.field.node.leadership_message.field_designation
     - field.field.node.leadership_message.field_dm_name
     - field.field.node.leadership_message.field_image
     - image.style.wide
     - node.type.leadership_message
   module:
+    - file
     - image_class
     - svg_image
     - text
@@ -27,6 +29,14 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_designation:
     type: string

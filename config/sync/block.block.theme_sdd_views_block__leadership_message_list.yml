@@ -1,0 +1,29 @@
+uuid: 94c2b3a1-cb7f-4685-a177-b8e039b013d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.leadership_message
+  module:
+    - system
+    - views
+  theme:
+    - theme_sdd
+id: theme_sdd_views_block__leadership_message_list
+theme: theme_sdd
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:leadership_message-list'
+settings:
+  id: 'views_block:leadership_message-list'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/media-kit\r\n/node/52"

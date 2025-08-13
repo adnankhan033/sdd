@@ -1,0 +1,27 @@
+uuid: 7237a4f2-dad1-40f7-a24d-987ba381d500
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pr_select_type
+field_name: field_pr_select_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sharjah_digital_department
+      label: 'Sharjah Digital Department'
+    -
+      value: sharjah_cyber_security
+      label: 'Sharjah Cyber Security'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

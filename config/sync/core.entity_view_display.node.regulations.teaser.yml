@@ -1,0 +1,50 @@
+uuid: a41aa857-2bf1-4a6b-aa1e-c030355ea9f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.regulations.body
+    - field.field.node.regulations.field_attachment
+    - field.field.node.regulations.field_reg_select_type
+    - node.type.regulations
+  module:
+    - file
+    - options
+    - text
+    - user
+id: node.regulations.teaser
+targetEntityType: node
+bundle: regulations
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_reg_select_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

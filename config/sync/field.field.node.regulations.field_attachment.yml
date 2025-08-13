@@ -1,0 +1,27 @@
+uuid: 48a19aca-87bf-4b1c-97f1-afeb28d51eaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.regulations
+  module:
+    - file
+id: node.regulations.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: regulations
+label: Attachment
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

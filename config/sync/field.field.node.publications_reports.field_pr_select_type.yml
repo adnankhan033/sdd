@@ -1,0 +1,21 @@
+uuid: 0cc6e4b9-f9fb-4462-92db-7bc5d693e8fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pr_select_type
+    - node.type.publications_reports
+  module:
+    - options
+id: node.publications_reports.field_pr_select_type
+field_name: field_pr_select_type
+entity_type: node
+bundle: publications_reports
+label: 'Select type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
