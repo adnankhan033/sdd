@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a webform submission form.
+ *
+ * Available variables:
+ * - form: The webform submission form.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<section class="md:py-16 py-12">
+	<div class="container mx-auto px-4">
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+			<div class="border border-[#D4D4D8] md:!p-6 py-6 px-4 rounded-xl">
+				<div class="md:mb-[30px] mb-4 md:text-[30px]">
+					<i class="fa-solid fa-clock text-[#4A5565]"></i>
+				</div>
+				<h6 class="mb-1">{{ "Working Hours"|t }}</h6>
+				<p class="text-sm text-[#6A7282]">{{ contact_info.working_hours.working_field1 }}</p>
+				<p class="text-sm text-[#6A7282]">
+					{{ contact_info.working_hours.working_field2 }}</p>
+			</div>
+
+			<div class="border border-[#D4D4D8] md:!p-6 py-6 px-4 rounded-xl">
+				<div class="md:mb-[30px] mb-4 md:text-[30px]">
+					<i class="fa-solid fa-location-dot text-[#4A5565]"></i>
+				</div>
+				<h6 class="mb-1">
+					{{ "Address"|t }}</h6>
+				<a class="flex items-center gap-1  text-sm">
+					<span>{{ contact_info.addresses.0 }}
+					</span>
+					<i class="fa-light fa-arrow-up-right"></i>
+				</a>
+				<a class="flex items-center gap-1 text-sm">
+
+					<span>{{ contact_info.addresses.1 }}</span>
+					<i class="fa-light fa-arrow-up-right "></i>
+				</a>
+			</div>
+
+			<div class="border border-[#D4D4D8] md:!p-6 py-6 px-4 rounded-xl">
+				<div class="md:mb-[30px] mb-4 md:text-[30px]">
+					<i class="fa-solid fa-phone text-[#4A5565]"></i>
+				</div>
+				<h6 class="mb-1">{{ "Phone number"|t }}</h6>
+				<a class="text-[#6A7282] text-sm" href="tel:+971-800-0000">
+					<span>
+						{{ contact_info.phone }}</span>
+				</a>
+			</div>
+
+			<div class="border border-[#D4D4D8] md:!p-6 py-6 px-4 rounded-xl">
+				<div class="md:mb-[30px] mb-4 md:text-[30px]">
+					<i class="fa-solid fa-envelope text-[#4A5565]"></i>
+				</div>
+				<h6 class="mb-1">
+					{{"Email us"|t }}</h6>
+				<a class="text-orange underline text-sm" href="tel:+971-800-0000">
+					{{ contact_info.email }}
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="md:py-16 py-12 bg-[#F3F4F6]">
+	<div class="container mx-auto px-4">
+		<div>
+			<h3 class="text-4xl mb-5">{{"Get in touch"|t }}</h3>
+		</div>
+		<div class="grid md:grid-cols-[1fr_2fr] gap-5">
+			<div class="h-[190px] md:h-auto">
+				<img class="w-full h-full object-cover" src="{{ contact_info.form_image }}" alt="{{ "contact us"|t }}">
+			</div>
+			<div class="bg-white md:p-14 p-4">
+				{{ form }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% if drupal_block('looking_digital_service_block')|length > 0 %}
+		{{ drupal_block('looking_digital_service_block') }}
+	{% endif %}

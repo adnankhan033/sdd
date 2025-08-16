@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+
+
+
+	
+			{% if rows %}
+   <section class="py-16  ">
+        <div class="container mx-auto px-4">
+
+          <h2 class="text-4xl mb-8">Service Providers</h2>
+
+          <div class="swiper swiperlogos">
+            <div class="swiper-wrapper">
+				{{ rows }}
+
+            </div>
+
+            <div class="flex items-center gap-8 mt-8">
+
+              <div
+                class="swiper-pagination w-[clac(100%_-40px)] !static !bottom-0 !top-auto !h-0.5 !bg-[#BDBDBD]"></div>
+
+              <div class="relative flex gap-4">
+                <div class="swiper-button-prev !static  !m-0 after:!hidden">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.85156 13.4168L2.3432 7.99909C3.72483 6.64402 6.4699 3.93644 7.85157 2.58134L8.54672 3.25402C7.30386 4.47271 5.65991 6.09658 4.2095 7.52091L13.1786 7.52087L13.1786 8.47741L4.20948 8.47743L8.54672 12.7368L7.85156 13.4168Z"
+                      fill="black" />
+                  </svg>
+
+                </div>
+                <div class="swiper-button-next !static !m-0 after:!hidden">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.14844 13.4168L13.6568 7.99909C12.2752 6.64402 9.5301 3.93644 8.14843 2.58134L7.45328 3.25402C8.69614 4.47271 10.3401 6.09658 11.7905 7.52091L2.82142 7.52087L2.82141 8.47741L11.7905 8.47743L7.45328 12.7368L8.14844 13.4168Z"
+                      fill="#353535" />
+                  </svg>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+			{% endif %}
+			

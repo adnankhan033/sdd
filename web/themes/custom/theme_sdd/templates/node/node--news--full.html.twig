@@ -1,0 +1,96 @@
+<section class="bg-[#353535] py-6">
+	<div class="container mx-auto px-4">
+
+		<ul class="text-white text-lg divide-y-[1px] md:divide-y-0  divide-[#CACACA]/20  gap-4  flex-col md:flex-row flex md:items-center md:gap-7">
+			<li class="flex items-center gap-2.5   [&:not(:last-child)]:pb-4 md:!p-0">
+				<i class="fa fa-calendar "></i>
+				<p>
+                	{{ node.getCreatedTime()|format_date('olivero_medium') }}
+                </p>
+			</li>
+
+			<li class="flex items-center gap-2.5  [&:not(:last-child)]:pb-4 md:!p-0">
+				<i class="fa fa-layer-group "></i>
+				<p>
+                {% if content.field_tags['#items'] is not empty %}
+  {% for tag in content.field_tags['#items'] %}
+    {{ tag.entity.label }}{% if not loop.last %}, {% endif %}
+  {% endfor %}
+{% endif %}
+                {# News, Gitex24 #}
+                </p>
+			</li>
+		</ul>
+
+	</div>
+</section>
+
+
+{% if content.field_sh_images['#items'] is defined %}
+
+	<section>
+		<div class="swiper news-details">
+			<div class="swiper-wrapper">
+
+				{% for item in content.field_sh_images['#items'] %}
+					{% set uri = item.entity.uri.value %}
+
+					{# Render the image using Drupal's image function #}
+					{% set images =  drupal_image(uri) %}
+
+
+					<div class="swiper-slide">
+						<div class="image w-full h-full">
+							<div class="absolute top-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_14.58%,rgba(0,0,0,0.4)_62.02%)]"></div>
+							{{ drupal_image(uri, 'wide', {
+            class: ['w-full h-full object-cover news-details-image'],
+            alt: item.alt|default('')|e,
+            loading: 'lazy',
+            }) }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="absolute md:bottom-12 bottom-4 text-white start-0 md:start-auto mx-auto max-w-max end-0 md:end-12 z-1">
+				<div class="relative flex items-center gap-5">
+					<div class="swiper-button-prev !static text-white !m-0 !w-10 !h-10 md:!w-[73px] md:!h-[73px] rounded-full flex items-center justify-center after:hidden border border-white flex-shrink-0">
+						<svg class="!w-3 !h-3" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6.35156 10.9177L0.843197 5.49994C2.22483 4.14487 4.9699 1.43729 6.35157 0.0821907L7.04672 0.754871C5.80386 1.97356 4.15991 3.59743 2.7095 5.02176L11.6786 5.02172L11.6786 5.97826L2.70948 5.97828L7.04672 10.2377L6.35156 10.9177Z" fill="white"/>
+						</svg>
+
+					</div>
+					<div class="swiper-pagination !static !text-sm"></div>
+
+					<div class="swiper-button-next !static   text-white !m-0 !w-10 !h-10 md:!w-[73px] md:!h-[73px] rounded-full flex items-center justify-center after:hidden border border-white flex-shrink-0">
+						<svg class="!w-3 !h-3" viewbox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M5.64844 10.9177L11.1568 5.49994C9.77517 4.14487 7.0301 1.43729 5.64843 0.0821907L4.95328 0.754871C6.19614 1.97356 7.84009 3.59743 9.2905 5.02176L0.321417 5.02172L0.321413 5.97826L9.29052 5.97828L4.95328 10.2377L5.64844 10.9177Z" fill="white"/>
+						</svg>
+
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+{% endif %}
+
+
+{% if content.body['#items'] %}
+	<section class="pb-10 pt-16 md:pb-24 bg-white">
+		<div class="container mx-auto px-4">
+			{{ content.body|raw }}
+		</div>
+	</section>
+{% endif %}
+
+
+
+{% if drupal_view_result('news','related_grid')|length >0 %}
+<section class="bg-[#F9FAFB] py-16 ">
+      <div class="container mx-auto px-4">
+  {{ drupal_view('news', 'related_grid') }}
+  </div>
+  </section>
+{% endif %}

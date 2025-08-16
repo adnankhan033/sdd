@@ -1,0 +1,36 @@
+<section class="pb-10 pt-12 md:pt-16 md:pb-24 bg-white">
+	<div class="container mx-auto px-4 md:px-14">
+		{% if content.body['#items'] is defined %}
+
+			{{ content.body|raw }}
+
+		{% endif %}
+
+		{% if content.field_init_images['#items'] is defined %}
+
+			<div class="images grid md:grid-cols-2 gap-6 mb-[60px]">
+
+				{% for item in content.field_init_images['#items'] %}
+
+					{% set uri = item.entity.uri.value %}
+
+					{# Render the image using Drupal's image function #}
+					{% set images =  drupal_image(uri) %}
+					<div>
+
+						{{ drupal_image(uri, 'wide', {
+            class: ['w-full h-full object-cover initiative-details-image'],
+            alt: item.alt|default('')|e,
+            loading: 'lazy',
+            }) }}
+					</div>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+
+{% if content.field_init_images['#items'] is defined %}
+        {{ content.field_buttom_description |raw }}
+{% endif %}
+	</div>
+</section>

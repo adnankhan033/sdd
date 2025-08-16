@@ -1,11 +1,56 @@
-<section class="md:py-14 py-8 bg-white/20 relative first-section">
-	<img class="w-full h-full absolute top-0 left-0 object-cover -z-[1] opacity-40" src="{{ items.image }}" alt>
+{% set wrapper_class =
+  items.bundle == 'digital_shajrah'
+    ? 'first-section relative bg-[#F3F4F6] py-8 md:py-16'
+    : (items.bundle in ['news', 'initiatives']
+        ? 'first-section bg-gradient-to-r from-[#353535] to-[#BDBDBD] relative bg-white/20 py-8 md:py-14 special-bundle'
+        : 'md:py-14 py-8 bg-white/20 relative first-section')
+%}
+
+
+{% set banner_img = 
+  items.bundle in ['news', 'initiatives','digital_sharjah'] 
+    ? '/themes/custom/theme_sdd/assets/images/Vector.svg' 
+    : items.image 
+%}
+
+
+<section class="{{ wrapper_class }}">
+
+	{% if items.bundle =='digital_shajrah'  %}
+		<div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max">
+			<img src="/themes/custom/theme_sdd/assets/images/Group_9.svg" alt="">
+		</div>
+
+	{% endif %}
+
+	{% if items.bundle in ['news', 'initiatives']  %}
+		<div class="absolute bottom-0 end-0 z-[0]">
+			<img src="/themes/custom/theme_sdd/assets/images/Vector.svg" alt="">
+		</div>
+
+	{% else %}
+		<img class="w-full h-full absolute top-0 left-0 object-cover -z-[1] opacity-40" src="{{ items.image }}" alt>
+	{% endif %}
 	<div class="container mx-auto px-4">
 		{{ drupal_breadcrumb() }}
 
-		<h1 class="md:text-5xl text-4xl">
-			{{ items.title }}
-		</h1>
+		{% if items.bundle in [ 'initiatives']  %}
+			<div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
+				<h1 class="md:text-5xl text-4xl">
+					{{ items.title }}
+				</h1>
+				<a href="{{ items.shared_link }}" class="copy-link inline-flex h-11 flex-shrink-0 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange" data-link="{{ items.shared_link }}">
+					<i class="fa-solid fa-share-nodes text-sm"></i>
+					<span>{{ 'Share'|t }}</span>
+				</a>
+				<div class="copy-popup">{{ "Link copied!"|t }}</div>
+
+			</div>
+		{% else  %}
+			<h1 class="md:text-5xl text-4xl">
+				{{ items.title }}
+			</h1>
+		{% endif %}
 
 	</div>
 </section>

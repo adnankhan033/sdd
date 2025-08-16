@@ -50,13 +50,13 @@
 		<div class="grid-layout  gap-x-[84px]">
 			<div class="item1">
 				<div class=" flex-1 flex items-start mb-10 md:mb-0 md:justify-start justify-center">
-					{# <img src="/{{ active_theme_path()}}/assets/images/Logo.svg" class="max-w-full" alt> #}
+					<img src="/{{ active_theme_path()}}/assets/images/Logo.svg" class="max-w-full" alt>
 				</div>
 			</div>
 			<div class="item3  mt-10 md:mt-0   ">
 				<div class=" flex-1 flex items-end justify-start h-full">
 
-					<form action class="w-full">
+					 <form action class="w-full">
 						<label class="text-xl font-bold mb-7" for>
 							Sign up to our newsletter
 						</label>
@@ -65,8 +65,10 @@
 							<input type="search" class="outline-0 rounded-2xl bg-white block w-full" placeholder="Add your email">
 							<button class="bg-[#353535] rounded-[10px] text-white md:p-6 p-2 font-bold">Subscribe</button>
 						</div>
-					</form>
+					</form> 
 
+{# {{ drupal_block('theme_sdd_simplenewssubscription', { unique_id: 'footer_newsletter' }) }} #}
+				
 				</div>
 			</div>
 			<div class="item2">
@@ -169,3 +171,5 @@
 	</div>
 
 </footer>
+
+

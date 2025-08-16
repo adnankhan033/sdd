@@ -5,6 +5,7 @@ custom-library:
     https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js: { type: external, minified: true }
     https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js: { type: external, minified: true }
     assets/js/script.js: {}
+    js/custom.js: {}
     
     
   css:

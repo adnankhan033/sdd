@@ -1,0 +1,32 @@
+<section class="py-16 bg-white">
+	<div class="container mx-auto px-4">
+		<div class="flex justify-between items-center">
+			<div>
+				<h6 class="  flex items-center gap-2 font-bold text-orange">
+					<img src="/{{ active_theme_path()}}/assets/images/headline.svg" alt="">
+					<span>
+						{{ items.highlight}}
+					</span>
+				</h6>
+				<h3 class="md:text-4xl text-[30px] mb-5">
+					{{ items.title}}
+				</h3>
+				<p class="text-[#6A7282] text-lg"> 
+                {{ items.description|raw }}
+                </p>
+
+				<a href="{{ items.link_uri}}" class="group/btn mt-6 relative inline-flex h-[51px] flex-shrink-0 rounded-full border  py-3 pe-[65px] ps-7  transition-all border-orange bg-[#FFF3E9] text-black hover:text-orange ">
+					<span class=" ">{{ items.link_title}}
+					</span>
+
+					<span class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border transition-all group-hover/btn:border-orange border-orange bg-orange ">
+						<i class="fa-regular fa-arrow-right text-xs   text-white"></i>
+					</span>
+				</a>
+			</div>
+			<div class="hidden md:block">
+				<img src="/{{ active_theme_path()}}/assets/images/Group 21.svg" alt="">
+			</div>
+		</div>
+	</div>
+</section>
