@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
+    - field.field.node.news.field_tags
     - field.field.node.news.field_year
     - node.type.news
   module:
@@ -77,5 +78,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_tags: true
   field_year: true
   langcode: true

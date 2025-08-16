@@ -1,0 +1,19 @@
+uuid: 54fd6602-37e9-4f26-a98f-5bd5ab7d82cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sh_number
+    - paragraphs.paragraphs_type.growing
+id: paragraph.growing.field_sh_number
+field_name: field_sh_number
+entity_type: paragraph
+bundle: growing
+label: Number
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

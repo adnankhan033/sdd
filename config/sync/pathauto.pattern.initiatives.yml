@@ -1,0 +1,33 @@
+uuid: 97cfc8c0-0c69-4af3-96fe-b15377d137df
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: initiatives
+label: Initiatives
+type: 'canonical_entities:node'
+pattern: '/initiatives/[node:title]'
+selection_criteria:
+  a677f6e3-2f63-4bb3-b5c9-4f18b1549bc0:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a677f6e3-2f63-4bb3-b5c9-4f18b1549bc0
+    context_mapping:
+      node: node
+    bundles:
+      initiatives: initiatives
+  f6b96e62-e527-48fb-b9e8-eb6d3cccede1:
+    id: language
+    negate: false
+    uuid: f6b96e62-e527-48fb-b9e8-eb6d3cccede1
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Language

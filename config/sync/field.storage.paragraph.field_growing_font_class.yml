@@ -1,0 +1,30 @@
+uuid: 47e27322-795c-4dfb-9ca8-51143960c697
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_growing_font_class
+field_name: field_growing_font_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: users
+      label: users
+    -
+      value: grid_2
+      label: grid-2
+    -
+      value: landmark_dome
+      label: landmark-dome
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

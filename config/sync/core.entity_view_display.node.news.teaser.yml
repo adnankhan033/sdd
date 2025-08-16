@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
+    - field.field.node.news.field_tags
     - field.field.node.news.field_year
     - node.type.news
   module:
@@ -47,6 +48,14 @@ content:
       format_type: olivero_medium
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
     region: content
   links:
     settings: {  }

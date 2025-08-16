@@ -1,0 +1,23 @@
+uuid: 4620ecbd-298d-49ea-9a03-e5c5a9c148e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.our_journey
+  module:
+    - yearonly
+id: node.our_journey.field_year
+field_name: field_year
+entity_type: node
+bundle: our_journey
+label: Year
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  yearonly_from: '2000'
+  yearonly_to: now
+field_type: yearonly

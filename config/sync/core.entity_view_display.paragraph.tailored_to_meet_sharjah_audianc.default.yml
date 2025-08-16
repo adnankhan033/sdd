@@ -1,0 +1,68 @@
+uuid: 785f57d3-b461-4677-92f7-8429fabe92a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tailored_to_meet_sharjah_audianc.field_description
+    - field.field.paragraph.tailored_to_meet_sharjah_audianc.field_shared_icon
+    - field.field.paragraph.tailored_to_meet_sharjah_audianc.field_title
+    - paragraphs.paragraphs_type.tailored_to_meet_sharjah_audianc
+  module:
+    - image_class
+    - smart_trim
+    - svg_image
+id: paragraph.tailored_to_meet_sharjah_audianc.default
+targetEntityType: paragraph
+bundle: tailored_to_meet_sharjah_audianc
+mode: default
+content:
+  field_description:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 125
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: true
+        replace_tokens: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_shared_icon:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: mx-auto
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: 7d995c73-cdd7-49cf-a6f0-128ace2f9eb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_c_address
+id: config_pages.general_pages.field_c_address
+field_name: field_c_address
+entity_type: config_pages
+bundle: general_pages
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

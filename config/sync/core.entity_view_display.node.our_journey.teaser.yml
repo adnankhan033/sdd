@@ -1,0 +1,40 @@
+uuid: 1eac6e60-3883-4294-abbb-342e93b3045a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.our_journey.body
+    - field.field.node.our_journey.field_year
+    - node.type.our_journey
+  module:
+    - text
+    - user
+    - yearonly
+id: node.our_journey.teaser
+targetEntityType: node
+bundle: our_journey
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_year:
+    type: yearonly_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

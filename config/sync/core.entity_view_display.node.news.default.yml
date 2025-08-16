@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
+    - field.field.node.news.field_tags
     - field.field.node.news.field_year
+    - image.style.thumbnail
     - node.type.news
   module:
     - datetime
@@ -36,6 +38,10 @@ content:
       image_style: wide
       image_loading:
         attribute: eager
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: -1
     region: content
@@ -53,7 +59,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: thumbnail
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -64,6 +70,14 @@ content:
       image_class:
         class: 'w-full h-full object-cover'
     weight: 103
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_year:
     type: yearonly_default

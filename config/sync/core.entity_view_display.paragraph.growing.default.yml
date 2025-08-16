@@ -1,0 +1,40 @@
+uuid: c9c5472f-b72b-43db-8fef-716047327e7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.growing.field_growing_font_class
+    - field.field.paragraph.growing.field_sh_number
+    - field.field.paragraph.growing.field_title
+    - paragraphs.paragraphs_type.growing
+  module:
+    - options
+id: paragraph.growing.default
+targetEntityType: paragraph
+bundle: growing
+mode: default
+content:
+  field_growing_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sh_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

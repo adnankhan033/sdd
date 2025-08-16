@@ -1,0 +1,21 @@
+uuid: ee73195f-c2ed-49c7-b638-46b74fa7acf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_tailored_to_meet_sharjah
+field_name: field_tailored_to_meet_sharjah
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

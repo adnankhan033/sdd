@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
+    - field.field.node.news.field_tags
     - field.field.node.news.field_year
     - image.style.thumbnail
     - node.type.news
@@ -58,6 +59,16 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_year:
     type: yearonly_default

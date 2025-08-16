@@ -1,0 +1,29 @@
+uuid: 98857535-0dab-42b2-a8c8-c3ad32044d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.publications_reports
+  module:
+    - system
+    - views
+  theme:
+    - theme_sdd
+id: theme_sdd_views_block__publications_reports_block_media_center
+theme: theme_sdd
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:publications_reports-block_media_center'
+settings:
+  id: 'views_block:publications_reports-block_media_center'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /media-center

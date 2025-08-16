@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.initiatives.body
     - field.field.node.initiatives.field_annual_carbon_removal
+    - field.field.node.initiatives.field_buttom_description
     - field.field.node.initiatives.field_image
+    - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
     - field.field.node.initiatives.field_year_of_delivery
@@ -44,9 +46,25 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_buttom_description:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_image:
     type: image_image
     weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_init_images:
+    type: image_image
+    weight: 26
     region: content
     settings:
       progress_indicator: throbber

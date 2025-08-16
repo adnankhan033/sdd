@@ -1,0 +1,21 @@
+uuid: 25882f4f-5d55-4b95-955f-e48120c9c927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_type
+    - node.type.digital_shajrah
+  module:
+    - options
+id: node.digital_shajrah.field_page_type
+field_name: field_page_type
+entity_type: node
+bundle: digital_shajrah
+label: 'Page Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.field.node.initiatives.body
     - field.field.node.initiatives.field_annual_carbon_removal
+    - field.field.node.initiatives.field_buttom_description
     - field.field.node.initiatives.field_image
+    - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
     - field.field.node.initiatives.field_year_of_delivery
-    - image.style.wide
     - node.type.initiatives
   module:
     - svg_image
@@ -35,6 +36,13 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
+  field_buttom_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_image:
     type: image
     label: hidden
@@ -49,6 +57,21 @@ content:
       svg_render_as_image: true
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_init_images:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_sh_highlights:
     type: string

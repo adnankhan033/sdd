@@ -1,0 +1,11 @@
+uuid: 016068d1-84ab-42e7-ac9e-00e508d91c3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.puplications_media
+label: 'Puplications Media'
+description: ''
+targetEntityType: node
+cache: true

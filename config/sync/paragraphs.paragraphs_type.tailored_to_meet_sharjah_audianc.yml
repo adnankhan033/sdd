@@ -1,0 +1,10 @@
+uuid: 065eff3f-a15e-488d-b56c-5dd2d1fd7e52
+langcode: en
+status: true
+dependencies: {  }
+id: tailored_to_meet_sharjah_audianc
+label: 'Tailored to meet Sharjah audiance'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

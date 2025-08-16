@@ -1,0 +1,11 @@
+uuid: 776f2fd7-b717-4c46-a5c2-cf64c3f214b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.services_statistics
+label: 'Services Statistics'
+description: ''
+targetEntityType: node
+cache: true

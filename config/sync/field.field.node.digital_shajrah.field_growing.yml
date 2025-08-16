@@ -1,0 +1,40 @@
+uuid: c2be8375-04b4-4cbe-b556-995d3478ba68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_growing
+    - node.type.digital_shajrah
+    - paragraphs.paragraphs_type.growing
+  module:
+    - entity_reference_revisions
+id: node.digital_shajrah.field_growing
+field_name: field_growing
+entity_type: node
+bundle: digital_shajrah
+label: Growing
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      growing: growing
+    negate: 0
+    target_bundles_drag_drop:
+      growing:
+        weight: 4
+        enabled: true
+      our_strategic_goals:
+        weight: 5
+        enabled: false
+      our_values:
+        weight: 6
+        enabled: false
+      tailored_to_meet_sharjah_audianc:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

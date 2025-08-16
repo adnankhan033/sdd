@@ -1,0 +1,67 @@
+uuid: 79981a4f-6717-491d-8fa3-7d326687b128
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.puplications_media
+    - field.field.node.publications_reports.body
+    - field.field.node.publications_reports.field_attachment
+    - field.field.node.publications_reports.field_image
+    - field.field.node.publications_reports.field_pr_select_type
+    - image.style.wide
+    - node.type.publications_reports
+  module:
+    - file
+    - options
+    - svg_image
+    - text
+    - user
+id: node.publications_reports.puplications_media
+targetEntityType: node
+bundle: publications_reports
+mode: puplications_media
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_attachment:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_pr_select_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

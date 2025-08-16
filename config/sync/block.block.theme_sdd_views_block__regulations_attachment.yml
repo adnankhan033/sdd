@@ -1,0 +1,29 @@
+uuid: 4536e78b-586b-497c-9a1b-39bc556bf826
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.regulations
+  module:
+    - system
+    - views
+  theme:
+    - theme_sdd
+id: theme_sdd_views_block__regulations_attachment
+theme: theme_sdd
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:regulations-attachment'
+settings:
+  id: 'views_block:regulations-attachment'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/61

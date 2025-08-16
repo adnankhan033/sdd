@@ -1,0 +1,22 @@
+uuid: f2b57424-ac26-4c0a-9922-743380c3156b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.tailored_to_meet_sharjah_audianc
+  module:
+    - text
+id: paragraph.tailored_to_meet_sharjah_audianc.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: tailored_to_meet_sharjah_audianc
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

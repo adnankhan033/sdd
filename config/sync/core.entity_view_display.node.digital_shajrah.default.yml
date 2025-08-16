@@ -1,0 +1,80 @@
+uuid: 3619b409-4ede-4e48-9c73-83a58722e4c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.digital_shajrah.body
+    - field.field.node.digital_shajrah.field_growing
+    - field.field.node.digital_shajrah.field_image
+    - field.field.node.digital_shajrah.field_page_type
+    - field.field.node.digital_shajrah.field_tailored_to_meet_sharjah
+    - image.style.large
+    - node.type.digital_shajrah
+  module:
+    - entity_reference_revisions
+    - image_class
+    - options
+    - svg_image
+    - text
+    - user
+id: node.digital_shajrah.default
+targetEntityType: node
+bundle: digital_shajrah
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_growing:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: eager
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: -1
+    region: content
+  field_page_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tailored_to_meet_sharjah:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

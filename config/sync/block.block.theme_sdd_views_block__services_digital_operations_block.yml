@@ -1,0 +1,30 @@
+uuid: 672ee236-76ee-46d3-a453-3e9a29041b37
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.services
+  module:
+    - system
+    - views
+  theme:
+    - theme_sdd
+id: theme_sdd_views_block__services_digital_operations_block
+theme: theme_sdd
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:services-digital_operations_block'
+settings:
+  id: 'views_block:services-digital_operations_block'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /services

@@ -1,0 +1,16 @@
+uuid: bb787305-a1f1-4801-b87c-351f96a272f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.our_journey
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.our_journey
+target_entity_type_id: node
+target_bundle: our_journey
+default_langcode: site_default
+language_alterable: true

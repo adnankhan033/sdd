@@ -1,0 +1,39 @@
+uuid: e3d4ef54-6958-4cc0-875f-631378a761d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.growing.field_growing_font_class
+    - field.field.paragraph.growing.field_sh_number
+    - field.field.paragraph.growing.field_title
+    - paragraphs.paragraphs_type.growing
+id: paragraph.growing.default
+targetEntityType: paragraph
+bundle: growing
+mode: default
+content:
+  field_growing_font_class:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sh_number:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

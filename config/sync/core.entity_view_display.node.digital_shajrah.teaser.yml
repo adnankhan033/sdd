@@ -1,0 +1,55 @@
+uuid: 05218849-ccb8-4d7d-b074-083b90af60ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.digital_shajrah.body
+    - field.field.node.digital_shajrah.field_growing
+    - field.field.node.digital_shajrah.field_image
+    - field.field.node.digital_shajrah.field_page_type
+    - field.field.node.digital_shajrah.field_tailored_to_meet_sharjah
+    - image.style.medium
+    - node.type.digital_shajrah
+  module:
+    - svg_image
+    - text
+    - user
+id: node.digital_shajrah.teaser
+targetEntityType: node
+bundle: digital_shajrah
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_growing: true
+  field_page_type: true
+  field_tailored_to_meet_sharjah: true
+  langcode: true

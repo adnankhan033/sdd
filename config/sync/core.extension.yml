@@ -27,6 +27,7 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -56,6 +57,7 @@ module:
   search: 0
   sharjah_dd: 0
   shortcut: 0
+  simplenews: 0
   simplify_menu: 0
   smart_trim: 0
   svg_image: 0
@@ -69,7 +71,15 @@ module:
   user: 0
   vch: 0
   views_ui: 0
+  webform: 0
+  webform_access: 0
+  webform_node: 0
+  webform_submission_log: 0
+  webform_templates: 0
+  webform_ui: 0
   yearonly: 0
+  pathauto: 1
+  webform_bootstrap: 1
   content_translation: 10
   views: 10
   form_mode_manager: 11

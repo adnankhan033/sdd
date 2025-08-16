@@ -22,4 +22,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/about/leadership-message\r\n/node/32\r\n/services\r\n/faqs\r\n/initiatives\r\n/media-center/publications-reports\r\n/regulations\r\n/media-center/news"
+    pages: "/about/leadership-message\r\n/node/32\r\n/services\r\n/faqs\r\n/initiatives\r\n/media-center/publications-reports\r\n/regulations\r\n/media-center/news\r\n/contact\r\n/media-center/multimedia-gallery"

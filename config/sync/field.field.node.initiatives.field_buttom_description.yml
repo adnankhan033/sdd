@@ -1,0 +1,22 @@
+uuid: c88148db-02d9-4d66-a90b-92df34be81f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_buttom_description
+    - node.type.initiatives
+  module:
+    - text
+id: node.initiatives.field_buttom_description
+field_name: field_buttom_description
+entity_type: node
+bundle: initiatives
+label: 'Buttom Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

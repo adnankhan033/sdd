@@ -1,0 +1,19 @@
+uuid: 33e16928-ffe1-488c-9017-8560404c40d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_digital_service_highlight
+id: config_pages.general_pages.field_digital_service_highlight
+field_name: field_digital_service_highlight
+entity_type: config_pages
+bundle: general_pages
+label: 'Digital Service Highlight'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,33 @@
+uuid: 316efe09-a8d4-4679-8475-3c786da7f493
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: digital_sharjah
+label: 'digital sharjah'
+type: 'canonical_entities:node'
+pattern: '/open-data/[node:title]'
+selection_criteria:
+  dd50732a-a4d4-4db1-a3c8-ef6ce8c9122e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: dd50732a-a4d4-4db1-a3c8-ef6ce8c9122e
+    context_mapping:
+      node: node
+    bundles:
+      digital_shajrah: digital_shajrah
+  8cab3151-c7ee-476a-9d40-e979a569d791:
+    id: language
+    negate: false
+    uuid: 8cab3151-c7ee-476a-9d40-e979a569d791
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

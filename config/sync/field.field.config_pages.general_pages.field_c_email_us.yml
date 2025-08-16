@@ -1,0 +1,19 @@
+uuid: 32ffc931-e917-40fc-9066-f575054ba69f
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_c_email_us
+id: config_pages.general_pages.field_c_email_us
+field_name: field_c_email_us
+entity_type: config_pages
+bundle: general_pages
+label: 'Email us'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -345,6 +345,26 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  attachment:
+    id: attachment
+    display_title: 'Regulations attachment Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
+      exposed_block: false
+      display_extenders: {  }
+      block_description: 'Regulations attachment'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   grid:
     id: grid
     display_title: Regulations
@@ -352,6 +372,7 @@ display:
     position: 1
     display_options:
       display_description: ''
+      exposed_block: false
       display_extenders: {  }
       path: regulations
     cache_metadata:

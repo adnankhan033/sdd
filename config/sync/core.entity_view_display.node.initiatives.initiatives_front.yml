@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.initiatives_front
     - field.field.node.initiatives.body
     - field.field.node.initiatives.field_annual_carbon_removal
+    - field.field.node.initiatives.field_buttom_description
     - field.field.node.initiatives.field_image
+    - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
     - field.field.node.initiatives.field_year_of_delivery
@@ -84,4 +86,6 @@ content:
     weight: 1
     region: content
 hidden:
+  field_buttom_description: true
+  field_init_images: true
   langcode: true

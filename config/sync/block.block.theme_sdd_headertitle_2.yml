@@ -26,4 +26,7 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       custom_page: custom_page
+      digital_shajrah: digital_shajrah
+      initiatives: initiatives
+      news: news
       our_strategy: our_strategy
