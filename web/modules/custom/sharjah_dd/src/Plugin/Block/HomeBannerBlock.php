@@ -64,21 +64,16 @@ final class HomeBannerBlock extends BlockBase implements ContainerFactoryPluginI
       return [];
     }
 
-
     $banner_video = $config_page->get('field_banner_video')->entity ?? '';
     $banner_info = $config_page->get('field_banner_info')->value ?? '';
-
     $video_url = '';
     if ($banner_video instanceof \Drupal\file\FileInterface) {
       $video_url = \Drupal::service('file_url_generator')->generateAbsoluteString($banner_video->getFileUri());
     }
-
     $items = [
       'banner_info' => $banner_info,
       'video_url' => $video_url,
     ];
-
-
     return [
       '#theme' => 'home_banner',
       '#items' => $items,

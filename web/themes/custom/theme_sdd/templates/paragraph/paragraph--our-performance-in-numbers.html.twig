@@ -1,0 +1,12 @@
+<div class="flex gap-6 items-center">
+	<i class="fa-landmark-dome fa-{{ content.field_font_class|render|striptags|trim|raw  }} text-5xl xl:text-[60px] text-[#99A1AF]"></i>
+	<div class="grid gap-4">
+		<h4 class="text-orange font-bold text-5xl xl:text-[60px]">
+			{{ content.field_sh_number|render|striptags|trim|raw  }}
+		</h4>
+		<p class="text-sm">
+			{{ content.field_title|render|striptags|trim|raw  }}
+		</p>
+	</div>
+</div>
+

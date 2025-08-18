@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<div class="mb-7 text-xl font-bold"> {{ "Sign up to our newsletter"|t }} </div>
+<form{{ attributes }}>
+  {{ children }}
+</form>

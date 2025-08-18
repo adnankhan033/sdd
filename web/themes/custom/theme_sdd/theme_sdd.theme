@@ -8,9 +8,11 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\file\Entity\File;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Block\BlockManagerInterface;
-
-
-
+use Drupal\node\Entity\NodeType;
+use Drupal\Component\Utility\Html;
+use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\link\LinkItemInterface;
 
 
 
@@ -45,9 +47,34 @@ function theme_sdd_preprocess_node(array &$variables): void
   $medium_label = Unicode::truncate(strip_tags(preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 70, true, true);
   $shortened_title = Unicode::truncate(strip_tags(string: preg_replace('/[^\w$\x{0080}-\x{FFFF}]+/u', ' ', $title)), 30, true, true);
   $body_short = Unicode::truncate($body ?? '', 190, true, true);
-
-  $bundles = ['regulations', 'publications_reports','leadership_message'];
+  $body_long = Unicode::truncate($body ?? '', 290, true, true);
   
+  $bundle_label = NodeType::load($bundle)->label();
+  
+  $ds_type_machine_label = '';
+  $ds_type_machine_name = '';
+  if ($bundle === 'digital_shajrah' && $node->hasField('field_page_type')) {
+    $field = $node->get('field_page_type');
+
+    // Machine value (what is stored in DB).
+    $ds_type_machine_name = $field->value ?? '';
+
+    // Human-readable label.
+    $ds_type_machine_label = $field->getFieldDefinition()
+      ->getFieldStorageDefinition()
+      ->getOptionsProvider('value', $node)
+      ->getPossibleOptions()[$ds_type_machine_name] ?? $ds_type_machine_name;
+
+    $ds_type = [
+      'ds_type_machine_label' => $ds_type_machine_label,
+      'ds_type_machine_name' => $ds_type_machine_name,
+    ];
+    $variables['ds_type'] = $ds_type;
+  }
+
+
+  $bundles = ['regulations', 'publications_reports', 'leadership_message'];
+
   if (in_array($node->bundle(), $bundles, true) && !$node->get('field_attachment')->isEmpty()) {
     $gen = \Drupal::service('file_url_generator');
     $attachments = [];
@@ -61,13 +88,15 @@ function theme_sdd_preprocess_node(array &$variables): void
     }
     $variables['attachments'] = $attachments;
   }
-  
+// load bundle label 
+
   $variables['shorter_label'] = $shorter_label;
   $variables['short_label'] = $short_label;
   $variables['medium_label'] = $medium_label;
   $variables['shortened_title'] = $shortened_title;
   $variables['body_short'] = $body_short;
-  
+  $variables['body_long'] = $body_long;
+  $variables['bundle_label'] = $bundle_label;
 }
 
 
@@ -83,7 +112,7 @@ function theme_sdd_preprocess_html(array &$variables): void
   $node       = $route_match->getParameter('node');
   $variables['attributes']['class'][] = 'font-sdd';
 
-  $bundles_with_white_bg = ['custom_page', 'regulations', 'publications_reports' ,'digital_shajrah'];
+  $bundles_with_white_bg = ['custom_page', 'regulations', 'publications_reports', 'digital_shajrah'];
   if (
     $route_name === 'view.faqs.list'
     || ($node instanceof \Drupal\node\NodeInterface && in_array($node->bundle(), $bundles_with_white_bg, true))
@@ -94,8 +123,6 @@ function theme_sdd_preprocess_html(array &$variables): void
   $current_path = \Drupal::service('path.current')->getPath();
   $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
   $variables['attributes']['class'][] = 'path-' . str_replace('/', '-', trim($current_path_alias, '/'));
-  
-
 }
 
 
@@ -107,6 +134,26 @@ function theme_sdd_preprocess_html(array &$variables): void
 function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
   // dd($form['#id'])  ;
+  
+  if ( isset($form['#id']) && $form['#id'] === 'views-exposed-form-search-list-page' ) {
+
+    if (isset($form['type'])) {
+      // Add class to the entire BEF link list.
+      $form['type']['#attributes']['class'][] = 'bef-taxonomy-links';
+
+      // Add class to each term link.
+      foreach ($form['type']['#options'] as $tid => $label) {
+        if (!empty($tid)) {
+
+          if ($label ===  "- Any -") {
+            $form['type']['#options'][$tid] = t('All');
+          }
+        }
+      }
+    }
+
+  }
+
   if (
     isset($form['#id']) &&
     $form['#id'] === 'views-exposed-form-services-list' ||  $form['#id'] === "views-exposed-form-services-main-page"
@@ -126,7 +173,7 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
       }
     }
   }
-  
+
   if (isset($form['#id']) && $form['#id'] === "views-exposed-form-faqs-list") {
 
     // Your taxonomy exposed filter element.
@@ -190,7 +237,7 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
     }
   }
 
-  
+
   // if ($form['#id'] === 'views-exposed-form-news-main-page') {
   //   if (isset($form['field_year_value'])) {
   //     $form['field_year_value']['#type'] = 'select';
@@ -211,7 +258,7 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
   //     $form['field_year_value']['#options'] = $options;
   //     $form['field_year_value']['#empty_option'] = t('- All -');
   //   }
-  
+
   // }
 
   if ($form['#id'] ===  "views-exposed-form-media-images-page-grid") {
@@ -219,10 +266,7 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
     if (isset($form['sort_order'])) {
       $form['sort_order']['#attributes']['class'][] = 'h-[53px] w-full max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2';
     }
-   
-   
   }
-
 }
 /**
  * Implements hook_preprocess_bef_links().
@@ -308,4 +352,165 @@ function theme_sdd_preprocess_paragraph(array &$variables)
   $variables['title_medium']      = Unicode::truncate($clean($title), 70, true, true);
   $variables['description_full']  = $description;
   $variables['description_short'] = Unicode::truncate($clean($description), 150, true, true);
+  // load paragraph type 
+  $bundle = $paragraph->bundle();
+  $variables['paragraph_type'] = $bundle;
+
+  // 🔹 Now check parent node and its field(s).
+  if ($parent = $paragraph->getParentEntity()) {
+
+    if ($parent->getEntityTypeId() === 'node') {
+      $variables['parent_node_type'] = $parent->bundle();
+      $variables['parent_node_id']   = $parent->id();
+      // dd($parent->bundle());
+
+      // Example: check a specific field on the node.
+      if ($parent->hasField('field_page_type') && !$parent->get('field_page_type')->isEmpty()) {
+        $field_value = $parent->get('field_page_type')->value; // machine value
+        $variables['ds_selected_type'] = $field_value;
+      }
+    }
+  }
+}
+
+
+
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function theme_sdd_theme_suggestions_form_alter(array &$suggestions, array $variables)
+{
+    $suggestions[] = 'form__' . str_replace('-', '_', subject: $variables['element']['#id']);
+}
+
+
+/**
+ * Implements hook_theme_suggestions_input_alter().
+ */
+function theme_sdd_theme_suggestions_input_alter(array &$suggestions, array $variables)
+{
+  
+  
+  
+    if (isset($variables['element']['#type'])) {
+        // Get the original theme hook.
+        $theme_hook_original = $variables['element']['#theme'] ?? null;
+
+        // Add a suggestion based on the input type.
+        if ($theme_hook_original) {
+            $suggestions[] = $theme_hook_original . '__' . $variables['element']['#type'];
+        }
+    }
+
+  }
+
+
+
+  /**
+ * Implements hook_preprocess_views_view().
+ */
+function theme_sdd_preprocess_views_view(&$variables) {
+  $view = $variables['view'];  // $view->id()
+
+  // Check for a specific view and display if needed
+  if ($view->id() === 'search' && $view->current_display === 'list_page') {
+    // Get exposed input
+    $exposed_input = $view->getExposedInput();
+    
+    if (!empty($exposed_input['keys'])) {
+      $variables['filter_value'] = $exposed_input['keys'];
+    }
+  }
+  
+  
+  // services
+  if ($view->id() === 'services') {
+    $cacheability = new CacheableMetadata();
+
+    // Load Config Pages: home_settings
+    if ($config = ConfigPages::config('general_pages')) {
+      // Inherit cache from the config entity (includes correct tags).
+      $cacheability = $cacheability->merge(CacheableMetadata::createFromObject($config));
+      $info = $config->get('field_services_info')->value?? '';
+      $details = $config->get('field_serv_header_details')->value?? '';
+      $variables['services_header'] = ['title' => $info, 'description'=>  $details];
+    
+    }
+  }
+  // our_journey  
+  
+  if ($view->id() === 'our_journey'  && $view->current_display === 'grid') {
+    $cacheability = new CacheableMetadata();
+
+    // Load Config Pages: home_settings
+    if ($config = ConfigPages::config('general_pages')) {
+      // Inherit cache from the config entity (includes correct tags).
+      $cacheability = $cacheability->merge(CacheableMetadata::createFromObject($config));
+      $info = $config->get('field_laws_regulations')->value?? '';
+      $details = $config->get('field_laws_regulations_descripti')->value?? '';
+      $variables['our_journey'] = ['title' => $info, 'description'=>  $details];
+    
+    }
+  }
+
+
+
+}
+
+
+/**
+ * e.g. in hook_preprocess_page().
+ */
+function theme_sdd_preprocess_page(array &$variables) {
+  $plugin = \Drupal::service('plugin.manager.block')
+    ->createInstance('simplenews_subscription_block', [
+      'unique_id' => Html::getUniqueId('simplenews_subscribe_footer'),
+    ]);
+
+  $variables['simplenews_subscribe_block'] = $plugin->build();
+
+// Prepare cacheability collector for everything we add.
+$cacheability = new CacheableMetadata();
+
+// Load Config Pages: home_settings
+if ($config = ConfigPages::config('home_settings')) {
+  // Inherit cache from the config entity (includes correct tags).
+  $cacheability = $cacheability->merge(CacheableMetadata::createFromObject($config));
+
+  // Helper: read link field and return URL as string (works for external + route links).
+  $read_link = static function ($entity, string $field) : string {
+    if (!$entity->hasField($field) || $entity->get($field)->isEmpty()) {
+      return '';
+    }
+    $item = $entity->get($field)->first();
+    if ($item instanceof LinkItemInterface && $item->getUrl()) {
+      return $item->getUrl()->toString();
+    }
+    // Fallback if stored as raw 'uri'.
+    return $entity->get($field)->getValue()[0]['uri'] ?? '';
+  };
+
+  $facebook  = $read_link($config, 'field_facebook');
+  $instagram = $read_link($config, 'field_instagram');
+  $youtube   = $read_link($config, 'field_youtube');
+  $twitter   = $read_link($config, 'field_twitter');
+
+  // Copyright text with [year] token.
+  $copy_raw = $config->get('field_copyrights')->value ?? '';
+  $copy     = $copy_raw ? str_replace('[year]', date('Y'), $copy_raw) : '';
+
+  // Expose to Twig (same structure you used before as #items).
+  $variables['items'] = [
+    'facebook'   => $facebook,
+    'instagram'  => $instagram,
+    'youtube'    => $youtube,
+    'twitter'    => $twitter,
+    'copy_right' => $copy,
+  ];
+}
+
+// Apply collected cache metadata to the page render context.
+$cacheability->applyTo($variables);
+  
 }

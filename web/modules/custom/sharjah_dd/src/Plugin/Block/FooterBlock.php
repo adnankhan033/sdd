@@ -63,16 +63,13 @@ final class FooterBlock extends BlockBase implements ContainerFactoryPluginInter
     if (!$config_page) {
       return [];
     }
-    $facebook = $config_page->get('field_facebook')->getValue()[0]['uri'] ?? '';
+    $facebook = $config_page->get(field_name: 'field_facebook')->getValue()[0]['uri'] ?? '';
     $instagram = $config_page->get('field_instagram')->getValue()[0]['uri'] ?? '';
     $youtube = $config_page->get('field_youtube')->getValue()[0]['uri'] ?? '';
     $twitter = $config_page->get('field_twitter')->getValue()[0]['uri'] ?? '';
     $copy_right = $config_page->get('field_copyrights')->value?? '';
-    
-    //  $twitter1 = $config_page->get('field_twitter')->getValue()[0]['uri'] ?? '';
+  
 
- 
-// dd( $copy_right); exit;
      $copy_right_text = '';
     if ($copy_right) {
       $copy_right_text = str_replace('[year]', date('Y'), $copy_right);

@@ -1,86 +1,234 @@
-{# {% set page_types = [] %}
 
-{% for item in node.field_page_type %}
-{{ dd(item)}}
-  {% set page_types = page_types|merge([{
-    'id': item.target_id,
-    'label': item.entity.label
-  }]) %}
-{% endfor %} #}
-
-{# Now you can use it #}
-{# {% for type in page_types %}
-{{dd(type)}}
-  {{ type.id }} - {{ type.label }}
-{% endfor %} #}
-
-
-{# {{ dd( node.bundle)}}
-{{ dd( content.field_page_type)}} #}
-
-
-<section class="md:py-20 py-12">
-	<div class="container mx-auto px-4">
-		<div class="grid md:grid-cols-[1fr_2fr] gap-10">
-			<div>
-				<h3 class="md:text-2xl text-xl   md:hidden mb-10">
-					{{ label|render|striptags|trim|raw }}
-
-				</h3>
-				<div class="px-9 md:px-0">
-					{{ content.field_image }}
-				</div>
-			</div>
-			<div class="grid gap-10">
-				{{ content.body }}
-
-			</div>
-		</div>
-	</div>
-</section>
-
-{% if content.field_growing['#items'] %}
-	<section class="md:py-16 py-8">
+{% if ds_type.ds_type_machine_name =='statistics' %}
+	<section class="md:py-20 pt-12 bg-white">
 		<div class="container mx-auto px-4">
-			<div class="md:divide-x-[1px] divide-y-[1px]  md:divide-y-0 divide-[#D4D4D8] gap-12 xl:gap-[70px] grid md:grid-cols-3">
+			<div class="grid md:grid-cols-2 gap-10">
+				<div>
+					<h2 class="md:text-5xl text-[30px] font-light">
+						{{ node.body.summary }}
+					</h2>
+				</div>
 
-				{{ content.field_growing }}
+				<div>
+					<p class="text-lg mb-16">
+						{{ content.body|raw }}
+					</p>
+
+					{% if content.field_growing['#items'] %}
+						<div class="grid md:gap-16 gap-8 ">
+							{{ content.field_growing }}
+
+						</div>
+					{% endif %}
+
+				</div>
+
 			</div>
 
 		</div>
 	</section>
 
-{% endif %}
+
+	<section class="md:py-20 bg-white">
+		<div class="container mx-auto px-4">
+			<div class="grid  md:grid-cols-2 md:gap-10 gap-4">
+				<div>
+					<h2 class="lg:text-5xl font-light text-3xl">
+
+						{{ node.field_government_entities.summary }}
+					</h2>
+				</div>
+
+				<div>
+					<div class="text-lg mb-16">
+						{{ content.field_government_entities|render|striptags|trim|raw }}
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</section>
 
 
-{% if content.field_tailored_to_meet_sharjah['#items'] %}
+	{# Machine name of the field is "field_energy_saving" #}
+	{% set field = node.field_energy_saving %}
+	{# Field label #}
+	{% set label = field.getFieldDefinition().getLabel() %}
+	{# Field description (help text from field settings) #}
+	{% set description = field.getFieldDefinition().getDescription() %}
 
-<section class="md:py-16 py-12 bg-[#F9FAFB]">
+	<section class="md:py-20 py-8 bg-[#F9FAFB]">
+		<div class="container mx-auto px-4">
+
+			<div class="grid  md:grid-cols-[1fr_2fr] lg:gap-20 md:gap-10 gap-8">
+
+				<div>
+					<div class="bg-white p-9 rounded-[20px]  ">
+						<div class="mb-5 flex items-center justify-between">
+							<h6 class="text-lg text-[#6A7282]">{{ label }}</h6>
+							<i class="fa-thin  fa-bolt text-5xl text-orange"></i>
+						</div>
+						<h4 class="text-4xl font-bold mb-5">
+							{{ content.field_energy_saving|render|striptags|trim|raw }}</h4>
+						<p class="text-sm text-[#6A7282]">
+							{{ description }}
+						</p>
+
+						<div class="progress-container flex items-center mt-5 justify-between">
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+							<span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="grid md:gap-10 gap-4">
+					{{ content.field_ds_infrastructure_descr|raw }}
+
+				</div>
+
+			</div>
+		</section>
+
+
+		<section class="">
+			<div class="border-y border-[#E5E7EB]">
+				<div class="container mx-auto   px-4 md:py-20 py-14">
+					<div class="faq-btn cursor-pointer">
+						<h2 class="text-4xl   md:text-5xl">
+							{{ node.field_ds_digital_operation.getFieldDefinition().getLabel() }}
+						</h2>
+					</div>
+
+					<p class="faq-content mb-6 mt-10 hidden text-2xl text-[#6A7282]">
+						{{ content.field_ds_digital_operation|render|striptags|trim|raw  }}
+					</p>
+				</div>
+			</div>
+
+			<div class="border-y border-[#E5E7EB]">
+				<div class="container mx-auto   px-4 md:py-20 py-14">
+					<div class="faq-btn cursor-pointer">
+						<h2 class="text-4xl   md:text-5xl">
+							{{ node.field_ds_our_mission.getFieldDefinition().getLabel() }}
+						</h2>
+					</div>
+                
+					<div class="faq-content mb-6 mt-10 hidden text-2xl text-[#6A7282]">
+						{{ content.field_ds_our_mission|render|striptags|trim|raw  }}
+
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+
+<section class="md:py-20 pt-8 pb-24">
       <div class="container mx-auto px-4">
+        <h2 class="lg:text-5xl font-light text-[36px] ">
+        							{{ node.field_our_performance_in_numbers.getFieldDefinition().getLabel() }}
 
-        <div class="text-center">
-          <h2 class="text-3xl mb-8">
-          {{ node.field_tailored_to_meet_sharjah.fieldDefinition.label ?: '' }}
-          </h2>
-          <div class="grid md:grid-cols-3">
-              {{ content.field_tailored_to_meet_sharjah }}
-            
-          </div>
+        </h2>
+        <div class="grid sm:grid-cols-2  lg:grid-cols-3 mt-16 gap-10">
+
+{{ content.field_our_performance_in_numbers }}
+
         </div>
-
       </div>
     </section>
-{% endif %}
+
+	{% endif %}
 
 
 
-{% if drupal_view_result('services','grid')|length > 0 %}
-  {{ drupal_view('services', 'grid') }}
-
-{% endif %}
 
 
-{% if drupal_view_result('service_providers','slider')|length > 0 %}
-  {{ drupal_view('service_providers', 'slider') }}
+	{# create for type fo digital sharjah type #}
+	{% if ds_type.ds_type_machine_name =='digital_shajrah' %}
+		<section class="md:py-20 py-12">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-[1fr_2fr] gap-10">
+					<div>
+						<h3 class="md:text-2xl text-xl   md:hidden mb-10">
+							{{ label|render|striptags|trim|raw }}
 
-{% endif %}
+						</h3>
+						<div class="px-9 md:px-0">
+							{{ content.field_image }}
+						</div>
+					</div>
+					<div class="grid gap-10">
+						{{ content.body }}
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{% if content.field_growing['#items'] %}
+			<section class="md:py-16 py-8">
+				<div class="container mx-auto px-4">
+					<div class="md:divide-x-[1px] divide-y-[1px]  md:divide-y-0 divide-[#D4D4D8] gap-12 xl:gap-[70px] grid md:grid-cols-3">
+
+						{{ content.field_growing }}
+					</div>
+
+				</div>
+			</section>
+
+
+		{% endif %}
+
+
+		{% if content.field_tailored_to_meet_sharjah['#items'] %}
+
+			<section class="md:py-16 py-12 bg-[#F9FAFB]">
+				<div class="container mx-auto px-4">
+
+					<div class="text-center">
+						<h2 class="text-3xl mb-8">
+							{{ node.field_tailored_to_meet_sharjah.fieldDefinition.label ?: '' }}
+						</h2>
+						<div class="grid md:grid-cols-3">
+							{{ content.field_tailored_to_meet_sharjah }}
+
+						</div>
+					</div>
+
+				</div>
+			</section>
+		{% endif %}
+
+
+		{% if drupal_view_result('services','grid')|length > 0 %}
+			{{ drupal_view('services', 'grid') }}
+
+		{% endif %}
+
+
+		{% if drupal_view_result('service_providers','slider')|length > 0 %}
+			{{ drupal_view('service_providers', 'slider') }}
+		{% endif %}
+
+	{% endif %}

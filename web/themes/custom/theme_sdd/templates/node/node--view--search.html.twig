@@ -1,0 +1,16 @@
+<h6 class="flex items-center gap-2 text-sm capitalize text-[#6A7282]">
+		<img class="w-[15px]" src="/{{ active_theme_path()}}/assets/images/headline.svg" alt="">
+		<span>
+			{{ bundle_label }}
+            
+		</span>
+	</h6>
+	<a href="{{ url }}" class="inline-block py-6 text-2xl underline transition-all hover:text-orange">
+		{{ medium_label }}
+	</a>
+    
+    {% if body_long is not empty  %}
+	<div class="text-[#6A7282]">
+		{{  body_long|render|striptags|trim|raw }}
+	</div>
+    {% endif %}

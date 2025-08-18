@@ -90,9 +90,5 @@
 	{{ page.featured_secondary_bottom }}
 {% endif %}
 
-{# footer #}
-{% if page.footer %}
-	<footer role="contentinfo">
-		{{ page.footer }}
-	</footer>
-{% endif %}
+
+{% include '@theme_sdd/includes/_footer.html.twig' ignore missing %}

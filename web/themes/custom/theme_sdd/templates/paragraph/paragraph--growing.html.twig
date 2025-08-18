@@ -1,9 +1,31 @@
-<div class="xl:pe-[70px] md:pe-10 pb-8 md:pb-0">
-	<div class="flex items-center gap-6 mb-4 xl:text-6xl md:text-3xl text-5xl">
-		<i class="fa-light fa-{{ content.field_growing_font_class|render|striptags|trim|raw  }} text-[#007A55]  "></i>
-		<h4 class="">
+{# selected type paragraph  digital_shajrah #}
+
+{% if  ds_selected_type =='digital_shajrah'%}
+	<div class="xl:pe-[70px] md:pe-10 pb-8 md:pb-0">
+		<div class="flex items-center gap-6 mb-4 xl:text-6xl md:text-3xl text-5xl">
+			<i class="fa-light fa-{{ content.field_growing_font_class|render|striptags|trim|raw  }} text-[#007A55]  "></i>
+			<h4 class="">
+				{{ content.field_sh_number|render|striptags|trim|raw  }}
+			</h4>
+		</div>
+		<p class="text-[#4A5565]">
+			{{ content.field_title|render|striptags|trim|raw  }}
+		</p>
+	</div>
+{% endif %}
+
+
+{# selected type paragraph  statistics #}
+{% if  ds_selected_type =='statistics'%}
+
+	<div class="flex flex-col md:flex-row gap-6 items-center border-b border-[#D4D4D8]  pb-8 md:pb-16">
+		<i class="fa-light fa-hourglass-clock md:text-4xl text-5xl lg:text-5xl xl:text-[60px] text-[#99A1AF]"></i>
+		<h4 class="text-orange font-bold md:text-4xl text-5xl lg:text-5xl xl:text-[60px]">
 			{{ content.field_sh_number|render|striptags|trim|raw  }}
 		</h4>
+		<p class="text-sm">
+			{{ content.field_title|render|striptags|trim|raw  }}
+		</p>
 	</div>
-	<p class="text-[#4A5565]">{{ content.field_title|render|striptags|trim|raw  }}</p>
-</div>
+
+{% endif %}

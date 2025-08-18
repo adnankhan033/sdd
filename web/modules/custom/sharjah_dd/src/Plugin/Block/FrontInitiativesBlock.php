@@ -73,8 +73,6 @@ final class FrontInitiativesBlock extends BlockBase implements ContainerFactoryP
       'title' => $title,
       'description' => $description,
     ];
-
-
     return [
       '#theme' => 'front_initiatives',
       '#items' => $items,

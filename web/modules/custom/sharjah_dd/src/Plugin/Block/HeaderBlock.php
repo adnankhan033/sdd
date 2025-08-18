@@ -69,17 +69,14 @@ final class HeaderBlock extends BlockBase implements ContainerFactoryPluginInter
     if ($top_logo_left instanceof \Drupal\file\FileInterface) {
       $left_logo_url = \Drupal::service('file_url_generator')->generateAbsoluteString($top_logo_left->getFileUri());
     } 
-
     $right_logo_url = '';
     if ($top_logo_right instanceof \Drupal\file\FileInterface) {
       $right_logo_url = \Drupal::service('file_url_generator')->generateAbsoluteString($top_logo_right->getFileUri());
     }
-
     $items = [
       'left_logo_url' => $left_logo_url,
       'right_logo_url' => $right_logo_url,
     ];
-
     return [
       '#theme' => 'header',
       '#items' => $items,

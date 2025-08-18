@@ -62,10 +62,8 @@ final class FrontNewsBlock extends BlockBase implements ContainerFactoryPluginIn
     if (!$config_page) {
       return [];
     }
-    
     $description = $config_page->get('field_front_news_description')->value ?? '';
     $highlight = $config_page->get('field_front_news_highlight')->value ?? '';
-    
     $items = [
       'highlight' => $highlight,
       'description' => $description,

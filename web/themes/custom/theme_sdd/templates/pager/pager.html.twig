@@ -1,0 +1,123 @@
+{#
+/**
+ * @file
+ * Theme override to display a pager.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - pagination_heading_level: The heading level to use for the pager.
+ * - items: List of pager items.
+ *   The list is keyed by the following elements:
+ *   - first: Item for the first page; not present on the first page of results.
+ *   - previous: Item for the previous page; not present on the first page
+ *     of results.
+ *   - next: Item for the next page; not present on the last page of results.
+ *   - last: Item for the last page; not present on the last page of results.
+ *   - pages: List of pages, keyed by page number.
+ *   Sub-sub elements:
+ *   items.first, items.previous, items.next, items.last, and each item inside
+ *   items.pages contain the following elements:
+ *   - href: URL with appropriate query parameters for the item.
+ *   - attributes: A keyed list of HTML attributes for the item.
+ *   - text: The visible text used for the item link, such as "‹ Previous"
+ *     or "Next ›".
+ * - current: The page number of the current page.
+ * - ellipses: If there are more pages than the quantity allows, then an
+ *   ellipsis before or after the listed pages may be present.
+ *   - previous: Present if the currently visible list of pages does not start
+ *     at the first page.
+ *   - next: Present if the visible list of pages ends before the last page.
+ *
+ * @see template_preprocess_pager()
+ */
+#}
+{% if items %}
+
+{% set link_class ='[.active]:bg-orange [.active]:text-white flex h-10 w-10 items-center justify-center rounded-full transition-all hover:bg-orange hover:text-white' %}
+<div class="mb-7 flex flex-col items-center gap-11 lg:flex-row lg:justify-end">
+
+
+<div class="flex items-center gap-3 append-items-per-page">
+  <span>{{ "Rows per page"|t }}</span>
+  <select id="rows-per-page" class="rounded border border-[#D4D4D8] px-2 py-1 focus:border-orange focus:outline-none">
+    <option value="25">{{"25"|t }}</option>
+    <option value="50">{{"50"|t }}</option>
+    <option value="75">{{"75"|t }}</option>
+    <option value="100">{{"100"|t }}</option>
+  </select>
+  <span>{{ "1–25 of 100"|t }}</span>
+</div>
+
+          <div class="flex items-center gap-3">
+          
+  <nav class="" role="navigation" aria-labelledby="{{ heading_id }}">
+    <{{ pagination_heading_level }} id="{{ heading_id }}" class="visually-hidden hidden">{{ 'Pagination'|t }}</{{ pagination_heading_level }}>
+    <ul class="pager__items js-pager__items pager flex items-center gap-1 sm:gap-3">
+      {# Print first item if we are not on the first page. #}
+      {% if items.first %}
+        <li class="pager__item pager__item--first">
+          <a href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }} class="{{ link_class }}">
+            <i class="fa-light fa-chevrons-left"></i>
+          </a>
+        </li>
+      {% endif %}
+      {# Print previous item if we are not on the first page. #}
+      {% if items.previous %}
+        <li class="pager__item pager__item--previous">
+          <a href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }} class="{{ link_class }}">
+            <i class="fa-light fa-chevron-left"></i>
+            {# correct english sorry for late reply im near to complete the site i didnt contact with your hope i will share link with you #}
+          </a>
+        </li>
+      {% endif %}
+      {# Add an ellipsis if there are further previous pages. #}
+      {% if ellipses.previous %}
+        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
+      {% endif %}
+      {# Now generate the actual pager piece. #}
+      {% for key, item in items.pages %}
+        <li class="pager__item{{ current == key ? ' is-active active' : '' }}">
+          {% if current == key %}
+            {% set title = 'Current page'|t %}
+          {% else %}
+            {% set title = 'Go to page @key'|t({'@key': key}) %}
+          {% endif %}
+          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} class="{{ link_class }} {{ current == key ? ' active' : '' }}">
+            <span class="visually-hidden hidden">
+              {{ 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
+        </li>
+      {% endfor %}
+      {# Add an ellipsis if there are further next pages. #}
+      {% if ellipses.next %}
+        <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
+      {% endif %}
+      {# Print next item if we are not on the last page. #}
+      {% if items.next %}
+        <li class="pager__item pager__item--next">
+          <a href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }} class="{{ link_class }}">
+         
+            <i class="fa-light fa-chevron-right"></i>
+          </a>
+        </li>
+      {% endif %}
+      {# Print last item if we are not on the last page. #}
+      {% if items.last %}
+        <li class="pager__item pager__item--last">
+          <a href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }} class="{{ link_class }}">
+            
+            
+            <i class="fa-light fa-chevrons-right"></i>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+
+  </nav>
+  </div>
+  </div>
+{% endif %}
+
+

@@ -63,18 +63,14 @@ final class FrontServicesBlock extends BlockBase implements ContainerFactoryPlug
     if (!$config_page) {
       return [];
     }
-    
     $description = $config_page->get('field_service_front_description')->value ?? '';
     $highlight = $config_page->get('field_services_highlights')->value ?? '';
-    $title = $config_page->get('field_services_title')->value ?? '';
-    
+    $title = $config_page->get('field_services_title')->value ?? '';  
     $items = [
       'highlight' => $highlight,
       'title' => $title,
       'description' => $description,
     ];
-
-
     return [
       '#theme' => 'front_services',
       '#items' => $items,

@@ -40,3 +40,18 @@ body a.visually-hidden.focusable {
     z-index: 9999;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
+
+
+  .form-item-items-per-page {
+    display: none;
+  }
+
+ 
+  .newsletter-form .fieldgroup,
+  .newsletter-form .description,
+  .newsletter-form #edit-message--2,
+  .newsletter-form label
+  
+  {
+    display: none !important;
+  }
