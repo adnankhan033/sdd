@@ -19,6 +19,7 @@ dependencies:
     - field.field.config_pages.general_pages.field_laws_regulations_descripti
     - field.field.config_pages.general_pages.field_leadership_banner
     - field.field.config_pages.general_pages.field_multimedia_gallery_banner
+    - field.field.config_pages.general_pages.field_news_room_banner
     - field.field.config_pages.general_pages.field_our_mission
     - field.field.config_pages.general_pages.field_our_vision
     - field.field.config_pages.general_pages.field_serv_header_details
@@ -157,6 +158,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_news_room:
+      children:
+        - field_news_room_banner
+      label: 'News Room'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 id: config_pages.general_pages.default
 targetEntityType: config_pages
 bundle: general_pages
@@ -277,6 +294,14 @@ content:
   field_multimedia_gallery_banner:
     type: image_image
     weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_news_room_banner:
+    type: image_image
+    weight: 7
     region: content
     settings:
       progress_indicator: throbber

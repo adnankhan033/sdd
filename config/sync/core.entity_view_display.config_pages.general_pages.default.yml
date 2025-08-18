@@ -19,6 +19,7 @@ dependencies:
     - field.field.config_pages.general_pages.field_laws_regulations_descripti
     - field.field.config_pages.general_pages.field_leadership_banner
     - field.field.config_pages.general_pages.field_multimedia_gallery_banner
+    - field.field.config_pages.general_pages.field_news_room_banner
     - field.field.config_pages.general_pages.field_our_mission
     - field.field.config_pages.general_pages.field_our_vision
     - field.field.config_pages.general_pages.field_serv_header_details
@@ -181,6 +182,21 @@ content:
       svg_render_as_image: true
     third_party_settings: {  }
     weight: 16
+    region: content
+  field_news_room_banner:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 22
     region: content
   field_our_mission:
     type: text_default

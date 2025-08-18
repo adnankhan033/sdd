@@ -10,18 +10,18 @@ label: Initiatives
 type: 'canonical_entities:node'
 pattern: '/initiatives/[node:title]'
 selection_criteria:
-  a677f6e3-2f63-4bb3-b5c9-4f18b1549bc0:
+  a13aae1d-d9d5-4d05-bcc1-1257b9e6ae31:
     id: 'entity_bundle:node'
     negate: false
-    uuid: a677f6e3-2f63-4bb3-b5c9-4f18b1549bc0
+    uuid: a13aae1d-d9d5-4d05-bcc1-1257b9e6ae31
     context_mapping:
       node: node
     bundles:
       initiatives: initiatives
-  f6b96e62-e527-48fb-b9e8-eb6d3cccede1:
+  5e24ed9c-1878-456b-a121-6a89fde7c836:
     id: language
     negate: false
-    uuid: f6b96e62-e527-48fb-b9e8-eb6d3cccede1
+    uuid: 5e24ed9c-1878-456b-a121-6a89fde7c836
     context_mapping:
       language: 'node:langcode:language'
     langcodes:
