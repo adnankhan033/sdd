@@ -1,0 +1,27 @@
+uuid: 8ce49fd4-9979-403f-9abb-5b5b133a84ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+  theme:
+    - theme_sdd
+id: theme_sdd_simplenewssubscription
+theme: theme_sdd
+region: sidebar_second
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  label_display: '0'
+  provider: simplenews
+  newsletters:
+    default: default
+  default_newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  show_manage: false
+  unique_id: 0b9add7d-f918-4fe8-ba20-9f98cacb0143
+visibility: {  }

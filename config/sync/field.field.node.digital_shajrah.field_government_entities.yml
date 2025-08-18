@@ -1,0 +1,24 @@
+uuid: ee9ad6bd-1bda-4aa6-868b-c7ac90f3f971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_government_entities
+    - node.type.digital_shajrah
+  module:
+    - text
+id: node.digital_shajrah.field_government_entities
+field_name: field_government_entities
+entity_type: node
+bundle: digital_shajrah
+label: 'Government Entities'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

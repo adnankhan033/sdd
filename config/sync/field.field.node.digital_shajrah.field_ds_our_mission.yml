@@ -1,0 +1,22 @@
+uuid: 5da1bdb7-c9be-4d68-9429-baaf8391d8e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ds_our_mission
+    - node.type.digital_shajrah
+  module:
+    - text
+id: node.digital_shajrah.field_ds_our_mission
+field_name: field_ds_our_mission
+entity_type: node
+bundle: digital_shajrah
+label: ' Our Mission'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

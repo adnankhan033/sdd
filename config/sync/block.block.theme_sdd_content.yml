@@ -11,7 +11,7 @@ _core:
 id: theme_sdd_content
 theme: theme_sdd
 region: content
-weight: -10
+weight: -12
 provider: null
 plugin: system_main_block
 settings:

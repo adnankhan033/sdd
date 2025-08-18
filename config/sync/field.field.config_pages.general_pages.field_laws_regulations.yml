@@ -1,0 +1,19 @@
+uuid: b7b6ce7d-2ac0-4913-9fed-eb999f6b506a
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_laws_regulations
+id: config_pages.general_pages.field_laws_regulations
+field_name: field_laws_regulations
+entity_type: config_pages
+bundle: general_pages
+label: 'Laws & Regulations title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

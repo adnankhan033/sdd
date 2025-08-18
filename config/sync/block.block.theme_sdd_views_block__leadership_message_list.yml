@@ -12,7 +12,7 @@ dependencies:
 id: theme_sdd_views_block__leadership_message_list
 theme: theme_sdd
 region: content
-weight: -9
+weight: -11
 provider: null
 plugin: 'views_block:leadership_message-list'
 settings:

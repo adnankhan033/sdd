@@ -12,7 +12,7 @@ dependencies:
 id: theme_sdd_views_block__regulations_attachment
 theme: theme_sdd
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: 'views_block:regulations-attachment'
 settings:

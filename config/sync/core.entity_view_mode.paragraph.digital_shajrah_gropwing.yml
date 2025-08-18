@@ -1,0 +1,11 @@
+uuid: 90825ee6-f6c1-4f97-b692-62dd02d76700
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.digital_shajrah_gropwing
+label: ' Digital Shajrah Gropwing'
+description: ''
+targetEntityType: paragraph
+cache: true

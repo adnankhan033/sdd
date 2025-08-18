@@ -1,0 +1,39 @@
+uuid: 922f5506-d2b9-4cbb-8079-90e3f5f10086
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.our_performance_in_numbers.field_font_class
+    - field.field.paragraph.our_performance_in_numbers.field_sh_number
+    - field.field.paragraph.our_performance_in_numbers.field_title
+    - paragraphs.paragraphs_type.our_performance_in_numbers
+id: paragraph.our_performance_in_numbers.default
+targetEntityType: paragraph
+bundle: our_performance_in_numbers
+mode: default
+content:
+  field_font_class:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sh_number:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,22 @@
+uuid: fe9ff2ed-8555-4887-845a-ab6d92602b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_services_info
+  module:
+    - text
+id: config_pages.general_pages.field_services_info
+field_name: field_services_info
+entity_type: config_pages
+bundle: general_pages
+label: 'Services Info'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

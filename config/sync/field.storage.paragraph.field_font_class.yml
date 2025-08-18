@@ -29,6 +29,9 @@ settings:
     -
       value: shield
       label: shield
+    -
+      value: light
+      label: light
   allowed_values_function: ''
 module: options
 locked: false

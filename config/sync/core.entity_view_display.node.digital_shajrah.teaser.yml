@@ -5,8 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.digital_shajrah.body
+    - field.field.node.digital_shajrah.field_ds_digital_operation
+    - field.field.node.digital_shajrah.field_ds_infrastructure_descr
+    - field.field.node.digital_shajrah.field_ds_our_mission
+    - field.field.node.digital_shajrah.field_energy_saving
+    - field.field.node.digital_shajrah.field_government_entities
     - field.field.node.digital_shajrah.field_growing
     - field.field.node.digital_shajrah.field_image
+    - field.field.node.digital_shajrah.field_our_performance_in_numbers
     - field.field.node.digital_shajrah.field_page_type
     - field.field.node.digital_shajrah.field_tailored_to_meet_sharjah
     - image.style.medium
@@ -49,7 +55,13 @@ content:
     weight: 100
     region: content
 hidden:
+  field_ds_digital_operation: true
+  field_ds_infrastructure_descr: true
+  field_ds_our_mission: true
+  field_energy_saving: true
+  field_government_entities: true
   field_growing: true
+  field_our_performance_in_numbers: true
   field_page_type: true
   field_tailored_to_meet_sharjah: true
   langcode: true

@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.digital_shajrah.body
+    - field.field.node.digital_shajrah.field_ds_digital_operation
+    - field.field.node.digital_shajrah.field_ds_infrastructure_descr
+    - field.field.node.digital_shajrah.field_ds_our_mission
+    - field.field.node.digital_shajrah.field_energy_saving
+    - field.field.node.digital_shajrah.field_government_entities
     - field.field.node.digital_shajrah.field_growing
     - field.field.node.digital_shajrah.field_image
+    - field.field.node.digital_shajrah.field_our_performance_in_numbers
     - field.field.node.digital_shajrah.field_page_type
     - field.field.node.digital_shajrah.field_tailored_to_meet_sharjah
     - image.style.large
@@ -28,6 +34,42 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_ds_digital_operation:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_ds_infrastructure_descr:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_ds_our_mission:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_energy_saving:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_government_entities:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_growing:
     type: entity_reference_revisions_entity_view
@@ -54,6 +96,15 @@ content:
       image_class:
         class: ''
     weight: -1
+    region: content
+  field_our_performance_in_numbers:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_page_type:
     type: list_default

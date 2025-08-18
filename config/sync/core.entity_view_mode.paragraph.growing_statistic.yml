@@ -1,0 +1,11 @@
+uuid: 80c95e93-24d3-4076-a3ee-7f5521e45ff3
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.growing_statistic
+label: 'Growing Statistic'
+description: ''
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,22 @@
+uuid: 24778947-d2ea-4884-9ece-5a95acfb530b
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_serv_header_details
+  module:
+    - text
+id: config_pages.general_pages.field_serv_header_details
+field_name: field_serv_header_details
+entity_type: config_pages
+bundle: general_pages
+label: 'Services Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

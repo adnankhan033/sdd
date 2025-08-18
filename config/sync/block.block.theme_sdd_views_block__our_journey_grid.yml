@@ -12,7 +12,7 @@ dependencies:
 id: theme_sdd_views_block__our_journey_grid
 theme: theme_sdd
 region: content
-weight: -4
+weight: -6
 provider: null
 plugin: 'views_block:our_journey-grid'
 settings:

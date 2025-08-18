@@ -1,0 +1,19 @@
+uuid: 4702eb95-0d5c-4a96-8f4c-8440c4be3575
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - text
+id: config_pages.field_serv_header_details
+field_name: field_serv_header_details
+entity_type: config_pages
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

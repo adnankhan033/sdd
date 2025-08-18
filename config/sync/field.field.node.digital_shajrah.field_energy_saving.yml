@@ -1,0 +1,19 @@
+uuid: a1d51cba-0174-4e50-b292-ca9e43ad4a39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_energy_saving
+    - node.type.digital_shajrah
+id: node.digital_shajrah.field_energy_saving
+field_name: field_energy_saving
+entity_type: node
+bundle: digital_shajrah
+label: 'Energy Saving'
+description: '*Based on the number of servers.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

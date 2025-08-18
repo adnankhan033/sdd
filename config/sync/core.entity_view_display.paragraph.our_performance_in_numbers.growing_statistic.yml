@@ -1,0 +1,41 @@
+uuid: 50932879-3406-4a60-8591-f80ba604959a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.growing_statistic
+    - field.field.paragraph.our_performance_in_numbers.field_font_class
+    - field.field.paragraph.our_performance_in_numbers.field_sh_number
+    - field.field.paragraph.our_performance_in_numbers.field_title
+    - paragraphs.paragraphs_type.our_performance_in_numbers
+  module:
+    - options
+id: paragraph.our_performance_in_numbers.growing_statistic
+targetEntityType: paragraph
+bundle: our_performance_in_numbers
+mode: growing_statistic
+content:
+  field_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_sh_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

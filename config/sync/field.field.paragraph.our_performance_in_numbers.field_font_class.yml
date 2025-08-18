@@ -1,0 +1,21 @@
+uuid: c5b09499-1238-41a3-bff0-391a779e6a5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_font_class
+    - paragraphs.paragraphs_type.our_performance_in_numbers
+  module:
+    - options
+id: paragraph.our_performance_in_numbers.field_font_class
+field_name: field_font_class
+entity_type: paragraph
+bundle: our_performance_in_numbers
+label: 'Font Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

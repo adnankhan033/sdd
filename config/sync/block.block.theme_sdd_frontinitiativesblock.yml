@@ -10,7 +10,7 @@ dependencies:
 id: theme_sdd_frontinitiativesblock
 theme: theme_sdd
 region: content
-weight: -12
+weight: -14
 provider: null
 plugin: front_initiatives
 settings:

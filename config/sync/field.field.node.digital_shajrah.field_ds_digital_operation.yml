@@ -1,0 +1,22 @@
+uuid: 21b27cc5-d3f1-438c-aefe-718038f602e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ds_digital_operation
+    - node.type.digital_shajrah
+  module:
+    - text
+id: node.digital_shajrah.field_ds_digital_operation
+field_name: field_ds_digital_operation
+entity_type: node
+bundle: digital_shajrah
+label: ' Digital Operation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

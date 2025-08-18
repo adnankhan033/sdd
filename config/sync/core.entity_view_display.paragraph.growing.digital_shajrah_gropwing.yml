@@ -1,0 +1,41 @@
+uuid: ebccb9f5-ae24-4c20-b803-50d9dcd1eca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.digital_shajrah_gropwing
+    - field.field.paragraph.growing.field_growing_font_class
+    - field.field.paragraph.growing.field_sh_number
+    - field.field.paragraph.growing.field_title
+    - paragraphs.paragraphs_type.growing
+  module:
+    - options
+id: paragraph.growing.digital_shajrah_gropwing
+targetEntityType: paragraph
+bundle: growing
+mode: digital_shajrah_gropwing
+content:
+  field_growing_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sh_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

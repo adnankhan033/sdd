@@ -1,0 +1,22 @@
+uuid: 6bc62cb9-4600-4c64-86d6-c7a3e3405559
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ds_infrastructure_descr
+    - node.type.digital_shajrah
+  module:
+    - text
+id: node.digital_shajrah.field_ds_infrastructure_descr
+field_name: field_ds_infrastructure_descr
+entity_type: node
+bundle: digital_shajrah
+label: 'Infrastructure description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
