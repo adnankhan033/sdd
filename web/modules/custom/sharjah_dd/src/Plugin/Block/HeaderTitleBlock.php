@@ -118,7 +118,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       // news main_page
       'view.news.main_page' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_news_room_banner',
         'type' => 'news',
       ],
       //  "entity.webform.canonical"
@@ -244,7 +244,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       'shared_title' => $shared_title ?? '',
       'shared_link' => $shared_link ?? '',
     ];
-    
+    // dd($items);
     $build = [
       '#theme' => 'header_title_block',
       '#items' => $items,

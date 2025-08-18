@@ -55,3 +55,22 @@ body a.visually-hidden.focusable {
   {
     display: none !important;
   }
+
+
+   .wrapper-services-header .container {
+    display: none;
+  }
+
+  .wrapper-services-header:first-of-type .container {
+    display: block;
+  }
+
+  .news-room-filter .form-item-offset,
+  .news-room-filter label,
+  .hide-wrapper,
+  .news-room-filter #edit-submit-news
+   {display: none;}
+   
+   [class^="simplenews-subscriptions-"] [id^="edit-message-"]{
+    display: none !important;
+   }

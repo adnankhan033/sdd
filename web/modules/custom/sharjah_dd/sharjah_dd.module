@@ -4,6 +4,8 @@ declare(strict_types=1);
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * @file
@@ -81,6 +83,10 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
 function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
 
+  if (isset($form['field_year'])) {
+    $form['field_year']['#attributes']['class'][] = 'only-wrapper-hidden hidden';
+  
+  }
   // echo "<pre>";
   // print_r($form['#id']);
   // echo "</pre>";
@@ -88,7 +94,6 @@ function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
   {
   
     $form['#attributes']['class'][] = 'my-custom-form w-full newsletter-form';
-
     // Add a class to a specific input, for example the email field.
     if (isset($form['mail'])) {
 
@@ -104,8 +109,6 @@ function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
     if (isset($form['actions']['submit'])) {
       $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary rounded-[10px] bg-[#353535] p-2 font-bold text-white md:p-6';
     }
-
-   
   }
 
 
@@ -151,4 +154,30 @@ function sharjah_dd_preprocess_webform_submission_form(array &$variables) {
     'form_image' => $form_img_url,
   ];
   
+}
+
+
+
+/**
+ * Implements hook_entity_presave().
+ */
+function sharjah_dd_entity_presave(EntityInterface $entity) {
+  if (!$entity instanceof NodeInterface) {
+    return;
+  }
+
+  // Limit to specific bundles (add more if needed).
+  $bundles = ['our_journey','news'];
+  if (!in_array($entity->bundle(), $bundles, true)) {
+    return;
+  }
+  if ($entity->hasField('field_year')) {
+    $year = (int) \Drupal::service('date.formatter')->format($entity->getCreatedTime(), 'custom', 'Y');
+// dd("test");
+    // If it's a List (text) field, save as string; otherwise integer is fine.
+    $definition = $entity->getFieldDefinition('field_year')->getFieldStorageDefinition();
+    $is_list_text = $definition->getType() === 'list_string' || $definition->getType() === 'list_text';
+
+    $entity->set('field_year', $is_list_text ? (string) $year : $year);
+  }
 }

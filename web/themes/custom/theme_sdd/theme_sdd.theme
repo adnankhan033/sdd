@@ -238,28 +238,52 @@ function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormS
   }
 
 
-  // if ($form['#id'] === 'views-exposed-form-news-main-page') {
-  //   if (isset($form['field_year_value'])) {
-  //     $form['field_year_value']['#type'] = 'select';
-  //     $form['field_year_value']['#attributes']['class'][] = 'h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2';
-  //     // remove size 
-  //     unset($form['field_year_value']['#size']);
-  //     // Start with the default "- Any -" option.
-  //     $options = ['' => t('- All -')];
+  if ($form['#id'] === 'views-exposed-form-news-main-page') {
 
-  //     // Get current year.
-  //     $current_year = date('Y');
+    if (isset($form)) {
+  $form['#attributes']['class'][] ="flex gap-5  flex-grow-1 items-center flex-col md:flex-row news-room-filter";
+    }
+    // sort_by actions
+    if (isset($form['sort_by'])) {
+      $form['sort_by']['#attributes']['class'][] ="hide-wrapper";
+    }
+    if (isset($form['actions'])) {
+      $form['actions']['#attributes']['class'][] ="hide-wrapper";
+    }
+    if (isset($form['items_per_page'])) {
+      $form['items_per_page']['#attributes']['class'][] ="hidden";
+    }
+      if (isset($form['sort_order'])) {
+      $form['sort_order']['#attributes']['class'][] = 'h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2';
+    }
+    if (isset($form['offset'])) {
+      $form['offset']['#attributes']['class'][] = 'hidden';
+    }
+    if (isset($form['keys'])) {
+      $form['keys']['#attributes']['class'][] = 'h-[52px] w-full rounded-sm border border-[#D4D4D8] bg-[#fff] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]  md:max-w-[333px]';
+    }
+      if (isset($form['year'])) {
+      $form['year']['#type'] = 'select';
+      $form['year']['#attributes']['class'][] = 'h-[53px] w-full md:max-w-[333px] rounded-lg border border-[#D4D4D8] px-4 py-2';
+      
+      $form['year']['#weight'] = 1000;
+      // remove size 
+      unset($form['year']['#size']);
+      // Start with the default "- Any -" option.
+      $options = ['' => t('- All -')];
+      // Get current year.
+      $current_year = date('Y');
 
-  //     // Generate years from 2000 to current year (descending order).
-  //     for ($year = $current_year; $year >= 2000; $year--) {
-  //       $options[$year] = (string) $year;
-  //     }
+      // Generate years from 2000 to current year (descending order).
+      for ($year = $current_year; $year >= 2000; $year--) {
+        $options[$year] = (string) $year;
+      }
 
-  //     $form['field_year_value']['#options'] = $options;
-  //     $form['field_year_value']['#empty_option'] = t('- All -');
-  //   }
+      $form['year']['#options'] = $options;
+      $form['year']['#empty_option'] = t('- All -');
+    }
 
-  // }
+  }
 
   if ($form['#id'] ===  "views-exposed-form-media-images-page-grid") {
     // add class to ASC and DESC 

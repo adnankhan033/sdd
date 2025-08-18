@@ -4,18 +4,18 @@
 ] %}
 
 
-		{% set is_nested = true %}
-		{% for name, value in hiddens %}
-			<input type="hidden" name="{{ name }}" value="{{ value }}"/>
-		{% endfor %}
+{% set is_nested = true %}
+{% for name, value in hiddens %}
+<input type="hidden" name="{{ name }}" value="{{ value }}" />
+{% endfor %}
 
-		<div{{attributes.removeClass('form-select').addClass(classes)}}>
-			{% set current_nesting_level = 0 %}
-			{% for child in children %}
-				{% set item = attribute(element, child) %}
+<div{{attributes.removeClass('form-select').addClass(classes)}}>
+    {% set current_nesting_level = 0 %}
+    {% for child in children %}
+    {% set item = attribute(element, child) %}
 
 
-				{% set item = item|merge({
+    {% set item = item|merge({
   '#attributes': item['#attributes']|merge({
     'class': (item['#attributes'].class|default([]))|merge([
       child in selected ? 'active' : '',
@@ -24,32 +24,32 @@
   })
 }) %}
 
-				{% set new_nesting_level = attribute(depth, child) ?? 0 %}
-				{% set delta = (current_nesting_level - new_nesting_level) |abs %}
+    {% set new_nesting_level = attribute(depth, child) ?? 0 %}
+    {% set delta = (current_nesting_level - new_nesting_level) |abs %}
 
-				{% if loop.first %}
-					<ul class="hidden gap-2 md:grid md:gap-4">
-					{% else %}
-						{% if delta %}
-							{% for i in 1..delta %}
-								{% if new_nesting_level > current_nesting_level %}
-									<ul>
-								{% else %}
-									</ul>
-								{% endif %}
-							{% endfor %}
-						{% endif %}
-					{% endif %}
+    {% if loop.first %}
+    <ul class="hidden gap-2 md:grid md:gap-4">
+        {% else %}
+        {% if delta %}
+        {% for i in 1..delta %}
+        {% if new_nesting_level > current_nesting_level %}
+        <ul>
+            {% else %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endif %}
 
-					<li>
-						{{ item }}
-						{% if loop.last %}
-							{% for i in new_nesting_level..0 %}
-							</li>
-						</ul>
-					{% endfor %}
-				{% endif %}
+        <li>
+            {{ item }}
+            {% if loop.last %}
+            {% for i in new_nesting_level..0 %}
+        </li>
+    </ul>
+    {% endfor %}
+    {% endif %}
 
-				{% set current_nesting_level = new_nesting_level %}
-			{% endfor %}
-		</div>
+    {% set current_nesting_level = new_nesting_level %}
+    {% endfor %}
+    </div>

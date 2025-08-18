@@ -1,19 +1,19 @@
 {% set wrapper_class =
   items.bundle == 'digital_shajrah'
     ? 'first-section relative bg-[#F3F4F6] py-8 md:py-16'
-    : (items.bundle in ['news', 'initiatives']
+    : (items.bundle in ['initiatives','services']
         ? 'first-section bg-gradient-to-r from-[#353535] to-[#BDBDBD] relative bg-white/20 py-8 md:py-14 special-bundle'
         : 'md:py-14 py-8 bg-white/20 relative first-section')
 %}
 
 
 {% set banner_img = 
-  items.bundle in ['news', 'initiatives','digital_sharjah'] 
+  items.bundle in [ 'initiatives','digital_sharjah','services'] 
     ? '/themes/custom/theme_sdd/assets/images/Vector.svg' 
     : items.image 
 %}
 
-
+{# {{ dd( items.type)}} #}
 <section class="{{ wrapper_class }}">
 
 	{% if items.bundle =='digital_shajrah'  %}
@@ -23,18 +23,23 @@
 
 	{% endif %}
 
-	{% if items.bundle in ['news', 'initiatives']  %}
+	{% if items.bundle in [ 'initiatives','services']  %}
+	
 		<div class="absolute bottom-0 end-0 z-[0]">
 			<img src="/themes/custom/theme_sdd/assets/images/Vector.svg" alt="">
 		</div>
 
+	{% elseif   items.type in [ 'news'] %}
+	<img class="absolute left-0 top-0 -z-[1] h-full w-full object-cover opacity-40" src="{{ items.image }}" alt="">
+	
 	{% else %}
+	
 		<img class="w-full h-full absolute top-0 left-0 object-cover -z-[1] opacity-40" src="{{ items.image }}" alt>
 	{% endif %}
 	<div class="container mx-auto px-4">
 		{{ drupal_breadcrumb() }}
 
-		{% if items.bundle in [ 'initiatives']  %}
+		{% if items.bundle in [ 'initiatives','services']  %}
 			<div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
 				<h1 class="md:text-5xl text-4xl">
 					{{ items.title }}

@@ -30,13 +30,9 @@
     'class': (keys['#attributes'].class|default([]))|merge(['mb-4 h-[52px] w-full rounded-sm border border-[#D4D4D8] bg-[#fff] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828] md:mb-10 md:max-w-[333px]'])
   })
 }) %}
-{# {{ dd(form.field_pr_select_type)}} #}
+
 		{{ keys }}
-
 	{{ form.field_pr_select_type }}	
-		{# {{ keys }} #}
-
-		{# {{ form.service_type }} #}
 	<div class="submit-reset hidden ">
 		{{ form.actions }}
 	</div>
