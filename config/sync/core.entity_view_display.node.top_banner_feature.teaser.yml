@@ -8,8 +8,8 @@ dependencies:
     - field.field.node.top_banner_feature.field_icon
     - node.type.top_banner_feature
   module:
+    - smart_trim
     - svg_image
-    - text
     - user
 id: node.top_banner_feature.teaser
 targetEntityType: node
@@ -17,10 +17,26 @@ bundle: top_banner_feature
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 70
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: true
+        replace_tokens: false
     third_party_settings: {  }
     weight: 101
     region: content
