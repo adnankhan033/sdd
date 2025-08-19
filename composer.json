@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.5",
+        "drupal/all_in_one_accessibility": "^1.5",
         "drupal/better_exposed_filters": "^7.0",
         "drupal/bootstrap": "^5.0",
         "drupal/ckeditor5_line_height": "^1.2",
@@ -42,6 +43,7 @@
         "drupal/svg_image": "^3.2",
         "drupal/twig_tweak": "^3.4",
         "drupal/vch": "^1.0",
+        "drupal/views_autocomplete_filters": "^2.0",
         "drupal/webform": "^6.2",
         "drupal/yearonly": "^9.1",
         "drush/drush": "^12.5"

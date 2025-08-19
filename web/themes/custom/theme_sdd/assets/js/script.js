@@ -1,7 +1,7 @@
 if (document.querySelector('.heroswiper')) {
   var swiper = new Swiper('.heroswiper', {
     spaceBetween: 20,
-    speed: 3000,
+    speed: 2000,
     slidesPerView: 1.5,
     autoplay: {
       delay: 4000,
@@ -45,8 +45,6 @@ if (document.querySelector('.swiperlogos')) {
 
   var swiper = new Swiper(".swiperlogos", {
     spaceBetween: 20,
-
- 
     breakpoints: {
       768: {
         slidesPerView: 2.5,
@@ -73,7 +71,7 @@ if (document.querySelector('.swiperlogos')) {
 if (document.querySelector('.aboutswiper')) {
   var swiper = new Swiper('.aboutswiper', {
     spaceBetween: 20,
-    speed: 3000,
+    speed: 1500,
     slidesPerView: 1,
 
     breakpoints: {
@@ -114,6 +112,35 @@ if (document.querySelector('.news-details')) {
 });
 
 }
+
+
+if (document.querySelector('.journeyswiper')) {
+
+  var swiper = new Swiper(".journeyswiper", {
+    spaceBetween: 16,
+    speed: 1500,
+    slidesPerView: 1,
+    breakpoints: {
+      768: {
+        slidesPerView: 7,
+      },
+
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+
+    },
+  });
+
+}
+
+
 
 const stickySection = document.getElementById('sticky-section');
 const firstSection = document.querySelector('.first-section');

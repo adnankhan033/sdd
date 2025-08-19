@@ -74,3 +74,7 @@ body a.visually-hidden.focusable {
    [class^="simplenews-subscriptions-"] [id^="edit-message-"]{
     display: none !important;
    }
+
+   .header-search [id^="edit-submit-head"]{
+    display: none !important;
+   }

@@ -64,9 +64,9 @@
 <div class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
 	<img class="mb-5 max-w-full" src="{{ content.field_icon|render|striptags|trim|raw }}" alt="" />
 	<h3 class="mb-3 text-xl text-white">
-		{{ medium_label }}
+		{{ short_label }}
 	</h3>
 	<p class="text-sm text-white">
-		{{ node.body.value|render|striptags|trim|raw }}
+		{{ content.body|render|striptags|trim|raw }}
 	</p>
 </div>

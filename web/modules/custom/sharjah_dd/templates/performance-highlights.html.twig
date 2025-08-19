@@ -3,7 +3,7 @@
       <div class="container mx-auto px-4">
         <div class="title relative z-[1]">
           <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
-            <img src="/{{ active_theme_path()}}/assets/images/headline.svg" alt />
+            <img src="{{ active_theme_path()}}/assets/images/headline.svg" alt />
             <span> {{ items.highlight }}</span>
           </h6>
           <h2 class="md:mb-10 md:text-4xl mb-6  text-[30px]">
@@ -18,7 +18,7 @@
       </div>
       <div class="md:-translate-y-[200px]">
         <video class="h-[500px] w-full object-fill hidden md:block" autoplay
-          muted src="/{{ active_theme_path()}}/assets/video/shutterstock_1097618671.mp4"></video>
+          muted src="{{ active_theme_path()}}/assets/video/shutterstock_1097618671.mp4"></video>
 
         <div class="container mx-auto px-4">
           <div class="md:mt-[150px] grid md:grid-cols-4 grid-cols-2">
@@ -35,11 +35,16 @@
                  </div>
                 </div>
                              <h6 class="mb-6">
-{{"Supporting"|t }} <br />
+              {{"Supporting"|t }} <br />
               {{ "Government"|t }}
                 </h6>
-                <h4 class="sm:text-[70px] text-5xl font-bold  text-orange">{{ items.supporting_govt }}</h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">{{"Total entities we serve"|t }}</p>
+                <h4 class="sm:text-[70px] text-5xl font-bold  text-orange">
+                {{ items.supporting_govt }}
+                </h4>
+                <p class="text-sm max-w-[150px] md:max-w-max">
+                
+                {{"Total entities we serve"|t }}
+                </p>
               </div>
             </div>
 
@@ -59,9 +64,9 @@
                 </div>
 
                 <h6 class="mb-6">
-                   {{ "Featured "|t }}
+                   {# {{ "Featured "|t }} #}
               <br />
-              {{ "Solutions"|t }}
+              {# {{ "Solutions"|t }} #}
                 </h6>
                 <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.featured_solutions }}</h4>
                 <p class="text-sm max-w-[150px] md:max-w-max">{{ "Total entities we serve"|t }}</p>
@@ -81,8 +86,9 @@
                 </div>
 
                 <h6 class="mb-6">
-                   {{ "Serving"|t }} <br />
-              {{ "Sharjah"|t }}
+                   {# {{ "Serving"|t }}  #}
+                   <br />
+              {# {{ "Sharjah"|t }} #}
                 </h6>
                 <h4 class="sm:text-[70px] text-5xl font-bold "> {{ items.serving_sharjah }}</h4>
                 <p class="text-sm max-w-[150px] md:max-w-max">
@@ -110,7 +116,12 @@
               {{ "Datacenter"|t }}
                 </h6>
                 <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.our_datacenter }}</h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">{{ "Certified Data Center"|t }}</p>
+                <p class="text-sm max-w-[150px] md:max-w-max">
+                
+                {{ "Certified"|t }} 
+                <br / >
+                {{ "Data Center"|t }}
+                </br></p>
               </div>
             </div>
           </div>

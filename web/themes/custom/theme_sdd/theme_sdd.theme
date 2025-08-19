@@ -131,9 +131,23 @@ function theme_sdd_preprocess_html(array &$variables): void
  *
  * This function alters the exposed filter forms for the services view.
  */
-function theme_sdd_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+function theme_sdd_form_views_exposed_form_alter(&$form, $form_state, $form_id)
 {
-  // dd($form['#id'])  ;
+  if($form['#id'] =='views-exposed-form-header-search-popup-popup') {
+    $form['#action'] = "/search";
+    $form['#attributes']['class'][] = 'flex items-center gap-5 py-7';
+
+    $form['keys']['#attributes']['class'][] = 'outline:border h-[52px] w-full rounded-lg bg-[#F3F4F6] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]';
+    // $form['keys']['#prefix'] = '';
+    $form['keys']['#suffix'] = '<div class="close_search flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-full bg-[#353535] text-white">
+    <i class="fa-regular fa-close text-xl text-white"></i>
+  </div>';
+  // $form['#prefix'] ='<div class="flex items-center gap-5 py-7">';
+  // $form['#suffix'] =' </div>
+  
+  // ';
+
+  }
   
   if ( isset($form['#id']) && $form['#id'] === 'views-exposed-form-search-list-page' ) {
 
@@ -331,20 +345,20 @@ function theme_sdd_preprocess_links__language_block(&$variables)
     $linkLanguage = $link['link']['#options']['language'];
     $text = $linkLanguage->getId() === 'ar' ? 'AR' : ($linkLanguage->getId() === 'en' ? 'EN' : $linkLanguage->getName());
     $theme_path = \Drupal::theme()->getActiveTheme()->getPath();
-    $full_path =  $theme_path . '/images/language.svg';
-    $lang_icon = file_get_contents($full_path);
+    // $full_path =  $theme_path . '/images/language.svg';
+    // $lang_icon = file_get_contents($full_path);
 
     $link['link']['#title'] = [
       '#type' => 'inline_template',
       '#template' => '{{ svg|raw }} <span>{{ text|raw }}</span>',
       '#context' => [
         'text' => $text,
-        'svg' =>  $lang_icon,
+        // 'svg' =>  $lang_icon,
 
       ],
     ];
 
-    $link['link']['#options']['attributes']['class'][] = 'language-switcher';
+    $link['link']['#options']['attributes']['class'][] = 'language-switcher flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange';
   }
 }
 

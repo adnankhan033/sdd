@@ -7,19 +7,19 @@
         <div class="flex justify-between items-center">
 
           <div class="flex items-center gap-3 has-border">
-            <button
+            <a href="{{ path('view.services.main_page') }}"
               class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
               <i class="fa-solid fa-rectangle-history"></i>
               <span>{{ "Services"|t }}</span>
-            </button>
+            </a>
 
-            <button
+            <a href="{{ path('contact.site_page') }}"
               class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
               <i class="fa-solid fa-message-exclamation"></i>
               <span>{{ "Feedback & Complaints"|t }}</span>
-            </button>
+            </a>
 
-            <a
+            <a  
               class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
               <i class="fa-solid fa-phone"></i>
               <span>{{"Call centre 06-5017717"|t }}</span>
@@ -52,7 +52,7 @@
             
 			<div class="item1">
 				<div class=" flex-1 flex items-start mb-10 md:mb-0 md:justify-start justify-center">
-					{# <img src="/{{ active_theme_path()}}/assets/images/Logo.svg" class="max-w-full" alt> #}
+					<img src="{{ active_theme_path()}}/assets/images/Logo.svg" class="max-w-full" alt>
 				</div>
 			</div>
 			<div class="item3  mt-10 md:mt-0   ">
@@ -80,7 +80,7 @@
 	<div class="copyrights mt-[30px] relative overflow-hidden md:pb-16 pb-10">
 
 		<div class="absolute bottom-0 end-0 start-0 md:start-auto">
-			{# <img class="w-full h-[25px] md:h-full" src="/{{ active_theme_path()}}/assets/images/footer.png" alt> #}
+			{# <img class="w-full h-[25px] md:h-full" src="{{ active_theme_path()}}/assets/images/footer.png" alt> #}
 		</div>
 
 		<div class="container mx-auto px-4 relative z-1">
@@ -115,7 +115,7 @@
 
 						<li>
 							<a href="{{ items.twitter }}" target="_blank">
-								<img src="/{{ active_theme_path()}}/assets/images/x-twitter.svg" alt>
+								<img src="{{ active_theme_path()}}/assets/images/x-twitter.svg" alt>
 							</a>
 						</li>
 

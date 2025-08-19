@@ -1,3 +1,9 @@
+  <div
+      class="search-block absolute left-0 right-0 top-[87px] z-20 border-t border-[#D4D4D8] bg-white py-3 pb-16 shadow-[0px_14px_24px_0px_#00000012] lg:top-[153px]"
+    >
+{{ drupal_view('header_search_popup', 'popup') }}
+
+   </div>
    <header>
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between lg:py-6 py-5">
@@ -13,11 +19,11 @@
           </button>
 
           <div>
-            {# <img src="{{ items.left_logo_url }}" class="max-w-full" alt /> #}
+            <img src="{{ items.left_logo_url }}" class="max-w-full" alt />
           </div>
 
           <div class="hidden lg:block">
-            {# <img src="{{ items.right_logo_url }}" class="max-w-full" alt /> #}
+            <img src="{{ items.right_logo_url }}" class="max-w-full" alt />
           </div>
 
           <button class="search lg:hidden">
@@ -91,7 +97,7 @@
 						{{ drupal_block('language_block:language_interface', wrapper=false) }}
 						</div>
 						<div class="flex items-center justify-center mt-8">
-							{# <img src="/{{ active_theme_path()}}//{{ active_theme_path()}}/assets/images/Logo2.svg" class="max-w-full" alt/> #}
+							{# <img src="{{ active_theme_path()}}//{{ active_theme_path()}}/assets/images/Logo2.svg" class="max-w-full" alt/> #}
 						</div>
 
 					</div>
@@ -99,12 +105,20 @@
 				</div>
 
 				<div class="  items-center gap-3 hidden lg:flex">
-					<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+
+				      <button
+                class="show_search [.active]:border-orange [.active]:bg-[#FFF3E9] [.active]:text-orange flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange"
+              >
+                <i class="fa-regular fa-search text-sm font-semibold transition-all"></i>
+
+                <span>Search</span>
+              </button>
+					{# <button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
 
 						<i class="fa-regular fa-search text-sm transition-all font-semibold"></i>
 
 						<span>Search</span>
-					</button>
+					</button> #}
 
 					<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
 
@@ -117,3 +131,7 @@
 		</div>
    </nav>
     </header>
+
+
+
+

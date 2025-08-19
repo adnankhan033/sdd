@@ -253,3 +253,21 @@ footer .open i {
   background:#F27B21;
  
 }
+
+.list-custom{
+  padding-inline-start: 10px;
+}
+.list-custom li{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.list-custom li::before{
+  border-radius: 100%;
+  content: '';
+   width: 5px;
+  height: 5px;
+  background: #000;
+  display: inline;
+  flex-shrink: 0;
+}
