@@ -1,0 +1,15 @@
+uuid: a00a6f8e-d067-4109-893f-a2e7391a625e
+langcode: en
+status: true
+dependencies: {  }
+name: about_slider
+label: 'About Slider'
+effects:
+  0a68e829-43dd-4857-a30e-1ae1efe40186:
+    uuid: 0a68e829-43dd-4857-a30e-1ae1efe40186
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: 320
+      upscale: false

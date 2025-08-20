@@ -373,6 +373,20 @@ display:
     display_options:
       title: 'Citizens Block'
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_services_type_target_id:
           id: field_services_type_target_id
@@ -568,6 +582,7 @@ display:
         title: false
         css_class: false
         use_ajax: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -845,6 +860,20 @@ display:
     display_options:
       title: Services
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_services_type_target_id:
           id: field_services_type_target_id
@@ -1040,6 +1069,7 @@ display:
         title: false
         css_class: false
         use_ajax: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -1085,6 +1115,20 @@ display:
           offset: 0
           items_per_page: 6
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -1171,6 +1215,7 @@ display:
         pager: false
         style: false
         row: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -1209,6 +1254,20 @@ display:
     position: 1
     display_options:
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -1361,12 +1420,57 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
         empty: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -1390,6 +1494,20 @@ display:
     display_options:
       title: Services
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_services_type_target_id:
           id: field_services_type_target_id
@@ -1584,6 +1702,7 @@ display:
         empty: false
         title: false
         use_ajax: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -1623,6 +1742,20 @@ display:
     display_options:
       title: 'Consultancy Block'
       empty: {  }
+      sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments:
         field_services_type_target_id:
           id: field_services_type_target_id
@@ -1818,6 +1951,7 @@ display:
         title: false
         css_class: false
         use_ajax: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false

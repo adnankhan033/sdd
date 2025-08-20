@@ -1,0 +1,18 @@
+uuid: cef4c546-ea08-4e6e-b249-d1c7ce3a28e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.initiatives
+id: node.initiatives.changed
+field_name: changed
+entity_type: node
+bundle: initiatives
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

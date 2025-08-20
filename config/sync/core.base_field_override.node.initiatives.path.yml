@@ -1,0 +1,20 @@
+uuid: 181302e4-b76f-4d27-a54a-7f43ac3a8e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.initiatives
+  module:
+    - path
+id: node.initiatives.path
+field_name: path
+entity_type: node
+bundle: initiatives
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

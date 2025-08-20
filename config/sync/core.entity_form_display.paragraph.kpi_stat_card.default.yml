@@ -1,0 +1,55 @@
+uuid: fe161fa0-576c-4070-bbaf-63cec2c844c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kpi_stat_card.field_description
+    - field.field.paragraph.kpi_stat_card.field_font_class
+    - field.field.paragraph.kpi_stat_card.field_short_note
+    - field.field.paragraph.kpi_stat_card.field_title
+    - paragraphs.paragraphs_type.kpi_stat_card
+  module:
+    - text
+id: paragraph.kpi_stat_card.default
+targetEntityType: paragraph
+bundle: kpi_stat_card
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_font_class:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_short_note:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

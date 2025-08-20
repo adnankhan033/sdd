@@ -1,0 +1,24 @@
+uuid: d60c66e1-9814-4034-a6ec-95b8e1c2d507
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.growing_statistic
+    - field.field.paragraph.steps.field_description
+    - field.field.paragraph.steps.field_title
+    - paragraphs.paragraphs_type.steps
+id: paragraph.steps.growing_statistic
+targetEntityType: paragraph
+bundle: steps
+mode: growing_statistic
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_description: true

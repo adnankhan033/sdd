@@ -1,0 +1,49 @@
+uuid: cc38baf7-d9e9-41a9-aa12-1f048a79247e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kpi_stat_card
+    - node.type.services
+    - paragraphs.paragraphs_type.kpi_stat_card
+  module:
+    - entity_reference_revisions
+id: node.services.field_kpi_stat_card
+field_name: field_kpi_stat_card
+entity_type: node
+bundle: services
+label: 'KPI / Stat Card'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      kpi_stat_card: kpi_stat_card
+    negate: 0
+    target_bundles_drag_drop:
+      growing:
+        weight: 8
+        enabled: false
+      kpi_stat_card:
+        weight: 9
+        enabled: true
+      our_performance_in_numbers:
+        weight: 10
+        enabled: false
+      our_strategic_goals:
+        weight: 11
+        enabled: false
+      our_values:
+        weight: 12
+        enabled: false
+      steps:
+        weight: 13
+        enabled: false
+      tailored_to_meet_sharjah_audianc:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

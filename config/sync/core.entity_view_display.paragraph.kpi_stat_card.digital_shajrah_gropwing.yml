@@ -1,0 +1,36 @@
+uuid: 2ded23d4-0d81-457a-90cd-4c8a5872a913
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.digital_shajrah_gropwing
+    - field.field.paragraph.kpi_stat_card.field_description
+    - field.field.paragraph.kpi_stat_card.field_font_class
+    - field.field.paragraph.kpi_stat_card.field_short_note
+    - field.field.paragraph.kpi_stat_card.field_title
+    - paragraphs.paragraphs_type.kpi_stat_card
+  module:
+    - options
+id: paragraph.kpi_stat_card.digital_shajrah_gropwing
+targetEntityType: paragraph
+bundle: kpi_stat_card
+mode: digital_shajrah_gropwing
+content:
+  field_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_description: true
+  field_short_note: true

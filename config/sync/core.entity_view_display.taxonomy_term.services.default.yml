@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.services.field_image
+    - image.style.service_providers
     - taxonomy.vocabulary.services
   module:
+    - image_class
     - svg_image
     - text
 id: taxonomy_term.services.default
@@ -25,14 +27,16 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: service_providers
       image_loading:
         attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-    third_party_settings: {  }
+    third_party_settings:
+      image_class:
+        class: ''
     weight: 1
     region: content
 hidden:

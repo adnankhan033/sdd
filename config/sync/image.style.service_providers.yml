@@ -1,0 +1,15 @@
+uuid: be44a97f-03cf-4a75-bfd7-5de639a285c5
+langcode: en
+status: true
+dependencies: {  }
+name: service_providers
+label: 'Service Providers'
+effects:
+  11b56a48-91f8-4d32-92c9-47fa7f7f413b:
+    uuid: 11b56a48-91f8-4d32-92c9-47fa7f7f413b
+    id: image_scale
+    weight: 1
+    data:
+      width: 133
+      height: 128
+      upscale: false

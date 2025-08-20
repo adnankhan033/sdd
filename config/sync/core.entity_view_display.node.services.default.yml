@@ -6,12 +6,18 @@ dependencies:
     - field.field.node.services.body
     - field.field.node.services.field_font_icon
     - field.field.node.services.field_image
+    - field.field.node.services.field_kpi_stat_card
+    - field.field.node.services.field_service_detail_item
     - field.field.node.services.field_services_type
+    - field.field.node.services.field_sh_icon
+    - field.field.node.services.field_sh_images
     - field.field.node.services.field_short_title
+    - field.field.node.services.field_steps
     - field.field.node.services.field_weight
-    - image.style.wide
     - node.type.services
   module:
+    - entity_reference_revisions
+    - image_class
     - options
     - svg_image
     - text
@@ -43,8 +49,30 @@ content:
       image_style: wide
       image_loading:
         attribute: eager
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_kpi_stat_card:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_service_detail_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_services_type:
     type: entity_reference_label
@@ -54,6 +82,38 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_sh_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_sh_images:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: 'w-full h-full object-cover'
+    weight: 103
+    region: content
   field_short_title:
     type: string
     label: above
@@ -61,6 +121,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_steps:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 107
     region: content
   field_weight:
     type: number_integer

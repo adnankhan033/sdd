@@ -23,6 +23,7 @@ dependencies:
     - field.field.config_pages.general_pages.field_our_mission
     - field.field.config_pages.general_pages.field_our_vision
     - field.field.config_pages.general_pages.field_serv_header_details
+    - field.field.config_pages.general_pages.field_services_apply_link
     - field.field.config_pages.general_pages.field_services_info
     - field.field.config_pages.general_pages.field_sh_images
   module:
@@ -218,6 +219,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 18
+    region: content
+  field_services_apply_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_services_info:
     type: text_default
