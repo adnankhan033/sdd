@@ -1,0 +1,24 @@
+   <div class="grid md:grid-cols-[1fr_2fr] gap-6  border-t border-[#D4D4D8] py-6 md:py-10">
+        <div class="flex items-center gap-4">
+          <i class="fa-regular fa-{{ content.field_font_class|render|striptags|trim|raw  }}  "></i>
+          <h6 class="text-lg font-bold">
+          {{ content.field_title|render|striptags|trim|raw  }}
+          </h6>
+        </div>
+
+        <div class="text-lg">
+  {# Render the field to a string #}
+{% set desc = content.field_description is iterable ? content.field_description|render : content.field_description %}
+
+{# Check if there is any <li> in the rendered HTML #}
+{% set has_li = desc matches '/<\\s*li(\\s|>)/i' %}
+
+<div class="list-inside grid gap-5 {{ has_li ? 'list-custom  list-inside grid gap-5' }}">
+  {{ desc|raw }}
+</div>
+
+        </div>
+
+      </div>
+
+      

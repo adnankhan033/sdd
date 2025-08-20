@@ -1,9 +1,10 @@
        <a href="{{ url }}"
             class="rounded-xl bg-white p-9 group/service hover:border-orange border border-transparent transition-all">
             <div class="mb-6 text-xl flex items-center justify-between">
-              <h5>{{ short_label }}</h5>
+              <h5>{{ shorter_label }}</h5>
               <i
                 class="fa-thin {{ content.field_font_icon|render|striptags|trim|raw }} text-5xl text-orange  group-hover/service:!font-bold transition-all "></i>
+                
             </div>
             <p class="text-sm text-[#99A1AF]">
              {{ content.body|render|striptags|trim|raw}}

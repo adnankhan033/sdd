@@ -1,0 +1,10 @@
+<div class="flex relative mb-8  gap-8 last:after:hidden after:rounded-2xl after:border-[#CACACA]  after:start-[15px] after:top-10  after:absolute after:w-[2px] after:h-[calc(100%-18px)] after:bg-[#CACACA]">
+    <div class="flex-shrink-0 font-bold text-white box-content  shadow-[0px_0px_0px_3px_#f27b214d]   relative z-[1] w-8 h-8 bg-[#F27B21] rounded-full flex items-center justify-center">
+        {{ count }}
+    </div>
+
+    <div class="flex-grow-1  text-sm md:text-base  text-[#353535]">
+        <h5 class="font-bold"> {{ content.field_title|render|striptags|trim|raw }}</h5>
+        {{ content.field_description |render|striptags|trim|raw}}
+    </div>
+</div>

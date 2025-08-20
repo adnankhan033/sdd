@@ -13,30 +13,34 @@
 		</div>
 	</div>
 </section>
-
-<section class="overflow-hidden pt-10 pb-20">
-	<div class="container mx-auto px-4">
-		<div class="swiper aboutswiper !overflow-visible">
-			<div class="swiper-wrapper">
-				{% if content.field_sh_images['#items'] is defined %}
+{% if content.field_sh_images['#items'] is defined %}
+    <section class="overflow-hidden pb-20 pt-10">
+      <div class="container mx-auto px-4">
+        <div class="swiper aboutswiper !overflow-visible">
+          <div class="swiper-wrapper">
+				
 					{% for item in content.field_sh_images['#items'] %}
 						{% set uri = item.entity.uri.value %}
 
 						{# Render the image using Drupal's image function #}
-						{% set images =  drupal_image(uri) %}
-
+						{# {% set images =  drupal_image(uri) %} #}
+{# {{ dd(images)}} #}
 						<div class="swiper-slide !h-auto">
-							<div class="image w-full h-full">
-								{{ drupal_image(uri, 'large', { class: ['w-full', 'h-full', 'object-cover'], alt: item.alt|e }) }}
+							<div class="image h-full w-full about-slider">
+								{{ drupal_image(uri, 'about_slider', { class: ['h-full w-full about-images'], alt: item.alt|e }) }}
+								 {# <img class="h-full w-full" src="{{ active_theme_path()}}/assets/images/img (2).png" alt /> #}
+								 {# <img class="h-full w-full" src="{{ file_url(uri) }}" alt="{{ item.alt|default('')|e }}"> #}
+								 
+
 							</div>
 						</div>
 					{% endfor %}
-				{% endif %}
+				
 			</div>
 		</div>
 	</div>
 </section>
-
+{% endif %}
 
 <section class="md:pt-[120px] md:pb-[300px] py-10">
 	<div class="border-y border-[#E5E7EB]">

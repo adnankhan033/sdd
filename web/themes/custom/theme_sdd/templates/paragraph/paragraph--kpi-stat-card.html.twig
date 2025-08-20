@@ -1,0 +1,39 @@
+   <div class="bg-white p-9 rounded-[20px]  ">
+       <div class="mb-5 flex items-center justify-between">
+           <h6 class="text-lg text-[#6A7282]">
+               {{ content.field_title|render|striptags|trim|raw  }}
+           </h6>
+           <i class="fa-thin  fa-{{ content.field_font_class|render|striptags|trim|raw  }} text-5xl text-orange"></i>
+       </div>
+       <h4 class="text-4xl font-bold mb-5">{{ content.field_description|render|striptags|trim|raw  }}</h4>
+       {% if content.field_short_note['#items'] %}
+       <p class="text-sm text-[#6A7282]">
+           {{ content.field_short_note }}
+       </p>
+       {% endif %}
+
+       <div class="progress-container flex items-center mt-5 justify-between">
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="active w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+           <span class="w-1.5 h-5 bg-[#E5E7EB] block rounded-2xl [.active]:bg-orange"></span>
+
+       </div>
+   </div>
+
