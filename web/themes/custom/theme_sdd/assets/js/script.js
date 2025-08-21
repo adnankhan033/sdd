@@ -45,6 +45,8 @@ if (document.querySelector('.swiperlogos')) {
 
   var swiper = new Swiper(".swiperlogos", {
     spaceBetween: 20,
+    slidesPerView: 1.1,
+
     breakpoints: {
       768: {
         slidesPerView: 2.5,
@@ -395,43 +397,85 @@ jQuery(document).on('input', '.gradient-text', function () {
 
 $(document).ready(function () {
 
-  const observer = new IntersectionObserver(function (entries, obs) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
+   if ('IntersectionObserver' in window) {
+    const visionObserver = new IntersectionObserver(function (entries, obs) {
+      $.each(entries, function (_, entry) {
+        if (entry.isIntersecting) {
+          $('.vision_mission').each(function () {
+            const $el = $(this);
+            if ($el.css('display') === 'none') {
+              $el.slideDown(600);
+            }
+          });
 
-        $('.vision_mission').each(function () {
-          const $el = $(this);
-          if ($el.css('display') === 'none') {
-            $el.slideDown(600);
-          }
-        });
+          obs.unobserve(entry.target);  
+        }
+      });
+    }, { threshold: 0.3 });
 
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
+     if ($('.vision-section')[0]){
+      visionObserver.observe($('.vision-section')[0]);
+    }
+  }
 
-  observer.observe(document.querySelector('.vision-section'));
+   if ('IntersectionObserver' in window) {
+    const faqObserver = new IntersectionObserver(function (entries, obs) {
+      $.each(entries, function (_, entry) {
+        if (entry.isIntersecting) {
+          $(entry.target).find('.faq-btn').trigger('click');
+          obs.unobserve(entry.target); 
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const $firstFaqItem = $('.path-about-our-strategy .faq-item').first();
+    if ($firstFaqItem.length) {
+      faqObserver.observe($firstFaqItem[0]);
+    }
+  }
 
 });
 
-
 $(document).ready(function () {
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
- 
-          $(entry.target).find('.faq-btn').trigger('click');
+  
+  const $searchInput = $('#edit-keys');
+  const $defaultContainer = $('.defult-search');
+  const defaultHTML = $defaultContainer.html(); 
 
-           obs.unobserve(entry.target);
+   const targetNode = document.getElementById('ui-id-1');
+  if (targetNode) {
+    const observer = new MutationObserver(function (mutationsList) {
+      mutationsList.forEach(function (mutation) {
+        if (mutation.addedNodes.length) {
+          const $searchResults = $('#ui-id-1 li a');
+
+          if ($searchResults.length) {
+            $defaultContainer.empty();
+
+            const $newColumn = $('<div></div>');
+            $newColumn.append('<h5 class="mb-4 text-sm text-[#6A7282]">Search Results</h5>');
+
+            const $ul = $('<ul class="grid gap-4 text-xl"></ul>');
+
+            $searchResults.each(function () {
+              const $link = $(this).clone();
+              const $li = $('<li></li>').append($link);
+              $ul.append($li);
+            });
+
+            $newColumn.append($ul);
+            $defaultContainer.append($newColumn);
+          }
         }
       });
-    }, { threshold: 0.3 });  
-
-    const firstFaqItem = document.querySelector('.path-about-our-strategy .faq-item');
-    if (firstFaqItem) {
-      observer.observe(firstFaqItem);
-    }
+    });
+    observer.observe(targetNode, { childList: true, subtree: true });
   }
+
+   $searchInput.on('input', function () {
+    if (!$(this).val()) {
+      $defaultContainer.html(defaultHTML);
+    }
+  });
+ 
 });

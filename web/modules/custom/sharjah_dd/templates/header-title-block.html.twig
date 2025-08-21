@@ -16,7 +16,7 @@
 {% set container_class = 
   items.bundle in [ 'services'] 
     ? 'container mx-auto px-4 relative z-[1]' 
-    : 'container mx-auto px-4' 
+    : 'container mx-auto px-4 relative z-[1]' 
 %}
 
 
@@ -53,10 +53,14 @@
 
         {% if items.bundle in [ 'initiatives','services']  %}
         <div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
-            <h1 class="md:text-5xl text-4xl">
-                {{ items.title }}
-            </h1>
+          
+          <div class="max-w-[700px]">
+<h1 class="md:text-5xl text-4xl">
+	{{ items.title }}
+</h1>
 
+
+          </div>
 
 
             <div class="flex items-center gap-3">

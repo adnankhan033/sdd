@@ -305,3 +305,22 @@ footer .open i {
  .view.view-services  {
    padding: 64px 16px !important
  }
+.iti.iti--allow-dropdown {
+  width: 100%;
+}
+ .view.view-initiatives,.view-regulations  {
+   padding: 64px 16px !important;
+ }
+ @media (max-width:767px) {
+  .view.view-initiatives,.view-regulations {
+      padding: 48px 16px !important;
+    }
+        form#views-exposed-form-header-search-popup-popup {
+          padding: 0 10px 20px;
+        }
+ }
+
+ ul#ui-id-1 {
+   display: none !important;
+ }
+
