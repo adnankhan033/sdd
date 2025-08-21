@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.services_statistics
     - field.field.node.services.body
     - field.field.node.services.field_font_icon
+    - field.field.node.services.field_general_weight
     - field.field.node.services.field_image
     - field.field.node.services.field_kpi_stat_card
     - field.field.node.services.field_service_detail_item
@@ -83,6 +84,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_general_weight: true
   field_kpi_stat_card: true
   field_service_detail_item: true
   field_sh_icon: true

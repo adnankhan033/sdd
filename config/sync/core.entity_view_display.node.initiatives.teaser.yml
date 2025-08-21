@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
+    - field.field.node.initiatives.field_weight
     - field.field.node.initiatives.field_year_of_delivery
     - image.style.initiatives_card
     - node.type.initiatives
@@ -73,6 +74,15 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_year_of_delivery:
     type: string
     label: hidden
@@ -80,6 +90,16 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 4
+    region: content
+  flag_only_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  flag_only_like:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
   links:
     settings: {  }

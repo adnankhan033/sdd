@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
+    - field.field.node.initiatives.field_weight
     - field.field.node.initiatives.field_year_of_delivery
     - image.style.thumbnail
     - node.type.initiatives
@@ -88,6 +89,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 19
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_year_of_delivery:
     type: string_textfield
     weight: 11
@@ -95,6 +103,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  flag:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

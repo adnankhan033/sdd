@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.initiatives.field_init_images
     - field.field.node.initiatives.field_sh_highlights
     - field.field.node.initiatives.field_tags
+    - field.field.node.initiatives.field_weight
     - field.field.node.initiatives.field_year_of_delivery
     - image.style.wide
     - node.type.initiatives
@@ -80,6 +81,16 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  flag_only_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  flag_only_like:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -88,4 +99,5 @@ content:
 hidden:
   field_buttom_description: true
   field_init_images: true
+  field_weight: true
   langcode: true

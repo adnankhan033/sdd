@@ -9,7 +9,7 @@ id: node.services.field_weight
 field_name: field_weight
 entity_type: node
 bundle: services
-label: Weight
+label: 'Front Weight'
 description: ''
 required: false
 translatable: true

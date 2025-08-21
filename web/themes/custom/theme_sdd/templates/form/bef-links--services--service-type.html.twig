@@ -21,7 +21,8 @@
   '#attributes': item['#attributes']|merge({
     'class': (item['#attributes'].class|default([]))|merge([
       child in selected ? 'active' : '',
-      ' [.active]:bg-orange [.active]:text-white rounded-lg block px-4 py-2 text-lg capitalize transition-all hover:bg-orange hover:text-white'
+      ' [.active]:bg-orange [.active]:text-white rounded-lg px-4 py-1 text-lg capitalize transition-all hover:bg-orange hover:text-white md:px-2 lg:px-4'
+
     ])
   })
 }) %}
