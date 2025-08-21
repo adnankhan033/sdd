@@ -32,7 +32,7 @@ if (document.querySelector('.Initiatives-swiper')) {
       delay: 4000,
       disableOnInteraction: false,
     },
-    
+
     breakpoints: {
       768: {
         spaceBetween: 54,
@@ -57,22 +57,22 @@ if (document.querySelector('.swiperlogos')) {
       },
     },
 
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
 }
 if (document.querySelector('.aboutswiper')) {
   var swiper = new Swiper('.aboutswiper', {
     spaceBetween: 20,
     speed: 1500,
-    slidesPerView: 1,
+    slidesPerView: 1.1,
 
     breakpoints: {
       768: {
@@ -90,26 +90,26 @@ if (document.querySelector('.aboutswiper')) {
 if (document.querySelector('.news-details')) {
 
   var swiper = new Swiper(".news-details", {
-  spaceBetween: 16,
-  speed: 1500,
-  slidesPerView: 1,
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
+    spaceBetween: 16,
+    speed: 1500,
+    slidesPerView: 1,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+
     },
-   
-  },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
 
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
 
-  },
-});
+    },
+  });
 
 }
 
@@ -279,37 +279,33 @@ function playGroup(index = 0) {
   });
 }
 
-document.querySelectorAll('.faq-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
-    const icon = btn.querySelector('.faq-icon');
-    const title = btn.querySelector('.faq-title');
+$('.faq-btn').on('click', function () {
+  const $btn = $(this);
+  const $content = $btn.next('.faq-content');
+  const $icon = $btn.find('.faq-icon');
+  const $title = $btn.find('.faq-title');
 
-    document.querySelectorAll('.faq-content').forEach((c) => {
-      if (c !== content) {
-        c.classList.add('hidden');
-        const otherBtn = c.previousElementSibling;
-        if (otherBtn.querySelector('.faq-icon')) {
-          otherBtn.querySelector('.faq-icon').textContent = '+';
-          otherBtn.querySelector('.faq-icon').classList.remove('text-orange');
-          otherBtn.querySelector('.faq-title').classList.remove('text-orange');
-        }
-      }
-    });
-
-    content.classList.toggle('hidden');
-
-    if (content.classList.contains('hidden')) {
-      icon.textContent = '+';
-      icon.classList.remove('text-orange');
-      title.classList.remove('text-orange');
-    } else {
-      icon.textContent = '−';
-      icon.classList.add('text-orange');
-      title.classList.add('text-orange');
+  $('.faq-content').not($content).each(function () {
+    const $c = $(this);
+    $c.addClass('hidden');
+    const $otherBtn = $c.prev('.faq-btn');
+    if ($otherBtn.length) {
+      $otherBtn.find('.faq-icon').text('+').removeClass('text-orange');
+      $otherBtn.find('.faq-title').removeClass('text-orange');
     }
   });
+
+  $content.toggleClass('hidden');
+
+  if ($content.hasClass('hidden')) {
+    $icon.text('+').removeClass('text-orange');
+    $title.removeClass('text-orange');
+  } else {
+    $icon.text('−').addClass('text-orange');
+    $title.addClass('text-orange');
+  }
 });
+
 
 $(document).ready(function () {
   $('[data-filter]').click(function () {
@@ -350,13 +346,13 @@ document.getElementById('categorySelect')?.addEventListener('change', function (
 
 $(document).on('click', '.chnage-layout', function () {
 
-  let data= $(this).data('layout');
+  let data = $(this).data('layout');
   $('.chnage-layout ').removeClass('active');
-  $(this).addClass('active'); 
+  $(this).addClass('active');
 
   $('.section-layout').removeClass('list grid');
   $('.section-layout').addClass(data);
- 
+
 
 
 
@@ -367,7 +363,7 @@ document.querySelectorAll('.video').forEach(wrapper => {
   const video = wrapper.querySelector('video');
   const overlay = wrapper.querySelector('.videoOverlay');
 
- 
+
   video.controls = false;
 
   overlay?.addEventListener('click', () => {
@@ -376,8 +372,8 @@ document.querySelectorAll('.video').forEach(wrapper => {
     overlay.style.display = 'none';
   });
 
- 
-   video?.addEventListener('ended', () => {
+
+  video?.addEventListener('ended', () => {
     overlay.style.display = 'flex';
     video.controls = false;
   });
@@ -389,8 +385,53 @@ document.querySelectorAll('.video').forEach(wrapper => {
 jQuery(document).on('input', '.gradient-text', function () {
 
   let value = $(this).val();
-  if (value){
+  if (value) {
     $(this).removeClass('gradient-text');
   }
-  
+
+});
+
+
+
+$(document).ready(function () {
+
+  const observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+
+        $('.vision_mission').each(function () {
+          const $el = $(this);
+          if ($el.css('display') === 'none') {
+            $el.slideDown(600);
+          }
+        });
+
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(document.querySelector('.vision-section'));
+
+});
+
+
+$(document).ready(function () {
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+ 
+          $(entry.target).find('.faq-btn').trigger('click');
+
+           obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });  
+
+    const firstFaqItem = document.querySelector('.path-about-our-strategy .faq-item');
+    if (firstFaqItem) {
+      observer.observe(firstFaqItem);
+    }
+  }
 });

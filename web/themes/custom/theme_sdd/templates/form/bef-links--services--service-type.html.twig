@@ -4,7 +4,8 @@
 ] %}
 
  <div >
-       <div class="tabs flex-shrink-0 w-full lg:w-auto min-w-max ">
+<div class="tabs w-[calc(100%+16px)] flex-shrink-0 overflow-auto md:w-full md:min-w-max md:overflow-hidden lg:w-auto">
+
     {% set is_nested = true %}
     {% for name, value in hiddens %}
       <input type="hidden" name="{{ name }}" value="{{ value }}" />
@@ -30,7 +31,8 @@
         {% set delta = (current_nesting_level - new_nesting_level) |abs %}
 
         {% if loop.first %}
-          <ul class="flex items-center  lg:gap-3 xl:gap-6 gap-1 rounded-[11px] border border-[#BCBCBC] p-1">
+<ul class="flex min-w-max items-center gap-1 rounded-[11px] border border-[#BCBCBC] p-1 lg:gap-3 xl:gap-6">
+
         {% else %}
           {% if delta %}
             {% for i in 1..delta %}

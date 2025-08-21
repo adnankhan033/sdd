@@ -7,7 +7,8 @@
 				</h2>
 			</div>
 
-			<div class="grid md:gap-10 gap-6">
+<div class="grid md:gap-10 gap-6 text-justify md:text-start">
+
 				{{ content.body|raw }}
 			</div>
 		</div>
@@ -42,17 +43,20 @@
 </section>
 {% endif %}
 
-<section class="md:pt-[120px] md:pb-[300px] py-10">
+<section class="md:pt-[120px] md:pb-[300px] py-10 vision-section">
+
 	<div class="border-y border-[#E5E7EB]">
 		<div class="max-w-[1000px] mx-auto px-4 py-20">
-			<div class=" cursor-pointer faq-btn">
+			<div class="cursor-pointer">
 				<h2 class="md:text-5xl text-4xl font-light ">
 					{{ node.field_our_vision.fieldDefinition.label ?: '' }}
 
 				</h2>
 			</div>
 
-			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
+<div class="text-[#6A7282] md:text-2xl mb-6 mt-10 vision_mission text-justify md:text-start">
+
+
 				{{ content.field_our_vision|raw }}
 			</div>
 		</div>
@@ -60,14 +64,15 @@
 
 	<div class="border-y border-[#E5E7EB]">
 		<div class="max-w-[1000px] mx-auto px-4 py-20">
-			<div class=" cursor-pointer faq-btn">
+			<div class=" cursor-pointer">
 				<h2 class="md:text-5xl text-4xl font-light ">
 					{{ node.field_our_mission.fieldDefinition.label ?: '' }}
 
 				</h2>
 			</div>
 
-			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
+<div class="text-[#6A7282] md:text-2xl mb-6 mt-10 vision_mission text-justify md:text-start">
+
 				{{ content.field_our_mission|raw }}
 			</div>
 		</div>

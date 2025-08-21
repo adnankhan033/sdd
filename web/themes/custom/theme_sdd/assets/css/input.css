@@ -283,3 +283,25 @@ footer .open i {
 .view.view-news.py-10 {
   padding: 0;
 }
+.leader-image img{
+      height: 100%;
+        object-fit: cover;
+        object-position: top;
+}
+.vision_mission{
+  display:none
+}
+
+.view>.px-4{
+  padding: 0 !important;
+}
+ .view{
+  padding: 0 !important;
+ }
+ .path-services {
+   background: #F9FAFB;
+ }
+
+ .view.view-services  {
+   padding: 64px 16px !important
+ }
