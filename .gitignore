@@ -18,7 +18,7 @@
 # /web/sites/*/files-public
 # /web/sites/*/files-private
 
-
+/node_modules
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
 /web/sites/*/tmp
