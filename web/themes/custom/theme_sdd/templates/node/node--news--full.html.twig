@@ -5,20 +5,22 @@
 			<li class="flex items-center gap-2.5   [&:not(:last-child)]:pb-4 md:!p-0">
 				<i class="fa fa-calendar "></i>
 				<p>
-                	{{ node.getCreatedTime()|format_date('olivero_medium') }}
-                </p>
+					{{ node.getCreatedTime()|format_date('olivero_medium') }}
+				</p>
 			</li>
 
 			<li class="flex items-center gap-2.5  [&:not(:last-child)]:pb-4 md:!p-0">
 				<i class="fa fa-layer-group "></i>
 				<p>
-                {% if content.field_tags['#items'] is not empty %}
-  {% for tag in content.field_tags['#items'] %}
-    {{ tag.entity.label }}{% if not loop.last %}, {% endif %}
-  {% endfor %}
-{% endif %}
-                {# News, Gitex24 #}
-                </p>
+					{% if content.field_tags['#items'] is not empty %}
+						{% for tag in content.field_tags['#items'] %}
+							{{ tag.entity.label }}
+							{% if not loop.last %},
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+					{# News, Gitex24 #}
+				</p>
 			</li>
 		</ul>
 
@@ -86,11 +88,10 @@
 {% endif %}
 
 
-
 {% if drupal_view_result('news','related_grid')|length >0 %}
-<section class="bg-[#F9FAFB] py-16 ">
-      <div class="container mx-auto px-4">
-  {{ drupal_view('news', 'related_grid') }}
-  </div>
-  </section>
+	<section class="bg-[#F9FAFB] py-16 ">
+		<div class="container mx-auto px-4">
+			{{ drupal_view('news', 'related_grid') }}
+		</div>
+	</section>
 {% endif %}

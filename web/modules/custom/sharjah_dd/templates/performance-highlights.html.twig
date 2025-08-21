@@ -2,11 +2,11 @@
       class="relative translate-y-[-60px] rounded-t-[60px] bg-white pt-16 md:pt-[100px]">
       <div class="container mx-auto px-4">
         <div class="title relative z-[1]">
-          <h6 class="mb-7 flex items-center gap-2 font-bold text-orange">
+          <h6 class="md:mb-7 flex items-center gap-2 font-bold text-orange mb-4">
             <img src="{{ active_theme_path()}}/assets/images/headline.svg" alt />
             <span> {{ items.highlight }}</span>
           </h6>
-          <h2 class="md:mb-10 md:text-4xl mb-6  text-[30px]">
+          <h2 class="md:mb-10 md:text-4xl mb-6  text-[30px] text-[#353535]">
           {{ items.title }}
           </h2>
           <div class="max-w-[300px]">
@@ -24,7 +24,7 @@
           <div class="md:mt-[150px] grid md:grid-cols-4 grid-cols-2">
             <div class>
               <div
-                class="relative   max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px]  ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block  after:absolute after:bottom-0 after:end-0 after:h-[480px] after:w-[1px] after:bg-[#353535]">
+                class="relative   max-w-max me-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px]  ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block  after:absolute after:bottom-0 after:end-0 after:h-[480px] after:w-[1px] after:bg-[#353535]">
 
                   <div
                   class=" md:block hidden absolute z-[1] -end-[40px] -top-[332px] w-[80px] h-[80px]">
@@ -41,7 +41,7 @@
                 <h4 class="sm:text-[70px] text-5xl font-bold  text-orange">
                 {{ items.supporting_govt }}
                 </h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">
+                <p class="text-sm max-w-[147px] md:max-w-max">
                 
                 {{"Total entities we serve"|t }}
                 </p>
@@ -52,7 +52,7 @@
               class=" after:start-0 after:w-[1px] after:h-[130px] after:my-auto after:bottom-0 after:bg-[#CACACA] after:top-0 relative after:block  md:after:hidden after:absolute">
 
               <div
-                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0 before:hidden  after:hidden md:after:block md:before:block  before:absolute before:-top-[288px] after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+                class="relative max-w-max me-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0 before:hidden  after:hidden md:after:block md:before:block  before:absolute before:-top-[288px] after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
 
                <div
                   class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
@@ -68,14 +68,15 @@
               <br />
               {# {{ "Solutions"|t }} #}
                 </h6>
-                <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.featured_solutions }}</h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">{{ "Total entities we serve"|t }}</p>
+<h4 class="sm:text-[70px] text-5xl font-bold text-[#353535] ">{{ items.featured_solutions }}</h4>
+
+                <p class="text-sm max-w-[147px] md:max-w-max">{{ "Total entities we serve"|t }}</p>
               </div>
             </div>
 
             <div class="border-t border-[#CACACA] md:border-0 mt-6 md:mt-0">
               <div
-                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block     after:absolute after:bottom-11 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+                class="relative max-w-max me-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] ps-0 md:ps-5 p-5 pb-0 before:hidden after:hidden md:after:block md:before:block     after:absolute after:bottom-11 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
                <div
                   class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
                  <div class="flex relative w-[80px] h-[80px]">
@@ -90,8 +91,10 @@
                    <br />
               {# {{ "Sharjah"|t }} #}
                 </h6>
-                <h4 class="sm:text-[70px] text-5xl font-bold "> {{ items.serving_sharjah }}</h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">
+<h4 class="sm:text-[70px] text-5xl font-bold text-[#353535]">
+	{{ items.serving_sharjah }}</h4>
+
+                <p class="text-sm max-w-[147px] md:max-w-max">
                  {{ "Active citizen and resident through Digital Sharjah app"|t }}
                 </p>
               </div>
@@ -100,7 +103,7 @@
             <div
               class="border-t border-[#CACACA] md:border-0 mt-6 md:mt-0 after:start-0 after:w-[1px] after:h-[130px] after:my-auto after:bottom-0 after:bg-[#CACACA] after:top-0 relative after:block  md:after:hidden after:absolute">
               <div
-                class="relative max-w-max mx-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0  before:hidden md:before:block after:hidden md:after:block  after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
+                class="relative max-w-max me-auto md:mx-0 md:max-w-[150px] lg:max-w-[200px] p-5 pb-0  before:hidden md:before:block after:hidden md:after:block  after:absolute after:bottom-0 after:start-0 after:h-[480px] after:w-[1px] after:bg-[#D9D9D9]">
                 <div
                   class=" md:block hidden absolute z-[1] -start-[40px] -top-[332px] w-[80px] h-[80px]">
                  <div class="flex relative w-[80px] h-[80px]">
@@ -115,8 +118,9 @@
                  {{ "Our"|t }} <br />
               {{ "Datacenter"|t }}
                 </h6>
-                <h4 class="sm:text-[70px] text-5xl font-bold ">{{ items.our_datacenter }}</h4>
-                <p class="text-sm max-w-[150px] md:max-w-max">
+<h4 class="sm:text-[70px] text-5xl font-bold text-[#353535]">{{ items.our_datacenter }}</h4>
+
+                <p class="text-sm max-w-[147px] md:max-w-max">
                 
                 {{ "Certified"|t }} 
                 <br / >

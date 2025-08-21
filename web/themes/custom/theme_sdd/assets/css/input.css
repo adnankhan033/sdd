@@ -26,8 +26,7 @@ html {
 body {
   color: #101828;
   font-family: 'sdd';
-  background-color: #f9fafb;
-}
+ }
 
 @config "../../tailwind.config.js";
 @import 'tailwindcss';
@@ -52,17 +51,15 @@ header {
 }
 
 .sticky-bottom .has-border {
-  border: 2px solid;
-  border-image-source: linear-gradient(
-    90deg,
-    #ffffff00 0%,
-    #e5e7eb 53.37%,
-    #e5e7eb 73.08%,
-    #ffffff00 100%
-  );
-  border-image-slice: 1;
-  padding: 16px 0;
-  backdrop-filter: blur(14px);
+    border: 2px solid;
+      border-image-source: linear-gradient(90deg, #ffffff00 0%, #e5e7eb 53.37%, #e5e7eb 73.08%, #ffffff00 100%);
+      border-image-slice: 1;
+      padding: 16px 0;
+      backdrop-filter: blur(14px);
+      border-radius: 1000px;
+      overflow: hidden;
+      padding: 16px;
+      background: #FFFFFF80;
 }
 
 button {
@@ -271,3 +268,59 @@ footer .open i {
   display: inline;
   flex-shrink: 0;
 }
+
+.heroswiper .swiper-slide{
+  height: auto !important;
+}.gradient-text {
+  background: linear-gradient(90deg, #D0D0D0 0%, #6A6A6A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.view-news .px-4{
+  padding: 0 !important;
+}
+.view.view-news.py-10 {
+  padding: 0;
+}
+.leader-image img{
+      height: 100%;
+        object-fit: cover;
+        object-position: top;
+}
+.vision_mission{
+  display:none
+}
+
+.view>.px-4{
+  padding: 0 !important;
+}
+ .view{
+  padding: 0 !important;
+ }
+ .path-services {
+   background: #F9FAFB;
+ }
+
+ .view.view-services  {
+   padding: 64px 16px !important
+ }
+.iti.iti--allow-dropdown {
+  width: 100%;
+}
+ .view.view-initiatives,.view-regulations  {
+   padding: 64px 16px !important;
+ }
+ @media (max-width:767px) {
+  .view.view-initiatives,.view-regulations {
+      padding: 48px 16px !important;
+    }
+        form#views-exposed-form-header-search-popup-popup {
+          padding: 0 10px 20px;
+        }
+ }
+
+ ul#ui-id-1 {
+   display: none !important;
+ }
+

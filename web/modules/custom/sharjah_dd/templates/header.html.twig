@@ -1,44 +1,42 @@
-  <div
-      class="search-block absolute left-0 right-0 top-[87px] z-20 border-t border-[#D4D4D8] bg-white py-3 pb-16 shadow-[0px_14px_24px_0px_#00000012] lg:top-[153px]"
-    >
-{{ drupal_view('header_search_popup', 'popup') }}
+<div class="search-block absolute left-0 right-0 top-[87px] z-20 border-t border-[#D4D4D8] bg-white py-3 pb-16 shadow-[0px_14px_24px_0px_#00000012] lg:top-[153px]">
+	{{ drupal_view('header_search_popup', 'popup') }}
 
-   </div>
-   <header>
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between lg:py-6 py-5">
+</div>
+<header  >
+	<div class="container mx-auto px-4">
+		<div class="flex items-center justify-between lg:py-6 py-5">
 
-          <button class="flex items-center lg:hidden" type="button">
-            <div class="hamburger-toggle">
-              <div class="hamburger">
-                <span class="bg-black"></span>
-                <span class="bg-black"></span>
-                <span class="bg-black"></span>
-              </div>
-            </div>
-          </button>
+			<button class="flex items-center lg:hidden" type="button">
+				<div class="hamburger-toggle">
+					<div class="hamburger">
+						<span class="bg-black"></span>
+						<span class="bg-black"></span>
+						<span class="bg-black"></span>
+					</div>
+				</div>
+			</button>
 
-          <div>
-            <img src="{{ items.left_logo_url }}" class="max-w-full" alt />
-          </div>
+			<div>
+				<img src="{{ items.left_logo_url }}" class="max-w-full" alt/>
+			</div>
 
-          <div class="hidden lg:block">
-            <img src="{{ items.right_logo_url }}" class="max-w-full" alt />
-          </div>
+			<div class="hidden lg:block">
+				<img src="{{ items.right_logo_url }}" class="max-w-full" alt/>
+			</div>
 
-          <button class="search lg:hidden">
-            <i
-              class="fa-regular fa-search text-lg transition-all font-semibold"></i>
+<button class="search lg:hidden show_search ">
 
-          </button>
+				<i class="fa-regular fa-search text-lg transition-all font-semibold"></i>
 
-        </div>
-      </div>
+			</button>
+
+		</div>
+	</div>
 
 	<nav class="bg-secondary">
 		<div class="container mx-auto px-4 h-full">
 			<div class="lg:flex items-center justify-between h-full">
-				<div class="hidden- lg:block main-menu pt-3 lg:pt-0  h-full">
+				<div class="hidden lg:block main-menu pt-3 lg:pt-0  h-full">
 					<ul class="flex lg:items-center lg:gap-6 gap-4">
 
 						{% set main_items = simplify_menu('main') %}
@@ -61,12 +59,19 @@
 										<i class="fa-regular fa-arrow-up-right text-xs"></i>
 									</a>
 									<div class="dropdown-menu absolute opacity-0 -z-50 bg-white pt-4 pb-2 border-t-2 min-w-[200px] mt-4 border-orange lg:transition-all lg:group-hover/dropdwon:opacity-100 lg:group-hover/dropdwon:!z-20">
-										<ul class="grid gap-4  ">
+<div class="sub-item flex items-center justify-between px-4 pb-10 pt-5 lg:hidden">
+	<i class="fa-regular fa-close close-menu text-lg"></i>
+	<h6 class="text-xl">About</h6>
+	<i class="fa-regular fa-angle-left back-menu text-lg"></i>
+</div>
+
+<ul class="grid gap-4">
+
 											{% for child in item.submenu %}
-												<li class=" dropdown-item  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
+												<li class=" dropdown-item lg:text-sm text-[#4A5565]  group/dropdwon transition-all  lg:border-0 border-b border-[#D4D4D8]">
 													<a href="{{ child.url }}" class="flex justify-between items-center lg:py-4  pb-4 px-4 lg:hover:bg-[#FFF3E9] group/item hover:text-orange">
 														<span>{{ child.text }}</span>
-														<i class="fa-regular fa-arrow-right text-sm transition-all  group-hover/item:-rotate-45"></i>
+														<i class="fa-regular fa-arrow-right   transition-all  group-hover/item:-rotate-45"></i>
 													</a>
 												</li>
 											{% endfor %}
@@ -85,7 +90,7 @@
 
 					</ul>
 
-					<div class=" lg:hidden h-full flex flex-col justify-end mb-11">
+					<div class=" lg:hidden h-full flex flex-col justify-end mb-5">
 
 						<div class="flex gap-3 justify-center">
 							<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-[#F3F4F6] px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
@@ -94,10 +99,10 @@
 
 							</button>
 
-						{{ drupal_block('language_block:language_interface', wrapper=false) }}
+							{{ drupal_block('language_block:language_interface', wrapper=false) }}
 						</div>
-						<div class="flex items-center justify-center mt-8">
-							{# <img src="{{ active_theme_path()}}//{{ active_theme_path()}}/assets/images/Logo2.svg" class="max-w-full" alt/> #}
+						<div
+							class="flex items-center justify-center mt-8">{# <img src="{{ active_theme_path()}}//{{ active_theme_path()}}/assets/images/Logo2.svg" class="max-w-full" alt/> #}
 						</div>
 
 					</div>
@@ -106,19 +111,17 @@
 
 				<div class="  items-center gap-3 hidden lg:flex">
 
-				      <button
-                class="show_search [.active]:border-orange [.active]:bg-[#FFF3E9] [.active]:text-orange flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange"
-              >
-                <i class="fa-regular fa-search text-sm font-semibold transition-all"></i>
-
-                <span>Search</span>
-              </button>
-					{# <button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
-
-						<i class="fa-regular fa-search text-sm transition-all font-semibold"></i>
+					<button class="show_search [.active]:border-orange [.active]:bg-[#FFF3E9] [.active]:text-orange flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+						<i class="fa-regular fa-search text-sm font-semibold transition-all"></i>
 
 						<span>Search</span>
-					</button> #}
+					</button>
+					{# <button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
+					
+											<i class="fa-regular fa-search text-sm transition-all font-semibold"></i>
+					
+											<span>Search</span>
+										</button> #}
 
 					<button class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
 
@@ -129,9 +132,5 @@
 				</div>
 			</div>
 		</div>
-   </nav>
-    </header>
-
-
-
-
+	</nav>
+</header>

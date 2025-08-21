@@ -13,5 +13,5 @@ custom-library:
       css/style.css: {}
       https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css: { type: external, minified: true }
       assets/css/all.css: {}
-      assets/css/style.css: {}
+      assets/css/style2.css: {}
 
