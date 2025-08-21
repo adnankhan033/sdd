@@ -3,36 +3,33 @@
 					{% set footer_items = simplify_menu('footer') %}
 					{# Group parents into batches of 3 for each row #}
 					{% for row in footer_items.menu_tree|batch(3) %}
-						{# <div class="row"> #}
+						
 						{% for menu_item in row %}
-							<div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8] {{ loop.first ? 'open' }}">
+						    {% set is_first_parent = loop.parent.loop.first and loop.first %}
+							<div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8] {{ is_first_parent ? 'open ' }}">
 								<div class="footer_widget footer_links">
 									{% if menu_item.submenu is defined and menu_item.submenu|length > 0 %}
-										{# <h4 class="widget_title">
-																				                            {{ menu_item.text }}
-																				                        </h4> #}
+																									
 										<div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
 											<h3 class="font-bold">
 												{{ menu_item.text }}</h3>
-											<button class="sm:hidden">
+											<button class=" {{ is_first_parent ? '': 'sm:hidden'  }}">
 												<i class="fa-solid fa-angle-down transition-all"></i>
 											</button>
 										</div>
-
-										{# <div class="footer_nav"> #}
-										<ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm {{ loop.first ? 'grid' }}">
+										<ul class="sm:grid {{ is_first_parent  ? '': 'hidden'  }}  pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm {{ is_first_parent  ? 'grid' }}">
 											{% for child in menu_item.submenu %}
 												<li class="menu-item">
 													<a href="{{ child.url }}">{{ child.text }}</a>
 												</li>
 											{% endfor %}
 										</ul>
-										{# </div> #}
+										
 									{% endif %}
 								</div>
 							</div>
 						{% endfor %}
-						{# </div> #}
+						
 					{% endfor %}
 				</div>
 			</div>
