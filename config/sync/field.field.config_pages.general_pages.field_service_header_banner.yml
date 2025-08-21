@@ -1,0 +1,38 @@
+uuid: 2498c523-a640-4dad-ba61-df99be1ea5b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_service_header_banner
+  module:
+    - image
+id: config_pages.general_pages.field_service_header_banner
+field_name: field_service_header_banner
+entity_type: config_pages
+bundle: general_pages
+label: 'Service Header Banner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

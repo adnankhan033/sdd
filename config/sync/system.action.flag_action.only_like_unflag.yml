@@ -1,0 +1,15 @@
+uuid: 41a70001-2d4c-47a9-bb44-cef4b6461a98
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.only_like
+  module:
+    - flag
+id: flag_action.only_like_unflag
+label: 'Unflag this item'
+type: node
+plugin: 'flag_action:only_like_unflag'
+configuration:
+  flag_id: only_like
+  flag_action: unflag

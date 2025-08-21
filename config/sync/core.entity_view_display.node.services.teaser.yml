@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.services.field_short_title
     - field.field.node.services.field_steps
     - field.field.node.services.field_weight
-    - image.style.medium
     - node.type.services
   module:
     - options
@@ -81,6 +80,21 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  field_sh_icon:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_short_title:
     type: string
     label: above
@@ -106,7 +120,6 @@ content:
 hidden:
   field_kpi_stat_card: true
   field_service_detail_item: true
-  field_sh_icon: true
   field_sh_images: true
   field_steps: true
   langcode: true

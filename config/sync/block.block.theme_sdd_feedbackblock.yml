@@ -1,0 +1,28 @@
+uuid: 5a5bb8ad-a2ae-4ab8-8221-4ac123ef96a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sharjah_dd
+  theme:
+    - theme_sdd
+id: theme_sdd_feedbackblock
+theme: theme_sdd
+region: content
+weight: 0
+provider: null
+plugin: feedback_block
+settings:
+  id: feedback_block
+  label: 'feedback Block'
+  label_display: '0'
+  provider: sharjah_dd
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      initiatives: initiatives

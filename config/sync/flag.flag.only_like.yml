@@ -1,0 +1,30 @@
+uuid: 4d54c3b6-0007-4338-8957-9aaa33055473
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: only_like
+label: 'Only Like'
+bundles:
+  - initiatives
+entity_type: node
+global: false
+flag_short: 'Yes'
+flag_long: ''
+flag_message: ''
+unflag_short: .....
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+weight: 0
+flag_type: 'entity:node'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

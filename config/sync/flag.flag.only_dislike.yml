@@ -1,0 +1,30 @@
+uuid: 7691048e-7c9a-42ea-be56-aa93f8241490
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: only_dislike
+label: 'Only Dislike'
+bundles:
+  - initiatives
+entity_type: node
+global: false
+flag_short: 'No'
+flag_long: ''
+flag_message: ''
+unflag_short: ....
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+weight: 0
+flag_type: 'entity:node'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }
