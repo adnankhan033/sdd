@@ -19,11 +19,19 @@
 {% endif %}
 
 {% set classes = [
-	'my-[56px]',
-	 'flex',
-	  'items-center',
-	   'justify-between',
-	    'filter'
+ 
+ 'mt-10',
+  'flex',
+  'items-center',
+  'justify-between',
+  'gap-3',
+  'overflow-auto',
+  'filter',
+  'md:my-[56px]',
+  'md:flex-wrap',
+  'lg:overflow-hidden',
+  'lg:flex-nowrap',
+'my-8'
 	] %}
 
 <div {{attributes.addClass(classes)}} id="services">
@@ -34,7 +42,8 @@
     'class': (keys['#attributes'].class|default([]))|merge(['h-[54px] w-full rounded-sm border border-[#D4D4D8] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]'])
   })
 }) %}
-	<div class="search w-full min-w-max xl:max-w-[333px]">
+<div class="search w-full min-w-max xl:max-w-[333px] hidden xl:block">
+
 
 		{{ keys }}
 	</div>

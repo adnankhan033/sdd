@@ -135,9 +135,9 @@ function theme_sdd_form_views_exposed_form_alter(&$form, $form_state, $form_id)
 {
   if($form['#id'] =='views-exposed-form-header-search-popup-popup') {
     $form['#action'] = "/search";
-    $form['#attributes']['class'][] = 'flex items-center gap-5 py-7';
+    $form['#attributes']['class'][] = 'flex items-center gap-5 py-7 relative after:bg-[url(../images/Search.svg)] after:absolute after:w-[35px] after:start-0 after:h-[18px]  after:bg-[16px_center]  after:bg-no-repeat';
 
-    $form['keys']['#attributes']['class'][] = 'outline:border h-[52px] w-full rounded-lg bg-[#F3F4F6] bg-[url(../images/Search.svg)] bg-[16px_center] bg-no-repeat py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]';
+    $form['keys']['#attributes']['class'][] = 'outline:border h-[52px] w-full rounded-lg bg-[#F3F4F6]  py-[18px] pe-2 ps-11 text-[#101828] placeholder:text-[#101828]';
     // $form['keys']['#prefix'] = '';
     $form['keys']['#suffix'] = '<div class="close_search flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center rounded-full bg-[#353535] text-white">
     <i class="fa-regular fa-close text-xl text-white"></i>
@@ -358,7 +358,7 @@ function theme_sdd_preprocess_links__language_block(&$variables)
       ],
     ];
 
-    $link['link']['#options']['attributes']['class'][] = 'language-switcher flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange';
+    $link['link']['#options']['attributes']['class'][] = 'language-switcher bg-[#F3F4F6]  flex h-11 items-center gap-2.5 rounded-full border border-transparent lg:bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange';
   }
 }
 

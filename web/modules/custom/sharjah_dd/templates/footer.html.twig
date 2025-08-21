@@ -1,35 +1,33 @@
-			<div class="item2 only-footer-menu">
-				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-y-[30px] md:gap-y-[60px] ">
-					{% set footer_items = simplify_menu('footer') %}
-					{# Group parents into batches of 3 for each row #}
-					{% for row in footer_items.menu_tree|batch(3) %}
-						
-						{% for menu_item in row %}
-						    {% set is_first_parent = loop.parent.loop.first and loop.first %}
-							<div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8] {{ is_first_parent ? 'open ' }}">
-								<div class="footer_widget footer_links">
-									{% if menu_item.submenu is defined and menu_item.submenu|length > 0 %}
-																									
-										<div class="  cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
-											<h3 class="font-bold">
-												{{ menu_item.text }}</h3>
-											<button class=" {{ is_first_parent ? '': 'sm:hidden'  }}">
-												<i class="fa-solid fa-angle-down transition-all"></i>
-											</button>
-										</div>
-										<ul class="sm:grid {{ is_first_parent  ? '': 'hidden'  }}  pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm {{ is_first_parent  ? 'grid' }}">
-											{% for child in menu_item.submenu %}
-												<li class="menu-item">
-													<a href="{{ child.url }}">{{ child.text }}</a>
-												</li>
-											{% endfor %}
-										</ul>
-										
-									{% endif %}
-								</div>
+<div class="item2 only-footer-menu">
+	<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-y-[30px] md:gap-y-[60px] ">
+		{% set footer_items = simplify_menu('footer') %}
+		{# Group parents into batches of 3 for each row #}
+		{% for row in footer_items.menu_tree|batch(3) %}
+			{% for menu_item in row %}
+<div class="border-b-1 footer-menu border-[#D4D4D8] sm:border-transparent {{ menu_item == first_item ? 'open' }} ">
+
+					<div class="footer_widget footer_links">
+						{% if menu_item.submenu is defined and menu_item.submenu|length > 0 %}
+							<div class="cursor-pointer sm:cursor-auto sm:mb-9 mb-5 flex justify-between items-center">
+								<h3 class="font-bold">{{ menu_item.text }}</h3>
+								<button class="sm:hidden">
+									<i class="fa-solid fa-angle-down transition-all"></i>
+								</button>
 							</div>
-						{% endfor %}
-						
-					{% endfor %}
+
+							<ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm ">
+								{% for child in menu_item.submenu %}
+									<li class="menu-item">
+										<a href="{{ child.url }}">{{ child.text }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+
 				</div>
-			</div>
+			{% endfor %}
+		{% endfor %}
+	</div>
+</div>
+

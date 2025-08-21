@@ -1,0 +1,14 @@
+{
+  "name": "SDD",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/style.min.css --minify",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-tailwindcss": "latest",
+    "@tailwindcss/cli": "latest"
+  }
+}

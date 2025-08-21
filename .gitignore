@@ -4,6 +4,7 @@
 /web/sites/simpletest
 
 /vendor
+/node_modules
 
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings.*.php
