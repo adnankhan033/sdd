@@ -23,24 +23,9 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-{# <div{{ attributes }}>
-  {{ title_prefix }}
-  {% if name and not page %}
-    <h2><a href="{{ url }}">{{ name }}</a></h2>
-  {% endif %}
-  {{ title_suffix }}
-  {{ content }}
-</div> #}
-
-
-  {# <div class="bg-[#F9FAFB] rounded-sm text-center p-5 h-[200px] flex items-center justify-center">
-                  {{ content.field_image }}
-</div> #}
-
 
  <div class="swiper-slide"> 
-                  <div
-                  class="bg-[#F9FAFB] rounded-sm text-center p-5 h-[200px] flex items-center justify-center">
-                  <img src="{{ active_theme_path()}}/assets/images/image60.png" alt>
-                </div>
-                </div>
+   <div class="bg-[#F9FAFB] rounded-sm text-center p-5 h-[200px] flex items-center justify-center">
+                    {{ content.field_image }}
+  </div>
+</div>

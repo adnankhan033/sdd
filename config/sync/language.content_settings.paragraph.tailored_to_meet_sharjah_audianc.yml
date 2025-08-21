@@ -1,0 +1,18 @@
+uuid: b970ba1b-d661-4d18-a059-24a07db8fc0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.tailored_to_meet_sharjah_audianc
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.tailored_to_meet_sharjah_audianc
+target_entity_type_id: paragraph
+target_bundle: tailored_to_meet_sharjah_audianc
+default_langcode: site_default
+language_alterable: true

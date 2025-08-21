@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.top_banner_feature.body
     - field.field.node.top_banner_feature.field_icon
+    - field.field.node.top_banner_feature.field_weight
     - image.style.thumbnail
     - node.type.top_banner_feature
   module:
@@ -39,6 +40,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 17
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

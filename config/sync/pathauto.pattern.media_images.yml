@@ -1,0 +1,33 @@
+uuid: 2adddd90-31fa-4a5c-8001-256b7ddeed9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: media_images
+label: 'Media Images'
+type: 'canonical_entities:node'
+pattern: '/media-center/multimedia-gallery/[node:title]'
+selection_criteria:
+  81a020ff-9603-4a14-8ed5-ce857918fa4c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 81a020ff-9603-4a14-8ed5-ce857918fa4c
+    context_mapping:
+      node: node
+    bundles:
+      media_images: media_images
+  7ac6212c-6827-48ae-b225-47c14203831e:
+    id: language
+    negate: false
+    uuid: 7ac6212c-6827-48ae-b225-47c14203831e
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

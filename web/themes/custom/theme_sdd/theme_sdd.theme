@@ -368,6 +368,19 @@ function theme_sdd_preprocess_links__language_block(&$variables)
 function theme_sdd_preprocess_paragraph(array &$variables)
 {
 
+
+  static $bg_classes = [
+    'index-0',
+    'index-1',
+    'index-2'
+  ];
+  static $counter = 1;
+
+  $class_index = $counter % count($bg_classes);
+  $variables['index_count'] = $bg_classes[$class_index];
+  $variables['count'] = $counter;
+  $counter++;
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
 

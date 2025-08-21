@@ -99,7 +99,7 @@
 : 'fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white' %}
 
 
-<div class="{{ flex_ratio_class }}">
+<div class="{{ flex_ratio_class }} latest-news-front">
   <div class="{{ container_classes }}">
     <div class="{{ is_first ? 'w-full': ''}}">
       <div class="image mb-11">
@@ -112,7 +112,8 @@
           {{ content.field_sh_date['#items'] ? content.field_sh_date }}
         </div>
         <h3 class="text-2xl">
-          {{ short_label }}
+          {# {{ short_label }} #}
+          {{ label}}
         </h3>
       </div>
     </div>

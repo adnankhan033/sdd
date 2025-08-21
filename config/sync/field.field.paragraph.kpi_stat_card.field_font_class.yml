@@ -1,0 +1,21 @@
+uuid: 09b40354-49c0-4805-8178-0b59caf3d307
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_font_class
+    - paragraphs.paragraphs_type.kpi_stat_card
+  module:
+    - options
+id: paragraph.kpi_stat_card.field_font_class
+field_name: field_font_class
+entity_type: paragraph
+bundle: kpi_stat_card
+label: 'Font Class'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,18 @@
+uuid: 29438404-50d7-4ca4-a205-a2f287e635a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.simplenews_issue
+id: node.simplenews_issue.created
+field_name: created
+entity_type: node
+bundle: simplenews_issue
+label: 'Authored on'
+description: 'The date and time that the content was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

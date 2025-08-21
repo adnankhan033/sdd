@@ -1,0 +1,34 @@
+uuid: e3d20a98-f3c3-45f6-99d6-f21927851e14
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.growing_statistic
+    - field.field.paragraph.service_detail_item.field_description
+    - field.field.paragraph.service_detail_item.field_font_class
+    - field.field.paragraph.service_detail_item.field_title
+    - paragraphs.paragraphs_type.service_detail_item
+  module:
+    - options
+id: paragraph.service_detail_item.growing_statistic
+targetEntityType: paragraph
+bundle: service_detail_item
+mode: growing_statistic
+content:
+  field_font_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_description: true

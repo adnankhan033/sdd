@@ -1,0 +1,18 @@
+uuid: 86b5f13b-51b1-480f-8765-b9fa1494fa84
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.our_performance_in_numbers
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.our_performance_in_numbers
+target_entity_type_id: paragraph
+target_bundle: our_performance_in_numbers
+default_langcode: site_default
+language_alterable: true

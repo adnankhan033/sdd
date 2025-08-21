@@ -1,0 +1,82 @@
+  <section class="md:py-20 py-12 bg-[#F9FAFB] overflow-hidden">
+      <div class="container mx-auto px-4">
+
+          <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10">
+
+              {{ content.body |raw }}
+
+              {% if content.field_kpi_stat_card['#items'] %}
+
+              <div class=" order-3 md:order-2">
+                  <div class="grid gap-5">
+
+                      {{ content.field_kpi_stat_card }}
+                  </div>
+              </div>
+              {% endif %}
+
+
+              <div class=" md:ps-20 md:pt-20    order-2 md:order-3 md:col-span-2">
+                  <div class="swiper aboutswiper !overflow-visible">
+                      <div class="swiper-wrapper">
+
+
+                          {% for item in content.field_sh_images['#items'] %}
+                          {% set uri = item.entity.uri.value %}
+
+                          {# Render the image using Drupal's image function #}
+                          {% set images =  drupal_image(uri) %}
+
+                          <div class="swiper-slide !h-auto">
+                              <div class="image h-full w-full">
+                                  {{ drupal_image(uri, 'wide', {
+            class: ['h-full w-full'],
+            alt: item.alt|default('')|e,
+            loading: 'lazy',
+            }) }}
+
+                              </div>
+                          </div>
+
+                          {% endfor %}
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+
+
+  {% if content.field_steps['#items'] %}
+  <section class="md:pt-16 pt-12 pb-10 bg-white">
+      <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-[1fr_2fr]">
+              <div class="mb-6">
+                  <h3 class="md:text-4xl text-3xl">
+                      {{ "How to apply"|t }}
+                  </h3>
+              </div>
+
+              <div class="steps">
+                  {{ content.field_steps }}
+
+              </div>
+          </div>
+      </div>
+
+  </section>
+  {% endif %}
+
+  {% if content.field_service_detail_item['#items'] %}
+  <section class="md:pb-16 pb-10  bg-white">
+    <div class="container mx-auto px-4">
+{{ content.field_service_detail_item }}
+
+ </div>
+
+  </section>
+  {% endif %}

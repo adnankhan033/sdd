@@ -5,10 +5,13 @@ dependencies:
   config:
     - field.field.paragraph.our_values.field_description
     - field.field.paragraph.our_values.field_font_class
+    - field.field.paragraph.our_values.field_shared_icon
     - field.field.paragraph.our_values.field_title
     - paragraphs.paragraphs_type.our_values
   module:
+    - image_class
     - options
+    - svg_image
     - text
 id: paragraph.our_values.default
 targetEntityType: paragraph
@@ -28,6 +31,23 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_shared_icon:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 2
     region: content
   field_title:
     type: string

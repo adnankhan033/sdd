@@ -79,6 +79,8 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
     $bundle = '';
     $shared_title = '';
     $shared_link = '';
+    $apply_links ='';
+
     $cacheTags = ['config_pages:general_pages'];
     $mapping = [
       'view.leadership_message.about_list' => [
@@ -164,14 +166,32 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
           $image = $image_uri ? ImageStyle::load('wide')->buildUrl($image_uri) : '';
           $type = 'node:custom_page';
           break;
-          
+
+          case 'services':
+            $link = $config_page->get('field_services_apply_link')->uri ? $config_page->get('field_services_apply_link') : '';
+            $link_title = $config_page->get('field_services_apply_link')->title ? $config_page->get('field_services_apply_link') : '';
+            $apply_links = ['link' => $link ,'link_title'=> $link_title];
+            $type = 'node:services';
+
+            case 'media_images':
+              $image = $config_page->get('field_multimedia_gallery_banner')->entity ?? '';
+              if ($image) {
+                $image = \Drupal::service('file_url_generator')->generateAbsoluteString($image->getFileUri());
+              }
+              $count_images = 0;
+              if ($node->hasField('field_sh_images') && !$node->get('field_sh_images')->isEmpty()) {
+                $count_images = $node->get('field_sh_images')->count();
+              }
+              
+              // dd($count_images);
+              $type = 'node:media_images';
 
       }
 
       $cacheTags = array_merge($cacheTags, $node->getCacheTags());
     }
 
-
+    // dd($apply_links);
     /** @var \Drupal\config_pages\Entity\ConfigPages $config_page */
     if (isset($mapping[$routeName]) && $config_page) {
       $map = $mapping[$routeName];
@@ -236,6 +256,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       $cacheTags = array_merge($cacheTags, $config_page->getCacheTags());
     }
 
+
     $items = [
       'title' => $title,
       'image' => $image,
@@ -243,6 +264,8 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       'bundle' => $bundle,
       'shared_title' => $shared_title ?? '',
       'shared_link' => $shared_link ?? '',
+      'apply_links'=>  $apply_links,
+      'count_images'=>  $count_images,
     ];
     // dd($items);
     $build = [

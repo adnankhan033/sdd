@@ -1,0 +1,10 @@
+uuid: b0d25201-c5aa-4a0e-a832-1fda65e4844b
+langcode: en
+status: true
+dependencies: {  }
+id: kpi_stat_card
+label: 'KPI / Stat Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

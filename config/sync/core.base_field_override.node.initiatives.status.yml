@@ -1,0 +1,22 @@
+uuid: a18a991d-d0a1-4204-8ec1-d36304fc0990
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.initiatives
+id: node.initiatives.status
+field_name: status
+entity_type: node
+bundle: initiatives
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

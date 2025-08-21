@@ -6,12 +6,18 @@ dependencies:
     - field.field.node.services.body
     - field.field.node.services.field_font_icon
     - field.field.node.services.field_image
+    - field.field.node.services.field_kpi_stat_card
+    - field.field.node.services.field_service_detail_item
     - field.field.node.services.field_services_type
+    - field.field.node.services.field_sh_icon
+    - field.field.node.services.field_sh_images
     - field.field.node.services.field_short_title
+    - field.field.node.services.field_steps
     - field.field.node.services.field_weight
     - image.style.thumbnail
     - node.type.services
   module:
+    - paragraphs
     - path
     - svg_image
     - text
@@ -38,7 +44,7 @@ content:
     third_party_settings: {  }
   field_font_icon:
     type: options_select
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -50,15 +56,67 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_kpi_stat_card:
+    type: paragraphs
+    weight: 15
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_service_detail_item:
+    type: paragraphs
+    weight: 26
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_services_type:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_sh_icon:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_sh_images:
+    type: image_image
+    weight: 14
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_short_title:
     type: string_textfield
@@ -68,9 +126,27 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_steps:
+    type: paragraphs
+    weight: 16
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_weight:
     type: number
-    weight: 13
+    weight: 17
     region: content
     settings:
       placeholder: ''
@@ -116,6 +192,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

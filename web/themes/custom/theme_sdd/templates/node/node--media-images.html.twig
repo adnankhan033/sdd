@@ -1,0 +1,53 @@
+<section class="bg-[#353535] py-6">
+    <div class="container mx-auto px-4">
+
+        <ul class="text-white text-lg divide-y-[1px] md:divide-y-0  divide-[#CACACA]/20  gap-4  flex-col md:flex-row flex md:items-center md:gap-7">
+            <li class="flex items-center gap-2.5   [&amp;:not(:last-child)]:pb-4 md:!p-0">
+                <i class="fa fa-calendar "></i>
+                <p>
+                    {{ node.getCreatedTime()|format_date('olivero_medium') }}
+                </p>
+            </li>
+
+        </ul>
+
+    </div>
+</section>
+
+
+{% set items = content.field_sh_images['#items'] %}
+{% if items %}
+<section class="md:py-16 pt-12 pb-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap md:gap-5 gap-4">
+
+      {% for item in items %}
+        {% set uri = item.entity.uri.value %}
+
+        {# cycle: 0-1 => row of 2, 2-4 => row of 3, then repeat #}
+        {% set cycle = loop.index0 % 5 %}
+        {% set row_size = cycle < 2 ? 2 : 3 %}
+        {% set pos_in_row = cycle < 2 ? cycle : cycle - 2 %}
+        {% set left_total = items|length - loop.index0 %}
+        {# single item in this row? (starting a new row, and only 1 item left) #}
+        {% set single_row = pos_in_row == 0 and left_total == 1 %}
+
+        {% set cls = single_row
+          ? 'md:flex-[calc(1*100%-20px)] col-one'
+          : (row_size == 2
+              ? 'md:flex-[calc(0.5*100%-20px)] col-two'
+              : 'md:flex-[calc(0.33*100%-20px)] col-three') %}
+
+        <div class="flex-[calc(0.5*100%-16px)] {{ cls }}">
+          {{ drupal_image(uri, 'wide', {
+            class: ['w-full h-full object-cover rounded-xl'],
+            alt: item.alt|default('')|e,
+            loading: 'lazy'
+          }) }}
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% endif %}

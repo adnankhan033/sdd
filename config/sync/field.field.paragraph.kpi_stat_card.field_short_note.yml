@@ -1,0 +1,19 @@
+uuid: 00ef845e-f1ee-4b75-bfe7-55dccdd9f1bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_note
+    - paragraphs.paragraphs_type.kpi_stat_card
+id: paragraph.kpi_stat_card.field_short_note
+field_name: field_short_note
+entity_type: paragraph
+bundle: kpi_stat_card
+label: 'Short Note'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

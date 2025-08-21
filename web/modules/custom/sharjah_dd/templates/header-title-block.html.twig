@@ -13,49 +13,80 @@
     : items.image 
 %}
 
-{# {{ dd( items.type)}} #}
+{% set container_class = 
+  items.bundle in [ 'services'] 
+    ? 'container mx-auto px-4 relative z-[1]' 
+    : 'container mx-auto px-4' 
+%}
+
+
+
+
 <section class="{{ wrapper_class }}">
 
-	{% if items.bundle =='digital_shajrah'  %}
-		<div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max">
-			<img src="themes/custom/theme_sdd/assets/images/Group_9.svg" alt="">
-		</div>
+    {% if items.bundle =='digital_shajrah'  %}
 
-	{% endif %}
+    <div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max digital_shajrah">
+        <img src="/{{active_theme_path()}}/assets/images/Group_9.svg" alt="">
+    </div>
 
-	{% if items.bundle in [ 'initiatives','services']  %}
-	
-		<div class="absolute bottom-0 end-0 z-[0]">
-			<img src="themes/custom/theme_sdd/assets/images/Vector.svg" alt="">
-		</div>
+    {% endif %}
 
-	{% elseif   items.type in [ 'news'] %}
-	<img class="absolute left-0 top-0 -z-[1] h-full w-full object-cover opacity-40" src="{{ items.image }}" alt="">
-	
-	{% else %}
-	
-		<img class="w-full h-full absolute top-0 left-0 object-cover -z-[1] opacity-40" src="{{ items.image }}" alt>
-	{% endif %}
-	<div class="container mx-auto px-4">
-		{{ drupal_breadcrumb() }}
+    {% if items.bundle in [ 'initiatives','services']  %}
+    {# {{ dd(banner_img)}} #}
+    <div class="absolute bottom-0 end-0 z-[0]">
+        <img class="" src="{{ banner_img }}" alt="">
+    </div>
 
-		{% if items.bundle in [ 'initiatives','services']  %}
-			<div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
-				<h1 class="md:text-5xl text-4xl">
-					{{ items.title }}
-				</h1>
-				<a href="{{ items.shared_link }}" class="copy-link inline-flex h-11 flex-shrink-0 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange" data-link="{{ items.shared_link }}">
-					<i class="fa-solid fa-share-nodes text-sm"></i>
-					<span>{{ 'Share'|t }}</span>
-				</a>
-				<div class="copy-popup">{{ "Link copied!"|t }}</div>
+    {% elseif   items.type in [ 'news'] %}
+    <img class="absolute left-0 top-0 -z-[1] h-full w-full object-cover opacity-40" src="{{ items.image }}" alt="">
+    {# {{ dd(items.bundle =='media_images')}} #}
+    {% elseif   items.bundle  =='media_images' %}
+    <img class="absolute left-0 top-0 -z-[1] h-full w-full object-cover opacity-40" src="{{ items.image }}" alt="">
+    {# {{ dd(items.count_images)}} #}
+    {% else %}
 
-			</div>
-		{% else  %}
-			<h1 class="md:text-5xl text-4xl">
-				{{ items.title }}
-			</h1>
-		{% endif %}
+    <img class="w-full h-full absolute top-0 left-0 object-cover -z-[1] opacity-40" src="{{ items.image }}" alt>
+    {% endif %}
+    <div class="{{ container_class  }}">
+        {{ drupal_breadcrumb() }}
 
-	</div>
+        {% if items.bundle in [ 'initiatives','services']  %}
+        <div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
+            <h1 class="md:text-5xl text-4xl">
+                {{ items.title }}
+            </h1>
+
+
+
+            <div class="flex items-center gap-3">
+                <a href="{{ items.shared_link }}" class="copy-link inline-flex h-11 flex-shrink-0 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange" data-link="{{ items.shared_link }}">
+                    <i class="fa-solid fa-share-nodes text-sm"></i>
+                    <span>{{ 'Share'|t }}</span>
+                </a>
+                <div class="copy-popup">{{ "Link copied!"|t }}</div>
+                {% set apply_url = items.apply_links.link_title.0.value.uri ?? '' %}
+                {% set apply_text = items.apply_links.link_title.0.value.title ?? '' %}
+                <a href="{{ apply_url }}" class="inline-flex bg-[#353535]   h-11 flex-shrink-0 items-center gap-2.5 rounded-full border border-[#353535]   px-4 text-sm text-[#fff] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+
+                    <i class="fa-solid fa-arrow-up-right text-xs text-orange"></i>
+                    <span>{{ apply_text }}</span>
+                </a>
+
+            </div>
+
+        </div>
+        {% else  %}
+        <h1 class="{{items.bundle  =='media_images'? 'text-4xl md:text-5xl mb-6': 'md:text-5xl text-4xl'}}">
+            {{ items.title }}
+        </h1>
+        {% if   items.bundle  =='media_images' %}
+        <div class="  inline-flex items-center gap-2 rounded-full border border-[#D4D4D8] bg-white px-3 py-1">
+            <i class="fa-solid fa-image"></i>
+            <span>{{ items.count_images }} {{"ITEMS"|t }}</span>
+        </div>
+        {% endif %}
+        {% endif %}
+
+    </div>
 </section>

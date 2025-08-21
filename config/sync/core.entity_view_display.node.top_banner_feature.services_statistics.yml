@@ -1,0 +1,35 @@
+uuid: 40598763-667a-40f2-8612-4aaaf70a8398
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.services_statistics
+    - field.field.node.top_banner_feature.body
+    - field.field.node.top_banner_feature.field_icon
+    - field.field.node.top_banner_feature.field_weight
+    - node.type.top_banner_feature
+  module:
+    - user
+id: node.top_banner_feature.services_statistics
+targetEntityType: node
+bundle: top_banner_feature
+mode: services_statistics
+content:
+  field_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_icon: true
+  langcode: true

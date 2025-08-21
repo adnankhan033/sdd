@@ -32,6 +32,27 @@ settings:
     -
       value: light
       label: light
+    -
+      value: chart_mixed
+      label: chart-mixed
+    -
+      value: calendar_clock
+      label: calendar-clock
+    -
+      value: clock
+      label: clock
+    -
+      value: users
+      label: users
+    -
+      value: briefcase_blank
+      label: briefcase-blank
+    -
+      value: file_lines
+      label: file-lines
+    -
+      value: list
+      label: list
   allowed_values_function: ''
 module: options
 locked: false

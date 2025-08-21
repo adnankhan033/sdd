@@ -118,6 +118,8 @@ elements: |-
         '#type': tel
         '#title': phone
         '#title_display': none
+        '#placeholder': '000 0000 00'
+        '#required': true
         '#attributes':
           class:
             - rounded-lg
@@ -130,7 +132,6 @@ elements: |-
             - required
         '#international': true
         '#international_initial_country': AE
-        '#required': true
     message:
       '#type': textarea
       '#title': Message
