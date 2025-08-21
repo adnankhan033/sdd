@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.services.body
     - field.field.node.services.field_font_icon
+    - field.field.node.services.field_general_weight
     - field.field.node.services.field_image
     - field.field.node.services.field_kpi_stat_card
     - field.field.node.services.field_service_detail_item
@@ -47,6 +48,13 @@ content:
     weight: 13
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_general_weight:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: image_image

@@ -1,0 +1,57 @@
+uuid: 76f95563-9fca-4854-9235-3f6d1a609f8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.services_statistics
+    - field.field.node.initiatives.body
+    - field.field.node.initiatives.field_annual_carbon_removal
+    - field.field.node.initiatives.field_buttom_description
+    - field.field.node.initiatives.field_image
+    - field.field.node.initiatives.field_init_images
+    - field.field.node.initiatives.field_sh_highlights
+    - field.field.node.initiatives.field_tags
+    - field.field.node.initiatives.field_weight
+    - field.field.node.initiatives.field_year_of_delivery
+    - node.type.initiatives
+  module:
+    - user
+id: node.initiatives.services_statistics
+targetEntityType: node
+bundle: initiatives
+mode: services_statistics
+content:
+  field_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  flag_only_dislike:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  flag_only_like:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_annual_carbon_removal: true
+  field_buttom_description: true
+  field_image: true
+  field_init_images: true
+  field_sh_highlights: true
+  field_tags: true
+  field_year_of_delivery: true
+  langcode: true
