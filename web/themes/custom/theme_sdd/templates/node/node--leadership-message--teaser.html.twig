@@ -38,15 +38,14 @@
 
 {% if count is odd %}
 
-
 	<section class="md:py-[80px] py-12">
 		<div class="container mx-auto px-4">
 			<div class="grid md:gap-20 gap-10 md:grid-cols-2 ">
 
-
-				<div class>
-					<h2 class=" md:hidden mb-10 md:text-5xl text-[30px] font-light">
+				<div class="">
+					<h2 class=" mb-10 text-[30px] font-light md:hidden md:text-5xl">
 						{{ label|render|striptags|trim|raw }}
+						
 					</h2>
 
 					<div class="image">
@@ -64,7 +63,10 @@
 					</div>
 				</div>
 
-				<div class="grid md:gap-10 gap-6 order-1 md:order-0">
+				<div class="md:order-0 order-1 grid gap-6 md:gap-10">
+						<h2 class="hidden text-[30px] font-light md:block md:text-5xl">
+						{{ label|render|striptags|trim|raw }}
+					</h2>
 					{{ content.body[0]['#text']|raw }}
 
 				</div>

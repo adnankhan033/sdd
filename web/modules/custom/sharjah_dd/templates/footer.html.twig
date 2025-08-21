@@ -5,7 +5,7 @@
 					{% for row in footer_items.menu_tree|batch(3) %}
 						{# <div class="row"> #}
 						{% for menu_item in row %}
-							<div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8]">
+							<div class="border-b-1  footer-menu sm:border-transparent  border-[#D4D4D8] {{ loop.first ? 'open' }}">
 								<div class="footer_widget footer_links">
 									{% if menu_item.submenu is defined and menu_item.submenu|length > 0 %}
 										{# <h4 class="widget_title">
@@ -20,7 +20,7 @@
 										</div>
 
 										{# <div class="footer_nav"> #}
-										<ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm">
+										<ul class="sm:grid hidden pb-5 sm:pb-0 gap-3 text-[#6A7282] text-sm {{ loop.first ? 'grid' }}">
 											{% for child in menu_item.submenu %}
 												<li class="menu-item">
 													<a href="{{ child.url }}">{{ child.text }}</a>

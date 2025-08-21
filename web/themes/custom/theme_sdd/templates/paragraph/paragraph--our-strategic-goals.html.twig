@@ -38,28 +38,19 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
-  ]
-%}
-{% block paragraph %}
-	<div{{attributes.addClass(classes)}}>
-		{% block content %}
-			<div class="faq-item border-b border-[#D4D4D8] py-10">
-				<button class="faq-btn text-start gap-3 flex w-full items-center  text-[#6A7282] text-xl justify-between   focus:outline-none transition-colors">
-					<span class="faq-title ">{{ content.field_title }}
-					</span>
-					<span class="faq-icon font-light text-2xl">+</span>
-				</button>
-				<div class="faq-content mt-9 text-[#6A7282] hidden leading-7 ">
-					{{ content.field_description }}
-				</div>
-			</div>
 
-		{% endblock %}
-	</div>
+
+{% block paragraph %}
+<div class="faq-item border-b border-[#D4D4D8] py-10 section-our-strategy">
+    <button class="faq-btn flex w-full items-center justify-between gap-3 text-start text-xl text-[#6A7282] transition-colors focus:outline-none">
+        <span class="faq-title {{ count =="1" ? 'text-orange': ''}}">
+            {{ content.field_title|render|striptags|trim|raw }}
+        </span>
+        <span class="faq-icon text-2xl font-light {{ count =="1" ? 'text-orange': ''}}"> {{ count =="1" ? '-': '+'}}</span>
+    </button>
+    <div class="faq-content mt-9 leading-7 text-[#6A7282]  {{ count =="1" ? '': 'hidden'}}">
+        {{ content.field_description|render|striptags|trim|raw }}
+    </div>
+</div>
+
 {% endblock paragraph %}

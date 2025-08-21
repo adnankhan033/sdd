@@ -1,5 +1,6 @@
     <div id="overlay"
-      class="fixed inset-0 bg-black/70   opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+      class="fixed inset-0 bg-black/70   opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+	</div>
 
     <section id="sticky-section"
       class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
@@ -63,35 +64,27 @@
 <!--					render new subscription start-->
                        {{ page.sidebar_second }}
 <!--					render new subscription end-->
-</div>
+					</div>
 				
 				</div>
 			</div>
-
 		<div class="item2">
 		{{ page.footer }}	
-
-</div>
-
-
-</div>
-
+		</div>
 	</div>
+</div>
+
 
 	<div class="copyrights mt-[30px] relative overflow-hidden md:pb-16 pb-10">
-
 		<div class="absolute bottom-0 end-0 start-0 md:start-auto">
 			<img class="w-full h-[25px] md:h-full" src="themes/custom/theme_sdd/assets/images/footer.png" alt>
 		</div>
-
 		<div class="container mx-auto px-4 relative z-1">
-
 			<div class="inline-flex md:max-w-max  w-full flex-col md:flex-row justify-center md:justify-start items-center gap-3 pt-[38px] border-t border-[#E6E7EB]">
 				<p class="text-xs text-[#99A1AF]">
 					{{ items.copy_right }}
 					©
 					{{ 'now'|date('Y') }}.</p>
-
 				<div class="flex items-center gap-3 text-xs text-[#4A5565]">
 					<p class>{{"Follow us"|t }}</p>
 
@@ -101,32 +94,25 @@
 								<i class="fa-brands fa-facebook-f "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.instagram }}" target="_blank">
 								<i class="fa-brands fa-instagram "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.youtube }}" target="_blank">
 								<i class="fa-brands fa-youtube "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.twitter }}" target="_blank">
 								<img src="{{ active_theme_path()}}/images/x-twitter.svg" alt>
 							</a>
 						</li>
-
 					</ul>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
-
 </footer>
 

@@ -33,29 +33,6 @@
 #}
 {% if links -%}
 
-{# <div class="flex h-11 items-center border border-transparent gap-2.5 rounded-full bg-white px-4 transition-all hover:border-orange hover:bg-[#FFF3E9]  text-sm hover:text-orange">
-  {%- if heading -%}
-    {%- if heading.level -%}
-      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
-    {%- else -%}
-      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
-    {%- endif -%}
-  {%- endif -%}
-           <i class="fa-light fa-globe text-sm transition-all font-semibold"></i>
-    {%- for item in links -%}
-      
-        {%- if item.link -%}
-          {{ item.link }}
-        {%- elseif item.text_attributes -%}
-
-          <span{{ item.text_attributes }}>{{ item.text }}</span>
-        {%- else -%}
-          {{ item.text }}
-        {%- endif -%}
-  
-    {%- endfor -%}
-  </div> #}
-
  {%- for item in links -%}
   {%- if item.link -%}
     {% set link_markup = item.link is iterable ? item.link|render : item.link %}
@@ -74,8 +51,6 @@
   {%- else -%}
     {{ item.text }}
   {%- endif -%}
-  
 {%- endfor -%}
-
 
 {%- endif %}

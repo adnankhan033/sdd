@@ -34,3 +34,72 @@
 {% endif %}
 	</div>
 </section>
+
+
+
+
+
+    <section class="pb-[100px] md:!py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="rounded-3xl bg-[#F9FAFB] px-4 py-6 md:!p-10">
+          <div
+            class="grid gap-12 divide-y divide-[#D4D4D8] md:grid-cols-2 md:divide-x md:divide-y-0 xl:gap-20">
+            <div
+              class="flex flex-col justify-between pb-12 md:pb-0 md:pe-10 xl:pe-20">
+              <div>
+                <h3 class="mb-2 text-2xl md:text-[30px]">Did you find the
+                  content useful ?</h3>
+                <p class="text-[#6A7282] md:text-lg">
+                  You can help us improve by providing your feedback about your
+                  experience.
+                </p>
+              </div>
+
+              <div>
+                <div class="mt-4 flex items-center gap-3">
+                  <div class="flex items-center">
+              	{{ content.flag_only_like }}
+                  </div>
+
+                  <div class="flex items-center">
+               {{ content.flag_only_dislike}}
+                  </div>
+
+				  {{ dd(content.flag_only_like)}}
+     
+                    
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-between">
+              <div>
+                <h3 class="mb-2 text-2xl md:text-[30px]">Did you find the
+                  content useful ?</h3>
+                <p class="text-[#6A7282] md:text-lg">
+                  You can help us improve by providing your feedback about your
+                  experience.
+                </p>
+              </div>
+
+              <div class="mt-4">
+                <div class="flex items-center">
+                  <input id="feed" type="radio" name="feedback2" value="r"
+                    class="peer sr-only" />
+                  <label
+                    for="feed"
+                    class="inline-flex h-[53px] cursor-pointer items-center justify-center gap-2 rounded-lg border border-[#BDBDBD] px-5 text-[#6A7282] transition-colors duration-200 hover:bg-[#FFF3E9] peer-checked:border-[#F27B21] peer-checked:bg-[#FFF3E9] peer-checked:text-black">
+                    <i class="fa-regular fa-message-smile"></i>
+                    <span>Give us your feedback</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+	

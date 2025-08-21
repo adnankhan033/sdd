@@ -38,7 +38,6 @@ function theme_sdd_preprocess_node(array &$variables): void
 
   $node = $variables['node'];
   $bundle = $node->bundle();
-
   $title = $node->getTitle();
   $body  = $node->hasField('body') ? $node->get('body')->value : '';
 
@@ -97,6 +96,7 @@ function theme_sdd_preprocess_node(array &$variables): void
   $variables['body_short'] = $body_short;
   $variables['body_long'] = $body_long;
   $variables['bundle_label'] = $bundle_label;
+
 }
 
 

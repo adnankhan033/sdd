@@ -70,7 +70,12 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
       'variables' => ['items' => NULL],
       'template' => 'looking-digital-service',
     ],
+    // feedback_block
     
+    'feedback_block' => [
+      'variables' => ['items' => NULL],
+      'template' => 'feedback-block',
+    ],
   ];
 }   
 
