@@ -1,0 +1,15 @@
+uuid: 3cd94a1e-102e-4a19-8140-0228c8872dee
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.only_dislike
+  module:
+    - flag
+id: flag_action.only_dislike_unflag
+label: 'Unflag this item'
+type: node
+plugin: 'flag_action:only_dislike_unflag'
+configuration:
+  flag_id: only_dislike
+  flag_action: unflag

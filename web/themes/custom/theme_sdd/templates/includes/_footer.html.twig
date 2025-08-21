@@ -1,6 +1,51 @@
 <div id="overlay" class="fixed inset-0 bg-black/70   opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
 
 <section id="sticky-section" class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
+
+
+    <section id="sticky-section"
+      class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+
+          <div class="flex items-center gap-3 has-border">
+            <a href="{{ path('view.services.main_page') }}"
+              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+              <i class="fa-solid fa-rectangle-history"></i>
+              <span>{{ "Services"|t }}</span>
+            </a>
+
+            <a href="{{ path('contact.site_page') }}"
+              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+              <i class="fa-solid fa-message-exclamation"></i>
+              <span>{{ "Feedback & Complaints"|t }}</span>
+            </a>
+
+            <a  
+              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
+              <i class="fa-solid fa-phone"></i>
+              <span>{{"Call centre 06-5017717"|t }}</span>
+
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              class="bg-white rounded-full w-11 h-11 flex items-center justify-center">
+              <i class="fa-solid fa-share-nodes text-[#6A7282] text-sm"></i>
+            </button>
+
+            <button
+              class="border-3 border-[#ADB5BB] bg-white rounded-full w-11 h-11 flex items-center justify-center">
+
+              <i class="fa-regular fa-face-smile text-3xl "></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 	<div class="container mx-auto px-4">
 		<div class="flex justify-between items-center has-border">
 
@@ -83,22 +128,18 @@
 
 		</div>
 
-	</div>
+
 
 	<div class="copyrights mt-[30px] relative overflow-hidden md:pb-16 pb-10">
-
 		<div class="absolute bottom-0 end-0 start-0 md:start-auto">
 			<img class="w-full h-[25px] md:h-full" src="themes/custom/theme_sdd/assets/images/footer.png" alt>
 		</div>
-
 		<div class="container mx-auto px-4 relative z-1">
-
 			<div class="inline-flex md:max-w-max  w-full flex-col md:flex-row justify-center md:justify-start items-center gap-3 pt-[38px] border-t border-[#E6E7EB]">
 				<p class="text-xs text-[#99A1AF]">
 					{{ items.copy_right }}
 					©
 					{{ 'now'|date('Y') }}.</p>
-
 				<div class="flex items-center gap-3 text-xs text-[#4A5565]">
 					<p class>{{"Follow us"|t }}</p>
 
@@ -108,31 +149,24 @@
 								<i class="fa-brands fa-facebook-f "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.instagram }}" target="_blank">
 								<i class="fa-brands fa-instagram "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.youtube }}" target="_blank">
 								<i class="fa-brands fa-youtube "></i>
 							</a>
 						</li>
-
 						<li>
 							<a href="{{ items.twitter }}" target="_blank">
 								<img src="{{ active_theme_path()}}/images/x-twitter.svg" alt>
 							</a>
 						</li>
-
 					</ul>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
-
 </footer>

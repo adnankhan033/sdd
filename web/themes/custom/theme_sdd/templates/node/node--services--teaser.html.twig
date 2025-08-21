@@ -1,10 +1,10 @@
-       <a href="{{ url }}"
+<a href="{{ url }}"
             class="rounded-xl bg-white p-9 group/service hover:border-orange border border-transparent transition-all">
             <div class="mb-6 text-xl flex items-center justify-between">
               <h5>{{ shorter_label }}</h5>
-              <i
-                class="fa-thin {{ content.field_font_icon|render|striptags|trim|raw }} text-5xl text-orange  group-hover/service:!font-bold transition-all "></i>
-                
+              {# <i #}
+                {# class="fa-thin {{ content.field_font_icon|render|striptags|trim|raw }} text-5xl text-orange  group-hover/service:!font-bold transition-all "></i> #}
+                {{ content.field_sh_icon }}
             </div>
             <p class="text-sm text-[#99A1AF]">
              {{ content.body|render|striptags|trim|raw}}
@@ -15,4 +15,4 @@
               <i class="fa-regular fa-arrow-up-right text-xs "></i>
               <span class="text-sm ">{{ "Learn more"|t }}</span>
             </div>
-          </a>
+</a>

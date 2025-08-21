@@ -71,12 +71,13 @@
                 <div class="copy-popup">{{ "Link copied!"|t }}</div>
                 {% set apply_url = items.apply_links.link_title.0.value.uri ?? '' %}
                 {% set apply_text = items.apply_links.link_title.0.value.title ?? '' %}
+                {% if apply_text %}
                 <a href="{{ apply_url }}" class="inline-flex bg-[#353535]   h-11 flex-shrink-0 items-center gap-2.5 rounded-full border border-[#353535]   px-4 text-sm text-[#fff] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
 
                     <i class="fa-solid fa-arrow-up-right text-xs text-orange"></i>
                     <span>{{ apply_text }}</span>
                 </a>
-
+            {% endif %}
             </div>
 
         </div>

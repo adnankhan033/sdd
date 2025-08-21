@@ -90,7 +90,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       ],
       'view.services.main_page' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_service_header_banner',
         'type' => 'services',
       ],
       'view.faqs.list' => [
@@ -101,7 +101,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       // initiatives
       'view.initiatives.grid' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_initiative_banner',
         'type' => 'initiatives',
       ],
 
