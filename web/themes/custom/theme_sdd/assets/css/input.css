@@ -26,8 +26,7 @@ html {
 body {
   color: #101828;
   font-family: 'sdd';
-  background-color: #f9fafb;
-}
+ }
 
 @config "../../tailwind.config.js";
 @import 'tailwindcss';
@@ -52,17 +51,15 @@ header {
 }
 
 .sticky-bottom .has-border {
-  border: 2px solid;
-  border-image-source: linear-gradient(
-    90deg,
-    #ffffff00 0%,
-    #e5e7eb 53.37%,
-    #e5e7eb 73.08%,
-    #ffffff00 100%
-  );
-  border-image-slice: 1;
-  padding: 16px 0;
-  backdrop-filter: blur(14px);
+    border: 2px solid;
+      border-image-source: linear-gradient(90deg, #ffffff00 0%, #e5e7eb 53.37%, #e5e7eb 73.08%, #ffffff00 100%);
+      border-image-slice: 1;
+      padding: 16px 0;
+      backdrop-filter: blur(14px);
+      border-radius: 1000px;
+      overflow: hidden;
+      padding: 16px;
+      background: #FFFFFF80;
 }
 
 button {
@@ -270,4 +267,19 @@ footer .open i {
   background: #000;
   display: inline;
   flex-shrink: 0;
+}
+
+.heroswiper .swiper-slide{
+  height: auto !important;
+}.gradient-text {
+  background: linear-gradient(90deg, #D0D0D0 0%, #6A6A6A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.view-news .px-4{
+  padding: 0 !important;
+}
+.view.view-news.py-10 {
+  padding: 0;
 }

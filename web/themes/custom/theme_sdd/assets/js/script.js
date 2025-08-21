@@ -27,7 +27,7 @@ if (document.querySelector('.Initiatives-swiper')) {
   var swiper = new Swiper('.Initiatives-swiper', {
     slidesPerView: 1.1,
     spaceBetween: 20,
-    speed: 1000,
+    speed: 1500,
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,
@@ -265,7 +265,7 @@ function playGroup(index = 0) {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/video/lotti.json',
+      path: '/themes/custom/theme_sdd/assets/video/lotti.json',
     });
 
     animation.addEventListener('complete', () => {
@@ -384,3 +384,13 @@ document.querySelectorAll('.video').forEach(wrapper => {
 });
 
 
+
+
+jQuery(document).on('input', '.gradient-text', function () {
+
+  let value = $(this).val();
+  if (value){
+    $(this).removeClass('gradient-text');
+  }
+  
+});

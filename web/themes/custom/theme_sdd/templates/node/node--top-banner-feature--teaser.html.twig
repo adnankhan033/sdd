@@ -61,12 +61,18 @@
  *
  */
 #}
-<div class="rounded-2xl bg-[#FFFFFF0D] p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px]">
-	<img class="mb-5 max-w-full" src="{{ content.field_icon|render|striptags|trim|raw }}" alt="" />
-	<h3 class="mb-3 text-xl text-white">
+<div class="h-full rounded-2xl bg-white p-6 shadow-[inset_0px_1px_0px_0px_#FFFFFF40] backdrop-blur-[10px] md:bg-[#FFFFFF0D]">
+
+	<i class="fa-thin fa-landmark-dome mb-5 text-[40px] text-orange"></i>
+
+
+	<h3 class="mb-3 md:text-xl md:text-white font-bold md:font-normal">
+
 		{{ short_label }}
 	</h3>
-	<p class="text-sm text-white">
-		{{ content.body|render|striptags|trim|raw }}
-	</p>
+	<p class="text-xs md:text-sm md:text-white"> 
+
+	{{ content.body|render|striptags|trim|raw }}
+</p>
+
 </div>

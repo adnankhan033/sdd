@@ -358,7 +358,7 @@ function theme_sdd_preprocess_links__language_block(&$variables)
       ],
     ];
 
-    $link['link']['#options']['attributes']['class'][] = 'language-switcher flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange';
+    $link['link']['#options']['attributes']['class'][] = 'language-switcher bg-[#F3F4F6]  flex h-11 items-center gap-2.5 rounded-full border border-transparent lg:bg-white px-4 text-sm transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange';
   }
 }
 
