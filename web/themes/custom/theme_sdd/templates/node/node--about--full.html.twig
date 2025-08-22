@@ -7,8 +7,7 @@
 				</h2>
 			</div>
 
-<div class="grid md:gap-10 gap-6 text-justify md:text-start">
-
+			<div class="grid md:gap-10 gap-6">
 				{{ content.body|raw }}
 			</div>
 		</div>
@@ -28,7 +27,7 @@
 {# {{ dd(images)}} #}
 						<div class="swiper-slide !h-auto">
 							<div class="image h-full w-full about-slider">
-								{{ drupal_image(uri, 'about_slider', { class: ['h-full w-full about-images'], alt: item.alt|e }) }}
+								{{ drupal_image(uri, 'about_slider', { class: ['h-[480px] w-full about-images'], alt: item.alt|e }) }}
 								 {# <img class="h-full w-full" src="{{ active_theme_path()}}/assets/images/img (2).png" alt /> #}
 								 {# <img class="h-full w-full" src="{{ file_url(uri) }}" alt="{{ item.alt|default('')|e }}"> #}
 								 
@@ -43,20 +42,17 @@
 </section>
 {% endif %}
 
-<section class="md:pt-[120px] md:pb-[300px] py-10 vision-section">
-
+<section class="md:pt-[120px] md:pb-[300px] py-10">
 	<div class="border-y border-[#E5E7EB]">
 		<div class="max-w-[1000px] mx-auto px-4 py-20">
-			<div class="cursor-pointer">
+			<div class=" cursor-pointer faq-btn">
 				<h2 class="md:text-5xl text-4xl font-light ">
 					{{ node.field_our_vision.fieldDefinition.label ?: '' }}
 
 				</h2>
 			</div>
 
-<div class="text-[#6A7282] md:text-2xl mb-6 mt-10 vision_mission text-justify md:text-start">
-
-
+			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
 				{{ content.field_our_vision|raw }}
 			</div>
 		</div>
@@ -64,15 +60,14 @@
 
 	<div class="border-y border-[#E5E7EB]">
 		<div class="max-w-[1000px] mx-auto px-4 py-20">
-			<div class=" cursor-pointer">
+			<div class=" cursor-pointer faq-btn">
 				<h2 class="md:text-5xl text-4xl font-light ">
 					{{ node.field_our_mission.fieldDefinition.label ?: '' }}
 
 				</h2>
 			</div>
 
-<div class="text-[#6A7282] md:text-2xl mb-6 mt-10 vision_mission text-justify md:text-start">
-
+			<div class="text-[#6A7282] text-2xl mb-6 mt-10 faq-content hidden">
 				{{ content.field_our_mission|raw }}
 			</div>
 		</div>
