@@ -3,7 +3,7 @@
 	<section class="md:py-20 pt-12 bg-white">
 		<div class="container mx-auto px-4">
 			<div class="grid md:grid-cols-2 gap-10">
-				<div>
+				<div class="max-w-[670px]">
 					<h2 class="md:text-5xl text-[30px] font-light">
 						{{ node.body.summary }}
 					</h2>
@@ -111,16 +111,18 @@
 		</section>
 
 
-		<section class="">
+<section class="vision-section">
+
 			<div class="border-y border-[#E5E7EB]">
 				<div class="container mx-auto   px-4 md:py-20 py-14">
-					<div class="faq-btn cursor-pointer">
+					<div class="  cursor-pointer">
 						<h2 class="text-4xl   md:text-5xl">
 							{{ node.field_ds_digital_operation.getFieldDefinition().getLabel() }}
 						</h2>
 					</div>
 
-					<p class="faq-content mb-6 mt-10 hidden text-2xl text-[#6A7282]">
+<p class="  mb-6 mt-10  vision_mission  md:text-2xl text-[#6A7282]"></p>
+
 						{{ content.field_ds_digital_operation|render|striptags|trim|raw  }}
 					</p>
 				</div>
@@ -128,13 +130,14 @@
 
 			<div class="border-y border-[#E5E7EB]">
 				<div class="container mx-auto   px-4 md:py-20 py-14">
-					<div class="faq-btn cursor-pointer">
+					<div class="  cursor-pointer">
 						<h2 class="text-4xl   md:text-5xl">
 							{{ node.field_ds_our_mission.getFieldDefinition().getLabel() }}
 						</h2>
 					</div>
                 
-					<div class="faq-content mb-6 mt-10 hidden text-2xl text-[#6A7282]">
+<div class="  mb-6 mt-10  vision_mission  md:text-2xl text-[#6A7282]">
+
 						{{ content.field_ds_our_mission|render|striptags|trim|raw  }}
 
 					</div>
@@ -221,8 +224,8 @@
 		{% endif %}
 
 
-		{% if drupal_view_result('services','grid')|length > 0 %}
-			{{ drupal_view('services', 'grid') }}
+		{% if drupal_view_result('services','grid_listing')|length > 0 %}
+			{{ drupal_view('services', 'grid_listing') }}
 
 		{% endif %}
 

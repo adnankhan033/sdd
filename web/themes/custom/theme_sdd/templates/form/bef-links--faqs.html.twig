@@ -1,55 +1,69 @@
-{% set classes = [
-  'bef-links',
-  is_nested ? 'bef-nested'
-] %}
-
-
+{# Make sure is_nested is set *before* classes #}
 {% set is_nested = true %}
+{% set classes = ['bef-links'] %}
+{% if is_nested %}
+  {% set classes = classes|merge(['bef-nested']) %}
+{% endif %}
+
+{# Keep hidden inputs #}
 {% for name, value in hiddens %}
-<input type="hidden" name="{{ name }}" value="{{ value }}" />
+  <input type="hidden" name="{{ name }}" value="{{ value }}" />
 {% endfor %}
 
-<div{{attributes.removeClass('form-select').addClass(classes)}}>
-    {% set current_nesting_level = 0 %}
-    {% for child in children %}
+<div{{ attributes.removeClass('form-select').addClass(classes) }}>
+
+  {# ----------------- MOBILE SELECT (inside same wrapper) ----------------- #}
+  {% set select_id = (attributes.id|default('bef-filter')) ~ '--mobile' %}
+  <div class="md:hidden mb-4">
+    <label for="{{ select_id }}" class="sr-only">Filter</label>
+    <select id="{{ select_id }}" class="h-[53px] w-full rounded-lg border border-[#D4D4D8] px-4 py-2">
+      {% for child in children %}
+        {% set item  = attribute(element, child) %}
+        {% set label = (item['#title'] ?? item['#plain_text'] ?? child)|striptags %}
+        {% set url   = item['#url'] is defined ? item['#url'].toString : '#' %}
+        {% set lvl   = attribute(depth, child) ?? 0 %}
+        {% set indent = lvl ? ('— ' ~ ('— ' * lvl)) : '' %}
+        <option value="{{ url }}" {{ child in selected ? 'selected' }}>
+          {{ indent ~ label }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  {# ----------------- DESKTOP LINKS (your existing UL), hidden on mobile ----------------- #}
+  {% set current_nesting_level = 0 %}
+  {% for child in children %}
     {% set item = attribute(element, child) %}
-
-
     {% set item = item|merge({
-  '#attributes': item['#attributes']|merge({
-    'class': (item['#attributes'].class|default([]))|merge([
-      child in selected ? 'active' : '',
-      '[.active]:text-orange [.active]:border-orange border-s border-transparent px-4 py-3 text-start text-lg text-[#6A7282] transition-all hover:border-orange hover:text-orangee'
-    ])
-  })
-}) %}
+      '#attributes': item['#attributes']|merge({
+        'class': (item['#attributes'].class|default([]))|merge([
+          child in selected ? 'active' : '',
+          '[.active]:text-orange [.active]:border-orange border-s border-transparent px-4 py-3 text-start text-lg text-[#6A7282] transition-all hover:border-orange hover:text-orangee'
+        ])
+      })
+    }) %}
 
     {% set new_nesting_level = attribute(depth, child) ?? 0 %}
-    {% set delta = (current_nesting_level - new_nesting_level) |abs %}
+    {% set delta = (current_nesting_level - new_nesting_level)|abs %}
 
     {% if loop.first %}
-    <ul class="hidden gap-2 md:grid md:gap-4">
-        {% else %}
-        {% if delta %}
+      <ul class="hidden gap-2 md:grid md:gap-4">
+    {% else %}
+      {% if delta %}
         {% for i in 1..delta %}
-        {% if new_nesting_level > current_nesting_level %}
-        <ul>
-            {% else %}
-        </ul>
-        {% endif %}
+          {% if new_nesting_level > current_nesting_level %}
+            <ul>
+          {% else %}
+            </ul>
+          {% endif %}
         {% endfor %}
-        {% endif %}
-        {% endif %}
-
-        <li>
-            {{ item }}
-            {% if loop.last %}
-            {% for i in new_nesting_level..0 %}
-        </li>
-    </ul>
-    {% endfor %}
+      {% endif %}
     {% endif %}
 
+    <li>{{ item }}
+      {% if loop.last %}
+        {% for i in new_nesting_level..0 %}</li></ul>{% endfor %}
+      {% endif %}
     {% set current_nesting_level = new_nesting_level %}
-    {% endfor %}
-    </div>
+  {% endfor %}
+</div>

@@ -26,10 +26,10 @@ regions:
   footer: 'Footer'
 
 
-dependencies:
-  - drupal:jquery
-  - drupal:jquery_update
-  - drupal:jquery_ui
-  - drupal:jquery_ui_effects_core
-  - drupal:jquery_ui_effects_blind
-  - drupal:ajax
+# dependencies:
+#   - drupal:jquery
+#   - drupal:jquery_update
+#   - drupal:jquery_ui
+#   - drupal:jquery_ui_effects_core
+#   - drupal:jquery_ui_effects_blind
+#   - drupal:ajax

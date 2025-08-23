@@ -80,6 +80,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
     $shared_title = '';
     $shared_link = '';
     $apply_links ='';
+    $id ='';
 
     $cacheTags = ['config_pages:general_pages'];
     $mapping = [
@@ -95,7 +96,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       ],
       'view.faqs.list' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_faqs_banner',
         'type' => 'faqs',
       ],
       // initiatives
@@ -108,13 +109,13 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       // publications_reports
       'view.publications_reports.grid' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_publications_reports_banne',
         'type' => 'publications_reports',
       ],
       // regulations
       'view.regulations.grid' => [
         'title' => 'field_featured_solutions',
-        'image' => 'field_leadership_banner',
+        'image' => 'field_faqs_banner',
         'type' => 'regulations',
       ],
       // news main_page
@@ -135,8 +136,13 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
         'image' => 'field_multimedia_gallery_banner',
         'type' => 'multimedia_gallery',
       ],
+      'view.news.media_center_block' => [
+        'title' => 'field_featured_solutions',
+        'image' => 'field_news_room_banner',
+        'type' => 'media-center',
+      ],
     ];
-
+// dd($routeName);
     if ($routeName === 'entity.node.canonical') {
       $node = $this->routeMatch->getParameter('node');
       $title = $node->getTitle();
@@ -164,6 +170,7 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
         case 'custom_page':
           $image_uri = $node->get('field_banner')->entity?->getFileUri() ?? '';
           $image = $image_uri ? ImageStyle::load('wide')->buildUrl($image_uri) : '';
+          $id = $node->id();
           $type = 'node:custom_page';
           break;
 
@@ -266,6 +273,8 @@ final class HeaderTitleBlock extends BlockBase implements ContainerFactoryPlugin
       'shared_link' => $shared_link ?? '',
       'apply_links'=>  $apply_links,
       'count_images'=>  $count_images,
+      'id'=>  $id,
+      
     ];
     // dd($items);
     $build = [

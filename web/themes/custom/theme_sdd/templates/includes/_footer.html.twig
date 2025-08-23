@@ -1,57 +1,63 @@
-    <div id="overlay"
-      class="fixed inset-0 bg-black/70   opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+<div id="overlay" class="fixed inset-0 bg-black/70   opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+
+<section id="sticky-section" class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
+
+	<div class="container mx-auto px-4">
+		<div class="flex justify-between items-center has-border">
+
+
+			<div class="flex items-center gap-3 ">
+
+				<a href="{{ path('view.services.main_page') }}" class="flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+
+					<i class="fa-solid fa-rectangle-history"></i>
+					<span>{{ "Services"|t }}</span>
+
+				</a>
+
+
+				<a href="{{ path('contact.site_page') }}" class="flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+
+					<i class="fa-solid fa-message-exclamation"></i>
+					<span>{{ "Feedback & Complaints"|t }}</span>
+
+				</a>
+
+
+				<a href="tel:06-5017717" class="flex h-11 items-center gap-2.5 rounded-full border border-transparent bg-white px-4 text-sm text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+
+					<i class="fa-solid fa-phone"></i>
+					<span>{{"Call centre 06-5017717"|t }}</span>
+
+				</a>
+
+
+			</div>
+
+			<div class="flex items-center gap-3">
+				<button class="flex h-11 w-11 items-center justify-center rounded-full border border-transparent bg-white text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange">
+					<i class="fa-solid fa-share-nodes text-sm"></i>
+				</button>
+
+				<button class="border-3 flex h-11 w-11 items-center justify-center rounded-full border-[#ADB5BB] bg-white">
+					<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M16.0002 28.4655C19.4811 28.4655 22.4298 27.259 24.8427 24.8426C27.2592 22.4261 28.4656 19.481 28.4656 16C28.4656 12.519 27.2592 9.57033 24.8427 7.15743C22.4263 4.74097 19.4811 3.53452 16.0002 3.53452C12.5192 3.53452 9.57049 4.74097 7.15758 7.15743C4.74468 9.57388 3.53467 12.519 3.53467 16C3.53467 19.481 4.74113 22.4297 7.15758 24.8426C9.57404 27.2555 12.5192 28.4655 16.0002 28.4655ZM16.0002 31.581C13.8427 31.581 11.8202 31.1729 9.92177 30.3532C8.02338 29.5336 6.37693 28.4265 4.97532 27.0213C3.57371 25.6197 2.46307 23.9697 1.64339 22.0748C0.823711 20.18 0.415649 18.1539 0.415649 15.9965C0.415649 13.839 0.823711 11.8165 1.64339 9.91807C2.46307 8.01968 3.57016 6.37323 4.97532 4.97162C6.37693 3.57001 8.02693 2.45936 9.92177 1.63968C11.8166 0.820006 13.8427 0.411942 16.0002 0.411942C18.1576 0.411942 20.1802 0.820006 22.0785 1.63968C23.9734 2.45936 25.6234 3.56646 27.025 4.97162C28.4266 6.37323 29.5373 8.02323 30.3569 9.91807C31.1766 11.8129 31.5847 13.839 31.5847 15.9965C31.5847 18.1539 31.1766 20.1765 30.3569 22.0748C29.5373 23.9697 28.4302 25.6197 27.025 27.0213C25.6234 28.4229 23.9734 29.5336 22.0785 30.3532C20.1837 31.1729 18.1576 31.581 16.0002 31.581ZM16.0002 24.5694C17.7673 24.5694 19.3711 24.069 20.8118 23.0684C22.2524 22.0677 23.2992 20.7513 23.9485 19.1155H21.376C20.8047 20.0771 20.0453 20.8365 19.0979 21.3936C18.1505 21.9506 17.1179 22.231 16.0002 22.231C14.8824 22.231 13.8498 21.9506 12.9024 21.3936C11.955 20.8365 11.1956 20.0771 10.6244 19.1155H8.05177C8.70113 20.7513 9.7479 22.0713 11.1885 23.0684C12.6292 24.069 14.2331 24.5694 16.0002 24.5694ZM10.5463 14.4387C11.1956 14.4387 11.7492 14.2116 12.2034 13.7574C12.6576 13.3032 12.8847 12.7497 12.8847 12.1003C12.8847 11.451 12.6576 10.8974 12.2034 10.4432C11.7492 9.98904 11.1956 9.76194 10.5463 9.76194C9.89694 9.76194 9.34338 9.98904 8.88919 10.4432C8.43499 10.8974 8.2079 11.451 8.2079 12.1003C8.2079 12.7497 8.43499 13.3032 8.88919 13.7574C9.34338 14.2116 9.89694 14.4387 10.5463 14.4387ZM21.454 14.4387C22.1034 14.4387 22.6569 14.2116 23.1111 13.7574C23.5653 13.3032 23.7924 12.7497 23.7924 12.1003C23.7924 11.451 23.5653 10.8974 23.1111 10.4432C22.6569 9.98904 22.1034 9.76194 21.454 9.76194C20.8047 9.76194 20.2511 9.98904 19.7969 10.4432C19.3427 10.8974 19.1156 11.451 19.1156 12.1003C19.1156 12.7497 19.3427 13.3032 19.7969 13.7574C20.2511 14.2116 20.8047 14.4387 21.454 14.4387Z" fill="black"/>
+					</svg>
+				</button>
+			</div>
+
+		</div>
 	</div>
-
-    <section id="sticky-section"
-      class="sticky z-10 bg-[#F3F4F6]  py-5 hidden md:block    border-b-2 border-[#E5E7EB]">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
-
-          <div class="flex items-center gap-3 has-border">
-            <a href="{{ path('view.services.main_page') }}"
-              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
-              <i class="fa-solid fa-rectangle-history"></i>
-              <span>{{ "Services"|t }}</span>
-            </a>
-
-            <a href="{{ path('contact.site_page') }}"
-              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
-              <i class="fa-solid fa-message-exclamation"></i>
-              <span>{{ "Feedback & Complaints"|t }}</span>
-            </a>
-
-            <a  
-              class="h-11 px-4 rounded-full bg-white text-sm text-[#6A7282] gap-2.5 flex items-center">
-              <i class="fa-solid fa-phone"></i>
-              <span>{{"Call centre 06-5017717"|t }}</span>
-
-            </a>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <button
-              class="bg-white rounded-full w-11 h-11 flex items-center justify-center">
-              <i class="fa-solid fa-share-nodes text-[#6A7282] text-sm"></i>
-            </button>
-
-            <button
-              class="border-3 border-[#ADB5BB] bg-white rounded-full w-11 h-11 flex items-center justify-center">
-
-              <i class="fa-regular fa-face-smile text-3xl "></i>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    </section>
+</section>
 
 
-<footer class="bg-[#F3F4F6] pt-16">
+<footer class="bg-[#F3F4F6] md:pt-16 pt-10">
 	<div class="container mx-auto px-4">
 
-		<div class="grid-layout  gap-x-[84px]">
-<!--            footer image and newletter start-->
-            
+		<div
+			class="grid-layout  gap-x-[84px]">
+			<!--            footer image and newletter start-->
+
 			<div class="item1">
 				<div class=" flex-1 flex items-start mb-10 md:mb-0 md:justify-start justify-center">
 					<img src="/{{ active_theme_path()}}/assets/images/Logo.svg" class="max-w-full" alt>
@@ -60,19 +66,24 @@
 			<div class="item3  mt-10 md:mt-0   ">
 				<div class=" flex-1 flex items-end justify-start h-full">
 
-					<div class="w-full">
-<!--					render new subscription start-->
-                       {{ page.sidebar_second }}
-<!--					render new subscription end-->
+					<div
+						class="w-full">
+						<!--					render new subscription start-->
+						{{ page.sidebar_second }}
+						<!--					render new subscription end-->
 					</div>
-				
+
 				</div>
 			</div>
-		<div class="item2">
-		{{ page.footer }}	
+
+			<div class="item2">
+				{{ page.footer }}
+
+			</div>
+
+
 		</div>
-	</div>
-</div>
+
 
 
 	<div class="copyrights mt-[30px] relative overflow-hidden md:pb-16 pb-10">
@@ -115,4 +126,3 @@
 		</div>
 	</div>
 </footer>
-

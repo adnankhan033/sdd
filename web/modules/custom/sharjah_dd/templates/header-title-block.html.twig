@@ -1,10 +1,19 @@
-{% set wrapper_class =
-  items.bundle == 'digital_shajrah'
-    ? 'first-section relative bg-[#F3F4F6] py-8 md:py-16'
-    : (items.bundle in ['initiatives','services']
-        ? 'first-section bg-gradient-to-r from-[#353535] to-[#BDBDBD] relative bg-white/20 py-8 md:py-14 special-bundle'
-        : 'md:py-14 py-8 bg-white/20 relative first-section')
+
+{% if items.bundle == 'digital_shajrah' %}
+  {% set wrapper_class = 'first-section relative bg-[#F3F4F6] py-8 md:py-16' %}
+{% elseif items.bundle in ['initiatives','services'] %}
+  {% set wrapper_class = 'first-section bg-gradient-to-r from-[#353535] to-[#BDBDBD] relative bg-white/20 py-8 md:py-14 special-bundle' %}
+{% elseif items.type == 'faqs' 
+or items.type =="regulations" 
+or items.bundle =='custom_page'
+or items.bundle =='custom_page' 
 %}
+{% set wrapper_class = 'first-section relative bg-[#F3F4F6] py-8 md:py-16' %}
+{% elseif items.bundle == 'news' %}
+
+{% else %}
+  {% set wrapper_class = 'md:py-14 py-8 bg-white/20 relative first-section testingesel ' %}
+{% endif %}
 
 
 {% set banner_img = 
@@ -16,14 +25,16 @@
 {% set container_class = 
   items.bundle in [ 'services'] 
     ? 'container mx-auto px-4 relative z-[1]' 
-    : 'container mx-auto px-4' 
+    : 'container mx-auto px-4 relative z-[1]' 
 %}
 
 
 
-
+{% if items.bundle == 'custom_page' and items.id == 52 %}
+<section class="md:py-14 py-8 bg-white/20 relative first-section">
+{% else %}
 <section class="{{ wrapper_class }}">
-
+{% endif %}
     {% if items.bundle =='digital_shajrah'  %}
 
     <div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max digital_shajrah">
@@ -32,6 +43,21 @@
 
     {% endif %}
 
+{% if items.bundle =='custom_page' and items.id != 52  %} 
+
+ <div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max">
+  <img src="/themes/custom/theme_sdd/assets/images/Group_9.svg" alt="">
+   </div>
+    {% endif %}
+
+    {% if items.type in [ 'faqs','regulations']   %}
+    
+        {# <img class="absolute left-0 top-0 -z-[1] h-full w-full object-cover opacity-40" src="{{ items.image }}" alt=""> #}
+        <div class="absolute end-0 top-1/2 max-w-[150px] -translate-y-1/2 md:max-w-max">
+        <img src="{{ items.image }}" alt="">
+      </div>
+
+    {% endif %}
     {% if items.bundle in [ 'initiatives','services']  %}
     {# {{ dd(banner_img)}} #}
     <div class="absolute bottom-0 end-0 z-[0]">
@@ -53,10 +79,14 @@
 
         {% if items.bundle in [ 'initiatives','services']  %}
         <div class="flex md:items-end items-start gap-5 flex-col md:flex-row justify-between">
-            <h1 class="md:text-5xl text-4xl">
-                {{ items.title }}
-            </h1>
+          
+          <div class="max-w-[700px]">
+<h1 class="md:text-5xl text-4xl">
+	{{ items.title }}
+</h1>
 
+
+          </div>
 
 
             <div class="flex items-center gap-3">
