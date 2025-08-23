@@ -1,0 +1,23 @@
+uuid: 3159a624-c331-415e-b513-ea155edcdfca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.publications_reports
+id: node.publications_reports.field_weight
+field_name: field_weight
+entity_type: node
+bundle: publications_reports
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

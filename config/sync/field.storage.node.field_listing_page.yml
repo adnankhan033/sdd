@@ -1,0 +1,27 @@
+uuid: 0df02602-508a-4b70-bf7a-7c7d9b503534
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_listing_page
+field_name: field_listing_page
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: open_data
+      label: 'Open Data'
+    -
+      value: media_kit
+      label: 'Media Kit'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

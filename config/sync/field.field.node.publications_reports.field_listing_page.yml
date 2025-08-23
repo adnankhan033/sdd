@@ -1,0 +1,21 @@
+uuid: e987379d-4658-4235-b6c0-422b824a2742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_page
+    - node.type.publications_reports
+  module:
+    - options
+id: node.publications_reports.field_listing_page
+field_name: field_listing_page
+entity_type: node
+bundle: publications_reports
+label: 'Listing Page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

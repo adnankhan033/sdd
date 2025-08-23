@@ -13,7 +13,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\config_pages\Entity\ConfigPages;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\link\LinkItemInterface;
-
+use Drupal\Core\Url;
 
 
 
@@ -89,6 +89,46 @@ function theme_sdd_preprocess_node(array &$variables): void
   }
 // load bundle label 
 
+
+$count_images = 0;
+if($bundle =='media_images'){
+  if ($node->hasField('field_sh_images') && !$node->get('field_sh_images')->isEmpty()) {
+    $count_images = $node->get('field_sh_images')->count();
+  }
+}
+
+
+
+$cacheability = new CacheableMetadata();
+
+// Load Config Pages: home_settings
+if ($config = ConfigPages::config('general_pages')) {
+  // Inherit cache from the config entity (includes correct tags).
+  $cacheability = $cacheability->merge(CacheableMetadata::createFromObject($config));
+  $feedback_like_title = $config->get('field_feedback_like_title')->value?? '';
+  $feedback_like_description = $config->get('field_feedback_like_description')->value?? '';
+  $feedback_form_title = $config->get('field_feedback_form_title')->value?? '';
+  $feedback_form_description = $config->get('field_feedback_form_description')->value?? '';
+  $feedback_link_uri = $config->get('field_feedback_form_link')->getValue()[0]['uri'] ?? '';
+  $feedback_link_uri = Url::fromUri($feedback_link_uri)->toString();
+  $feedback_link_title = $config->get('field_feedback_form_link')->getValue()[0]['title'] ?? '';
+  
+  
+  $variables['feedback_info'] = [
+    'feedback_like_title' => $feedback_like_title, 
+    'feedback_like_description'=>  $feedback_like_description,
+    'feedback_form_title'=>  $feedback_form_title,
+    'feedback_form_description'=>  $feedback_form_description,
+    'feedback_link_uri'=>  $feedback_link_uri,
+    'feedback_link_title'=>  $feedback_link_title,
+  ];
+    
+
+}
+
+
+
+
   $variables['shorter_label'] = $shorter_label;
   $variables['short_label'] = $short_label;
   $variables['medium_label'] = $medium_label;
@@ -96,6 +136,10 @@ function theme_sdd_preprocess_node(array &$variables): void
   $variables['body_short'] = $body_short;
   $variables['body_long'] = $body_long;
   $variables['bundle_label'] = $bundle_label;
+  $variables['count_images'] = $count_images;
+  
+
+
 
 }
 
@@ -167,6 +211,42 @@ function theme_sdd_form_views_exposed_form_alter(&$form, $form_state, $form_id)
     }
 
   }
+  
+if($form['#id'] =='views-exposed-form-publications-reports-grid'){}
+
+
+if (isset($form['field_pr_select_type'])) {
+  // Add class to the entire BEF link list.
+  $form['field_pr_select_type']['#attributes']['class'][] = 'bef-taxonomy-links';
+
+  // Add class to each term link.
+  foreach ($form['field_pr_select_type']['#options'] as $tid => $label) {
+    if (!empty($tid)) {
+
+      if ($label ===  "- Any -") {
+        $form['field_pr_select_type']['#options'][$tid] = t('All Categories');
+      }
+    }
+  }
+}
+
+  if($form['#id'] =='views-exposed-form-regulations-grid'){
+
+if (isset($form['field_reg_select_type_value'])) {
+  // Add class to the entire BEF link list.
+  $form['field_reg_select_type_value']['#attributes']['class'][] = 'bef-taxonomy-links';
+
+  // Add class to each term link.
+  foreach ($form['field_reg_select_type_value']['#options'] as $tid => $label) {
+    if (!empty($tid)) {
+
+      if ($label ===  "- Any -") {
+        $form['field_reg_select_type_value']['#options'][$tid] = t('All Categories');
+      }
+    }
+  }
+}
+}
 
   if (
     isset($form['#id']) &&
@@ -204,7 +284,7 @@ function theme_sdd_form_views_exposed_form_alter(&$form, $form_state, $form_id)
     // Rename "- Any -" to "All".
     foreach ($form[$el_name]['#options'] as $k => $label) {
       if ($label === '- Any -') {
-        $form[$el_name]['#options'][$k] = t('All');
+        $form[$el_name]['#options'][$k] = t('All Categories');
       }
     }
 
@@ -422,6 +502,10 @@ function theme_sdd_preprocess_paragraph(array &$variables)
       }
     }
   }
+
+
+
+  
 }
 
 

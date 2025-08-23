@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.services.field_general_weight
     - field.field.node.services.field_image
     - field.field.node.services.field_kpi_stat_card
+    - field.field.node.services.field_listing_page
     - field.field.node.services.field_service_detail_item
     - field.field.node.services.field_services_type
     - field.field.node.services.field_sh_icon
@@ -51,7 +52,7 @@ content:
     third_party_settings: {  }
   field_general_weight:
     type: number
-    weight: 26
+    weight: 21
     region: content
     settings:
       placeholder: ''
@@ -81,6 +82,12 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_listing_page:
+    type: options_select
+    weight: 19
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_service_detail_item:
     type: paragraphs
@@ -154,7 +161,7 @@ content:
     third_party_settings: {  }
   field_weight:
     type: number
-    weight: 19
+    weight: 20
     region: content
     settings:
       placeholder: ''

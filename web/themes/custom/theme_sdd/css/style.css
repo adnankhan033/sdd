@@ -80,6 +80,12 @@ body a.visually-hidden.focusable {
    }
 
 
+
+   [id^="edit-message"]{
+    display: none !important;
+   }
+
+
 @media (min-width: 767px) and (max-width: 1024px) {
     .form-item-service-type {
         width: 100%;

@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.publications_reports.body
     - field.field.node.publications_reports.field_attachment
     - field.field.node.publications_reports.field_image
+    - field.field.node.publications_reports.field_listing_page
     - field.field.node.publications_reports.field_pr_select_type
+    - field.field.node.publications_reports.field_weight
     - image.style.thumbnail
     - node.type.publications_reports
   module:
@@ -50,11 +52,24 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_listing_page:
+    type: options_select
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_pr_select_type:
     type: options_select
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 19
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

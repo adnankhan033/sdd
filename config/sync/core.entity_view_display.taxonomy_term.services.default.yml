@@ -31,8 +31,8 @@ content:
       image_loading:
         attribute: lazy
       svg_attributes:
-        width: null
-        height: null
+        width: 315
+        height: 200
       svg_render_as_image: true
     third_party_settings:
       image_class:

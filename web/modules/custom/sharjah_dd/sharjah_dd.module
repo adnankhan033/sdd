@@ -70,12 +70,6 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
       'variables' => ['items' => NULL],
       'template' => 'looking-digital-service',
     ],
-    // feedback_block
-    
-    'feedback_block' => [
-      'variables' => ['items' => NULL],
-      'template' => 'feedback-block',
-    ],
   ];
 }   
 
@@ -87,7 +81,18 @@ function sharjah_dd_theme($existing, $type, $theme, $path)
  */
 function sharjah_dd_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
+if($form_id ==='webform_submission_contact_add_form') {
+  if (isset($form['actions']['submit'])) {
+    
+    $form['actions']['submit']['#prefix'] = '<div class="contact-submit group/btn relative inline-flex h-[51px] flex-shrink-0 rounded-full border  py-3 pe-[65px] ps-7  transition-all border-orange bg-[#FFF3E9] text-black hover:text-orange ">';
+        $form['actions']['submit']['#suffix'] = '
+        <span class="absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border transition-all group-hover/btn:border-orange border-orange bg-orange">
+            <i class="fa-regular fa-arrow-right text-xs   text-white"></i>
+        </span>
+    </div>';
 
+  }
+}
   if (isset($form['field_year'])) {
     $form['field_year']['#attributes']['class'][] = 'only-wrapper-hidden hidden';
   

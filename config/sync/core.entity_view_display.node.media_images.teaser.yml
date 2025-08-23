@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.media_images.body
     - field.field.node.media_images.field_banner
+    - field.field.node.media_images.field_general_weight
     - field.field.node.media_images.field_sh_images
     - node.type.media_images
   module:
@@ -63,4 +64,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_general_weight: true
   langcode: true

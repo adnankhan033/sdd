@@ -1,0 +1,19 @@
+uuid: dd5e94a7-abcf-46c0-92a8-16d306afeb26
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_feedback_like_title
+id: config_pages.general_pages.field_feedback_like_title
+field_name: field_feedback_like_title
+entity_type: config_pages
+bundle: general_pages
+label: 'feedback Like Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

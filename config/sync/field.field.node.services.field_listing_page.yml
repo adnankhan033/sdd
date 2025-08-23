@@ -1,0 +1,21 @@
+uuid: 493d2f52-b305-4e5c-aefc-fa396eef40bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_page
+    - node.type.services
+  module:
+    - options
+id: node.services.field_listing_page
+field_name: field_listing_page
+entity_type: node
+bundle: services
+label: 'Listing Page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

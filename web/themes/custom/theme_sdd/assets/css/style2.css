@@ -1850,6 +1850,12 @@ body {
       top: calc(var(--spacing) * 10);
     }
   }
+  .after\:-bottom-\[100px\] {
+    &::after {
+      content: var(--tw-content);
+      bottom: calc(100px * -1);
+    }
+  }
   .after\:bottom-0 {
     &::after {
       content: var(--tw-content);
@@ -2006,11 +2012,6 @@ body {
         content: var(--tw-content);
         display: none;
       }
-    }
-  }
-  .default\:block {
-    &:default {
-      display: block;
     }
   }
   .hover\:border-orange {
@@ -2712,6 +2713,11 @@ body {
   .md\:pb-\[300px\] {
     @media (width >= 48rem) {
       padding-bottom: 300px;
+    }
+  }
+  .md\:text-end {
+    @media (width >= 48rem) {
+      text-align: end;
     }
   }
   .md\:text-start {

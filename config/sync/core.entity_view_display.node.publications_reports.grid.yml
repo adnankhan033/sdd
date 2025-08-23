@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.publications_reports.body
     - field.field.node.publications_reports.field_attachment
     - field.field.node.publications_reports.field_image
+    - field.field.node.publications_reports.field_listing_page
     - field.field.node.publications_reports.field_pr_select_type
+    - field.field.node.publications_reports.field_weight
     - image.style.publication_icon
     - node.type.publications_reports
   module:
@@ -67,4 +69,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_listing_page: true
+  field_weight: true
   langcode: true

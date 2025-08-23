@@ -40,15 +40,16 @@
 #}
 
 
+
 {% block paragraph %}
 <div class="faq-item border-b border-[#D4D4D8] py-10 section-our-strategy">
     <button class="faq-btn flex w-full items-center justify-between gap-3 text-start text-xl text-[#6A7282] transition-colors focus:outline-none">
-        <span class="faq-title {{ count =="1" ? 'text-orange': ''}}">
+        <span class="faq-title {{ count =="1" ? 'text-orange first-tab': ''  }}">
             {{ content.field_title|render|striptags|trim|raw }}
         </span>
-        <span class="faq-icon text-2xl font-light {{ count =="1" ? 'text-orange': ''}}"> {{ count =="1" ? '-': '+'}}</span>
+        <span class="faq-icon text-2xl font-light {{ count =="1" ? 'text-orange first-tab': ''}}"> {{ count =="1" ? '-': '+'}}</span>
     </button>
-    <div class="faq-content mt-9 leading-7 text-[#6A7282]  {{ count =="1" ? '': 'hidden'}}">
+    <div class="faq-content mt-9 leading-7 text-[#6A7282]  {{ count =="1" ? ' first-tab': 'hidden'}}">
         {{ content.field_description|render|striptags|trim|raw }}
     </div>
 </div>

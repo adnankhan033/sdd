@@ -20,7 +20,7 @@ categories: {  }
 elements: |-
   container:
     '#type': webform_section
-    '#title': 'Testing '
+    '#title': 'Main container'
     '#title_display': invisible
     '#description_display': invisible
     '#attributes':
@@ -148,10 +148,17 @@ elements: |-
           - py-4
           - px-4
       '#test': 'Please ignore this email.'
+  section:
+    '#type': webform_section
+    '#title': Section
+    '#attributes':
+      class:
+        - 'md:text-end'
     actions:
       '#type': webform_actions
       '#title': 'Submit button(s)'
-      '#submit__label': 'Send message'
+      '#submit__label': Send
+      '#update__label': Send
 css: ''
 javascript: ''
 settings:

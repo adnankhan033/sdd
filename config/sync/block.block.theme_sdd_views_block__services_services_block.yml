@@ -12,7 +12,7 @@ dependencies:
 id: theme_sdd_views_block__services_services_block
 theme: theme_sdd
 region: content
-weight: -4
+weight: -2
 provider: null
 plugin: 'views_block:services-services_block'
 settings:

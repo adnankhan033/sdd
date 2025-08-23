@@ -1,0 +1,19 @@
+uuid: a403c6ff-2081-447c-969a-1e86f342ace7
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.general_pages
+    - field.storage.config_pages.field_feedback_form_title
+id: config_pages.general_pages.field_feedback_form_title
+field_name: field_feedback_form_title
+entity_type: config_pages
+bundle: general_pages
+label: 'Feedback Form title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
