@@ -15,6 +15,12 @@ dependencies:
     - field.field.config_pages.general_pages.field_digital_service_link
     - field.field.config_pages.general_pages.field_digital_service_title
     - field.field.config_pages.general_pages.field_ds_descriptio
+    - field.field.config_pages.general_pages.field_faqs_banner
+    - field.field.config_pages.general_pages.field_feedback_form_description
+    - field.field.config_pages.general_pages.field_feedback_form_link
+    - field.field.config_pages.general_pages.field_feedback_form_title
+    - field.field.config_pages.general_pages.field_feedback_like_description
+    - field.field.config_pages.general_pages.field_feedback_like_title
     - field.field.config_pages.general_pages.field_initiative_banner
     - field.field.config_pages.general_pages.field_laws_regulations
     - field.field.config_pages.general_pages.field_laws_regulations_descripti
@@ -23,6 +29,7 @@ dependencies:
     - field.field.config_pages.general_pages.field_news_room_banner
     - field.field.config_pages.general_pages.field_our_mission
     - field.field.config_pages.general_pages.field_our_vision
+    - field.field.config_pages.general_pages.field_publications_reports_banne
     - field.field.config_pages.general_pages.field_serv_header_details
     - field.field.config_pages.general_pages.field_service_header_banner
     - field.field.config_pages.general_pages.field_services_apply_link
@@ -141,6 +148,63 @@ content:
     third_party_settings: {  }
     weight: 14
     region: content
+  field_faqs_banner:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_feedback_form_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_feedback_form_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_feedback_form_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_feedback_like_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_feedback_like_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
+    region: content
   field_initiative_banner:
     type: image
     label: above
@@ -229,6 +293,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_publications_reports_banne:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 27
     region: content
   field_serv_header_details:
     type: text_default

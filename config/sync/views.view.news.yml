@@ -282,7 +282,7 @@ display:
         options:
           offset: 0
           pagination_heading_level: h4
-          items_per_page: 25
+          items_per_page: 9
           total_pages: null
           id: 0
           tags:
@@ -293,7 +293,7 @@ display:
           expose:
             items_per_page: true
             items_per_page_label: 'Items per page'
-            items_per_page_options: '25, 50,75, 100'
+            items_per_page_options: '9,18,27,36,45,56,63,72,81,90,99'
             items_per_page_options_all: true
             items_per_page_options_all_label: '- All -'
             offset: true
@@ -525,6 +525,224 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  media_center_block:
+    id: media_center_block
+    display_title: 'media center'
+    display_plugin: page
+    position: 1
+    display_options:
+      title: 'Media Center'
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_year_value:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+              created:
+                plugin_id: bef_datepicker
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                  hide_label: false
+      sorts:
+        field_general_weight_value:
+          id: field_general_weight_value
+          table: node__field_general_weight
+          field: field_general_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            news: news
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_general_weight_value:
+          id: field_general_weight_value
+          table: node__field_general_weight
+          field: field_general_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: 'not empty'
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: clean_html_style
+        options:
+          row_class: ''
+          uses_fields: false
+          wrapper_class: ' group-[:not(.list)]/layout:grid group-[.list]/layout:space-y-10 gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3'
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: grid
+      defaults:
+        title: false
+        exposed_form: false
+        style: false
+        row: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"mb-8 flex flex-wrap items-center justify-between gap-8\">\r\n            <h2 class=\"text-4xl\">Recent News</h2>\r\n\r\n            <a href=\"/media-center/news\" class=\"group/btn relative inline-flex h-[51px] flex-shrink-0 rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange\">\r\n              <span class=\" \"> Discover more </span>\r\n\r\n              <span class=\"absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange\">\r\n                <i class=\"fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white\"></i>\r\n              </span>\r\n            </a>\r\n          </div>"
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      path: media-center
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   recent_block:
     id: recent_block
     display_title: 'Recent News'
@@ -629,7 +847,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"mb-8 flex flex-wrap items-center justify-between gap-8\">\r\n            <h2 class=\"text-4xl\">Recent News</h2>\r\n\r\n            <a href=\"\" class=\"group/btn relative inline-flex h-[51px] flex-shrink-0 rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange\">\r\n              <span class=\" \"> Discover more </span>\r\n\r\n              <span class=\"absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange\">\r\n                <i class=\"fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white\"></i>\r\n              </span>\r\n            </a>\r\n          </div>"
+            value: "<div class=\"mb-8 flex flex-wrap items-center justify-between gap-8\">\r\n            <h2 class=\"text-4xl\">Recent News</h2>\r\n\r\n            <a href=\"/media-center/news\" class=\"group/btn relative inline-flex h-[51px] flex-shrink-0 rounded-full border border-[#D4D4D8] bg-[#F9FAFB] py-3 pe-[65px] ps-7 text-[#6A7282] transition-all hover:border-orange hover:bg-[#FFF3E9] hover:text-orange\">\r\n              <span class=\" \"> Discover more </span>\r\n\r\n              <span class=\"absolute -end-1 top-0 flex h-[50px] w-[53px] items-center justify-center rounded-full border border-[#D4D4D8] bg-white transition-all group-hover/btn:border-orange group-hover/btn:bg-orange\">\r\n                <i class=\"fa-regular fa-arrow-right text-xs text-[#99A1AF] group-hover/btn:text-white\"></i>\r\n              </span>\r\n            </a>\r\n          </div>"
             format: full_html
           tokenize: false
       display_extenders: {  }

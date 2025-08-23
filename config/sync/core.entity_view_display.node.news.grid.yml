@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.grid
     - field.field.node.news.body
+    - field.field.node.news.field_general_weight
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
@@ -78,6 +79,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_general_weight: true
   field_tags: true
   field_year: true
   langcode: true

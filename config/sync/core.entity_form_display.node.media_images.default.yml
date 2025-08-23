@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.media_images.body
     - field.field.node.media_images.field_banner
+    - field.field.node.media_images.field_general_weight
     - field.field.node.media_images.field_sh_images
     - image.style.thumbnail
     - node.type.media_images
@@ -40,6 +41,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_general_weight:
+    type: number
+    weight: 21
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_sh_images:
     type: image_image

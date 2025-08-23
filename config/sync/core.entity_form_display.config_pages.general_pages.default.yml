@@ -15,6 +15,12 @@ dependencies:
     - field.field.config_pages.general_pages.field_digital_service_link
     - field.field.config_pages.general_pages.field_digital_service_title
     - field.field.config_pages.general_pages.field_ds_descriptio
+    - field.field.config_pages.general_pages.field_faqs_banner
+    - field.field.config_pages.general_pages.field_feedback_form_description
+    - field.field.config_pages.general_pages.field_feedback_form_link
+    - field.field.config_pages.general_pages.field_feedback_form_title
+    - field.field.config_pages.general_pages.field_feedback_like_description
+    - field.field.config_pages.general_pages.field_feedback_like_title
     - field.field.config_pages.general_pages.field_initiative_banner
     - field.field.config_pages.general_pages.field_laws_regulations
     - field.field.config_pages.general_pages.field_laws_regulations_descripti
@@ -23,6 +29,7 @@ dependencies:
     - field.field.config_pages.general_pages.field_news_room_banner
     - field.field.config_pages.general_pages.field_our_mission
     - field.field.config_pages.general_pages.field_our_vision
+    - field.field.config_pages.general_pages.field_publications_reports_banne
     - field.field.config_pages.general_pages.field_serv_header_details
     - field.field.config_pages.general_pages.field_service_header_banner
     - field.field.config_pages.general_pages.field_services_apply_link
@@ -45,7 +52,7 @@ third_party_settings:
       label: About
       region: hidden
       parent_name: ''
-      weight: 11
+      weight: 17
       format_type: tab
       format_settings:
         classes: ''
@@ -210,6 +217,58 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_faqs:
+      children:
+        - field_faqs_banner
+      label: FAQS
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_publications_reports:
+      children:
+        - field_publications_reports_banne
+      label: 'Publications & Reports'
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_feedback_form:
+      children:
+        - field_feedback_like_title
+        - field_feedback_like_description
+        - field_feedback_form_title
+        - field_feedback_form_description
+        - field_feedback_form_link
+      label: 'Feedback Form'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
 id: config_pages.general_pages.default
 targetEntityType: config_pages
 bundle: general_pages
@@ -295,6 +354,54 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_faqs_banner:
+    type: image_image
+    weight: 10
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_feedback_form_description:
+    type: text_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_feedback_form_link:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_feedback_form_title:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_feedback_like_description:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_feedback_like_title:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_initiative_banner:
     type: image_image
     weight: 9
@@ -338,6 +445,14 @@ content:
   field_news_room_banner:
     type: image_image
     weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_publications_reports_banne:
+    type: image_image
+    weight: 10
     region: content
     settings:
       progress_indicator: throbber

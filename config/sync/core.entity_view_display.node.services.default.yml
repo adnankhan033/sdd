@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.services.field_general_weight
     - field.field.node.services.field_image
     - field.field.node.services.field_kpi_stat_card
+    - field.field.node.services.field_listing_page
     - field.field.node.services.field_service_detail_item
     - field.field.node.services.field_services_type
     - field.field.node.services.field_sh_icon
@@ -74,6 +75,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 108
+    region: content
+  field_listing_page:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
     region: content
   field_service_detail_item:
     type: entity_reference_revisions_entity_view

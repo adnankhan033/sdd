@@ -10,7 +10,7 @@ dependencies:
 id: theme_sdd_feedbackblock
 theme: theme_sdd
 region: content
-weight: 0
+weight: 1
 provider: null
 plugin: feedback_block
 settings:

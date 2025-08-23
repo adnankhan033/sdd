@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_general_weight
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
@@ -29,6 +30,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_general_weight:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 111
     region: content
   field_image:
     type: image

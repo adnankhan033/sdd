@@ -1,4 +1,4 @@
-uuid: 8bc76659-6103-43b2-96b9-20f9980e26dd
+uuid: 48a5696e-f59f-45b8-8d8d-84148f98e80a
 langcode: en
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - theme_sdd
-id: theme_sdd_views_block__services_services_block
+id: theme_sdd_views_block__services_block_1
 theme: theme_sdd
 region: content
-weight: -2
+weight: -4
 provider: null
-plugin: 'views_block:services-services_block'
+plugin: 'views_block:services-block_1'
 settings:
-  id: 'views_block:services-services_block'
+  id: 'views_block:services-block_1'
   label: ''
   label_display: '0'
   provider: views

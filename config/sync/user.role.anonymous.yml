@@ -8,6 +8,7 @@ dependencies:
     - comment
     - contact
     - filter
+    - flag
     - search
     - simplenews
     - system
@@ -21,6 +22,11 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'flag only_dislike'
+  - 'flag only_like'
   - 'search content'
   - 'subscribe to newsletters'
+  - 'unflag like_dislike'
+  - 'unflag only_dislike'
+  - 'unflag only_like'
   - 'use text format restricted_html'

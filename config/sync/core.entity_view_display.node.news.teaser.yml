@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_general_weight
     - field.field.node.news.field_image
     - field.field.node.news.field_sh_date
     - field.field.node.news.field_sh_images
@@ -60,6 +61,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_general_weight: true
   field_sh_images: true
   field_year: true
   langcode: true

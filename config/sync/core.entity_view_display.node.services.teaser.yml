@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.services.field_general_weight
     - field.field.node.services.field_image
     - field.field.node.services.field_kpi_stat_card
+    - field.field.node.services.field_listing_page
     - field.field.node.services.field_service_detail_item
     - field.field.node.services.field_services_type
     - field.field.node.services.field_sh_icon
@@ -121,6 +122,7 @@ content:
 hidden:
   field_general_weight: true
   field_kpi_stat_card: true
+  field_listing_page: true
   field_service_detail_item: true
   field_sh_images: true
   field_steps: true
