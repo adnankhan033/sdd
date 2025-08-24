@@ -5,6 +5,7 @@
 
 /vendor
 /node_modules
+/web/sites/default/files/
 
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings.*.php
